@@ -1,6 +1,6 @@
 MatChavez.github.io
 
-Made public.
+Made public, gh_pages reset.
 
 # Is this .io?
 
