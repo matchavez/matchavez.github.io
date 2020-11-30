@@ -8,6 +8,7 @@ nav:
   - Getting Underway:
     - Unit Tests: unit_testing.md
     - Fonts: typography.md
+    - Snip: testsnip.md
 
 # Extensions
 markdown_extensions:

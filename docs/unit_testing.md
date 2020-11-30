@@ -32,8 +32,7 @@ markdown_extensions:
   - pymdownx.snippets
 ```
 
-`--8<--​ "includes/testsnip.md"`
-
+`--8<--​ "testsnip.md"`
 
 --8<-- "testsnip.md"
 
