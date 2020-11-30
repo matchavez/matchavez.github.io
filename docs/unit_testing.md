@@ -35,9 +35,8 @@ markdown_extensions:
 `--8<--​ "includes/testsnip.md"`
 
 
---8<--- 
-includes/testsnip.md
---8<---
+--8<--- testsnip.md
+
 
 
 
