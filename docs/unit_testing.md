@@ -27,12 +27,14 @@ is maintained by the W3C.
 
 ## Snippets
 
+These are includes:
+
 ```material
 markdown_extensions:
   - pymdownx.snippets
 ```
 
-`--8<--​ "testsnip.md"`
+`--8<--​"testsnip.md"`
 
 
 
