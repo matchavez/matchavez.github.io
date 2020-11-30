@@ -34,15 +34,34 @@ markdown_extensions:
 
 `--8<--​ "testsnip.md"`
 
---8<-- "testsnip.md"
 
 
+--8<---​------ 
+testsnip.md
+--8<--------- 
+
+(Not working)
 
 
 ## Admonitions
 
+!!! note
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
+```material
+!!! note
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+```
 
 ## Buttons
+
+[Subscribe to our mailing list](#){: .md-button }
+
+`[Subscribe to our mailing list](#){: .md-button }`
 
 
 ## Code blocks
