@@ -36,9 +36,7 @@ markdown_extensions:
 
 
 
---8<---​------ 
-testsnip.md
---8<--------- 
+--8<-- "testsnip.md" 
 
 (Not working)
 
