@@ -1,6 +1,6 @@
 # Typography
 
-> Typography is to check the output of the theme, not including plug-ins or non-standard enhancements. Those are checked in unit_testing.md.
+> Typography is to check the output of the theme, not including plug-ins or non-standard enhancements. Those are checked in unit_testing.md. This admonition is improperly using a blockquote for its callout because it works without a plug-in.
 
 ---
 

@@ -1,4 +1,8 @@
-site_name: My Docs
+site_name: matchavez.com
 theme: 
   name: material
   
+nav:
+  - index.md
+  - unit_testing.md
+  - typography.md
