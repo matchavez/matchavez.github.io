@@ -1,6 +1,6 @@
 site_name: matchavez.com
 theme: 
-  name: material
+  name: #material
 
 # Page Tree
 nav:
