@@ -43,7 +43,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
-      linenums: true
       custom_fences:
         - name: mermaid
           class: mermaid
