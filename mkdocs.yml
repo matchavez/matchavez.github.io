@@ -1,6 +1,9 @@
 site_name: matchavez.com
 theme: 
   name: material
+  #name: readthedocs
+  #name: mkdocs
+
   # Default values, taken from mkdocs_theme.yml
   language: en
   features:
@@ -23,14 +26,15 @@ theme:
 # Page Tree
 nav:
   - HOME: index.md 
-  - INDEX: 
+  - Blank1: 
     - Unit Tests: unit_testing.md 
     - Fonty Fonts: typography.md 
-  - TAB TWO:
+  - Blank2:
     - Touchy shit: testsnip.md 
+  - Blank3: 
     - Unit Tests: unit_testing.md 
     - Fonty Fonts: typography.md 
-  - TAB THREE:
+  - Blank4:
     - Another one: testsnip.md
 
 
