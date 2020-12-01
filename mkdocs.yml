@@ -1,14 +1,38 @@
 site_name: matchavez.com
 theme: 
   name: material
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    - navigation.tabs
+    #- navigation.instant
+
+  palette:
+    scheme: default
+    primary: red 
+    accent: red
+    scheme: slate
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  #favicon: assets/favicon.png
+  #icon:
+    #logo: logo
 
 # Page Tree
 nav:
-  - Home: index.md
-  - Getting Underway:
-    - Unit Tests: unit_testing.md
-    - Fonts: typography.md
-    - Snip: testsnip.md
+  - HOME: index.md 
+  - INDEX: 
+    - Unit Tests: unit_testing.md 
+    - Fonty Fonts: typography.md 
+  - TAB TWO:
+    - Touchy shit: testsnip.md 
+    - Unit Tests: unit_testing.md 
+    - Fonty Fonts: typography.md 
+  - TAB THREE:
+    - Another one: testsnip.md
+
 
 # Extensions
 markdown_extensions:

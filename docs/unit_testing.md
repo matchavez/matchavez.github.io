@@ -34,7 +34,7 @@ markdown_extensions:
   - pymdownx.snippets
 ```
 
-`--8<--​"testsnip.md"`
+`--8<--​ 'testsnip.md'`
 
 --8<-- 'testsnip.md'
 
@@ -64,7 +64,7 @@ Relative to the SITE base path, not where the containing document is. So if your
 
 ## Code blocks
 
-``` python 
+``` python linenums="1"
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
