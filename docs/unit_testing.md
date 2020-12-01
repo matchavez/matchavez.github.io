@@ -40,8 +40,6 @@ markdown_extensions:
 
 Relative to the SITE base path, not where the containing document is. So if your file is in docs, and your include is in docs, you _still_ have to put a `base_path: docs` or go relative from the origin.
 
-#### (Not working)
-
 
 ## Admonitions
 
@@ -66,6 +64,25 @@ Relative to the SITE base path, not where the containing document is. So if your
 
 ## Code blocks
 
+``` python 
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+[python]
+
+> Blockquote to fake this:
+> ``` python linenums="1"
+> def bubble_sort(items):
+>   for i in range(len(items)):
+>       for j in range(len(items) - 1 - i):
+>           if items[j] > items[j + 1]:
+>               items[j], items[j + 1] = items[j + 1], items[j]
+>```
+
+Not sure how to make the language visible...
 
 ## Content tabs
 
