@@ -38,7 +38,7 @@ markdown_extensions:
 
 --8<-- 'testsnip.md'
 
-
+Relative to the SITE base path, not where the containing document is. So if your file is in docs, and your include is in docs, you _still_ have to put a `base_path: docs` or go relative from the origin.
 
 #### (Not working)
 
