@@ -1,21 +1,24 @@
+# Here's the Docker Command, no hashtag:
+# docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+
 site_name: matchavez.com
 theme: 
   name: material
   #name: readthedocs
   #name: mkdocs
+  features:
+    - navigation.tabs
 
   # Default values, taken from mkdocs_theme.yml
   language: en
-  features:
-    - navigation.tabs
+
     #- navigation.instant
 
   palette:
     scheme: default
     primary: red 
     accent: red
-    scheme: slate
-  
+
   font:
     text: Roboto
     code: Roboto Mono
@@ -25,12 +28,12 @@ theme:
 
 # Page Tree
 nav:
-  - HOME: index.md 
+  - .: index.md 
   - Blank1: 
     - Unit Tests: unit_testing.md 
     - Fonty Fonts: typography.md 
   - Blank2:
-    - Touchy shit: testsnip.md 
+    - Touchy shit: content.md 
   - Blank3: 
     - Unit Tests: unit_testing.md 
     - Fonty Fonts: typography.md 
