@@ -1,7 +1,5 @@
 # Typography
 
-> Typography is to check the output of the theme, not including plug-ins or non-standard enhancements. Those are checked in unit_testing.md. This admonition is improperly using a blockquote for its callout because it works without a plug-in.
-
 ---
 
 Opening TOC:
@@ -191,19 +189,52 @@ a#logo h1 {
 CREATE TABLE clowns;
 ```
 
+Admonitions:
 
-!!! info Hello (Custom info)
-
-    Very Handy
-
-!!! Danger
-    Don't do that.
+Default, Multi-paragraph, Collapsible
 
 !!! Nothing
     Boring default
 
-??? Is this on?
+
+!!! info "Hello World"
+    Very Handy
+
+    Multi-paragraph
+
+??? attention "Collapsible"
     This is supposed to be collapsible.
+
+All styles:
+
+!!! note
+
+!!! abstract
+
+!!! info
+
+!!! tip
+
+!!! success
+
+!!! question
+
+!!! warning
+
+!!! failure
+
+!!! danger
+
+!!! bug
+
+!!! example
+
+!!! quote
+
+
+
+
+---
 
 [Subscribe to our mailing list](#){: .md-button }
 
@@ -213,9 +244,6 @@ CREATE TABLE clowns;
 Later that day...
 
 :smile:
-
-
-
 
 ---
 

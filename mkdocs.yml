@@ -15,9 +15,9 @@ theme:
     #- navigation.instant
 
   palette:
-    scheme: default
-    primary: red 
-    accent: red
+    #scheme: default
+    #primary: red 
+    #accent: red
 
   font:
     text: Roboto
@@ -28,17 +28,11 @@ theme:
 
 # Page Tree
 nav:
-  - .: index.md 
-  - Blank1: 
-    - Unit Tests: unit_testing.md 
-    - Fonty Fonts: typography.md 
-  - Blank2:
-    - Touchy shit: content.md 
-  - Blank3: 
-    - Unit Tests: unit_testing.md 
-    - Fonty Fonts: typography.md 
-  - Blank4:
+  - Welcome:
+    - Sandbox: unit_testing.md 
     - Another one: testsnip.md
+    - Fonty Fonts: typography.md 
+    - Steps: steps.md 
 
 
 # Extensions
