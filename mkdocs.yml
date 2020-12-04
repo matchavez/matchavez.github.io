@@ -16,8 +16,8 @@ theme:
 
   palette:
     scheme: mycolour
-    #primary: yellow 
-    #accent: red
+    primary: red
+    accent: black
 
   font:
     text: Roboto
@@ -36,7 +36,14 @@ nav:
     - Another one: testsnip.md
     - Fonty Fonts: typography.md 
     - Steps: steps.md 
-
+  - Notetaking:
+    - All about notes: notetaking.md
+    - Winner First: notetaking/winner_first.md
+    - Applications: notetaking/applications.md
+    - GFM vs. JSON: notetaking/gfm_json.md
+  - Favourite Quotes: favourite_quotes.md
+  - Golf:
+    - Tournaments: golf/tourneys.md
 
 # Extensions
 markdown_extensions:
