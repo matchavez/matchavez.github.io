@@ -15,8 +15,8 @@ theme:
     #- navigation.instant
 
   palette:
-    #scheme: default
-    primary: yellow 
+    scheme: youtube
+    #primary: yellow 
     #accent: red
 
   font:
