@@ -16,7 +16,7 @@ theme:
 
   palette:
     #scheme: default
-    #primary: red 
+    primary: yellow 
     #accent: red
 
   font:
