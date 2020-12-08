@@ -17,7 +17,7 @@ theme:
     #- navigation.instant
 
   palette:
-    scheme: mycolour
+    scheme: slate
     primary: red
     accent: black
 
