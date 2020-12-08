@@ -29,6 +29,10 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+
+
+
+
 # Page Tree
 nav:
   - Welcome:
@@ -44,6 +48,11 @@ nav:
   - Favourite Quotes: favourite_quotes.md
   - Golf:
     - Tournaments: golf/tourneys.md
+    - Equipment: golf/equipment.md 
+
+
+
+
 
 # Extensions
 markdown_extensions:
