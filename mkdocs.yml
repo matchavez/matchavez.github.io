@@ -1,3 +1,5 @@
+# ----------------------------------------------------------------
+
 # Here's the Docker Command, no hashtag:
 # docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 
@@ -30,16 +32,13 @@ extra_css:
   - stylesheets/extra.css
 
 
+# ----------------------------------------------------------------
 
+# NAV PAGE TREE
 
-
-# Page Tree
 nav:
   - Welcome:
-    - Sandbox: unit_testing.md 
-    - Another one: testsnip.md
-    - Fonty Fonts: typography.md 
-    - Steps: steps.md 
+    - Hello: index.md
   - Notetaking:
     - All about notes: notetaking.md
     - Winner First: notetaking/winner_first.md
@@ -48,13 +47,18 @@ nav:
   - Favourite Quotes: favourite_quotes.md
   - Golf:
     - Tournaments: golf/tourneys.md
-    - Equipment: golf/equipment.md 
+    - Equipment: golf/equipment.md
+  - CMS Stuff:
+    - Sandbox: unit_testing.md 
+    - Include Test: testsnip.md
+    - Typography: typography.md 
+    - CMS Steps: steps.md 
 
 
+# ----------------------------------------------------------------
 
+# EXTENSIONS
 
-
-# Extensions
 markdown_extensions:
   - pymdownx.snippets:
       base_path: docs
@@ -96,3 +100,5 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+
+  # ----------------------------------------------------------------
