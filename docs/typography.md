@@ -169,7 +169,7 @@ Single-line code:
 
 `Use single apostrophes for one line.`
 
-Use code fences \`\`\` to block in multiple lines of code.
+Use code fences \`\`\` to block in multiple lines of code.
 
 ```html
 <h5>This is unrendered code in monospace and a selected language format...</h5>
