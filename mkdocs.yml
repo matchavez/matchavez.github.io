@@ -37,8 +37,7 @@ extra_css:
 # NAV PAGE TREE
 
 nav:
-  - Welcome:
-    - Hello: index.md
+  - Welcome: index.md
   - Notetaking:
     - All about notes: notetaking.md
     - Winner First: notetaking/winner_first.md
