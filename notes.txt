@@ -1,0 +1,3 @@
+@dmehra a bit more flexible approach is simply to check for a title beginning with '_':
+
+{% if not nav_item.title.startswith("_") %}

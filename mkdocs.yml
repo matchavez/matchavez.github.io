@@ -17,9 +17,9 @@ theme:
     #- navigation.instant
 
   palette:
-    scheme: slate
-    primary: red
-    accent: black
+    scheme: mycolour
+    #primary: red
+    #accent: black
 
   font:
     text: Roboto
@@ -53,7 +53,7 @@ nav:
     - Include Test: testsnip.md
     - Typography: typography.md 
     - CMS Steps: steps.md
-    - HideMe: _workstuff.md
+    - "": _workstuff.md
 
 
 # ----------------------------------------------------------------
