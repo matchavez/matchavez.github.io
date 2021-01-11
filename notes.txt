@@ -1,3 +1,1 @@
-@dmehra a bit more flexible approach is simply to check for a title beginning with '_':
-
-{% if not nav_item.title.startswith("_") %}
+To create a 'hidden' page; one that's published but not in the navigation structure, make sure the yaml has double-quotes as the title.
