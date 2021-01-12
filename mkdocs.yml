@@ -22,7 +22,7 @@ theme:
     #accent: black
 
   font:
-    text: Roboto
+    text: Quicksand
     code: Roboto Mono
   #favicon: assets/favicon.png
   #icon:
@@ -47,11 +47,11 @@ nav:
   - Golf:
     - Tournaments: golf/tourneys.md
     - Equipment: golf/equipment.md
-  - Testing:
-    - Sandbox: unit_testing.md 
-    - Include Test: testsnip.md
-    - Typography: typography.md 
-    - CMS Steps: steps.md
+#  - Testing:
+#    - Sandbox: unit_testing.md 
+#    - Include Test: testsnip.md
+#    - Typography: typography.md 
+#    - CMS Steps: steps.md
 
 
 #    - "": _workstuff.md
