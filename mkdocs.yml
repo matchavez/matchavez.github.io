@@ -47,10 +47,12 @@ nav:
   - Golf:
     - Tournaments: golf/tourneys.md
     - Equipment: golf/equipment.md
-#  - Testing:
+  - Apple Fixes: apple/fixes.md
+    - Commands: apple/commands.md
+  - Test Pages:
 #    - Sandbox: unit_testing.md 
 #    - Include Test: testsnip.md
-#    - Typography: typography.md 
+    - Typography: typography.md 
 #    - CMS Steps: steps.md
 
 
