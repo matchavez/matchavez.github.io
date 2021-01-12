@@ -47,7 +47,7 @@ nav:
   - Golf:
     - Tournaments: golf/tourneys.md
     - Equipment: golf/equipment.md
-  - "":
+  - Testing:
     - Sandbox: unit_testing.md 
     - Include Test: testsnip.md
     - Typography: typography.md 
