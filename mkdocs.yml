@@ -22,7 +22,7 @@ theme:
     #accent: black
 
   font:
-    text: Rosario
+    text: Public Sans
     code: Roboto Mono
   #favicon: assets/favicon.png
   #icon:
