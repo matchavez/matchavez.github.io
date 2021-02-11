@@ -19,8 +19,8 @@
 | 18 Oct  | at Harewood     | Draw     | AS           | 4.5-3.5 Win  |
 | 29 Nov  | Templeton       | Draw     | AS           | 5-3 Loss     |
 | 24 Jan  | at Coringa      | Draw     | AS           | 3.5-4.5 Loss |
-| 08 Nov  | at Bottle Lake  | PPD      | PPD          | PPD          |
 | 14 Feb  | Russley         |          |              |              |
+| 08 Nov  | at Bottle Lake  | PPD      | PPD          | PPD          |
 | 14 Mar  | Rawhiti         |          |              |              |
 | 11 Apr  | Semis TBD       |          |              |              |
 | 18 Apr  | Finals TBD      |          |              |              |
