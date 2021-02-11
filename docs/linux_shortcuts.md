@@ -16,7 +16,7 @@ Assign an alias ➜ alias [alias-name]="[command-to-run]"
 
 Source a file ➜ source [name-of-the-file-to-read-and-execute]
 
-### Change directory command (cd)
+### Change directory command `cd`
 
 Move to a specific directory ➜ cd [name-of-your-directory]
 
@@ -26,7 +26,7 @@ Move to the home directory ➜ cd or cd ~
 
 Move to the last directory yo were in ➜ cd -
 
-### List command (ls)
+### List command `ls`
 
 List all visible files and directories ➜ ls
 
@@ -74,13 +74,13 @@ Create a new directory ➜ mkdir [new-directory-name]
 
 Remove an empty directory ➜ rmdir [name-of-the-directory-you-want-to-remove]
 
-### Remove command (rm)
+### Remove command `rm`
 
 Remove a file ➜ rm [name-of-your-file]
 
 Remove a directory recursively (use with caution) ➜ rm -rf [name-of-your-directory]
 
-### Concatenate command (cat)
+### Concatenate command `cat`
 
 View a single file ➜ cat [name-of-your-file]
 
@@ -90,7 +90,7 @@ Copy the content of one file to another file ➜ cat [filename-whose-contents-is
 
 Learn more about the cat command ➜ man cat
 
-### Move command (mv)
+### Move command `mv`
 
 Move a file ➜ mv [source-path-of-your-file] [destination-path-for-your-file]
 
