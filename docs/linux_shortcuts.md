@@ -194,3 +194,6 @@ Print the first n lines for a file ➜ head -n [number-of-lines] [name-of-the-fi
 
 Page through a file ➜ less [name-of-the-file]
 
+
+
+> Source: https://dev.to/mauro_codes/linux-terminal-the-ultimate-cheat-sheet-part-2-11ge?utm_source=DigitalOcean_Newsletter
