@@ -16,7 +16,7 @@ Assign an alias ➜ alias [alias-name]="[command-to-run]"
 
 Source a file ➜ source [name-of-the-file-to-read-and-execute]
 
-Change directory command (cd)
+### Change directory command (cd)
 
 Move to a specific directory ➜ cd [name-of-your-directory]
 
