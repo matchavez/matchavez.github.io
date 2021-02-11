@@ -53,7 +53,8 @@ nav:
   - Test Pages:
 #    - Sandbox: unit_testing.md 
 #    - Include Test: testsnip.md
-    - Typography: typography.md 
+    - Typography: typography.md
+    - Linux Shortcuts: linux_shortcuts.md
 #    - CMS Steps: steps.md
 
 
