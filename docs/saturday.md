@@ -2,7 +2,7 @@
 
 ---
 
-Objective: Saturday triple-tee starts were a stress to both the pro shop staff and cafe, and also made finding times more difficult for members on Saturdays. Slow play. Disproportionate cost.
+Objective: Saturday triple-tee starts were a stress to both the pro shop staff and cafe. Times on Saturdays. Slow play.
 
 ## First fix - One tee start
 
@@ -24,7 +24,7 @@ THEREFORE:
   + Members
   + Member guest (max 1 per, or pro shop)
 
-- TWO TEE START ONLY, off 1 & 10. Limit to 8 starters per time, or shotgun.
+- TWO TEE START ONLY, off 1 & 10. Limit to 8 starters per time.
 - Two sessions of 72 each. Can have prizes split or combined.
 - All other Saturday times are still restricted to members.
 - Two sessions offer a BUNDLED fee covering all prize-games. e.g. GOTD = $10
