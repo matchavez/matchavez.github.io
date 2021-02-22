@@ -12,20 +12,20 @@
 #### 2020-21 Metro B:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
 
-| Date    | Opponent        | Result   | Score        | Team         |
-| ------- | --------------- | -------- | ------------ | ------------ |
-| 20 Sep  | McLean's Island | DNP-P    | -            | 3-5 Loss     |
-| 04 Oct  | Avondale        | Win      | 6 & 5        | 7-1 Win      |
-| 18 Oct  | at Harewood     | Draw     | AS           | 4.5-3.5 Win  |
-| 29 Nov  | Templeton       | Draw     | AS           | 5-3 Loss     |
-| 24 Jan  | at Coringa      | Draw     | AS           | 3.5-4.5 Loss |
-| 14 Feb  | Russley         |          |              |              |
-| 08 Nov  | at Bottle Lake  | PPD      | PPD          | PPD          |
-| 14 Mar  | Rawhiti         |          |              |              |
-| 11 Apr  | Semis TBD       |          |              |              |
-| 18 Apr  | Finals TBD      |          |              |              |
-| ---     | ---             | ---      | ---          | ---          |
-| 2020-21 | Season Record   | 1w 3d 0l | r.s. 5/8 pts | 2w 0d 3l     |
+| Date    | Opponent        | Result   | Score         | Team         |
+| ------- | --------------- | -------- | ------------- | ------------ |
+| 20 Sep  | McLean's Island | DNP-P    | -             | 3-5 Loss     |
+| 04 Oct  | Avondale        | Win      | 6 & 5         | 7-1 Win      |
+| 18 Oct  | at Harewood     | Draw     | AS            | 4.5-3.5 Win  |
+| 29 Nov  | Templeton       | Draw     | AS            | 5-3 Loss     |
+| 24 Jan  | at Coringa      | Draw     | AS            | 3.5-4.5 Loss |
+| 14 Feb  | Russley         | Win      | 2 & 1         | 4.5-3.5 Win  |
+| 08 Nov  | at Bottle Lake  | PPD      | PPD           | PPD          |
+| 14 Mar  | Rawhiti         |          |               |              |
+| 11 Apr  | Semis TBD       |          |               |              |
+| 18 Apr  | Finals TBD      |          |               |              |
+| ---     | ---             | ---      | ---           | ---          |
+| 2020-21 | Season Record   | 2w 3d 0l | r.s. 7/10 pts | 2w 0d 3l     |
 
 
 #### 2019-20 Metro B:
