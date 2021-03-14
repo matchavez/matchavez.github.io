@@ -12,21 +12,22 @@
 #### 2020-21 Metro B:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
 
-| Date    | Opponent                | Result   | Score         | Team         |
-| ------- | ----------------------- | -------- | ------------- | ------------ |
-| 20 Sep  | McLean's Island         | DNP-P    | -             | 3-5 Loss     |
-| 04 Oct  | Avondale                | Win      | 6 & 5         | 7-1 Win      |
-| 18 Oct  | at Harewood             | Draw     | AS            | 4.5-3.5 Win  |
-| 29 Nov  | Templeton               | Draw     | AS            | 5-3 Loss     |
-| 24 Jan  | at Coringa              | Draw     | AS            | 3.5-4.5 Loss |
-| 14 Feb  | Russley                 | Win      | 2 & 1         | 4.5-3.5 Win  |
-| 27 Feb  | at Bottle Lake          | Win      | 2 Up          | 5-3 Loss     |
-| 14 Mar  | Rawhiti @Waimairi Beach |          |               |              |
-| 11 Apr  | Semis TBD               |          |               |              |
-| 18 Apr  | Finals TBD              |          |               |              |
-| ---     | ---                     | ---      | ---           | ---          |
-| 2020-21 | Season Record           | 3w 3d 0l | r.s. 9/12 pts | 3w 0d 4l     |
+| Date    | Opponent                | Result   | Score          | Team         |
+| ------- | ----------------------- | -------- | -------------- | ------------ |
+| 20 Sep  | McLean's Island         | DNP-P    | -              | 3-5 Loss     |
+| 04 Oct  | Avondale                | Win      | 6 & 5          | 7-1 Win      |
+| 18 Oct  | at Harewood             | Draw     | AS             | 4.5-3.5 Win  |
+| 29 Nov  | Templeton               | Draw     | AS             | 5-3 Loss     |
+| 24 Jan  | at Coringa              | Draw     | AS             | 3.5-4.5 Loss |
+| 14 Feb  | Russley                 | Win      | 2 & 1          | 4.5-3.5 Win  |
+| 27 Feb  | at Bottle Lake          | Win      | 2 Up           | 5-3 Loss     |
+| 14 Mar  | Rawhiti @Waimairi Beach | Win      | 5 & 3          | 5.5-2.5 Win  |
+| 11 Apr  | Semis TBD               | TBD      |                |              |
+| 18 Apr  | Finals TBD              |          |                |              |
+| ---     | ---                     | ---      | ---            | ---          |
+| 2020-21 | Season Record           | 4w 3d 0l | r.s. 11/14 pts | 4w 0d 4l     |
 
+Team finish, 5th. Top team individual record.
 
 #### 2019-20 Metro B:
 
