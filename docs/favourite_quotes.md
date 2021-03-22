@@ -1,4 +1,8 @@
+> "Leaders. Being specific costs you nothing except time you’ll save cleaning up confusion."
+>
+> <cite>Rands</cite>
 
+---
 
 > "I refuse to join any club that would have me as a member."
 >
