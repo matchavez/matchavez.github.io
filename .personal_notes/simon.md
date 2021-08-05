@@ -4,7 +4,7 @@
 
 ## Week 1 selection notes:
 
-- [ ] Contact everyone
+- [x] Contact everyone
 - [ ] Book buggy for day-of
 - [ ] Book any practice rounds
 - [ ] Get free balls from shop
@@ -54,13 +54,15 @@ vertigo0082@gmail.com,
 
 ### Week 1 for Simon:
 
-| Player | email | Remarks |
-| --- | --- | --- |
-| Lee Morris | socastah_lee@hotmail.com| Will be signing player/mgr |
-| Sam Purvis | purvissamuel@gmail.com |  |
-| Mark Harding | Mark.Harding@placemakers.co.nz | Off first |
-| Uinisoni Saafi| uinisonisaafi@hotmail.com | |
-| Sam Sandford | samm.sandford@icloud.com | |
-| | | |
-| | | |
-| | | |
+| Player          | email                          | Remarks                      |
+| --------------- | ------------------------------ | ---------------------------- |
+| Lee Morris      | socastah_lee@hotmail.com       | Will be signing player / mgr |
+| Sam Purvis      | purvissamuel@gmail.com         |                              |
+| Mark Harding    | mark.harding@placemakers.co.nz | Off first                    |
+| Uinisoni Saafi  | uinisonisaafi@hotmail.com      |                              |
+| Sam Sandford    | samm.sandford@icloud.com       |                              |
+| Rob Penney      | robpenney60@gmail.com          |                              |
+| Josh Metuatini  | joshnjo@outlook.co.nz          |                              |
+| Talor Scott     | talorscott4@gmail.com          |                              |
+| POOL            | ---                            | ---                          |
+| Kiria Metuatini | kiria.metuatini@hotmail.com    |                              |
