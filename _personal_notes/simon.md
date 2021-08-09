@@ -2,6 +2,20 @@
 
 ---
 
+## Week 2 selection notes:
+
+- [ ] Contact all players
+- [ ] Book buggy for day-of
+- [ ] Book any practice rounds
+- [ ] Get free balls from shop
+
+
+
+
+
+
+---
+
 ## Week 1 selection notes:
 
 - [x] Contact everyone
@@ -66,3 +80,5 @@ vertigo0082@gmail.com,
 | Talor Scott     | talorscott4@gmail.com          |                              |
 | POOL            | ---                            | ---                          |
 | Kiria Metuatini | kiria.metuatini@hotmail.com    |                              |
+
+
