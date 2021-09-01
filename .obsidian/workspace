@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "0855c7e4ef0c8faf",
+    "type": "split",
+    "children": [
+      {
+        "id": "14fb56e2b1510190",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "docs/cms/cms.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d5e2f11cc03d5957",
+    "type": "split",
+    "children": [
+      {
+        "id": "d10a694cd1fa55a3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a742ddbf21d0e9a6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e52435d722377192",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f1f9102450071f73",
+    "type": "split",
+    "children": [
+      {
+        "id": "803cd89a32d35cd6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77a1766ba7e96c71",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/cms/cms.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "14fb56e2b1510190",
+  "lastOpenFiles": [
+    "docs/cms/cms.md",
+    "docs/golf/equipment.md",
+    "docs/golf/tourneys.md",
+    "docs/linux_shortcuts.md",
+    "docs/index.md",
+    "_personal_notes/simon.md"
+  ]
+}

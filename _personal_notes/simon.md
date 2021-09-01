@@ -4,10 +4,43 @@
 
 ## Week 2 selection notes:
 
-- [ ] Contact all players
+- [x] Contact all players
 - [ ] Book buggy for day-of
 - [ ] Book any practice rounds
 - [ ] Get free balls from shop
+
+
+| Player          | email                          | Remarks  |
+| --------------- | ------------------------------ | -------- |
+| Sam Sandford    | samm.sandford@icloud.com       | Probable |
+| Talor Scott     | talorscott4@gmail.com          |          |
+| Rob Penney      | robpenney60@gmail.com          |          |
+| Uinisoni Saafi  | uinisonisaafi@hotmail.com      |          |
+| Mark Harding    | mark.harding@placemakers.co.nz |          |
+| Josh Metuatini  | joshnjo@outlook.co.nz          |          |
+| Kiria Metuatini | kiria.metuatini@hotmail.com    |          |
+| Lee Morris      | socastah_lee@hotmail.com       |          |
+| POOL            | ---                            | ---      |
+| Sam Purvis      | purvissamuel@gmail.com         | n/a      |
+| Martin Booth    | mbnmac@gmail.com               |          |
+
+
+## Week 2 results:
+
+|   | Waimairi Beach  | HC   | Avondale          | HC  | Result  | WB Diff | Remark      | Rating |
+| - | --------------- | ---- | ----------------- | --- | ------- | ------- | ----------- | ------ |
+| 1 | Lee Morris      | 8.9  | Mike Robinson     | 6.3 | L 1Down | +2.6    | Good        | +1.6   |
+| 2 | Talor Scott     | 6.8  | Paul Costello     | 6.1 | D SQ    | +0.7    | Good        | +0.7   |
+| 3 | Uinisoni Saafi  | 9.0  | Marty Bantilan    | 5.2 | D SQ    | +3.8    | Excellent   | +3.8   |
+| 4 | Mark Harding    | 8.2  | Keri Maaka        | 5.8 | W 6&4   | +2.4    | Outstanding | +8.4   |
+| 5 | Rob Penney      | 3.8  | Paul Webb         | 8.2 | W 5&3   | -4.4    | Good        | +0.6   |
+| 6 | Sam Sandford    | 3.7  | Alistair McDonald | 7.3 | L 3&2   | -3.6    | Poor        | -6.6   |
+| 7 | Josh Metuatini  | 10.3 | Etienne Collier   | 5.9 | L 1Down | +4.4    | Excellent   | +3.4   |
+| 8 | Kiria Metuatini | 9.7  | Ross Barnes       | 9.1 | L 5&4   | +0.6    | Poor        | -4.4   |
+
+
+
+
 
 
 
