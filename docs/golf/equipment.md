@@ -7,14 +7,14 @@
 | 3-Hybrid       | G410 19      | Tensei Blue     | 90 TX       | 20º Flat | D1   | 39.75" |
 | 4-Iron         | i210         | Mitsubishi MMT  | 105TX SS1   | 22.5º    | D2   | 38.50" |
 | 5-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 27º      | D1   | 37.75" |
-| 6-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 30.5º    | D1   | 37.25" |
-| 7-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 34º      | D1   | 36.75" |
-| 8-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 38º      | D1   | 36.25" |
-| 9-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 42º      | D1   | 35.75" |
-| Pitching Wedge | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 46º      | D2   | 35.50" |
-| Gap Wedge      | Glide Forged | Mitsubishi MMT  | 105TX SS1   | 50º      | D4   | 35.25" |
-| Sand Wedge     | Glide Forged | Mitsubishi MMT  | 105TX Wedge | 54º      | D4   | 35.00" |
-| Lob Wedge      | Glide Forged | Mitsubishi MMT  | 105TX Wedge | 58º      | D5   | 34.75" |
+| 6-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 30.5º    | D0   | 37.25" |
+| 7-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 34º      | D0   | 36.75" |
+| 8-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 38º      | D0   | 36.25" |
+| 9-Iron         | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 42º      | D0   | 35.75" |
+| Pitching Wedge | Blueprint    | Mitsubishi MMT  | 105TX SS1   | 46º      | D1   | 35.50" |
+| Gap Wedge      | Glide Forged | Mitsubishi MMT  | 105TX SS1   | 50º      | D1   | 35.25" |
+| Sand Wedge     | Glide Forged | Mitsubishi MMT  | 105TX Wedge | 54º      | D1   | 35.00" |
+| Lob Wedge      | Glide Forged | Mitsubishi MMT  | 105TX Wedge | 58º      | D1   | 34.75" |
 | Putter         | 2021 Fetch   | Ping Adjustable | Blackout    | 3º       | n/a  | n/a    |
 
 ## _On The Bench_
@@ -35,7 +35,8 @@
 * Grips:
     + Woods, 54, 58: GolfPride MCC Plus4, +1/+4
     + Irons, 50:  MCC Plus 4 Align, +1+4
-    + Putter SuperStroke Traxion Pistol GT 2.0 +8g
+    + Putter SuperStroke Traxion Pistol GT 2.0 +8g (S2F)
+    + Putter 2021 Ping 58S
 * Bag - Ping Pioneer 2019
 * Cart - MGI Zip Navigator
 * Laser - Bushnell Pro X2
