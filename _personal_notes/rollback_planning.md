@@ -37,3 +37,14 @@ It's important to know whether a rollback will be needed, and what impact that c
 Once the individual lines are sorted with their possibilities, it will be necessary to combine and operationalise the effects of these changes as a more singular action for Cutover. It will be impossible to narrow a shut to a specific device; doing so would have potential knock on effects worse than the problem being solved. It will be key to be able to say that we are running a mitigation plan for a main product line, and invoke all the steps needed to do that.
 
 Thus, putting it all together, aligning these actions requires knowing which products will be in play on the day we intend to go live, and then treat each line as a grouping, knowing the procedures and impacts of choosing to mitigate for any or all of them on Cutover.
+
+
+## Example scenario
+
+One example scenario that could provide an issue would be a case where the driers don't restart due to a database issue with TPM.
+
+In this example, the TPM database is unique, and can be handled separately. This would cause issues with traceability, and could go back to running on M3 for the time needed to get the TPM database issues corrected.
+
+This will need the restoration of a database snapshot and continued presence with M3.
+
+Note that while this is technically possible, it brings up business continuity issues that need to be thought through prior to cutover.
