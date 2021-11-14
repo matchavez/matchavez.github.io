@@ -1,5 +1,31 @@
 # Simon Team Notes
 
+## Final at Waitikiri
+| n  | p      | m           | i   |
+| -- | ------ | ----------- | --- |
+| 1  | Talor  | text        | In  |
+| 2  | Sam    | person      | In  |
+| 3  | Sjahn  | email       | In  |
+| 4  | Uini   | email       | In  |
+| 5  | Mat    | If it works | In  |
+| 6  | Dom    | email       | In  |
+| 7  | Grant  | email       | In  |
+| 8  | Norm   | text        | In  |
+| :: | ::     | ::          |     |
+|    | Adam   | email       | Out |
+| 8  | Ash    | email       |     |
+|    | Graeme | email       | Out |
+|    | Mark   | email       | Out |
+|    | Keri   | email       | Out |
+|    | Willie | email       | Out |
+|    | Steve  | email       | Out |
+|    | Lee    | email       | Out |
+
+Jeff Wigney?
+Josh?
+Steve Priest?
+
+
 ## Double at Templeton
 | -  | player  | NOTE              | -  | player |                |
 | -- | ------- | ----------------- | -- | ------ | -------------- |
@@ -22,7 +48,7 @@ Kiria.
 3  Jeff Wigney A1
 4  Mark Harding M3
 5  Liam Smyth M3
-6  Graeme Taylor A3
+6  Graeme Cooper A3
 7  Talor Scott M4
 8  Talor Scott A1
 9  
