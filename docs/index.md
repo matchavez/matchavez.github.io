@@ -15,6 +15,6 @@ I'll post more about this later, but for now, the system is accessible like code
 
 The benefit is a fast static site, hosted on GitHub, and a far better setup than any Jekyll nonsense. No yaml needed. And static without having to build locally and repub; the build is in the repo.
 
-I have some test pages and details that are scattered around, but if you're able to check in a change on GitHub, you can have a site like this, for free.
+I have some test pages and details that are scattered around, but if you're able to check in a change on GitHub, you can have a site like this, for free. 
 
 I hope you find something here that's helpful to you if you've popped in. Thanks!
