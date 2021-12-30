@@ -207,7 +207,7 @@ Mark not available
 ## Week 2 selection notes:
 
 - [x] Contact all players
-- [ ] Book buggy for day-of
+- [x] Book buggy for day-of
 - [ ] Book any practice rounds
 - [ ] Get free balls from shop
 

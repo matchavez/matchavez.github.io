@@ -1,3 +1,3 @@
 # Work Tasks
 - [ ] Thing One
-- [ ] Thing Tw0
+- [x] Thing Tw0
