@@ -208,8 +208,8 @@ Mark not available
 
 - [x] Contact all players
 - [x] Book buggy for day-of
-- [ ] Book any practice rounds
-- [ ] Get free balls from shop
+- [x] Book any practice rounds
+- [x] Get free balls from shop
 
 
 | Player          | email                          | Remarks  |
@@ -254,9 +254,9 @@ Mark not available
 ## Week 1 selection notes:
 
 - [x] Contact everyone
-- [ ] Book buggy for day-of
-- [ ] Book any practice rounds
-- [ ] Get free balls from shop
+- [x] Book buggy for day-of
+- [x] Book any practice rounds
+- [x] Get free balls from shop
 
 ### Team
 
