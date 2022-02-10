@@ -6,14 +6,14 @@
 
 - [ ] Sign off by Leigh
 - [ ] Sign off by Jesse
-- [ ] Request logs from Buckleigh via ticket
+- [x] Request logs from Buckleigh via ticket
 
 
 ## Andy Prep & Info
 
-- [ ] Ensure in writing that the temporary setup on ST1 includes microsoervices, BWS, etc.
-- [ ] Enumerate actions being taken by Andy from Jira tickets
-- [ ] Ensure Jan stands behind Andy's plan
+- [x] Ensure in writing that the temporary setup on ST1 includes microsoervices, BWS, etc.
+- [x] Enumerate actions being taken by Andy from Jira tickets
+- [x] Ensure Jan stands behind Andy's plan
 
 ## Callum / Craig
 
