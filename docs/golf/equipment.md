@@ -2,9 +2,9 @@
 
 | Club           | Model         | Shaft                   | Detail      | Loft  | SW   | Length |
 | -------------- | ------------- | ----------------------- | ----------- | ----- | ---- | ------ |
-| Driver         | G410 LST 9    | Ping Tour               | 65 X        | 9º    | D5.5 | 45.25" |
+| Driver         | G410 LST 9    | Tensei Orange           | 65 X        | 9º    | D5.5 | 45.25" |
 | 3-Wood         | G410 LST 14.5 | Ping Tour               | 75 X        | 15.5º | D3   | 43.00" |
-| 3-Hybrid       | G410 19       | Tensei CK PRO Blue      | 90 TX       | 19º   | D1   | 39.75" |
+| 3-Hybrid       | G410 19       | Tensei CK Pro Blue      | 90 TX       | 19º   | D1   | 39.75" |
 | 4-Iron         | i210          | Mitsubishi MMT          | 105TX SS1   | 22.5º | D2   | 38.50" |
 | 5-Iron         | Blueprint     | Mitsubishi MMT          | 105TX SS1   | 27º   | D1   | 37.75" |
 | 6-Iron         | Blueprint     | Mitsubishi MMT          | 105TX SS1   | 30.5º | D0   | 37.25" |
