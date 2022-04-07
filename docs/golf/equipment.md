@@ -2,7 +2,7 @@
 
 | Club           | Model         | Shaft                   | Detail      | Loft  | SW   | Length |
 | -------------- | ------------- | ----------------------- | ----------- | ----- | ---- | ------ |
-| Driver         | G410 LST 9    | Tensei CK Pro Orange    | 65 TX       | 9º Fl | D4.5 | 45.25" |
+| Driver         | G410 LST 9    | Ping Tour               | 65 TX       | 9º Fl | D4.5 | 45.25" |
 | 3-Wood         | G410 LST 14.5 | Ping Tour               | 75 X        | 14.5º | D2   | 43.00" |
 | 3-Hybrid       | G410 19       | Tensei CK PRO Blue      | 90 TX       | 19º   | D1   | 39.75" |
 | 4-Iron         | i210          | Mitsubishi MMT          | 105TX SS1   | 22.5º | D2   | 38.50" |
@@ -23,7 +23,6 @@
 | ------------ | ------------- | ---------------- | -------- | ----- | --- | ------ |
 | 5-Wood       | G Series 17.5 | Ping Tour        | 80 X     | 16.5º | D3  | 42.50" |
 | 2-Hybrid     | G410 17       | Ping Tour        | 85 X     | 16º   | D1  | 40.25" |
-| Driving Iron | Rapture DI 18 | UST Recoil Proto | 95 F5    | 18º   | D3  | 39.75" |
 | Putter       | 2021 Fetch    | Ping Adjustable  | Blackout | 3º    | n/a | n/a    |
 
 ---
