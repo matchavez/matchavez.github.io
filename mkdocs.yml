@@ -23,7 +23,7 @@ theme:
 
   font: 
     text: Radio Canada
-    code: Oxygen Mono 
+    code: Inconsolata
   #icon:
     #logo: logo
 
