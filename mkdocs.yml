@@ -21,9 +21,9 @@ theme:
     #primary: red
     #accent: black
 
-  font:
-    text: 
-    code: 
+  font: false
+   # text: 
+   # code: 
   #icon:
     #logo: logo
 
