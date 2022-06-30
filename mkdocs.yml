@@ -23,7 +23,7 @@ theme:
 
   font:
     text: SF UI Display
-    code: SF Mono 
+    code: Fira Code
   #icon:
     #logo: logo
 
