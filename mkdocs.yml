@@ -23,7 +23,7 @@ theme:
 
   font: 
     text: Radio Canada
-    code: Inconsolata
+    code: Noto Sans Mono
   #icon:
     #logo: logo
 
