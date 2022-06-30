@@ -21,9 +21,9 @@ theme:
     #primary: red
     #accent: black
 
-  font: false
-   # text: 
-   # code: 
+  font: 
+    text: Radio Canada
+    code: Fira Code 
   #icon:
     #logo: logo
 
