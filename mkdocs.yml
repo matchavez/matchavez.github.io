@@ -22,7 +22,7 @@ theme:
     #accent: black
 
   font:
-    text: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    text: 
     code: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto Mono", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   #favicon: assets/favicon.png
   #icon:
