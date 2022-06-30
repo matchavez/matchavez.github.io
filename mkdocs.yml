@@ -23,12 +23,13 @@ theme:
 
   font:
     text: SF UI Display
-    code: SF Mono
+    code: SF Mono 
   #icon:
     #logo: logo
 
 extra_css:
   - stylesheets/extra.css
+
 
 repo_url: https://github.com/matchavez/matchavez.github.io
 
