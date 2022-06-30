@@ -23,7 +23,7 @@ theme:
 
   font: 
     text: Radio Canada
-    code: Fira Code 
+    code: Red Hat Mono 
   #icon:
     #logo: logo
 
