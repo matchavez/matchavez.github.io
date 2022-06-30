@@ -22,8 +22,8 @@ theme:
     #accent: black
 
   font:
-    text: SF UI Display
-    code: Fira Code
+    text: 
+    code: 
   #icon:
     #logo: logo
 
