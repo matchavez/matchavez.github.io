@@ -4,8 +4,8 @@
 
 ## Performance Testing
 
-- [ ] Sign off by Leigh
-- [ ] Sign off by Jesse
+- [x] Sign off by Leigh
+- [x] Sign off by Jesse
 - [x] Request logs from Buckleigh via ticket
 
 
@@ -17,6 +17,6 @@
 
 ## Callum / Craig
 
-- [ ] Get agreement on run sheet walkthrough with data signoffs
-- [ ] Ensure mid-deployment tests are clarified
+- [x] Get agreement on run sheet walkthrough with data signoffs
+- [x] Ensure mid-deployment tests are clarified
 

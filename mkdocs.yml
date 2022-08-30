@@ -21,15 +21,15 @@ theme:
     #primary: red
     #accent: black
 
-  font:
-    text: Public Sans
-    code: Roboto Mono
-  #favicon: assets/favicon.png
+  font: 
+    text: Radio Canada
+    code: Noto Sans Mono
   #icon:
     #logo: logo
 
 extra_css:
   - stylesheets/extra.css
+
 
 repo_url: https://github.com/matchavez/matchavez.github.io
 
@@ -53,6 +53,8 @@ nav:
   - Apple:
     - Fixes: apple/fixes.md
     - Commands: apple/commands.md
+  - Streaming:
+    - Stream Test: streaming.md
   - Test Pages:
 #    - Sandbox: unit_testing.md 
 #    - Include Test: testsnip.md
