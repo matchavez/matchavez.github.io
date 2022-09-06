@@ -27,8 +27,8 @@ _Note that you'll want a splitter, and not a switch!_
 
 After that, I have an ATEM Mini Pro that doesn't get enough use. Fantastic hardware, and it'll do the encode and stream to your server.
 
-!!! note 
-  Add more details here about settings.
+!!! note
+    Add more details here about settings.
 
 Finally, in order to ensure someone can get your stream, they have to be able to log into your location. This was set up with a VirtualBox linux server sitting on my old-as-dirt Mac Mini.
 
