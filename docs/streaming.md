@@ -50,9 +50,7 @@ $ sudo make install
 $ sudo /usr/local/nginx/sbin/nginx
 ```
 
-
-Go to:
-`/usr/local/nginx/conf/nginx.conf` 
+Go to: `/usr/local/nginx/conf/nginx.conf` 
 
 ```terminal
 rtmp {
@@ -66,7 +64,7 @@ rtmp {
                 }
         }
 }
-```This is an extremely basic configuration with a "live" application that simply forwards the RTMP stream on to whoever requests it. You can play with it some more later. Here's the whole configuration guide, which shows you how to forward streams to other places (such as Twitch), save recordings of uploads, output stats, etc.
+```
 
 ```terminal
 $ sudo /usr/local/nginx/sbin/nginx -s stop
