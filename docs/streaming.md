@@ -34,5 +34,45 @@ Finally, in order to ensure someone can get your stream, they have to be able to
 Virtual Box with the latest Ubuntu Server, then install nginx with RTMP.
 
 ```terminal
-install
+$ sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev
+
+$ wget http://nginx.org/download/nginx-1.18.1.tar.gz
+
+// Get the latest; this may be out of date
+
+$ wget https://github.com/sergey-dryabzhinsky/nginx-rtmp-module/archive/dev.zip
+$ tar -zxvf nginx-1.18.1.tar.gz
+$ unzip dev.zip
+$ cd nginx-1.18.1
+$ ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev
+$ make
+$ sudo make install
+$ sudo /usr/local/nginx/sbin/nginx
 ```
+
+
+Go to:
+`/usr/local/nginx/conf/nginx.conf` 
+
+```terminal
+rtmp {
+        server {
+                listen 1935;
+                chunk_size 4096;
+
+                application live {
+                        live on;
+                        record off;
+                }
+        }
+}
+```This is an extremely basic configuration with a "live" application that simply forwards the RTMP stream on to whoever requests it. You can play with it some more later. Here's the whole configuration guide, which shows you how to forward streams to other places (such as Twitch), save recordings of uploads, output stats, etc.
+
+```terminal
+$ sudo /usr/local/nginx/sbin/nginx -s stop
+$ sudo /usr/local/nginx/sbin/nginx
+```
+
+Streaming Service: Custom
+Server: rtmp://<your server ip>/live
+Play Path/Stream Key: test
