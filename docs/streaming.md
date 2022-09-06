@@ -2,7 +2,7 @@
 
 ---
 
-Concept:
+### Concept:
 
 I wanted to create a simple streaming service of what I have on my television, and make it available to specific people or myself outside my house.
 
@@ -10,7 +10,7 @@ Success is that you can stream to your device precisely what I'm seeing on my TV
 
 ---
 
-Gear:
+### Gear:
 
 In order to stream a signal, you need to have:
 
