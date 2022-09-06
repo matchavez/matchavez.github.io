@@ -50,7 +50,7 @@ $ sudo make install
 $ sudo /usr/local/nginx/sbin/nginx
 ```
 
-Go to: `/usr/local/nginx/conf/nginx.conf` 
+Go to: `/usr/local/nginx/conf/nginx.conf` and add this at the end:
 
 ```terminal
 rtmp {
