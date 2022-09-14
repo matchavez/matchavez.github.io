@@ -31,8 +31,8 @@
 
 * Clubs - All clubs are Ping
 * Grips:
-    + Woods, 54, 58: GolfPride MCC Plus4, +1/+4
-    + Irons, 50:  MCC Plus 4 Align, +1+4
+    + Woods, 54º, 58º: GolfPride MCC Plus4, +1/+4
+    + Irons, 50º:  MCC Plus 4 Align, +1+4
     + Putter SuperStroke Traxion Pistol GT 2.0 +8g (S2F)
     + Putter 2021 Ping AVS PL Jumbo
 * Bag - Ping Pioneer 2019
