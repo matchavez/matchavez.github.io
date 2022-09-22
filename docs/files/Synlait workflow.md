@@ -2,21 +2,25 @@
 
 ---
 
-## Goal First
+## Goal First - CAB-ready Development
 
 When given work to complete, your goal is to leave that work in a position to make it through the CAB process for Synlait. That process will require more than just code. You'll need:
 
-  - impact assessment
-  - deployment procedure
-  - rollback procedure
-  - business acceptance
-  - test evidence
-  - outage information
-  - change application
+  - Impact assessment
+  - Deployment procedure
+  - Rollback procedure
+  - Business acceptance
+  - Test evidence
+  - Outage information
+  - Change application
 
-Fortunately, your change sponsor will help with some of these, depending on the type of work you're assigned. Sometimes they won't all be applicable, but they all need to be documented. For example, if you require an outage or down-tools on something to complete work, or if the change as completed will affect someone, we want to know. We also want to know if this is _not_ the case. Your change sponsor, who is Andy Greathead (or his delegate) will work with you to ensure completeness.
+Fortunately, your change sponsor will help with some of these, depending on the type of work you're assigned. Sometimes they won't all be applicable, but they all need to be documented. For example, if you require an outage or down-tools on something to complete work, or if the change as completed will affect someone, we want to know. We also want to know if this is _not_ the case. Your change sponsor will work with you to ensure completeness.
 
-## Where to start
+In many cases, Andy Greathead will be your sponsor.
+In cases for Access & Controls, Reedhita or Megan will be your sponsor.
+Sponsors are also subject to change, so please ensure you know who your sponsor is before beginning work.
+
+## Where to start?
 
 There are three areas for "tickets" you'll need to be aware of.
 
@@ -62,7 +66,9 @@ Use comments and status per normal; follow the "happy path" of the workflow unle
 
 Triage -> Selected For Development -> In Development -> Ready for Deployment (QA) -> Ready For Test -> TIP -> Passed -> Ready Pending CAB -> CAB Approved -> Deployed (Prod)
 
-Comments are encouraged.
+Comments are encouraged. Workflow is visible if you click the Jira Status dropdown.
+
+!!! Always reassign the Jira ticket to whomever has the next action; NO EXCEPTIONS.
 
 ### Preparation for CAB
 
@@ -70,4 +76,9 @@ Working with your change sponsor, ensure that the Jira ticket contains testing e
 
 ## Once Approved
 
-After getting your work approved by the CAB, 
+After getting your work approved by the CAB, you'll work with your sponsor to get your change deployed. This may take on several permutations, but the important concepts are:
+
+- Set the Jira to `Deployed` once this happens
+- Revisit and close the Synlait ServiceDesk ticket
+
+That's it! Once you've closed those two tickets, the work will be considered complete unless there is a specific retrospective. 
