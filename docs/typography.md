@@ -23,6 +23,11 @@ Opening TOC:
 
 # h1 stops it
 
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789!?.
+Pixel preview  Resize to fit zenith zone
+Frame  Group  Feedback  Reset
 
 ---
 
