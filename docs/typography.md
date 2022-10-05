@@ -2,27 +2,6 @@
 
 ---
 
-Opening TOC:
-
-## Key is h2 after h1
-
-## Second
-
-### Second Sub
-
-#### Second Sub Sub
-
-##### Second Sub Sub Sub
-
-## Third
-
-### Third Sub
-
-###### h6
-## Fourth
-
-# h1 stops it
-
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 abcdefghijklmnopqrstuvwxyz
 0123456789!?.
