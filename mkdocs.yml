@@ -23,7 +23,6 @@ theme:
 
   font: 
     text: Inter
-    font-feature-settings: "zero"
     code: Noto Sans Mono
   #icon:
     #logo: logo
