@@ -208,6 +208,7 @@ Default, Multi-paragraph, Collapsible
 All styles:
 
 !!! note
+    Version 8.5.6 makes this a completed box outline, rounded.
 
 !!! abstract
 

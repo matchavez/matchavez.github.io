@@ -49,14 +49,14 @@ If a Jira Issue, often called a 'ticket', has not been created, you'll be asked 
 
 There are some mandatory fields, but these can be manipulated after a ticket is created. Best practice will be to add the following:
 
-Project: `PTE - Project Tumu Execution`
-Issue Type: `Bug`
-Summary: A clear title that conveys the **problem** clearly
-Description: Include the Observation, the Expectation, and Reproduction to start
-ManageEngine Ticket: Ticket Number from Synlait ServiceDesk
-Linked Issues: (Jira shows required, but it's not)
-Epic Link: Use `_generic_epic_` unless otherwise advised
-Severity: as advised
+- Project: `PTE - Project Tumu Execution`
+- Issue Type: `Bug`
+- Summary: A clear title that conveys the **problem** clearly
+- Description: Include the Observation, the Expectation, and Reproduction to start
+- ManageEngine Ticket: Ticket Number from Synlait ServiceDesk
+- Linked Issues: (Jira shows required, but it's not)
+- Epic Link: Use `_generic_epic_` unless otherwise advised
+- Severity: as advised
 
 All other fields are optional.
 
