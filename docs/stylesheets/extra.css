@@ -43,8 +43,7 @@
   --md-typeset-mark-color:  hsla(60, 100%, 50%, 0.5);
 }
 
-p, h1, h2 {
+@font-face {
+  font-family: "Inter";
   font-feature-settings: "zero,cv01";
 }
-
- 
