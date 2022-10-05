@@ -44,8 +44,8 @@
 }
 
 @font-face {
-  font-family: "Inter";
-  font-feature-settings: "zero,cv01";
+  font-family: 'Inter';
+  font-feature-settings: 'zero,cv01,ss01';
   src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZFhjp-Ek-_EeAmM.woff) format('woff');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
