@@ -22,7 +22,7 @@ theme:
     #accent: black
 
   font: 
-   # text: Alkalami
+    text: Inter
     code: Noto Sans Mono
   #icon:
     #logo: logo
