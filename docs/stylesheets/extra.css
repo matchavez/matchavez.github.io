@@ -50,6 +50,6 @@
 }
 
 body, input {
-  font-feature-settings: 'zero','ss01';
+  font-feature-settings: 'zero','ss01','ss04';
   font-family:var(--md-text-font-family)
 }
