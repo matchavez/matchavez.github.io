@@ -44,12 +44,12 @@
 }
 
 @font-face {
-  font-family: 'sf mono';
+  font-family: 'Inter';
   font-feature-settings: 'zero,cv01,ss01';
   src: '/files/Inter-Regular.woff';
 }
 
   
 :root {
-  --md-text-font: "Inter"; 
+  --md-text-font: "sf mono"; 
 }
