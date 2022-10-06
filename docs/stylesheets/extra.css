@@ -50,6 +50,7 @@
 }
 
 body, input {
-  font-feature-settings: 'zero','ss01','ss06','ss03';
+  font-feature-settings: 'zero','ss01','ss02','cv10';
   font-family:var(--md-text-font-family);
+  src: url(https://matchavez.com/files/Inter-Regular.woff);
 }
