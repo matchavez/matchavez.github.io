@@ -43,11 +43,6 @@
   --md-typeset-mark-color:  hsla(60, 100%, 50%, 0.5);
 }
 
-@font-face {
-  font-family: 'Inter';
-  font-feature-settings: 'zero,cv01,ss01';
-  src: '/files/Inter-Regular.woff';
-}
 
   
 :root {
