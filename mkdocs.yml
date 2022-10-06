@@ -22,7 +22,7 @@ theme:
     #accent: black
 
   font: 
-    #text: Inter
+    text: SF Mono
     code: Noto Sans Mono
   #icon:
     #logo: logo
