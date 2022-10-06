@@ -46,5 +46,11 @@
 
   
 :root {
-  --md-text-font: 'Inter V Clear'; 
+  --md-text-font: 'Inter'; 
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-feature-settings: 'zero,cv01,ss01';
+  src: '/files/Inter-Regular.woff';
 }
