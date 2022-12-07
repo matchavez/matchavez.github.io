@@ -1,11 +1,11 @@
 ## Winner:
-- 2021 Canadian Foursomes Pairs - Waimairi Beach Rose Bowl, Christchurch, New Zealand.
+- 2022 Christchurch Hackers - Senior Division Final / Irwin Trophy. Clearwater GC, Christchurch, New Zealand.
+- 2021 Canadian Foursomes Pairs - Waimairi Beach Rose Bowl, with Kim. Waimairi Beach GC, Christchurch, New Zealand.
 - 2019 Seaside Open, Division 3. Gross & Nett. Waimairi Beach GC, Christchurch, New Zealand.
 - 2015 Riverside Open. Riverside GC, Irving, Texas.
 
 ### _Notable_:
 - 2019 Waimairi Beach ANZAC Stableford T-1 (Countback) Division 1.
-- 2019 Waimairi Beach Handiskins T-4 Tiebreaker
 
 ## Interclub
 
