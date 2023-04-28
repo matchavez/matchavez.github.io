@@ -1,3 +1,9 @@
+> “Common sense is nothing more than a deposit of prejudices laid down in the mind before you reach eighteen.”
+>
+> <cite>Albert Einstein</cite>
+
+---
+
 > "Leaders. Being specific costs you nothing except time you’ll save cleaning up confusion."
 >
 > <cite>Rands</cite>
