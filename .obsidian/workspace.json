@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_personal_notes/# Outage Timing Concern.md",
+                "file": "_personal_notes/daily/2023-06-13.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_personal_notes/# Outage Timing Concern.md",
+                "file": "_personal_notes/daily/2023-06-13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_personal_notes/# Outage Timing Concern.md",
+                "file": "_personal_notes/daily/2023-06-13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_personal_notes/# Outage Timing Concern.md"
+                "file": "_personal_notes/daily/2023-06-13.md"
               }
             }
           },
@@ -167,6 +167,10 @@
   },
   "active": "ea04e5eae4fc815b",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "_personal_notes/daily/2023-06-13.md",
+    "_personal_notes/daily",
+    "_personal_notes/# Outage Timing Concern.md",
     "_personal_notes/What is AMS model.md",
     "_personal_notes/! Kanban Board.md",
     "asdf.md",
@@ -189,12 +193,8 @@
     "_personal_notes/# DeploymentProblems.md",
     "README.md",
     "_personal_notes/Kanban",
-    "Untitled.canvas",
     "_personal_notes/MEJira.md",
     "2023-06-13.md",
-    "_personal_notes/Release Management through Tumu Go-Live.md",
-    "_personal_notes/Release Management process.md",
-    "_personal_notes/Client Plan.md",
-    "docs/steps.md"
+    "_personal_notes/Release Management through Tumu Go-Live.md"
   ]
 }
