@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_personal_notes/What is AMS model.md",
+                "file": "_personal_notes/# Outage Timing Concern.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_personal_notes/What is AMS model.md",
+                "file": "_personal_notes/# Outage Timing Concern.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_personal_notes/What is AMS model.md",
+                "file": "_personal_notes/# Outage Timing Concern.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_personal_notes/What is AMS model.md"
+                "file": "_personal_notes/# Outage Timing Concern.md"
               }
             }
           },
@@ -167,6 +167,7 @@
   },
   "active": "ea04e5eae4fc815b",
   "lastOpenFiles": [
+    "_personal_notes/What is AMS model.md",
     "_personal_notes/! Kanban Board.md",
     "asdf.md",
     "drafts/law_changes.md",
@@ -194,7 +195,6 @@
     "_personal_notes/Release Management through Tumu Go-Live.md",
     "_personal_notes/Release Management process.md",
     "_personal_notes/Client Plan.md",
-    "docs/steps.md",
-    "docs/linux_shortcuts.md"
+    "docs/steps.md"
   ]
 }
