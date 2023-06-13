@@ -2,7 +2,7 @@
 
 | Club           | Model            | Shaft              | Detail   | Loft  | SW   | Length |
 | -------------- | ---------------- | ------------------ | -------- | ----- | ---- | ------ |
-| Driver         | G410 LST 9       | Ping Tour          | 65 X     | 8º   | D6   | 45.25" |
+| Driver         | G410 LST 9       | Ping Tour          | 65 X     | 8º    | D8   | 45.25" |
 | Fairway        | G410 LST 14.5    | Ping Tour          | 75 X     | 14.5º | D2.5 | 43.00" |
 | Hybrid         | G410 19          | Tensei CK PRO Blue | 80 TX    | 18º   | D2   | 39.75" |
 | 4-Iron         | iCrossover       | Hzrdus Smoke Red   | 80 S     | 22.5º | D2   | 39.00" |
