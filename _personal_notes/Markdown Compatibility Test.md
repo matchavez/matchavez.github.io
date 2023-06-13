@@ -203,3 +203,17 @@ Unofficial
 Images have a similar syntax to links but include a preceding exclamation point.
 
 ![Minion](http://octodex.github.com/images/minion.png)
+
+# This is pretty normal
+
+As you might expect
+
+## This works like Typora does.
+
+---
+
+### More h3
+
+Now to upload this...
+
+''
