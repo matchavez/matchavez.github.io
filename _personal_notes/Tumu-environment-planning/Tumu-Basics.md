@@ -4,12 +4,16 @@
 
 The **Tumu Environment Strategy** is the way in which each of the SAP instances and microservices will interact throughout the Tumu project. The Strategy seeks to define and optimise the planning and the tasks related to system deployment and connectivity.
 
-::: mermaid
+```mermaid
+
 graph LR
   A((Data Stores)) --- B[SAP Systems]
   B --- C{Microservices}
   C --- D(Connected Applications)
-:::
+
+```
+
+
 
 ## The Strategies here are split between the boundary of Microservices.
 
