@@ -13,8 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/golf/thoughts.md",
+                "file": "_personal_notes/What is AMS model.md",
                 "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/golf/thoughts.md",
+                "file": "_personal_notes/What is AMS model.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/golf/thoughts.md",
+                "file": "_personal_notes/What is AMS model.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,11 +126,28 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/golf/thoughts.md"
+                "file": "_personal_notes/What is AMS model.md"
               }
             }
+          },
+          {
+            "id": "a45b304e2aef8274",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "fdafed485068b697",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -142,14 +160,25 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "dbfolder:Create a new database table": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "ea04e5eae4fc815b",
   "lastOpenFiles": [
+    "_personal_notes/! Kanban Board.md",
+    "asdf.md",
+    "drafts/law_changes.md",
+    "Projects - Demo Project/Why You Should Be Taking More Notes.md",
+    "Projects - Demo Project/5 Mistakes I Made When I Started Using Obsidian.md",
+    "Projects - Demo Project/The Best Notes You'll Ever Make.md",
+    "Projects - Demo Project/What I Learned From Taking 15,000 Notes.md",
+    "Projects - Demo Project/The Easiest Way to Start Taking Notes.md",
+    "Projects - Demo Project",
     "_personal_notes/# Change - Amendments of Change within S.md",
-    "docs/golf/equipment.md",
     "docs/golf/thoughts.md",
+    "docs/golf/equipment.md",
     "_personal_notes/Markdown Compatibility Test.md",
     "_personal_notes/10 Feb Prep Sheet.md",
     "_personal_notes/dom_procedures.md",
@@ -157,18 +186,15 @@
     "_personal_notes/Actions for a better build.md",
     "_personal_notes/# ROLLBACK UPDATE.md",
     "_personal_notes/# DeploymentProblems.md",
-    "_personal_notes/! Kanban Board.md",
     "README.md",
     "_personal_notes/Kanban",
     "Untitled.canvas",
     "_personal_notes/MEJira.md",
     "2023-06-13.md",
-    "drafts/law_changes.md",
     "_personal_notes/Release Management through Tumu Go-Live.md",
     "_personal_notes/Release Management process.md",
     "_personal_notes/Client Plan.md",
     "docs/steps.md",
-    "docs/linux_shortcuts.md",
-    "docs/golf/tourneys.md"
+    "docs/linux_shortcuts.md"
   ]
 }

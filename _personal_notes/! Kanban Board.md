@@ -6,11 +6,11 @@ kanban-plugin: basic
 
 ## Queued
 
+- [ ] Test card<br><br>Probably need more info?
 
 
 ## In Progress
 
-- [ ] Test card<br><br>Probably need more info?
 - [ ] Test card<br><br>Probably need more info?
 
 
