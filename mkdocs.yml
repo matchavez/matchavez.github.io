@@ -17,8 +17,8 @@ theme:
     #- navigation.instant
 
   palette:
-#    scheme: mycolour
-    scheme: default
+    scheme: mycolour
+#   scheme: default
 #    primary: red
 #    accent: indigo
 
