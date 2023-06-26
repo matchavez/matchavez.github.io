@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_personal_notes/daily/2023-06-13.md",
+                "file": "_personal_notes/Tumu-environment-planning/Integration-Application-Nexus.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_personal_notes/daily/2023-06-13.md",
+                "file": "_personal_notes/Tumu-environment-planning/Integration-Application-Nexus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_personal_notes/daily/2023-06-13.md",
+                "file": "_personal_notes/Tumu-environment-planning/Integration-Application-Nexus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_personal_notes/daily/2023-06-13.md"
+                "file": "_personal_notes/Tumu-environment-planning/Integration-Application-Nexus.md"
               }
             }
           },
@@ -167,8 +167,8 @@
   },
   "active": "ea04e5eae4fc815b",
   "lastOpenFiles": [
-    "Untitled.canvas",
     "_personal_notes/daily/2023-06-13.md",
+    "Untitled.canvas",
     "_personal_notes/daily",
     "_personal_notes/# Outage Timing Concern.md",
     "_personal_notes/What is AMS model.md",

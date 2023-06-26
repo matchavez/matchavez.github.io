@@ -50,6 +50,6 @@
 }
 
 body, input {
-  font-feature-settings: 'zero','ss01','ss02','cv10';
+  font-feature-settings: 'salt','tnum';
   font-family:var(--md-text-font-family);
 }
