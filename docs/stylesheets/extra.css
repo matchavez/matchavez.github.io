@@ -34,7 +34,7 @@
   --md-footer-bg-color: hsla(0, 0%, 0%, 0.87);
   --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
   --md-typeset-a-color:   #900000;
-  --md-typeset-color:   hsla(0, 0%, 0%, 0.779);
+  --md-typeset-color:   hsl(301, 100%, 50%);
   --md-typeset-del-color:  hsla(6, 90%, 60%, 0.15);
   --md-typeset-ins-color:  hsla(150, 90%, 44%, 0.15);
   --md-typeset-kbd-accent-color:  hsla(0, 100%, 100%, 1);
