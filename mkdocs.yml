@@ -17,9 +17,10 @@ theme:
     #- navigation.instant
 
   palette:
-    scheme: mycolour
-    #primary: red
-    #accent: black
+#    scheme: mycolour
+    scheme: slate
+    primary: red
+    accent: indigo
 
   font: 
  #   text: Public Sans
