@@ -19,8 +19,8 @@ theme:
   palette:
 #    scheme: mycolour
     scheme: default
-    primary: red
-    accent: indigo
+#    primary: red
+#    accent: indigo
 
   font: 
  #   text: Public Sans

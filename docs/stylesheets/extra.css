@@ -1,5 +1,5 @@
-/* [data-md-color-scheme="mycolour"] {
-  --md-primary-fg-color:        #900000;
+ [data-md-color-scheme="mycolour"] {
+  --md-primary-fg-color:        #bf0000;
   --md-primary-fg-color--light: #191717;
   --md-primary-fg-color--dark:  #eaeaea;
   --md-default-bg-color: #e3e1e1;
@@ -42,7 +42,7 @@
   --md-typeset-kbd-color:  hsla(0, 0%, 98%, 1);
   --md-typeset-mark-color:  hsla(60, 100%, 50%, 0.5);
 }
- */
+
 
   
 /* :root {
