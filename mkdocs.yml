@@ -22,7 +22,7 @@ theme:
     #accent: black
 
   font: 
-    text: Public Sans
+ #   text: Public Sans
     code: Noto Sans Mono
   #icon:
     #logo: logo

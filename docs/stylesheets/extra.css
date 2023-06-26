@@ -34,7 +34,7 @@
   --md-footer-bg-color: hsla(0, 0%, 0%, 0.87);
   --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
   --md-typeset-a-color:   #900000;
-  --md-typeset-color:   hsl(301, 100%, 50%);
+  --md-typeset-color:   hsl(0, 0%, 26%);
   --md-typeset-del-color:  hsla(6, 90%, 60%, 0.15);
   --md-typeset-ins-color:  hsla(150, 90%, 44%, 0.15);
   --md-typeset-kbd-accent-color:  hsla(0, 100%, 100%, 1);
@@ -258,3 +258,17 @@
     font-display: swap;
     src: url("font-files/Inter-italic.var.woff2?v=3.19") format("woff2");
   }
+
+
+
+  .md-typeset h1 {
+    color: var(--md-default-fg-color--light);
+    font-size: 2em;
+    line-height: 1.3;
+    margin:0 0 1.25em
+}
+
+.md-typeset h1, .md-typeset h2 {
+  font-weight: 700;
+  letter-spacing:-.01em
+}
