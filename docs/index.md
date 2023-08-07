@@ -18,3 +18,21 @@ The benefit is a fast static site, hosted on GitHub, and a far better setup than
 I have some test pages and details that are scattered around, but if you're able to check in a change on GitHub, you can have a site like this, for free. 
 
 I hope you find something here that's helpful to you if you've popped in. Thanks!
+
+<!-- Default Statcounter code for GitHub
+https://matchavez.com -->
+<script type="text/javascript">
+var sc_project=12907738; 
+var sc_invisible=1; 
+var sc_security="9ec2d84c"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - Statcounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12907738/0/9ec2d84c/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
