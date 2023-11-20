@@ -2,10 +2,10 @@
 
 | Club           | Model            | Shaft              | Detail   | Loft  | SW   | Length |
 | -------------- | ---------------- | ------------------ | -------- | ----- | ---- | ------ |
-| Driver         | G410 LST 9       | Ping Tour          | 65 X     | 8º    | D8   | 45.25" |
-| Fairway        | G410 LST 14.5    | Ping Tour          | 75 X     | 14.5º | D2.5 | 43.00" |
-| Hybrid         | G410 19          | Tensei CK PRO Blue | 80 TX    | 18º   | D2   | 39.75" |
-| 4-Iron         | iCrossover       | Hzrdus Smoke Red   | 80 S     | 22.5º | D2   | 39.00" |
+| Driver         | RogueST LS ♢♢♢   | Graphite Design    | ADDI 6X  | 9º    |      |        |
+| Fairway        | G410 LST 14.5    | Ping Tour 1.0      | 75 X     | 14.5º | D2.5 | 43.00" |
+| Hybrid         | G430 19          | Hzrdus Smoke Red   | 80 6.0   | 19º   | D2   | 40.25" |
+| 4-Iron         | iCrossover       | Hzrdus Smoke Red   | 80 6.0   | 22.5º | D2   | 39.00" |
 | 5-Iron         | i230             | Recoil DART        | 105 F4   | 25º   | D2   | 38.25" |
 | 6-Iron         | i230             | Recoil DART        | 105 F4   | 28º   | D2   | 37.63" |
 | 7-Iron         | i230             | Recoil DART        | 105 F4   | 31.5º | D2   | 37.00" |
@@ -21,9 +21,10 @@
 
 | Club           | Model         | Shaft                   | Detail    | Loft  | SW   | Length |
 | -------------- | ------------- | ----------------------- | --------- | ----- | ---- | ------ |
-| 5-Wood         | G Series 17.5 | Ping Tour               | 80 X      | 16.5º | D3   | 42.50" |
+| Driver         | G410 LST 9    | Ping Tour               | 65 X      | 8º    | D8   | 45.25" |
+| Fairway        | G425 LST 14.5 | Ping Tour 1.0           | 75 X      | 14.5º | D0   | 43.00" |
 | 2-Hybrid       | G410 17       | Ping Tour               | 85 X      | 16º   | D1   | 40.25" |
-| Putter         | Sigma2 Fetch  | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
+| 3-Hybrid       | G410 19       | Tensei CK PRO Blue      | 80 TX     | 18º   | D2   | 39.75" |
 | 4-Iron         | i210          | Mitsubishi MMT Taper    | 105TX SS1 | 22.5º | D2   | 38.75" |
 | 5-Iron         | Blueprint     | Mitsubishi MMT Taper    | 105TX SS1 | 27º   | D1.5 | 38.00" |
 | 6-Iron         | Blueprint     | Mitsubishi MMT Taper    | 105TX SS1 | 30.5º | D1.5 | 37.50" |
@@ -32,12 +33,13 @@
 | 9-Iron         | Blueprint     | Mitsubishi MMT Taper    | 105TX SS1 | 42º   | D1.5 | 36.00" |
 | Pitching Wedge | Blueprint     | Mitsubishi MMT Taper    | 105TX SS1 | 46º   | D2   | 35.75" |
 | Gap Wedge      | Glide Forged  | Mitsubishi MMT Taper    | 105TX SS1 | 50º   | D2.5 | 35.50" |
+| Putter         | Sigma2 Fetch  | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
 
 ---
 
 #### Other items of note:
 
-* Clubs - All clubs are Ping
+* Clubs - All clubs are Ping except the Callaway driver
 * Grips:
     + GolfPride MCC Plus4 Midsize
     + Putter 2021 Ping AVS PL Jumbo
