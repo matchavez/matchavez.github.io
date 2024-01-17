@@ -9,7 +9,12 @@
 
 ## Interclub
 
-#### 2020-21 Metro B:
+##### 2023 Simon Cup substitute, McLean's Island (1-1-1)
+
+##### 2021 Manager Waimairi Beach Simon Cup
+
+
+#### 2020-21 Metro B for Waimairi Beach:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
 
 | Date    | Opponent                       | Result   | Score          | Team         |
@@ -28,7 +33,7 @@
 
 Team finish: 5th. Top team individual record.
 
-#### 2019-20 Metro B:
+#### 2019-20 Metro B for Waimairi Beach:
 
 | Date    | Opponent                          | Result   | Score          | Team              |
 | ------- | --------------------------------- | -------- | -------------- | ----------------- |
