@@ -25,7 +25,7 @@
 | 2-Hybrid       | G410 17       | Ping Tour 1.0           | 85 X      | 16º   | D1   | 40.25" |
 | Putter         | Sigma2 Fetch  | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
 
-## Retired
+## _Retired_
 
 | Club           | Model         | Shaft                   | Detail    | Loft  | SW   | Length |
 | -------------- | ------------- | ----------------------- | --------- | ----- | ---- | ------ |
