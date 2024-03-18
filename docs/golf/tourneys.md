@@ -6,6 +6,7 @@
 
 ### _Notable_:
 - 2019 Waimairi Beach ANZAC Stableford T-1 (Countback) Division 1.
+- 2024 Templeton Open 3rd NETT Jnr Division (6.3+) 
 
 ## Interclub
 
