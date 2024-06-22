@@ -1,0 +1,28 @@
+Hi Team,
+
+When filing Jira issues, here's best-practice:
+
+First, the Summary should be short but explain the bug. We may change it; don't be alarmed. If your bug relates to a Zephyr test case, include the `QUAL-` number.
+
+Second, in your Description add two things: What you observe that's not right, and simple instructions to reproduce what you've seen. If it's not self-evident, add why it's wrong or how it's functionally different from the current system.
+
+Third, in Expected Behaviour, enter what the correct behaviour is in contrast to what's in Description.
+
+Finally, when choosing a PARENT ISSUE, select `RISE-214: UAT BUG LIST`.
+
+Assign all issues to Helgaard unless specifically directed otherwise. If you have a question about a format or need more help, start the bug and reach out to Mat or Helgaard.
+
+
+- [x] 230 find sandbox bug
+- [x] Talk to Lakshmi about 4 issues / Helgaard (It's the blocking issues)
+- [x] Add 15 users incl Danielle Reece, who needs GUI
+- [x] New test case dupe
+- [x] Escalate 225 (waiting on Sandeep)
+
+- [ ] Fix triage meeting M-F
+- [ ] Tell Beorn that Danielle is on his Team
+- [ ] Get Sandeep's input on 225
+- [ ] Send "Beta" group email
+- [ ] Verify Beta group signons
+
+- [ ] What? 📅 2024-06-24 🔽  ➕ 2024-06-23 🔁 🛫 ⏳ 2024-06-23 
