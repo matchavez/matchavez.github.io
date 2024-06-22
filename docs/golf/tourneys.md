@@ -1,4 +1,5 @@
 ## Winner:
+- 2024 Christchurch Hackers, Senior Division. March 2024 - Hororata GC, Coalgate, New Zealand.
 - 2022 Christchurch Hackers, Senior Division. Season final / Irwin Trophy. Clearwater GC, Christchurch, New Zealand.
 - 2021 Canadian Foursomes Pairs - Waimairi Beach Rose Bowl, with Kim. Waimairi Beach GC, Christchurch, New Zealand.
 - 2019 Seaside Open, Division 3. Gross & Nett. Waimairi Beach GC, Christchurch, New Zealand.

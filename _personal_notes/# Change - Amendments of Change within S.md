@@ -7,7 +7,7 @@ _Change the following settings within ServiceDesk:_
 
 Change Category Descriptions will change from
 
-1. Sumbission
+1. Submission
 2. Planning
 3. Approval
 

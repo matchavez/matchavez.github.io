@@ -19,11 +19,11 @@
 
 ## _On The Bench_
 
-| Club           | Model         | Shaft                   | Detail    | Loft  | SW   | Length |
-| -------------- | ------------- | ----------------------- | --------- | ----- | ---- | ------ |
-| Fairway        | G410 LST 14.5 | Ping Tour 1.0           | 75 X      | 14.5º | D2.5 | 43.00" |
-| 2-Hybrid       | G410 17       | Ping Tour 1.0           | 85 X      | 16º   | D1   | 40.25" |
-| Putter         | Sigma2 Fetch  | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
+| Club     | Model         | Shaft                   | Detail    | Loft  | SW   | Length |
+| -------- | ------------- | ----------------------- | --------- | ----- | ---- | ------ |
+| Fairway  | G410 LST 14.5 | Ping Tour 1.0           | 75 X      | 14.5º | D2.5 | 43.00" |
+| 2-Hybrid | G410 17       | Ping Tour 1.0           | 85 X      | 16º   | D1   | 40.25" |
+| Putter   | Sigma2 Fetch  | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
 
 ## _Retired_
 
