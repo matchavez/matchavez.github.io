@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_job_notes/Markdown Compatibility Test.md",
+                "file": "_job_log/2024-W26.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#DeploymentProblems",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -66,13 +66,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "be37b129b949ea3d",
@@ -88,7 +86,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_job_notes/Markdown Compatibility Test.md",
+                "file": "_job_log/2024-W26.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -111,7 +109,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_job_notes/Markdown Compatibility Test.md"
+                "file": "_job_log/2024-W26.md"
               }
             }
           },
@@ -143,11 +141,11 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "589b0e01e4f9c9f7",
+  "active": "af8fd7784e5adc13",
   "lastOpenFiles": [
+    "_job_notes/Markdown Compatibility Test.md",
     "_job_log/2024-W26.md",
     "_job_notes/# Change - Amendments of Change within S.md",
-    "_job_notes/Markdown Compatibility Test.md",
     "_job_notes/takeover.md",
     "_job_notes/MEJira.md",
     "_job_notes/outages.md",
