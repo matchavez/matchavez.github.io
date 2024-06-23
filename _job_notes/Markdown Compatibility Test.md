@@ -208,7 +208,7 @@ Images have a similar syntax to links but include a preceding exclamation point.
 
 As you might expect
 
-## This works like Typora does.
+In this case, just checking updates.
 
 ---
 

@@ -6,5 +6,15 @@
       ],
       "key": "T"
     }
+  ],
+  "obsidian-git:commit": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "G"
+    }
   ]
 }

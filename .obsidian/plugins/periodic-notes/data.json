@@ -10,7 +10,7 @@
   "weekly": {
     "format": "",
     "template": "",
-    "folder": "",
+    "folder": "_job_log",
     "enabled": true
   },
   "monthly": {

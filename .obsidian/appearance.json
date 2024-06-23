@@ -1,7 +1,7 @@
 {
-  "accentColor": "#9da61c",
-  "cssTheme": "Solarized",
-  "interfaceFontFamily": "IBM Plex Sans,Inter V Clear",
+  "accentColor": "#800000",
+  "cssTheme": "Minimal",
+  "interfaceFontFamily": "CommitMonoV143",
   "monospaceFontFamily": "SF Mono",
   "textFontFamily": "SF Pro Text"
 }
