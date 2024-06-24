@@ -1,7 +1,7 @@
 {
   "accentColor": "#800000",
-  "cssTheme": "Minimal",
-  "interfaceFontFamily": "CommitMonoV143",
+  "cssTheme": "Blackbird",
+  "interfaceFontFamily": "CommitMonoV143,Andale Mono",
   "monospaceFontFamily": "SF Mono",
   "textFontFamily": "SF Pro Text"
 }
