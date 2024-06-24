@@ -7,16 +7,6 @@
       "key": "T"
     }
   ],
-  "obsidian-git:commit": [
-    {
-      "modifiers": [
-        "Alt",
-        "Ctrl",
-        "Mod"
-      ],
-      "key": "G"
-    }
-  ],
   "obsidian-tasks-plugin:toggle-done": [
     {
       "modifiers": [
@@ -31,6 +21,46 @@
         "Mod"
       ],
       "key": "["
+    }
+  ],
+  "obsidian-git:commit": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "G"
+    }
+  ],
+  "obsidian-git:fetch": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "F"
+    }
+  ],
+  "obsidian-git:pull": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "P"
+    }
+  ],
+  "obsidian-git:push2": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod"
+      ],
+      "key": "U"
     }
   ]
 }
