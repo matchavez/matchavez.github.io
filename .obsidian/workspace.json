@@ -84,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "be37b129b949ea3d",
@@ -155,7 +154,7 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "5f21f6ddd883099a",
+  "active": "a250aab8025c9464",
   "lastOpenFiles": [
     "Tasks.md",
     "README.md",
