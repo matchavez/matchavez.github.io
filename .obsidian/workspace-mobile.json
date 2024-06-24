@@ -1,0 +1,178 @@
+{
+  "main": {
+    "id": "d162177b5a7eb5e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "0277b0580704a22f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0d0002d41dcfcaf1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ZMobileSync.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "122e17bda43d341b",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "f7bed61bfd7cf477",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "54ffd6699a4aec3f",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "e1023cb72ddd3993",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "c10df837e54d4cbb",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "43b4093c9aa7f746",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "ed7fa97c07e916db",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "ZMobileSync.md",
+            "collapseAll": true,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "8a653780cd627847",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "ZMobileSync.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "bfb674001ccebfbb",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "ZMobileSync.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "dbfolder:Create a new database table": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "periodic-notes:Open this week": false
+    }
+  },
+  "active": "0d0002d41dcfcaf1",
+  "lastOpenFiles": [
+    "ZMobileSync.md",
+    "Tasks.md",
+    "material",
+    "matchavez.github.io.code-workspace",
+    "README.md",
+    "_job_notes/Tumu-environment-planning/Tumu-Basics.md",
+    "_job_notes/Tumu-environment-planning/oldSAP-Environment-Strategy.md",
+    "_job_notes/Tumu-environment-planning/ANZ_incoming - need rules.md",
+    "_job_notes/Tumu-environment-planning/earlyreadme.md",
+    "_job_notes/Tumu-environment-planning/Connected-Systems.md",
+    "_job_notes/Tumu-environment-planning/readme.md",
+    "_job_notes/Tumu-environment-planning/How is it different between a DR with da.md",
+    "_job_notes/Tumu-environment-planning/25 June draft.xlsx",
+    "_job_notes/Tumu-environment-planning/cloud move.md",
+    "_job_notes/Tumu-environment-planning/ANZ Steps.md",
+    "_job_notes/Tumu-environment-planning/MermaidFlowcharts.md",
+    "_job_notes/Tumu-environment-planning/Integration-Application-Nexus.md",
+    "_job_notes/Tumu-environment-planning/coreConnections-Strategy.md",
+    "_job_notes/Tumu-environment-planning/deployment_strategy.md",
+    "_job_notes/Tumu-environment-planning/EAM option 5.md",
+    "_job_notes/Tumu-environment-planning",
+    "_job_notes/Actions for a better build.md",
+    "_job_notes/Untitled-1.md",
+    "_job_notes/outages.md",
+    "_job_notes/Release Management through Tumu Go-Live.md",
+    "_job_notes/SAP Release Schedule Transition.md",
+    "_job_notes/10 Feb Prep Sheet.md",
+    "_job_notes/memorycards.md",
+    "_job_notes/md_docs_best_practice.md",
+    "_job_notes/Ways of Working.md",
+    "_job_notes",
+    "docs/stylesheets/extra.css",
+    "docs/files/kim_swing.mp4",
+    "docs/files/Inter-Regular.woff",
+    "docs/files/colourscheme_example.txt",
+    "docs/files/bk1997tour.pdf",
+    "docs/images/nzhelmet.png",
+    "docs/images/IMG_9324.jpg"
+  ]
+}
