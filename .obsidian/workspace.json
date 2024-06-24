@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tasks.md",
+                "file": "_job_log/2024-W26.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -84,7 +84,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "be37b129b949ea3d",
@@ -100,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tasks.md",
+                "file": "_job_log/2024-W26.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tasks.md"
+                "file": "_job_log/2024-W26.md"
               }
             }
           },
@@ -139,7 +140,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -155,8 +157,8 @@
   },
   "active": "5f21f6ddd883099a",
   "lastOpenFiles": [
-    "README.md",
     "Tasks.md",
+    "README.md",
     "_job_log/2024-W26.md",
     "_job_notes/Tumu-environment-planning/Connected-Systems.md",
     "drafts/law_changes.md",
