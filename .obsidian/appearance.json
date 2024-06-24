@@ -3,5 +3,7 @@
   "cssTheme": "Blackbird",
   "interfaceFontFamily": "CommitMonoV143,Andale Mono",
   "monospaceFontFamily": "SF Mono",
-  "textFontFamily": "SF Pro Text"
+  "textFontFamily": "SF Pro Text",
+  "baseFontSize": 18,
+  "baseFontSizeAction": false
 }
