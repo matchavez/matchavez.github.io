@@ -32,9 +32,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "eae9473ac0bf644c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.5"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -154,7 +164,7 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "a250aab8025c9464",
+  "active": "eae9473ac0bf644c",
   "lastOpenFiles": [
     "drafts/law_changes.md",
     "drafts/notes21.md",
