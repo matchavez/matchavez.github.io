@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "drafts/law_changes.md",
+                "file": "_job_log/2024-W26.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -100,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "drafts/law_changes.md",
+                "file": "_job_log/2024-W26.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "drafts/law_changes.md"
+                "file": "_job_log/2024-W26.md"
               }
             }
           },
@@ -154,10 +154,10 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "af8fd7784e5adc13",
+  "active": "a250aab8025c9464",
   "lastOpenFiles": [
-    "drafts/notes21.md",
     "drafts/law_changes.md",
+    "drafts/notes21.md",
     "Tasks.md",
     "README.md",
     "_job_log/2024-W26.md",
