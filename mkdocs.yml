@@ -1,0 +1,117 @@
+# ----------------------------------------------------------------
+
+# Here's the Docker Command, no hashtag:
+# docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+
+site_name: MatChavez.com
+theme: 
+  name: material
+  #name: readthedocs
+  #name: mkdocs
+  features:
+    - navigation.tabs
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+
+    #- navigation.instant
+
+  palette:
+   scheme: mycolour
+#    scheme: slate
+#    primary: pink
+#    accent: indigo
+
+  font: 
+ #   text: Public Sans
+    code: Noto Sans Mono
+  #icon:
+    #logo: logo
+
+extra_css:
+  - stylesheets/extra.css
+
+
+
+repo_url: https://github.com/matchavez/matchavez.github.io
+
+
+
+# ----------------------------------------------------------------
+
+# NAV PAGE TREE
+
+nav:
+  - Welcome: index.md
+  - Notetaking:
+    - All about notes: notetaking.md
+    - Winner First: notetaking/winner_first.md
+    - Applications: notetaking/applications.md
+    - GFM vs. JSON: notetaking/gfm_json.md
+  - Favourite Quotes: favourite_quotes.md
+  - Golf:
+    - Tournaments: golf/tourneys.md
+    - Equipment: golf/equipment.md
+  - Apple:
+    - Fixes: apple/fixes.md
+    - Commands: apple/commands.md
+  - Streaming:
+    - Stream Test: streaming.md
+  - Test Pages:
+#    - Sandbox: unit_testing.md 
+#    - Include Test: testsnip.md
+    - Typography: typography.md
+    - Linux Shortcuts: linux_shortcuts.md
+#    - CMS Steps: steps.md
+
+
+#    - "": _workstuff.md
+
+
+# ----------------------------------------------------------------
+
+# EXTENSIONS
+
+markdown_extensions:
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+  # ----------------------------------------------------------------
