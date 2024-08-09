@@ -1,7 +1,7 @@
 ---
 share: "true"
 path: /docs/golf
-file: test.md
+filename: test.md
 ---
 ---
 
