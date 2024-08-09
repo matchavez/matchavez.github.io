@@ -1,3 +1,10 @@
+---
+share: "true"
+path: /docs/golf
+title: tourneys
+---
+
+# Tournament Results
 ## Winner:
 - 2024 Christchurch Hackers, Senior Division. March 2024 - Hororata GC, Coalgate, New Zealand.
 - 2022 Christchurch Hackers, Senior Division. Season final / Irwin Trophy. Clearwater GC, Christchurch, New Zealand.
