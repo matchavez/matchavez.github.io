@@ -1,7 +1,7 @@
 ---
 file: file:///Users/matchavez/Documents/GitHub/matchavez.github.io/docs/golf/equipment.md
 share: "true"
-path: /golf/test.md
+path: golf/test.md
 ---
 ---
 
