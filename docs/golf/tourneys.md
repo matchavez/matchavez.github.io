@@ -23,11 +23,19 @@ title: tourneys
 ##### 2021 Manager Waimairi Beach Simon Cup
 
 #### 2024 Thompson MacDonald for McLean's Island
+http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/
 
 | Date   | Opponent       | Result | Score | Team     |
 | ------ | -------------- | ------ | ----- | -------- |
 | 04 Aug | Waimairi Beach | DNP    | -     | 3-3 Draw |
 | 11 Aug | @ Russley      | Loss   | 5 & 3 | 3-3 Draw |
+| 18 Aug | Bottle Lake    | DNP    | -     |          |
+| 01 Sep | @ Templeton    |        |       |          |
+| 08 Sep | Greendale      | DNP    |       |          |
+| 15 Sep | @ Avondale     |        |       |          |
+| 22 Sep | @ Harewood     |        |       |          |
+| 29 Sep | Coringa        |        |       |          |
+| 06 Oct | @ Rawhiti      |        |       |          |
 
 #### 2020-21 Metro B for Waimairi Beach:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
