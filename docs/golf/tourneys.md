@@ -3,8 +3,8 @@ share: "true"
 path: /docs/golf
 title: tourneys
 ---
-
 # Tournament Results
+
 ## Winner:
 - 2024 Christchurch Hackers, Senior Division. March 2024 - Hororata GC, Coalgate, New Zealand.
 - 2022 Christchurch Hackers, Senior Division. Season final / Irwin Trophy. Clearwater GC, Christchurch, New Zealand.
@@ -22,6 +22,12 @@ title: tourneys
 
 ##### 2021 Manager Waimairi Beach Simon Cup
 
+#### 2024 Thompson MacDonald for McLean's Island
+
+| Date   | Opponent       | Result | Score | Team     |
+| ------ | -------------- | ------ | ----- | -------- |
+| 04 Aug | Waimairi Beach | DNP    | -     |          |
+| 11 Aug | @ Russley      | Loss   | 5 & 3 | 3-3 Draw |
 
 #### 2020-21 Metro B for Waimairi Beach:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
@@ -37,7 +43,6 @@ title: tourneys
 | 27 Feb  | at Bottle Lake                 | Win      | 2 Up           | 3-5 Loss     |
 | 14 Mar  | Rawhiti at Waimairi Beach      | Win      | 5 & 3          | 5.5-2.5 Win  |
 | 28 Mar  | Metro A Avondale at Clearwater | Win      | 5 & 4          | 5-3 Win (A)  |
-| ---     | ---                            | ---      | ---            | ---          |
 | 2020-21 | Season Record                  | 5w 3d 0l | r.s. 13/16 pts | 4w 0d 4l (B) |
 
 Team finish: 5th. Top team individual record.
