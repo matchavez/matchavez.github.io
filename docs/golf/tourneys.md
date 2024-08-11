@@ -26,7 +26,7 @@ title: tourneys
 
 | Date   | Opponent       | Result | Score | Team     |
 | ------ | -------------- | ------ | ----- | -------- |
-| 04 Aug | Waimairi Beach | DNP    | -     |          |
+| 04 Aug | Waimairi Beach | DNP    | -     | 3-3 Draw |
 | 11 Aug | @ Russley      | Loss   | 5 & 3 | 3-3 Draw |
 
 #### 2020-21 Metro B for Waimairi Beach:
