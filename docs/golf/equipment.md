@@ -2,7 +2,6 @@
 share: "true"
 path: /docs/golf
 title: equipment
-icon: LiFileCode
 ---
 # _WITB_
 
