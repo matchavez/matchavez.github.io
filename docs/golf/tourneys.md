@@ -23,7 +23,7 @@ title: tourneys
 ##### 2021 Manager Waimairi Beach Simon Cup
 
 #### 2024 Thompson MacDonald for McLean's Island
-http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/
+http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
 
 | Date   | Opponent       | Result | Score | Team     |
 | ------ | -------------- | ------ | ----- | -------- |
