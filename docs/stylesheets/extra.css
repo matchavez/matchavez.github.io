@@ -2,8 +2,8 @@
   --md-primary-fg-color:        #800000;
   --md-primary-fg-color--light: #7c3a3a;
   --md-primary-fg-color--dark:  #eaeaea;
-  --md-default-bg-color: #252525;
-  --md-default-fg-color: var(--md-typeset-color);
+  --md-default-bg-color: #383232;
+  --md-default-fg-color: rgb(233, 239,100);
   --md-code-fg-color: rgb(233, 239, 202);
   --md-code-bg-color: hsla(0, 0%, 96%, 1);
   --md-code-hl-color: hsla(60, 100%, 50%, 0.5);
