@@ -32,7 +32,7 @@ title: equipment
 | Pitching Wedge | i230             | Recoil DART             | 105 F4    | 44.5º | D3   | 35.75" |
 | Gap Wedge      | i230             | Recoil DART             | 105 F4    | 49.5º | D3.5 | 35.50" |
 | Putter         | Sigma2 Fetch     | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
-| Putter         | AI-One 7         | Callaway                | Dual Grip |       |      | 48.00" |
+| Putter         | AI-One 7         | Callaway                | Dual Grip | 3º    |      | 48.00" |
 
 ## _Retired_
 
