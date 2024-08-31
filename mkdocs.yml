@@ -17,10 +17,10 @@ theme:
     #- navigation.instant
 
   palette:
-   scheme: mycolour
-#    scheme: slate
-#    primary: pink
-#    accent: indigo
+#   scheme: mycolour
+    scheme: slate
+    primary: pink
+    accent: indigo
 
   font: 
  #   text: Public Sans
