@@ -28,8 +28,8 @@ theme:
   #icon:
     #logo: logo
 
-extra_css:
-  - stylesheets/extra.css
+# extra_css:
+ # - stylesheets/extra.css
 
 
 
