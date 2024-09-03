@@ -23,8 +23,8 @@ theme:
     accent: indigo
 
   font: 
- #   text: Public Sans
-    code: Noto Sans Mono
+    text: Atkinson Hyperlegible
+    code: Source Code Pro
   #icon:
     #logo: logo
 
