@@ -29,4 +29,8 @@ If you pull up from the bottom on iPhone, it's the same as if you pull from the 
 
 ---
 
-All iDevices should allow a mode you can boot into that accept an HDMI signal. All of those old iPads doing nothing... well, they could be a Raspberry Pi screen, a gaming screen, a second monitor... not something to be thrown away. 
+All iDevices should allow a mode you can boot into that accept an HDMI signal. All of those old iPads doing nothing... well, they could be a Raspberry Pi screen, a gaming screen, a second monitor... not something to be thrown away.
+
+---
+
+Devices should allow you to record video from both camera sides at once, and give you a two files. Would be very helpful for 1:1 interviews.
