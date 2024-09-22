@@ -18,10 +18,6 @@ title: tourneys
 
 ## Interclub
 
-##### 2023 Simon Cup substitute, McLean's Island (1-1-1)
-
-##### 2021 Manager Waimairi Beach Simon Cup
-
 #### 2024 Thompson MacDonald for McLean's Island
 http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
 
@@ -38,6 +34,9 @@ http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-i
 | 13 Oct | Bottle Lake        |        |         |             |
 |        |                    |        |         |             |
 
+##### 2023 Simon Cup substitute, McLean's Island (1-1-1)
+
+##### 2021 Manager Waimairi Beach Simon Cup
 #### 2020-21 Metro B for Waimairi Beach:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
 
