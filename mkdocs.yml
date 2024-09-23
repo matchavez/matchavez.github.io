@@ -23,7 +23,8 @@ theme:
     accent: indigo
 
   font: 
-    text: Atkinson Hyperlegible
+#    text: Atkinson Hyperlegible
+    text: Libre Franklin
     code: Source Code Pro
   #icon:
     #logo: logo
