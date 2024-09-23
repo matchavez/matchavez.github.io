@@ -19,7 +19,7 @@ theme:
   palette:
 #   scheme: mycolour
     scheme: slate
-    primary: pinkblue grey
+    primary: blue grey
     accent: cyan
 
   font: 
