@@ -19,8 +19,8 @@ theme:
   palette:
 #   scheme: mycolour
     scheme: slate
-    primary: pink
-    accent: indigo
+    primary: pinkblue grey
+    accent: cyan
 
   font: 
 #    text: Atkinson Hyperlegible
