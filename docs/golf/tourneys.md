@@ -73,6 +73,3 @@ Team finish: 5th. Top team individual record.
 | 2019-20 | Season Record                     | 8w 1d 1l | r.s. 13/16 pts | 4w 2d 2l          |
 
 Team finish: Runners up. Top team individual record.
-
-
-''
