@@ -5,17 +5,6 @@ title: tourneys
 ---
 # Tournament Results
 
-## Winner:
-- 2024 Christchurch Hackers, Senior Division. March 2024 - Hororata GC, Coalgate, New Zealand.
-- 2022 Christchurch Hackers, Senior Division. Season final / Irwin Trophy. Clearwater GC, Christchurch, New Zealand.
-- 2021 Canadian Foursomes Pairs - Waimairi Beach Rose Bowl, with Kim. Waimairi Beach GC, Christchurch, New Zealand.
-- 2019 Seaside Open, Division 3. Gross & Nett. Waimairi Beach GC, Christchurch, New Zealand.
-- 2015 Riverside Open. Riverside GC, Irving, Texas.
-
-### _Notable_:
-- 2024 Templeton Open 3rd NETT Jnr Division (6.3+, 5th Gross) 
-- 2019 Waimairi Beach ANZAC Stableford T-1 (Countback) Division 1.
-
 ## Interclub
 
 #### 2024 Thompson MacDonald for McLean's Island
@@ -73,3 +62,14 @@ Team finish: 5th. Top team individual record.
 | 2019-20 | Season Record                     | 8w 1d 1l | r.s. 13/16 pts | 4w 2d 2l          |
 
 Team finish: Runners up. Top team individual record.
+
+## Winner:
+- 2024 Christchurch Hackers, Senior Division. March 2024 - Hororata GC, Coalgate, New Zealand.
+- 2022 Christchurch Hackers, Senior Division. Season final / Irwin Trophy. Clearwater GC, Christchurch, New Zealand.
+- 2021 Canadian Foursomes Pairs - Waimairi Beach Rose Bowl, with Kim. Waimairi Beach GC, Christchurch, New Zealand.
+- 2019 Seaside Open, Division 3. Gross & Nett. Waimairi Beach GC, Christchurch, New Zealand.
+- 2015 Riverside Open. Riverside GC, Irving, Texas.
+
+### _Notable_:
+- 2024 Templeton Open 3rd NETT Jnr Division (6.3+, 5th Gross) 
+- 2019 Waimairi Beach ANZAC Stableford T-1 (Countback) Division 1.
