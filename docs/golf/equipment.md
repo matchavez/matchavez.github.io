@@ -28,16 +28,15 @@ title: equipment
 | -------------- | ---------------- | ----------------------- | --------- | ----- | ---- | ------ |
 | Driver         | RogueST LS ♢♢♢ 9 | Graphite Design         | DI 6X     | 11º   | D2   | 45.50" |
 | 2-Hybrid       | G410 17          | Ping Tour 1.0           | 85 X      | 16º   | D1   | 40.25" |
-| 2 iron         | Rapture          | Recoil Proto            | 95 F5     | 18º   |      | 39.50" |
 | Pitching Wedge | i230             | Recoil DART             | 105 F4    | 44.5º | D3   | 35.75" |
 | Gap Wedge      | i230             | Recoil DART             | 105 F4    | 49.5º | D3.5 | 35.50" |
-| Putter         | Sigma2 Fetch     | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
 | Putter         | AI-One 7         | Callaway                | Dual Grip | 3º    |      | 48.00" |
 
 ## _Retired_
 
 | Club           | Model         | Shaft                   | Detail    | Loft  | SW   | Length |
 | -------------- | ------------- | ----------------------- | --------- | ----- | ---- | ------ |
+| 2 iron         | Rapture       | Recoil Proto            | 95 F5     | 18º   |      | 39.50" |
 | 4-Iron         | i210          | MMT Taper               | 105TX SS1 | 22.5º | D2   | 38.75" |
 | 5-Iron         | Blueprint     | MMT Taper               | 105TX SS1 | 27º   | D1.5 | 38.00" |
 | 6-Iron         | Blueprint     | MMT Taper               | 105TX SS1 | 30.5º | D1.5 | 37.50" |
@@ -46,6 +45,7 @@ title: equipment
 | 9-Iron         | Blueprint     | MMT Taper               | 105TX SS1 | 42º   | D1.5 | 36.00" |
 | Pitching Wedge | Blueprint     | MMT Taper               | 105TX SS1 | 46º   | D2   | 35.75" |
 | Gap Wedge      | Glide Forged  | MMT Taper               | 105TX SS1 | 50º   | D2.5 | 35.50" |
+| Putter         | Sigma2 Fetch  | Breakthrough Technology | Stability | 4º    | D3   | 32.90" |
 
 
 ---
@@ -55,6 +55,7 @@ title: equipment
 * Clubs - All clubs are Ping or Callaway
 * Grips:
     + GolfPride MCC Plus4 Midsize
+    + Ping Wedge grips on wedges
     + Putter 2021 Ping AVS PL Jumbo
 * Bag - Ping Pioneer 2022
 * Cart - MGI Zip Navigator
