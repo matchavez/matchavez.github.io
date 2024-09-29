@@ -29,7 +29,7 @@ http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-i
 | 08 Sep | Greendale          | DNP    | -       | 4.5-1.5 Win |
 | 15 Sep | @ Avondale         | DNP    | -       | 4.5-1.5 Win |
 | 22 Sep | @ Harewood         | Win    | 7 & 6   | 4-2 Win     |
-| 29 Sep | Coringa            |        |         |             |
+| 29 Sep | Coringa            | Loss   | _5 & 4_ | 2-4 Loss    |
 | 06 Oct | Rawhiti @ Avondale |        |         |             |
 | 13 Oct | Bottle Lake        |        |         |             |
 |        |                    |        |         |             |
@@ -75,3 +75,4 @@ Team finish: 5th. Top team individual record.
 Team finish: Runners up. Top team individual record.
 
 
+''
