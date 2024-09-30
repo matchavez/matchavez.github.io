@@ -1,7 +1,17 @@
+---
+share: "true"
+path: /docs
+title: index
+---
+
 ![](images/IMG_9324.jpg)
 Near Arthur's Pass, New Zealand
 
 ---
+
+# Nau Mai Haere Mai
+Welcome everyone to my personal reference area and so-called Digital Garden. This is first a place for me to refer back to in the areas that I'm most interested, but I hope it can be of use to anyone here as well.
+
 
 ## Content Management
 
