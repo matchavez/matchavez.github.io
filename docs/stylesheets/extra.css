@@ -15,5 +15,5 @@
 
     /* Slate theme */
 	[data-md-color-scheme=slate] .md-typeset h1 {
-		background-color: green;
+		color: green;
 	  }
