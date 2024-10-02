@@ -1,4 +1,19 @@
+---
+share: "true"
+path: /docs/notetaking
+title: gfm_json
+---
+
+
 ## Notetaking systems - Using GitHub Flavored Markdown .md text files vs. a JSON-formatted storage matrix
+
+The basics of this argument still ring true today. You either have a notes system that creates and renders text files locally, or it saves everything in a database and saves those entries as formatted javascript.
+
+Another option is LogSeq, which also keeps things in Markdown. If that evolves into a more friendly product, I can transfer everything from Obsidian, and also still be able to return if I want. From my short experience, [LogSeq ](https://logseq.com)was a little less usable, but had some very clean features around the use of personal contacts. 
+
+
+> [!note]
+> Below is out of date, but it was context written in 2020.
 
 #### _This is where notes get really nerdy..._
 
