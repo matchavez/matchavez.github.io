@@ -45,6 +45,31 @@
 }
 
 
+h1 {
+    color: red;
+}
+
+h2 {
+    color: orange;
+}
+
+h3 {
+    color: yellow;
+}
+
+h4 {
+    color: green;
+}
+
+h5 {
+    color: blue;
+}
+
+h6 {
+    color: violet;
+}
+
+/*
 *
 {
   font-family: SF Pro Display, sans-serif !important;
@@ -156,3 +181,4 @@
 .md-typeset h2 {
   font-weight: 700;
 }
+*/
