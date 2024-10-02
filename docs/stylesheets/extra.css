@@ -2,3 +2,13 @@
 .md-typeset h1 {
 		color: #ff0000;
 	  }
+	  
+/* Default, light theme */
+.md-tabs {
+	background-color: red;
+  }
+  
+  /* Slate theme */
+  [data-md-color-scheme=slate] .md-tabs {
+	background-color: green;
+  }
