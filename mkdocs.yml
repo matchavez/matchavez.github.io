@@ -1,13 +1,8 @@
 # ----------------------------------------------------------------
 
-# Here's the Docker Command, no hashtag:
-# docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
-
 site_name: MatChavez.com
 theme: 
   name: material
-  #name: readthedocs
-  #name: mkdocs
   features:
     - navigation.tabs
 
@@ -19,22 +14,20 @@ theme:
   palette:
     scheme: mycolour
 #   scheme: slate
- #   primary: blue grey
-  #  accent: cyan
+#   primary: blue grey
+#   accent: cyan
 
   font: 
-#    text: Atkinson Hyperlegible
+#   text: Atkinson Hyperlegible
     text: Libre Franklin
     code: Source Code Pro
   #icon:
     #logo: logo
 
- extra_css:
-   - stylesheets/extra.css
+  extra_css:
+    - stylesheets/extra.css
 
-
-
-repo_url: https://github.com/matchavez/matchavez.github.io
+  repo_url: https://github.com/matchavez/matchavez.github.io
 
 
 
