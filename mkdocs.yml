@@ -12,10 +12,10 @@ theme:
     #- navigation.instant
 
   palette:
-    scheme: mycolour
-#   scheme: slate
-#   primary: blue grey
-#   accent: cyan
+#   scheme: mycolour
+    scheme: slate
+    primary: blue grey
+    accent: cyan
 
   font: 
 #   text: Atkinson Hyperlegible
