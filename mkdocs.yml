@@ -24,7 +24,7 @@ theme:
   #icon:
     #logo: logo
 
-  extra_css: #
+  extra_css:
     - stylesheets/extra.css
 
   repo_url: https://github.com/matchavez/matchavez.github.io
@@ -107,5 +107,7 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+plugins:
+  - gh-admonitions
 
   # ----------------------------------------------------------------
