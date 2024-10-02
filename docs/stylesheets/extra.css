@@ -1,11 +1,6 @@
-[data-md-color-primary="orange"] {
-	--md-primary-bg-color: #fff;
-}
+:root {
 
-[md-typeset.h1="orange"] {
-	--md-primary-bg-color: #fff;
-}
-
-h1 {
-  color: red;
+	[data-md-color-scheme="custom"] .md-typeset h1 {
+		color: #ff0000;
+	  }
 }
