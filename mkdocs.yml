@@ -14,7 +14,7 @@ theme:
   palette:
 #    scheme: mycolour
     scheme: slate
-    primary: cyan
+    primary: blue grey
     accent: cyan
 
   font: 
