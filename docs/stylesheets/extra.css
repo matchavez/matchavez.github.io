@@ -1,19 +1,7 @@
-[data-md-color-scheme="mycolour"] 
 .md-typeset h1 {
-		color: #ff0000;
-	  }
-	  
-/* Default, light theme */
-.md-tabs {
-	background-color: red;
-  }
-  
-  /* Slate theme */
-  [data-md-color-scheme=slate] .md-tabs {
-	background-color: green;
-  }
+    color: red;
+}
 
-    /* Slate theme */
-	[data-md-color-scheme=slate] .md-typeset h1 {
-		color: green;
-	  }
+h2 {
+    color: red;
+}
