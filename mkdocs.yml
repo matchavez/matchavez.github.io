@@ -24,10 +24,12 @@ theme:
   #icon:
     #logo: logo
 
-  repo_url: https://github.com/matchavez/matchavez.github.io
+ extra_css:
+  - stylesheets/extra.css
 
-  extra_css:
-    - stylesheets/extra.css
+
+
+repo_url: https://github.com/matchavez/matchavez.github.io
 
 
 
