@@ -5,6 +5,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - content.action.edit
 
   # Default values, taken from mkdocs_theme.yml
   language: en
