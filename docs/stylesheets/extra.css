@@ -1,6 +1,6 @@
 :root {
 
-	[data-md-color-scheme="custom"] .md-typeset h1 {
+	[data-md-color-scheme="mycolour"] .md-typeset h1 {
 		color: #ff0000;
 	  }
 }
