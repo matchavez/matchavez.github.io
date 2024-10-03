@@ -14,9 +14,9 @@ theme:
 
   palette:
 #    scheme: mycolour
-    scheme: default
-    primary: custom
-    accent: custom
+    scheme: youtube
+#    primary: custom
+#    accent: custom
 
   font: 
 #   text: Atkinson Hyperlegible
