@@ -1,33 +1,17 @@
-# ----------------------------------------------------------------
-
 site_name: MatChavez.com
 theme: 
   name: material
   features:
     - navigation.tabs
     - content.action.edit
-
-  # Default values, taken from mkdocs_theme.yml
   language: en
-
-    #- navigation.instant
-
   palette:
-#    scheme: mycolour
     scheme: youtube
-#    primary: custom
-#    accent: custom
-
   font: 
-#   text: Atkinson Hyperlegible
     text: Libre Franklin
     code: Source Code Pro
-  #icon:
-    #logo: logo
-
 extra_css:
   - stylesheets/extra.css
-
 repo_url: https://github.com/matchavez/matchavez.github.io
 edit_uri: edit/main/docs/
 
