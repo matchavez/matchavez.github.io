@@ -1,3 +1,9 @@
+---
+share: "true"
+path: /docs/notetaking
+title: applications
+---
+
 ## Applications of interest for notetaking
 
 #### [Typora](https://typora.io)
@@ -26,7 +32,9 @@ Despite the fact that Agenda is not my perfect notetaking app, it's worth sharin
 
 #### [Quiver](http://happenapps.com)
 
-What was one of the most promising applications, I've become very sour with this app. I had data loss, and that's just not acceptable. It's one guy working part-time on the app, and the promised iOS app never appeared beyond a read-only. Some really neat tricks in the app, as you can combine different kinds of note pieces, such as text, code, etc. Really, it's nothing you can't do in markdown, but the conversions to a presentation mode are slick. If you're on one Mac all the time, it's worth a look. Just make sure you make backups.
+No longer something I can recommend; Quiver has been abandoned. It did not receive an iOS app. It did still do something interesting, which was break up cells like a Jupyter notebook, but the data problems and unfinished features make this a no-go.
+
+~~What was one of the most promising applications, I've become very sour with this app. I had data loss, and that's just not acceptable. It's one guy working part-time on the app, and the promised iOS app never appeared beyond a read-only. Some really neat tricks in the app, as you can combine different kinds of note pieces, such as text, code, etc. Really, it's nothing you can't do in markdown, but the conversions to a presentation mode are slick. If you're on one Mac all the time, it's worth a look. Just make sure you make backups.~~
 
 #### [Evernote](https://evernote.com)
 
