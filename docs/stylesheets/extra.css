@@ -10,6 +10,7 @@
   --md-default-fg-color--light: #0F0;
   --md-default-fg-color--lighter: #00000052;
   --md-default-fg-color--lightest: #00000012;
+  --md-typeset-color: #999999;
 
   .md-typeset h1 {
     color: ##cc0000;
