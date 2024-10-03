@@ -3,11 +3,13 @@
   --md-primary-fg-color--light: #ECB7B7;
   --md-primary-fg-color--dark:  #90030C;
   --md-default-fg-color--light: #0F0;
-}
 
-.md-typeset h1 {
-  color: #90030C !important;
-  font-size: 2em;
-  line-height: 1.3;
-  margin:0 0 1.25em
+
+  .md-typeset h1 {
+    color: #90030C !important;
+    font-size: 2em;
+    line-height: 1.3;
+    margin:0 0 1.25em
+  }
+
 }
