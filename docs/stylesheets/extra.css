@@ -2,8 +2,14 @@
   --md-primary-fg-color:        #EE0F0F;
   --md-primary-fg-color--light: #ECB7B7;
   --md-primary-fg-color--dark:  #90030C;
+  --md-default-bg-color: #4b4747;
+  --md-default-bg-color--light: #ffffffb3;
+  --md-default-bg-color--lighter: #ffffff4d;
+  --md-default-bg-color--lightest: #ffffff1f;
+  --md-default-fg-color: #000000de;
   --md-default-fg-color--light: #0F0;
-
+  --md-default-fg-color--lighter: #00000052;
+  --md-default-fg-color--lightest: #00000012;
 
   .md-typeset h1 {
     color: #90030C !important;
@@ -12,4 +18,39 @@
     margin:0 0 1.25em
   }
 
+  .md-typeset h2 {
+    color: #884400;
+    font-size: 1.5625em;
+    line-height: 1.4;
+    margin: 1.6em 0 .64em;
+    }
+
+.md-typeset h3 {
+  color: #888800;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.5;
+  margin: 1.6em 0 .8em;
+}
+
+.md-typeset h4 {
+  color: #008f00;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin: 1em 0;
+  }
+
+  .md-typeset h5 {
+    color: #00f;
+    text-transform: uppercase;
+    }
+
+    .md-typeset h5, .md-typeset h6 {
+      color: #8f008f;
+      font-size: .8em;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin: 1.25em 0;
+      }
 }
