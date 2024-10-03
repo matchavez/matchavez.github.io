@@ -13,21 +13,21 @@
   --md-typeset-color: #999999;
 
   .md-typeset h1 {
-    color: ##cc0000;
+    color: #C00 !important;
     font-size: 2em;
     line-height: 1.3;
     margin:0 0 1.25em
   }
 
   .md-typeset h2 {
-    color: #ff8000;
+    color: #F90 !important;
     font-size: 1.5625em;
     line-height: 1.4;
     margin: 1.6em 0 .64em;
     }
 
 .md-typeset h3 {
-  color: #ffff00;
+  color: #FF0 !important;
   font-size: 1.25em;
   font-weight: 400;
   letter-spacing: -.01em;
@@ -36,19 +36,19 @@
 }
 
 .md-typeset h4 {
-  color: #00ff00;
+  color: #090 !important;
   font-weight: 700;
   letter-spacing: -.01em;
   margin: 1em 0;
   }
 
   .md-typeset h5 {
-    color: #00f;
+    color: #00F !important;
     text-transform: uppercase;
     }
 
     .md-typeset h5, .md-typeset h6 {
-      color: #ff00ff;
+      color: #F0F !important;
       font-size: .8em;
       font-weight: 700;
       letter-spacing: -.01em;
