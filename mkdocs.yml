@@ -6,8 +6,7 @@ theme:
     - content.action.edit
   language: en
   palette:
-    #primary: stylesheets/extra.css
-    scheme: youtube
+    scheme: mycolours
   font: 
     text: Libre Franklin
     code: Source Code Pro
