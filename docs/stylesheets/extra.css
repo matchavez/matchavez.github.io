@@ -12,7 +12,8 @@
   --md-default-fg-color--lightest: #00000012;
   --md-typeset-color: #999;
   --md-admonition-fg-color: #999;
-  --md-accent-fg-color: #00F;
+  --md-accent-fg-color: #66F;
+  --md-typeset-a-color: #00F;
 
   .md-typeset h1 {
     color: #C00 !important;
