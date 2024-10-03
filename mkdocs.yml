@@ -14,7 +14,7 @@ theme:
 
   palette:
 #    scheme: mycolour
-    scheme: slate
+    scheme: default
     primary: custom
     accent: custom
 
