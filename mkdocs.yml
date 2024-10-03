@@ -6,6 +6,7 @@ theme:
     - content.action.edit
   language: en
   palette:
+    primary: stylesheets/extra.css
     scheme: youtube
   font: 
     text: Libre Franklin
