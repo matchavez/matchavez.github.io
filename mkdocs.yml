@@ -25,10 +25,8 @@ theme:
   #icon:
     #logo: logo
 
-  extra_css:
-    - stylesheets/extra.css
-
-
+extra_css:
+  - stylesheets/extra.css
 
 repo_url: https://github.com/matchavez/matchavez.github.io
 edit_uri: edit/main/docs/
