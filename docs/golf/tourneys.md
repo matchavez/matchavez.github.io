@@ -19,9 +19,10 @@ http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-i
 | 15 Sep | @ Avondale         | DNP    | -       | 4.5-1.5 Win |
 | 22 Sep | @ Harewood         | Win    | 7 & 6   | 4-2 Win     |
 | 29 Sep | Coringa            | Loss   | _5 & 4_ | 2-4 Loss    |
-| 06 Oct | Rawhiti @ Avondale |        |         |             |
+| 06 Oct | Rawhiti @ Avondale | Loss   | _5 & 3_ | 2-4 Loss    |
 | 13 Oct | Bottle Lake        |        |         |             |
-|        |                    |        |         |             |
+| 20 Oct | Semifinal - TBD    |        |         |             |
+| 10 Nov |                    |        |         |             |
 
 ##### 2023 Simon Cup substitute, McLean's Island (1-1-1)
 
