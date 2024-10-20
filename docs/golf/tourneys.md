@@ -20,7 +20,7 @@ http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-i
 | 22 Sep | @ Harewood                        | Win    | 7 & 6   | 4-2 Win         |
 | 29 Sep | Coringa                           | Loss   | _5 & 4_ | 2-4 Loss        |
 | 06 Oct | Rawhiti @ Avondale                | Loss   | _5 & 3_ | 2-4 Loss        |
-| 13 Oct | Bottle Lake                       | DNP-F  | -       | 6-0 Win (f)     |
+| 13 Oct | Bottle Lake                       | Win    | Win (f) | 6-0 Win (f)     |
 | 20 Oct | Semifinal -Rawhiti<br>@ Templeton | Loss   | 2 Down  | 3-3 won playoff |
 | 10 Nov | Final -Harewood<br>@ Avondale     |        |         |                 |
 
