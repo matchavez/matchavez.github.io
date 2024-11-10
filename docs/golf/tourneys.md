@@ -10,19 +10,20 @@ title: tourneys
 #### 2024 Thompson MacDonald for McLean's Island
 http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
 
-| Date   | Opponent                          | Result | Score    | Team            |
-| ------ | --------------------------------- | ------ | -------- | --------------- |
-| 04 Aug | Waimairi Beach                    | DNP    | -        | 3-3 Draw        |
-| 11 Aug | @ Russley                         | Loss   | _5 & 3_  | 3-3 Draw        |
-| 01 Sep | @ Templeton                       | Win    | 1 Up     | 4-2 Win         |
-| 08 Sep | Greendale                         | DNP    | -        | 4.5-1.5 Win     |
-| 15 Sep | @ Avondale                        | DNP    | -        | 4.5-1.5 Win     |
-| 22 Sep | @ Harewood                        | Win    | 7 & 6    | 4-2 Win         |
-| 29 Sep | Coringa                           | Loss   | _5 & 4_  | 2-4 Loss        |
-| 06 Oct | Rawhiti @ Avondale                | Loss   | _5 & 3_  | 2-4 Loss        |
-| 13 Oct | Bottle Lake                       | Win    | Win (f)  | 6-0 Win (f)     |
-| 20 Oct | Semifinal -Rawhiti<br>@ Templeton | Loss   | _2 Down_ | 3-3 won playoff |
-| 10 Nov | Final -Harewood<br>@ Avondale     |        |          |                 |
+| Date   | Opponent                          | Result   | Score     | Team             |
+| ------ | --------------------------------- | -------- | --------- | ---------------- |
+| 04 Aug | Waimairi Beach                    | DNP      | -         | 3-3 Draw         |
+| 11 Aug | @ Russley                         | Loss     | _5 & 3_   | 3-3 Draw         |
+| 01 Sep | @ Templeton                       | Win      | 1 Up      | 4-2 Win          |
+| 08 Sep | Greendale                         | DNP      | -         | 4.5-1.5 Win      |
+| 15 Sep | @ Avondale                        | DNP      | -         | 4.5-1.5 Win      |
+| 22 Sep | @ Harewood                        | Win      | 7 & 6     | 4-2 Win          |
+| 29 Sep | Coringa                           | Loss     | _5 & 4_   | 2-4 Loss         |
+| 06 Oct | Rawhiti @ Avondale                | Loss     | _5 & 3_   | 2-4 Loss         |
+| 13 Oct | Bottle Lake                       | Win      | Win (f)   | 6-0 Win (f)      |
+| 20 Oct | Semifinal -Rawhiti<br>@ Templeton | Loss     | _2 Down_  | 3-3 won playoff  |
+| 10 Nov | Final -Harewood<br>@ Avondale     | Loss     | *2&1*     | 3-3 lost playoff |
+| 2024   | Season Record                     | 3w 0d 5l | r.s. 6/12 | 5w 2d 3l         |
 
 ##### 2023 Simon Cup substitute, McLean's Island (1-1-1)
 
