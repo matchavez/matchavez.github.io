@@ -7,6 +7,7 @@ title: tourneys
 
 ## Interclub
 
+##### 2025 Metro B Substitute, McLeans Island (1-0-0)
 #### 2024 Thompson MacDonald for McLean's Island
 http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
 
