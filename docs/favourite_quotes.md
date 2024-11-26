@@ -1,3 +1,10 @@
+---
+path: /docs
+title: favourite_quotes
+share: "true"
+---
+
+
 > “Common sense is nothing more than a deposit of prejudices laid down in the mind before you reach eighteen.”
 >
 > <cite>Albert Einstein</cite>
@@ -100,13 +107,7 @@
 
 ---
 
-> “Throughout the centuries, there were men who took first steps, down new roads, armed with nothing but their own vision.”
-> 
-> <cite>Ayn Rand</cite>
-
----
-
-> “He who lives in harmony with himself lives in harmony with with the world.”
+> “He who lives in harmony with himself lives in harmony with the world.”
 > 
 > <cite>Marcus Auraleus</cite>
 
