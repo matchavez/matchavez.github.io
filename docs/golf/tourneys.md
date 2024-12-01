@@ -73,5 +73,6 @@ Team finish: Runners up. Top team individual record.
 - 2015 Riverside Open. Riverside GC, Irving, Texas.
 
 ### _Notable_:
+- 2024 Christchurch Hackers, Senior Division. T-1 (Countback)
 - 2024 Templeton Open 3rd NETT Jnr Division (6.3+, 5th Gross) 
 - 2019 Waimairi Beach ANZAC Stableford T-1 (Countback) Division 1.
