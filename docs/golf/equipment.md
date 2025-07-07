@@ -6,9 +6,9 @@ title: equipment
 # _WITB_    
 | Club           | Model             | Shaft             | Detail   | Loft  | SW    | Length |
 | -------------- | ----------------- | ----------------- | -------- | ----- | ----- | ------ |
-| Driver         | Ai Smoke Max 10.5 | Graphite Design   | UB 6S    | 11.5º | D2    | 45.50" |
-| Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 7S    | 16º   | D1.5  | 43.25" |
-| Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 19º   | D2    | 40.25" |
+| Driver         | Ai Smoke Max 10.5 | Graphite Design   | UB 6S    | 10.5º | D2    | 45.50" |
+| Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 7S    | 15º   | D1.5  | 43.25" |
+| Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 18º   | D2    | 40.25" |
 | 4-Iron         | i530              | Recoil DART       | 105 F4   | 19º   | D2    | 38.88" |
 | 5-Iron         | i230              | Recoil DART       | 105 F4   | 25º   | D2    | 38.25" |
 | 6-Iron         | i230              | Recoil DART       | 105 F4   | 28º   | D2    | 37.63" |
@@ -24,15 +24,15 @@ title: equipment
 ## _On The Bench_
 | Club           | Model             | Shaft             | Detail    | Loft  | SW    | Length |
 | -------------- | ----------------- | ----------------- | --------- | ----- | ----- | ------ |
-| Driver         | Rogue ST LS ♢♢♢ 9 | Graphite Design   | DI 6X     | 11º   | D2    | 45.50" |
+| Driver         | Rogue ST LS ♢♢♢ 9 | Graphite Design   | DI 6X     | 9º    | D2    | 45.50" |
 | Fairway        | G425 LST 14.5     | Ping Tour 1.0     | 75 X      | 14.5º | D0    | 43.00" |
 | Hybrid         | G410 17           | Ping Tour 1.0     | 85 X      | 16º   | D1    | 40.25" |
 | Pitching Wedge | S159 M            | Recoil DART       | 105 F4    | 45º   | D2.75 | 35.50" |
 | Gap Wedge      | i230              | Recoil DART       | 105 F4    | 49.5º | D3.5  | 35.50" |
 | Sand Wedge     | Glide 4.0         | Recoil DART       | 105 F4    | 54º   | D4    | 35.50" |
 | Lob Wedge      | Glide Forged Pro  | Recoil DART       | 105 F4    | 59º   | D4.5  | 35.50" |
-| Putter         | AI-One 7          | Callaway          | Dual Grip | 3º    | n/a   | 48.00" |
-| Putter         | 2019 Fetch        | Breakthrough Tour | Original  | 3.5º  | n/a   | 32.90" |
+| Putter         | AI-One 7 Broom    | Standard Steel    | Dual Grip | 3º    | n/a   | 48.00" |
+| Putter         | Sigma 2 Fetch     | Breakthrough Tour | Original  | 3.5º  | n/a   | 32.90" |
 
 ### _Retired_
 | Club           | Model        | Shaft        | Detail    | Loft  | SW   | Length |
@@ -58,5 +58,5 @@ title: equipment
     + Putter 2021 Ping AVS PL Jumbo
 * Bag - Ping Pioneer 2022
 * Cart - MGI Zip Navigator
-* Laser - Bushnell Pro X2
+* Laser - Bushnell Pro X2 / Nikon CoolShot Pro II
 * Ball - 2024 Chrome Tour TruTrack
