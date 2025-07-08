@@ -16,9 +16,9 @@ title: equipment
 | 8-Iron         | i230              | Recoil DART       | 105 F4   | 35.5º | D2    | 36.50" |
 | 9-Iron         | i230              | Recoil DART       | 105 F4   | 40º   | D2.5  | 36.00" |
 | Pitching Wedge | i230              | Recoil DART       | 105 F4   | 44.5º | D3    | 35.75" |
-| Gap Wedge      | S159 M            | Recoil DART       | 105 F4   | 49º   | D3    | 35.50" |
-| Sand Wedge     | S159 M            | Recoil DART       | 105 F4   | 54º   | D3.25 | 35.50" |
-| Lob Wedge      | S159 M            | Recoil DART       | 105 F4   | 58º   | D3.5  | 35.50" |
+| Gap Wedge      | S159 M - S        | Recoil DART       | 105 F4   | 49º   | D3    | 35.50" |
+| Sand Wedge     | S159 M - H        | Recoil DART       | 105 F4   | 54º   | D3.25 | 35.50" |
+| Lob Wedge      | S159 M - H        | Recoil DART       | 105 F4   | 58º   | D3.5  | 35.50" |
 | Putter         | 2021 Fetch        | Breakthrough Tour | Blackout | 3.5º  | E4.5  | 33.60" |
 
 ## _On The Bench_
@@ -27,7 +27,7 @@ title: equipment
 | Driver         | Rogue ST LS ♢♢♢ 9 | Graphite Design   | DI 6X     | 9º    | D2    | 45.50" |
 | Fairway        | G425 LST 14.5     | Ping Tour 1.0     | 75 X      | 14.5º | D0    | 43.00" |
 | Hybrid         | G410 17           | Ping Tour 1.0     | 85 X      | 16º   | D1    | 40.25" |
-| Pitching Wedge | S159 M            | Recoil DART       | 105 F4    | 45º   | D2.75 | 35.50" |
+| Pitching Wedge | S159 M - S        | Recoil DART       | 105 F4    | 45º   | D2.75 | 35.50" |
 | Gap Wedge      | i230              | Recoil DART       | 105 F4    | 49.5º | D3.5  | 35.50" |
 | Sand Wedge     | Glide 4.0         | Recoil DART       | 105 F4    | 54º   | D4    | 35.50" |
 | Lob Wedge      | Glide Forged Pro  | Recoil DART       | 105 F4    | 59º   | D4.5  | 35.50" |
