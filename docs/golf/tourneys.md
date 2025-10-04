@@ -7,6 +7,25 @@ title: tourneys
 
 ## Interclub
 
+#### 2025 Thompson MacDonald for McLean's Island
+http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
+
+| Date   | Opponent               | Result   | Score    | Team         |
+| ------ | ---------------------- | -------- | -------- | ------------ |
+| 10 Aug | @ Greendale            | DNP      | -        | 3-3 Draw     |
+| 17 Aug | Harewood               | DNP      | -        | 4-2 Win      |
+| 24 Aug | Rawhiti                | DNP      | -        | 1-5 Loss     |
+| 31 Aug | @ Coringa              | Loss     | _3 & 2_  | 2.5-3.5 Loss |
+| 07 Sep | Russley                | DNP      | -        | 5.5-0.5 Win  |
+| 14 Sep | @ Waimairi Beach       | Loss     | _4 & 3_  | 4-2 Win      |
+| 21 Sep | @ Weedons              | Win      | 6 & 5    | 4-2 Win      |
+| 28 Sep | Avondale               | Win      | 2 Up     | 6-0 Win      |
+| 12 Oct | Christchurch @ Coringa |          |          |              |
+| 02 Nov | Semifinal -            |          |          |              |
+| 09 Nov | Final -                |          |          |              |
+| 2025   | Season Record          | 2w 0d 2l | r.s. 4/8 | 5w 1d 2l     |
+
+
 ##### 2025 Metro B Substitute, McLeans Island (1-0-0)
 #### 2024 Thompson MacDonald for McLean's Island
 http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
