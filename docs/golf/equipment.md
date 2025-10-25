@@ -6,8 +6,8 @@ title: equipment
 # _WITB_    
 | Club           | Model             | Shaft             | Detail   | Loft  | SW    | Length |
 | -------------- | ----------------- | ----------------- | -------- | ----- | ----- | ------ |
-| Driver         | Ai Smoke Max 10.5 | Graphite Design   | UB 6S    | 10.5º | D2    | 45.50" |
-| Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 7S    | 15º   | D1.5  | 43.25" |
+| Driver         | Ai Smoke Max 10.5 | Graphite Design   | UB 6S    | 10.5º | D5    | 45.50" |
+| Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 7S    | 15º   | D2    | 43.25" |
 | Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 18º   | D2    | 40.25" |
 | 4-Iron         | i530              | Recoil DART       | 105 F4   | 19º   | D2    | 38.88" |
 | 5-Iron         | i230              | Recoil DART       | 105 F4   | 25º   | D2    | 38.25" |
@@ -24,7 +24,7 @@ title: equipment
 ## _On The Bench_
 | Club           | Model             | Shaft             | Detail    | Loft  | SW    | Length |
 | -------------- | ----------------- | ----------------- | --------- | ----- | ----- | ------ |
-| Driver         | Rogue ST LS ♢♢♢ 9 | Graphite Design   | DI 6X     | 9º    | D2    | 45.50" |
+| Driver         | Rogue ST LS ♢♢♢ 9 | Graphite Design   | DI 6X     | 9º    | D5    | 45.50" |
 | Fairway        | G425 LST 14.5     | Ping Tour 1.0     | 75 X      | 14.5º | D0    | 43.00" |
 | Hybrid         | G410 17           | Ping Tour 1.0     | 85 X      | 16º   | D1    | 40.25" |
 | Pitching Wedge | S159 M - S        | Recoil DART       | 105 F4    | 45º   | D2.75 | 35.50" |
