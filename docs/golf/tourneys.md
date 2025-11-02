@@ -13,7 +13,7 @@ title: tourneys
 | Date    | Opponent                  | Result   | Score        | Team        |
 | ------- | ------------------------- | -------- | ------------ | ----------- |
 | 19 Oct  | Templeton                 | Win      | 3 & 1        | 5.5-2.5 Win |
-| 02 Nov  | Bottle Lake               | DNP-TM   |              |             |
+| 02 Nov  | Bottle Lake               | DNP-TM   |              | 3-5 Loss    |
 | 23 Nov  | @ Coringa                 |          |              |             |
 | 30 Nov  | Harewood                  |          |              |             |
 | 07 Dec  | @ Waimairi Beach          |          |              |             |
@@ -24,7 +24,7 @@ title: tourneys
 | 29 Mar  | Clearwater @ Christchurch |          |              |             |
 | 2025-26 | Season Record             | 1w 0d 0l | r.s. 2/2 pts | 1w 0d 0l    |
 
-Team finish: 5th. Top team individual record.
+
 
 #### 2025 Thompson MacDonald for McLean's Island
 [http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ ](https://www.canterburygolf.co.nz/thompson-macdonald-trophy/)(Non-index)
@@ -40,8 +40,7 @@ Team finish: 5th. Top team individual record.
 | 21 Sep | @ Weedons                            | Win      | 6 & 5     | 4-2 Win      |
 | 28 Sep | Avondale                             | Win      | 2 Up      | 6-0 Win      |
 | 12 Oct | Christchurch @ Coringa               | Draw     | AS        | 2.5-3.5 Loss |
-| 02 Nov | Semifinal - Christchurch @ Greendale |          |           |              |
-| 09 Nov | Final -                              |          |           |              |
+| 02 Nov | Semifinal - Christchurch @ Greendale | Loss     | _1 Down_  | 2-4 Loss     |
 | 2025   | Season Record (3rd r.s.)             | 2w 1d 2l | r.s. 5/10 | 5w 1d 3l     |
 
 
