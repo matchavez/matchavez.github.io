@@ -14,17 +14,17 @@ title: tourneys
 | ------- | ------------------------- | -------- | ------------ | ----------- |
 | 19 Oct  | Templeton                 | Win      | 3 & 1        | 5.5-2.5 Win |
 | 02 Nov  | Bottle Lake               | DNP-TM   |              | 3-5 Loss    |
-| 23 Nov  | @ Coringa                 |          |              |             |
 | 30 Nov  | Harewood                  |          |              |             |
 | 07 Dec  | @ Waimairi Beach          |          |              |             |
 | 14 Dec  | Avondale                  |          |              |             |
+| 18 Jan  | @ Coringa                 |          |              |             |
 | 15 Feb  | @ Russley                 |          |              |             |
 | 22 Feb  | Waitikiri                 |          |              |             |
 | 01 Mar  | @ Christchurch            |          |              |             |
 | 29 Mar  | Clearwater @ Christchurch |          |              |             |
 | 2025-26 | Season Record             | 1w 0d 0l | r.s. 2/2 pts | 1w 0d 0l    |
 
-
+##### 2026 Metro B Substitute, McLeans Island (0-0-1)
 
 #### 2025 Thompson MacDonald for McLean's Island
 [http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ ](https://www.canterburygolf.co.nz/thompson-macdonald-trophy/)(Non-index)
