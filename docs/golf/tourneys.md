@@ -14,7 +14,7 @@ title: tourneys
 | ------- | ------------------------- | -------- | ------------ | ----------- |
 | 19 Oct  | Templeton                 | Win      | 3 & 1        | 5.5-2.5 Win |
 | 02 Nov  | Bottle Lake               | DNP-TM   |              | 3-5 Loss    |
-| 30 Nov  | Harewood                  |          |              |             |
+| 30 Nov  | Harewood                  | Win      | 3 & 2        | 4-4 Draw    |
 | 07 Dec  | @ Waimairi Beach          |          |              |             |
 | 14 Dec  | Avondale                  |          |              |             |
 | 18 Jan  | @ Coringa                 |          |              |             |
@@ -22,7 +22,7 @@ title: tourneys
 | 22 Feb  | Waitikiri                 |          |              |             |
 | 01 Mar  | @ Christchurch            |          |              |             |
 | 29 Mar  | Clearwater @ Christchurch |          |              |             |
-| 2025-26 | Season Record             | 1w 0d 0l | r.s. 2/2 pts | 1w 0d 0l    |
+| 2025-26 | Season Record             | 2w 0d 0l | r.s. 4/4 pts | 1w 1d 1l    |
 
 ##### 2026 Metro B Substitute, McLeans Island (0-0-1)
 
