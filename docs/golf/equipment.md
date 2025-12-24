@@ -15,7 +15,7 @@ title: equipment
 | 7-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 33º   | D2    | 37.00" |
 | 8-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 37º   | D2    | 36.50" |
 | 9-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 41º   | D2.5  | 36.00" |
-| Pitching Wedge | Blueprint S       | Fujikura Axiom    | 105 S    | 45º   | D3    | 35.75" |
+| Pitching Wedge | Blueprint S       | Fujikura Axiom    | 105 S    | 45º   | D3    | 35.50" |
 | Gap Wedge      | S159M - 50S       | Recoil DART       | 105 F4   | 49º   | D3    | 35.50" |
 | Sand Wedge     | S159M - 54H       | Recoil DART       | 105 F4   | 54º   | D3.25 | 35.50" |
 | Lob Wedge      | S159M - 58H       | Recoil DART       | 105 F4   | 58º   | D3.5  | 35.50" |
