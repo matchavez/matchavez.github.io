@@ -8,7 +8,7 @@ theme:
   palette:
     scheme: mycolours
   font: 
-    text: Libre Franklin
+    text: Geist
     code: Source Code Pro
 extra_css:
   - stylesheets/extra.css

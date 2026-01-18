@@ -1,8 +1,8 @@
 [data-md-color-scheme="mycolours"] {
-  --md-primary-fg-color:        #EE0F0F;
+  --md-primary-fg-color:        #a80000;
   --md-primary-fg-color--light: #ECB7B7;
   --md-primary-fg-color--dark:  #90030C;
-  --md-default-bg-color: #000000;
+  --md-default-bg-color: #382f47ae;
   --md-default-bg-color--light: #ffffffb3;
   --md-default-bg-color--lighter: #ffffff4d;
   --md-default-bg-color--lightest: #ffffff1f;
