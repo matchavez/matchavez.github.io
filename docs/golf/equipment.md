@@ -6,9 +6,9 @@ title: equipment
 # _WITB_    
 | Club           | Model             | Shaft             | Detail   | Loft  | SW    | Length |
 | -------------- | ----------------- | ----------------- | -------- | ----- | ----- | ------ |
-| Driver         | Ai Smoke Max 10.5 | Graphite Design   | UB 6S    | 11.5º | D7    | 45.50" |
+| Driver         | Ai Smoke Max 10.5 | Graphite Design   | UB 6S    | 11.5º | D2    | 45.50" |
 | Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 6S    | 16º   | D2    | 43.25" |
-| Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 18º   | D2    | 40.25" |
+| Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 19º   | D2    | 40.25" |
 | 4-Iron         | i530              | Fujikura Axiom    | 105 S    | 19º   | D2    | 38.88" |
 | 5-Iron         | i230              | Fujikura Axiom    | 105 S    | 25º   | D2    | 38.25" |
 | 6-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 29º   | D2    | 37.50" |
@@ -35,10 +35,10 @@ title: equipment
 | Gap Wedge      | i230              | Fujikura Axiom    | 105 S          | 49.5º | D3.5  | 35.50" |
 | Pitching Wedge | S159M - 46S       | Recoil DART       | 105 F4         | 45º   | D2.75 | 35.50" |
 | Sand Wedge     | Glide 4.0         | Recoil DART       | 105 F4         | 54º   | D4    | 35.50" |
-| Putter         | Sigma 2 Fetch     | Breakthrough Tour | Original       | 3.5º  | n/a   | 32.90" |
 | Gap Wedge      | Glide Forged      | MMT Taper         | 105TX SS1      | 50º   | D2.5  | 35.50" |
 | Sand Wedge     | Glide Forged      | MMT Taper         | 105TX SS1      | 54º   | D2.5  | 35.50" |
 | Lob Wedge      | Glide Forged      | MMT Taper         | 105TX SS1      | 58º   | D2.5  | 35.50" |
+| Putter         | Sigma 2 Fetch     | Breakthrough Tour | Original       | 3.5º  | n/a   | 32.90" |
 
 
 ---
