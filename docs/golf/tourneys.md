@@ -10,19 +10,19 @@ title: tourneys
 #### 2025-26 Metro A for McLeans Island:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
 
-| Date    | Opponent                  | Result       | Score         | Team         |
-| ------- | ------------------------- | ------------ | ------------- | ------------ |
-| 19 Oct  | Templeton                 | Win          | 3 & 1         | 5.5-2.5 Win  |
-| 02 Nov  | Bottle Lake               | DNP-TM       |               | 3-5 Loss     |
-| 30 Nov  | Harewood                  | Win          | 3 & 2         | 4-4 Draw     |
-| 07 Dec  | @ Waimairi Beach          | Loss         | _7 & 6_       | 4.5-3.5 Win  |
-| 14 Dec  | Avondale                  | Win          | 2 & 1         | 4.5-3.5 Win  |
-| 18 Jan  | @ Coringa                 | Win          | 3 & 2         | 6.5-1.5 Loss |
-| 15 Feb  | @ Russley                 |              |               |              |
-| 22 Feb  | Waitikiri                 |              |               |              |
-| 01 Mar  | @ Christchurch            |              |               |              |
-| 29 Mar  | Clearwater @ Christchurch |              |               |              |
-| 2025-26 | Season Record             | 4w 0d <br>1l | r.s. 8/10 pts | 3w 1d 2l     |
+| Date    | Opponent                  | Result       | Score          | Team         |
+| ------- | ------------------------- | ------------ | -------------- | ------------ |
+| 19 Oct  | Templeton                 | Win          | 3 & 1          | 5.5-2.5 Win  |
+| 02 Nov  | Bottle Lake               | DNP-TM       |                | 3-5 Loss     |
+| 30 Nov  | Harewood                  | Win          | 3 & 2          | 4-4 Draw     |
+| 07 Dec  | @ Waimairi Beach          | Loss         | _7 & 6_        | 4.5-3.5 Win  |
+| 14 Dec  | Avondale                  | Win          | 2 & 1          | 4.5-3.5 Win  |
+| 18 Jan  | @ Coringa                 | Win          | 3 & 2          | 6.5-1.5 Loss |
+| 22 Feb  | Waitikiri                 | Win          | 3 & 1          | 5-3 Win      |
+| 01 Mar  | @ Christchurch            |              |                |              |
+| 08 Mar  | @ Russley                 |              |                |              |
+| 29 Mar  | Clearwater @ Christchurch |              |                |              |
+| 2025-26 | Season Record             | 5w 0d <br>1l | r.s. 10/12 pts | 4w 1d 2l     |
 
 ##### 2026 Metro B Substitute, McLeans Island (0-0-1)
 
