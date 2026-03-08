@@ -1,0 +1,63 @@
+[data-md-color-scheme="mycolours"] {
+  --md-primary-fg-color:        #a80000;
+  --md-primary-fg-color--light: #ECB7B7;
+  --md-primary-fg-color--dark:  #90030C;
+  --md-default-bg-color: #0f0d12;
+  --md-default-bg-color--light: #f3fedbb3;
+  --md-default-bg-color--lighter: #ffffff4d;
+  --md-default-bg-color--lightest: #ffffff1f;
+  --md-default-fg-color: #a1a1a1de;
+  --md-default-fg-color--light: #0F0;
+  --md-default-fg-color--lighter: #00000052;
+  --md-default-fg-color--lightest: #00000012;
+  --md-typeset-color: #999;
+  --md-admonition-bg-color: #999;
+  --md-accent-fg-color: #66F;
+  --md-typeset-a-color: #00F;
+
+  .md-typeset h1 {
+    color: #C00 !important;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3;
+    margin:0 0 1.25em
+  }
+
+  .md-typeset h2 {
+    color: #F90 !important;
+    font-size: 1.5625em;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 1.6em 0 .64em;
+    }
+
+.md-typeset h3 {
+  color: #FF0 !important;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.5;
+  margin: 1.6em 0 .8em;
+}
+
+.md-typeset h4 {
+  color: #090 !important;
+  font-weight: 600;
+  font-size: 1.125em;
+  letter-spacing: -.01em;
+  margin: 1em 0;
+  }
+
+  .md-typeset h5 {
+    color: #00F !important;
+    text-transform: uppercase;
+    }
+
+    .md-typeset h6 {
+      color: #F0F !important;
+      font-size: .8em;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin: 1.25em 0;
+      }
+}
