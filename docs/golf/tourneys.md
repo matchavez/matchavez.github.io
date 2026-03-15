@@ -20,9 +20,10 @@ title: tourneys
 | 18 Jan  | @ Coringa                 | Win          | 3 & 2          | 1.5-6.5 Loss |
 | 22 Feb  | Waitikiri                 | Win          | 3 & 1          | 5-3 Win      |
 | 08 Mar  | @ Russley                 | Win          | 3 & 1          | 5-3 Win      |
-| 15 Mar  | @ Christchurch            |              |                |              |
+| 15 Mar  | @ Christchurch            | Loss         | *3 & 2*        | 4-4 Draw     |
 | 29 Mar  | Clearwater @ Christchurch |              |                |              |
-| 2025-26 | Season Record             | 6w 0d <br>1l | r.s. 12/14 pts | 5w 1d 2l     |
+| 2025-26 | Season Record             | 6w 0d <br>2l | r.s. 12/16 pts | 5w 2d 2l     |
+|         |                           |              |                |              |
 
 ##### 2026 Metro B Substitute, McLeans Island (0-0-1)
 
