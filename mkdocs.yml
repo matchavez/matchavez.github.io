@@ -6,7 +6,7 @@ theme:
     - content.action.edit
   language: en
   palette:
-    scheme: mycolours
+    scheme: default
   font: 
     text: Geist
     code: Source Code Pro
