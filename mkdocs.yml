@@ -5,8 +5,19 @@ theme:
     - navigation.tabs
     - content.action.edit
   language: en
-  palette:
-    scheme: default
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: lucide/sun
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: lucide/moon
+        name: Switch to light mode
   font: 
     text: Geist
     code: Source Code Pro
