@@ -1,6 +1,6 @@
 site_name: MatChavez.com
 theme: 
-  name: material
+  name: modern
   features:
     - navigation.tabs
     - content.action.edit
