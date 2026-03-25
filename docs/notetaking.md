@@ -48,5 +48,3 @@ What I mean by simple formatting is that it's readable. Too often, when you look
 
 For me, it's important to be able to keep certain text separate. In a very loose sense, we can call that "code". Maybe in other areas, it's just pre-formatted text, or text that you want to prohibit from being changed, etc.
 
-
-.
