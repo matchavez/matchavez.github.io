@@ -19,8 +19,8 @@ theme:
         icon: lucide/moon
         name: Switch to light mode
   font: 
-    text: Geist
-    code: Source Code Pro
+    text: Lexend Deca
+    code: Intel One Mono
 extra_css:
   - stylesheets/extra.css
 repo_url: https://github.com/matchavez/matchavez.github.io
