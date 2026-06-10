@@ -131,3 +131,176 @@
   background-color: #122027;
   border-bottom: 2px solid rgba(34, 211, 238, 0.5);
 }
+
+
+/* ============================================================
+   POLISH LAYER — colours untouched, everything else refined
+   Added June 2026. Sections:
+     1. Self-hosted fonts (replaces Google Fonts request)
+     2. Typographic rhythm
+     3. Links & micro-interactions
+     4. Code, tables, images
+     5. Selection, focus, scrollbars
+     6. View transitions (page-to-page cross-fade + theme reveal)
+   ============================================================ */
+
+/* ---------- 1. Self-hosted fonts (variable woff2, latin + latin-ext) */
+
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("fonts/LexendDeca.var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Intel One Mono";
+  src: url("fonts/IntelOneMono.var.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Intel One Mono";
+  src: url("fonts/IntelOneMono-Italic.var.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --md-text-font: "Lexend Deca";
+  --md-code-font: "Intel One Mono";
+}
+
+/* ---------- 2. Typographic rhythm */
+
+.md-typeset {
+  font-size: 0.85rem;          /* ~17px */
+  line-height: 1.65;
+}
+
+.md-content__inner {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.md-typeset h1 {
+  font-size: clamp(1.7rem, 1.35rem + 1.4vw, 2.15rem);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.9em;
+}
+.md-typeset h2 {
+  font-size: 1.32rem;
+  letter-spacing: -0.01em;
+  margin-top: 1.8em;
+}
+.md-typeset h3 { font-size: 1.08rem; }
+.md-typeset h4 { font-size: 0.94rem; }
+
+/* ---------- 3. Links & micro-interactions */
+
+.md-typeset a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.md-typeset a:not(:hover) {
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.md-tabs__link,
+.md-nav__link {
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+/* Heading permalinks: hidden until heading hover, gentle fade */
+.md-typeset .headerlink {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.md-typeset :hover > .headerlink,
+.md-typeset .headerlink:focus-visible { opacity: 1; }
+
+/* ---------- 4. Code, tables, images */
+
+.md-typeset code { border-radius: 0.25rem; }
+.md-typeset pre > code { border-radius: 0.45rem; }
+.md-typeset .highlight { border-radius: 0.45rem; }
+
+.md-typeset table:not([class]) {
+  border-radius: 0.45rem;
+  font-size: 0.78rem;
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) {
+  border: 1px solid rgba(47, 45, 39, 0.16);
+}
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tbody tr:nth-child(odd) {
+  background: rgba(47, 45, 39, 0.03);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border: 1px solid rgba(233, 237, 236, 0.14);
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* Content images mounted, not pasted (emoji excluded) */
+.md-typeset img:not(.twemoji) {
+  border-radius: 0.5rem;
+}
+[data-md-color-scheme="default"] .md-typeset img:not(.twemoji) {
+  border: 1px solid rgba(47, 45, 39, 0.14);
+}
+[data-md-color-scheme="slate"] .md-typeset img:not(.twemoji) {
+  border: 1px solid rgba(233, 237, 236, 0.12);
+}
+
+/* ---------- 5. Selection, focus, scrollbars, native widget hinting */
+
+[data-md-color-scheme="default"] { color-scheme: light; }
+[data-md-color-scheme="slate"]   { color-scheme: dark; }
+
+[data-md-color-scheme="default"] ::selection { background: rgba(168, 0, 0, 0.16); }
+[data-md-color-scheme="slate"] ::selection   { background: rgba(224, 50, 47, 0.30); }
+
+:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+html { scrollbar-color: var(--md-default-fg-color--lighter) transparent; }
+
+/* ---------- 6. View transitions (progressive enhancement) */
+
+/* Page-to-page cross-fade on same-origin navigation */
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.18s;
+  animation-timing-function: ease;
+}
+
+/* Keep the header visually stable across page transitions */
+.md-header { view-transition-name: site-header; }
+
+/* Theme toggle: JS drives a circular reveal; suppress the default fade */
+html.vt-theme::view-transition-old(root),
+html.vt-theme::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+html.vt-theme .md-header { view-transition-name: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+  .md-typeset a,
+  .md-typeset .headerlink,
+  .md-tabs__link,
+  .md-nav__link { transition: none; }
+}
