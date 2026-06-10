@@ -1,6 +1,7 @@
 site_name: MatChavez.com
 theme: 
   name: material
+  favicon: images/favicon.png
   features:
     - navigation.tabs
     - content.action.edit
