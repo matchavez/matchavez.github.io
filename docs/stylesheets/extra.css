@@ -12,7 +12,7 @@
      Links      #3b82f6 (dark)  ·  #1d4ed8 (light)
    Brand red (header/nav): #a80000
    Admonitions: left on Material defaults, intentionally not overridden.
-   Font: Lexend Deca (set in mkdocs.yml)
+   Font: Inter (Mat's feature-freeze: tnum, zero, ss01, ss02, ss07), self-hosted
    ============================================================ */
 
 
@@ -147,10 +147,17 @@
 /* ---------- 1. Self-hosted fonts (variable woff2, latin + latin-ext) */
 
 @font-face {
-  font-family: "Lexend Deca";
-  src: url("fonts/LexendDeca.var.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("fonts/InterFreeze.var.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterFreeze-Italic.var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 @font-face {
@@ -169,7 +176,7 @@
 }
 
 :root {
-  --md-text-font: "Lexend Deca";
+  --md-text-font: "Inter";
   --md-code-font: "Intel One Mono";
 }
 
@@ -187,7 +194,7 @@
 }
 
 .md-typeset h1 {
-  font-size: clamp(1.7rem, 1.35rem + 1.4vw, 2.15rem);
+  font-size: 1.7rem;            /* 34px — Mat's pick, 11 Jun 2026 */
   letter-spacing: -0.015em;
   margin-bottom: 0.9em;
 }
