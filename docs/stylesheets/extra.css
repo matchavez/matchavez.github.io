@@ -1,63 +1,115 @@
-[data-md-color-scheme="mycolours"] {
+/* ============================================================
+   matchavez.com - dark/red theme, "Curated" heading palette
+   Refined from the original "mycolours" experiment (see extra.css.bak).
+
+   Scoped to the "default" (light) and "slate" (dark) schemes that the
+   palette in mkdocs.yml actually selects, so it renders without any
+   name mismatch. Works the same under Zensical or Material for MkDocs.
+
+   Brand red (header/nav): #a80000
+   Headings (dark):  H1 red, H2 amber, H3 teal, H4 lime, H5/H6 grey
+   Admonitions: left on Material defaults, intentionally not overridden.
+   Font: Lexend Deca (set in mkdocs.yml)
+   ============================================================ */
+
+
+/* ---------- LIGHT MODE (default scheme) ---------- */
+/* Heading hues darkened so they stay legible on white. */
+
+[data-md-color-scheme="default"] {
   --md-primary-fg-color:        #a80000;
-  --md-primary-fg-color--light: #ECB7B7;
-  --md-primary-fg-color--dark:  #90030C;
-  --md-default-bg-color: #0f0d12;
-  --md-default-bg-color--light: #f3fedbb3;
-  --md-default-bg-color--lighter: #ffffff4d;
-  --md-default-bg-color--lightest: #ffffff1f;
-  --md-default-fg-color: #a1a1a1de;
-  --md-default-fg-color--light: #0F0;
-  --md-default-fg-color--lighter: #00000052;
-  --md-default-fg-color--lightest: #00000012;
-  --md-typeset-color: #999;
-  --md-admonition-bg-color: #999;
-  --md-accent-fg-color: #66F;
-  --md-typeset-a-color: #00F;
+  --md-primary-fg-color--light: #c62828;
+  --md-primary-fg-color--dark:  #7a0000;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
 
-  .md-typeset h1 {
-    color: #C00 !important;
-    font-size: 2em;
-    font-weight: 700;
-    line-height: 1.3;
-    margin:0 0 1.25em
-  }
+  --md-accent-fg-color:         #0d9488;   /* teal, matches link colour */
+  --md-accent-fg-color--transparent: rgba(13, 148, 136, 0.1);
 
-  .md-typeset h2 {
-    color: #F90 !important;
-    font-size: 1.5625em;
-    font-weight: 300;
-    line-height: 1.4;
-    margin: 1.6em 0 .64em;
-    }
-
-.md-typeset h3 {
-  color: #FF0 !important;
-  font-size: 1.25em;
-  font-weight: 400;
-  letter-spacing: -.01em;
-  line-height: 1.5;
-  margin: 1.6em 0 .8em;
+  --md-typeset-a-color:         #0d9488;
 }
 
-.md-typeset h4 {
-  color: #090 !important;
-  font-weight: 600;
-  font-size: 1.125em;
-  letter-spacing: -.01em;
-  margin: 1em 0;
-  }
+[data-md-color-scheme="default"] .md-typeset h1 { color: #dc2626; font-weight: 700; }
+[data-md-color-scheme="default"] .md-typeset h2 {
+  color: #b45309;
+  border-bottom: 1px solid rgba(180, 83, 9, 0.3);
+  padding-bottom: 0.2em;
+}
+[data-md-color-scheme="default"] .md-typeset h3 { color: #0d9488; }
+[data-md-color-scheme="default"] .md-typeset h4 { color: #4d7c0f; }
+[data-md-color-scheme="default"] .md-typeset h5 {
+  color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700;
+}
+[data-md-color-scheme="default"] .md-typeset h6 { color: #9ca3af; font-weight: 700; }
 
-  .md-typeset h5 {
-    color: #00F !important;
-    text-transform: uppercase;
-    }
+[data-md-color-scheme="default"] .md-typeset code {
+  color: #92400e; background-color: rgba(245, 158, 11, 0.12);
+}
 
-    .md-typeset h6 {
-      color: #F0F !important;
-      font-size: .8em;
-      font-weight: 700;
-      letter-spacing: -.01em;
-      margin: 1.25em 0;
-      }
+
+/* ---------- DARK MODE (slate scheme) ---------- */
+
+[data-md-color-scheme="slate"] {
+  /* Surfaces */
+  --md-default-bg-color:          #0f0d12;
+  --md-default-bg-color--light:   #17141b;
+  --md-default-bg-color--lighter: rgba(255, 255, 255, 0.07);
+  --md-default-bg-color--lightest: rgba(255, 255, 255, 0.04);
+
+  /* Foreground / text */
+  --md-default-fg-color:          rgba(244, 244, 245, 0.87);
+  --md-default-fg-color--light:   rgba(244, 244, 245, 0.62);
+  --md-default-fg-color--lighter: rgba(244, 244, 245, 0.34);
+  --md-default-fg-color--lightest: rgba(244, 244, 245, 0.12);
+  --md-typeset-color:             #d4d4d8;
+
+  /* Brand red carries the header/nav bar */
+  --md-primary-fg-color:          #a80000;
+  --md-primary-fg-color--light:   #c62828;
+  --md-primary-fg-color--dark:    #7a0000;
+  --md-primary-bg-color:          #f4f4f5;
+  --md-primary-bg-color--light:   rgba(244, 244, 245, 0.7);
+
+  /* Teal for interactive states / links */
+  --md-accent-fg-color:           #2dd4bf;
+  --md-accent-fg-color--transparent: rgba(45, 212, 191, 0.1);
+  --md-typeset-a-color:           #2dd4bf;
+
+  /* Code */
+  --md-code-bg-color:             #17141b;
+  --md-code-fg-color:             #e4e4e7;
+
+  /* Footer */
+  --md-footer-bg-color:           #0a0810;
+  --md-footer-bg-color--dark:     #07060b;
+}
+
+/* Curated heading palette: distinct hues at matched saturation. */
+[data-md-color-scheme="slate"] .md-typeset h1 { color: #ef4444; font-weight: 700; line-height: 1.3; }
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: #f59e0b; font-weight: 600;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+  padding-bottom: 0.2em;
+}
+[data-md-color-scheme="slate"] .md-typeset h3 { color: #2dd4bf; font-weight: 600; }
+[data-md-color-scheme="slate"] .md-typeset h4 { color: #a3e635; font-weight: 600; }
+[data-md-color-scheme="slate"] .md-typeset h5 {
+  color: #9ca3af; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700;
+}
+[data-md-color-scheme="slate"] .md-typeset h6 { color: #6b7280; font-weight: 700; }
+
+/* Inline code: amber tint, distinct from the teal links */
+[data-md-color-scheme="slate"] .md-typeset code {
+  color: #fcd34d; background-color: rgba(245, 158, 11, 0.14);
+}
+
+/* Blockquotes (your callout convention) get a red left rule */
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left: 0.25rem solid #ef4444; color: #c4c4c8;
+}
+
+/* Tables: amber header underline to match the H2 treatment */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #17141b;
+  border-bottom: 2px solid rgba(245, 158, 11, 0.5);
 }
