@@ -13,3 +13,8 @@ Great video on how to hit a draw.
 https://www.youtube.com/watch?app=desktop&v=ASH06DwHaRw
 
 Video that shows the illusion of arms in the swing.
+
+
+https://www.youtube.com/shorts/pHv8y1xHCEY
+
+Short video on basics; setup, backswing, downswing.
