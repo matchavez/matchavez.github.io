@@ -23,7 +23,6 @@ title: tourneys
 | 15 Mar  | @ Christchurch            | Loss         | *3 & 2*        | 4-4 Draw     |
 | 29 Mar  | Clearwater @ Christchurch | Draw         | AS             | 3.5-4.5 Loss |
 | 2025-26 | Season Record             | 6w 1d <br>2l | r.s. 13/18 pts | 5w 2d 3l     |
-|         |                           |              |                |              |
 
 ##### 2026 Metro B Substitute, McLeans Island (0-0-1)
 
