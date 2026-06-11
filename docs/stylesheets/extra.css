@@ -12,7 +12,7 @@
      Links      #3b82f6 (dark)  ·  #1d4ed8 (light)
    Brand red (header/nav): #a80000
    Admonitions: left on Material defaults, intentionally not overridden.
-   Font: Inter (Mat's feature-freeze: tnum, zero, ss01, ss02, ss07), self-hosted
+   Font: InterVariable MC (Mat's own build: tnum, zero, ss01, ss02), self-hosted
    ============================================================ */
 
 
@@ -39,9 +39,10 @@
   --md-code-fg-color:           #3a3730;
 }
 
-[data-md-color-scheme="default"] .md-typeset h1 { color: #e0322f; font-weight: 700; line-height: 1.2; }
+[data-md-color-scheme="default"] .md-typeset h1 { color: #e0322f; font-weight: 600; line-height: 1.2; }
 [data-md-color-scheme="default"] .md-typeset h2 {
   color: #0e7490;
+  font-weight: 200;
   border-bottom: 1px solid rgba(14, 116, 144, 0.35);
   padding-bottom: 0.2em;
 }
@@ -103,9 +104,9 @@
 }
 
 /* Heading palette: distinct hues, shared red H1, bright on the near-black. */
-[data-md-color-scheme="slate"] .md-typeset h1 { color: #e0322f; font-weight: 700; line-height: 1.2; }
+[data-md-color-scheme="slate"] .md-typeset h1 { color: #e0322f; font-weight: 600; line-height: 1.2; }
 [data-md-color-scheme="slate"] .md-typeset h2 {
-  color: #22d3ee; font-weight: 600;
+  color: #22d3ee; font-weight: 200;
   border-bottom: 1px solid rgba(34, 211, 238, 0.35);
   padding-bottom: 0.2em;
 }
@@ -148,14 +149,14 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("fonts/InterFreeze.var.woff2") format("woff2");
+  src: url("fonts/InterMC.var.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("fonts/InterFreeze-Italic.var.woff2") format("woff2");
+  src: url("fonts/InterMC-Italic.var.woff2") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
