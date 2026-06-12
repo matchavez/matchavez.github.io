@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{#-
+  Open Graph + Twitter Card tags for rich link previews (unfurls).
+  Zensical has no built-in social-card support, so these are injected
+  via the extrahead block. Values fall back from page meta -> site config.
+-#}
+{% block extrahead %}
+  {#- Preload the primary body font (woff2) so it paints sooner; font-display:swap already set in extra.css -#}
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/InterMC.var.woff2">
+  {% set og_title = page.meta.title if page.meta and page.meta.title else page.title %}
+  {% if not og_title or og_title == "index" %}{% set og_title = config.site_name %}{% endif %}
+  {% set og_desc = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% set og_image = config.site_url ~ "images/IMG_9324.jpg" %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ og_title | striptags }}">
+  {% if og_desc %}<meta property="og:description" content="{{ og_desc }}">{% endif %}
+  {% if page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title | striptags }}">
+  {% if og_desc %}<meta name="twitter:description" content="{{ og_desc }}">{% endif %}
+  <meta name="twitter:image" content="{{ og_image }}">
+{% endblock %}

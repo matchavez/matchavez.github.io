@@ -312,3 +312,6 @@ html.vt-theme .md-header { view-transition-name: none; }
   .md-tabs__link,
   .md-nav__link { transition: none; }
 }
+
+/* Reserve image aspect-ratio to prevent layout shift (CLS); keep responsive */
+.md-typeset img { height: auto; }

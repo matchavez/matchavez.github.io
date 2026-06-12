@@ -5,7 +5,7 @@ title: Personal Reference and Digital Garden Welcome
 ---
 
 
-![](images/IMG_9324.jpg)
+![Near Arthur’s Pass, New Zealand](images/IMG_9324.jpg){ width="1600" height="1200" }
 Near Arthur's Pass, New Zealand
 
 ---

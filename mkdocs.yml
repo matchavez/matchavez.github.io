@@ -1,6 +1,10 @@
 site_name: MatChavez.com
+site_url: https://matchavez.com/
+site_description: "Mat Chavez's personal reference site and digital garden — notes on notetaking, golf, Apple, and more."
+site_author: Mat Chavez
 theme: 
   name: material
+  custom_dir: overrides
   favicon: images/favicon.png
   features:
     - navigation.tabs
