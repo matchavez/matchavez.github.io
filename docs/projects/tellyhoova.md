@@ -6,7 +6,7 @@ title: tellyhoova
 
 # Tellyhoova 📺
 
-**Save your own copy of any video you find online. Paste the link, press Get, and it's on your Mac.**
+**Save your own copy of any video you find online. Paste the link, press Get, and it's on your Mac - locally!**
 
 ## How it works
 
