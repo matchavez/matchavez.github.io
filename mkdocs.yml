@@ -38,6 +38,10 @@ validation: false
 
 nav:
   - Welcome: index.md
+  - Projects:
+    - Stream Test: projects/streaming.md
+    - Tellyhoova: projects/tellyhoova.md
+    - Dumptruck: projects/sdumptruck.md
   - Notetaking:
     - All about notes: notetaking.md
     - Winner First: notetaking/winner_first.md
@@ -51,10 +55,6 @@ nav:
   - Apple:
     - Fixes: apple/fixes.md
     - Commands: apple/commands.md
-  - Projects:
-    - Stream Test: projects/streaming.md
-    - Tellyhoova: projects/tellyhoova.md
-    - Dumptruck: projects/sdumptruck.md
   - Test Pages:
 #    - Sandbox: unit_testing.md 
 #    - Include Test: testsnip.md
