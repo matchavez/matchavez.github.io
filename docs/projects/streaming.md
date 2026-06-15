@@ -1,5 +1,4 @@
 ---
-icon: LiFileCode
 share: "true"
 path: /docs/projects
 title: streaming
