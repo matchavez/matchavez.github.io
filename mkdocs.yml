@@ -39,7 +39,7 @@ validation: false
 nav:
   - Welcome: index.md
   - Projects:
-    - Stream Test: projects/streaming.md
+#    - Stream Test: projects/streaming.md
     - Tellyhoova: projects/tellyhoova.md
     - Dumptruck: projects/sdumptruck.md
   - Notetaking:
