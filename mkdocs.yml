@@ -30,6 +30,7 @@ extra_javascript:
   - javascripts/extra.js
 repo_url: https://github.com/matchavez/matchavez.github.io
 edit_uri: edit/main/docs/
+validation: false
 
 # ----------------------------------------------------------------
 
