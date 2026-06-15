@@ -50,8 +50,10 @@ nav:
   - Apple:
     - Fixes: apple/fixes.md
     - Commands: apple/commands.md
-  - Streaming:
-    - Stream Test: streaming.md
+  - Projects:
+    - Stream Test: projects/streaming.md
+    - Tellyhoova: projects/tellyhoova.md
+    - Dumptruck: projects/sdumptruck.md
   - Test Pages:
 #    - Sandbox: unit_testing.md 
 #    - Include Test: testsnip.md
