@@ -41,7 +41,7 @@ nav:
   - Projects:
     - Stream Test: projects/streaming.md
     - Tellyhoova: projects/tellyhoova.md
-    - Dumptruck: projects/sdumptruck.md
+    - Dumptruck: projects/dumptruck.md
   - Notetaking:
     - All about notes: notetaking.md
     - Winner First: notetaking/winner_first.md
