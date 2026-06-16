@@ -1,7 +1,8 @@
 ---
 share: "true"
 path: /docs/projects
-title: dumptruck
+title: Dumptruck
+description: Dumptruck is a macOS menubar quick-capture tool — one shortcut, type, hit Return, and your note saves as a Markdown file.
 ---
 
 # Dumptruck 🚛
