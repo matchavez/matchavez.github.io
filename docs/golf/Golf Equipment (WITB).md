@@ -2,6 +2,7 @@
 share: "true"
 path: /docs/golf
 title: Golf Equipment (WITB)
+description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter with shafts, lofts, swing weights and lengths — plus the clubs on the bench."
 ---
 # _WITB_    
 | Club           | Model             | Shaft             | Detail    | Loft  | SW    | Length |
