@@ -1,0 +1,5 @@
+# Build output — `zensical build` writes here; CI regenerates it each deploy
+site/
+
+# Scratch / temporary image exports
+docs/images/_t_*
