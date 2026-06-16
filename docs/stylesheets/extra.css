@@ -260,25 +260,8 @@
 .md-typeset table:not([class]) :is(th, td) {
   padding: 0.5em 0.62em;
 }
-/* When a table still can't fit (narrow laptops / the band where both sidebars
-   are shown, phones), it scrolls horizontally with a clear cue — a thin
-   scrollbar plus edge fades — so it reads as scrollable, not cut off, at every
-   width. Material/Zensical wraps tables in .md-typeset__scrollwrap. */
-.md-typeset__scrollwrap {
-  scrollbar-width: thin;
-  --tbl-fade: var(--md-default-bg-color);
-  --tbl-shadow: rgba(0, 0, 0, 0.18);
-  background:
-    linear-gradient(to right, var(--tbl-fade) 30%, rgba(0, 0, 0, 0)) 0 0 / 36px 100%,
-    linear-gradient(to right, rgba(0, 0, 0, 0), var(--tbl-fade) 70%) 100% 0 / 36px 100%,
-    radial-gradient(farthest-side at 0 50%, var(--tbl-shadow), rgba(0, 0, 0, 0)) 0 0 / 14px 100%,
-    radial-gradient(farthest-side at 100% 50%, var(--tbl-shadow), rgba(0, 0, 0, 0)) 100% 0 / 14px 100%;
-  background-repeat: no-repeat;
-  background-attachment: local, local, scroll, scroll;
-}
-[data-md-color-scheme="slate"] .md-typeset__scrollwrap {
-  --tbl-shadow: rgba(0, 0, 0, 0.55);
-}
+/* Material/Zensical wraps tables in .md-typeset__scrollwrap, which scrolls a
+   too-wide table on its own — left on the theme default (no custom scrollbar). */
 
 [data-md-color-scheme="default"] .md-typeset table:not([class]) {
   border: 1px solid rgba(47, 45, 39, 0.16);
