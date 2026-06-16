@@ -189,9 +189,15 @@
 }
 
 .md-content__inner {
-  max-width: 50rem;
+  max-width: 60rem;          /* roomier column so wide tables (e.g. WITB) aren't clipped */
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Keep body text at a comfortable ~50rem measure, left-aligned to the table's
+   edge. Tables (and code/images) are free to use the full 60rem column. */
+.md-typeset > :is(p, ul, ol, dl, blockquote, h1, h2, h3, h4, h5, h6, hr) {
+  max-width: 50rem;
 }
 
 .md-typeset h1 {
@@ -240,6 +246,11 @@
 .md-typeset table:not([class]) {
   border-radius: 0.45rem;
   font-size: 0.78rem;
+  /* Zensical doesn't add Material's auto scroll-wrapper, so a too-wide table
+     would overflow the column and clip under the TOC. Block + overflow-x lets
+     it fill the column and scroll instead of clipping on any viewport. */
+  display: block;
+  overflow-x: auto;
 }
 
 [data-md-color-scheme="default"] .md-typeset table:not([class]) {
