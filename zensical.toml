@@ -1,0 +1,125 @@
+# ----------------------------------------------------------------
+# Zensical configuration (native) — replaces mkdocs.yml
+# Docs: https://zensical.org/docs/setup/basics/
+# ----------------------------------------------------------------
+
+[project]
+site_name = "MatChavez.com"
+site_url = "https://matchavez.com/"
+site_description = "Mat Chavez's personal reference site and digital garden — notes on notetaking, golf, Apple, and more."
+site_author = "Mat Chavez"
+repo_url = "https://github.com/matchavez/matchavez.github.io"
+edit_uri = "edit/main/docs/"
+extra_css = ["stylesheets/extra.css"]
+extra_javascript = ["javascripts/extra.js"]
+
+# ----------------------------------------------------------------
+# NAV PAGE TREE
+# ----------------------------------------------------------------
+nav = [
+  { "Welcome" = "index.md" },
+  { "Projects" = [
+    # { "Stream Test" = "projects/streaming.md" },
+    { "Tellyhoova" = "projects/tellyhoova.md" },
+    { "Dumptruck" = "projects/dumptruck.md" },
+  ] },
+  { "Notetaking" = [
+    { "All about notes" = "notetaking.md" },
+    { "Winner First" = "notetaking/winner_first.md" },
+    { "Applications" = "notetaking/applications.md" },
+    { "GFM vs. JSON" = "notetaking/gfm_json.md" },
+  ] },
+  { "Favourite Quotes" = "favourite_quotes.md" },
+  { "Golf" = [
+    { "Tournaments" = "golf/tourneys.md" },
+    { "Equipment" = "golf/equipment.md" },
+    { "Chch Info" = "golf/Christchurch Golf Information.md" },
+  ] },
+  { "Apple" = [
+    { "Fixes" = "apple/fixes.md" },
+    { "Commands" = "apple/commands.md" },
+  ] },
+  { "Test Pages" = [
+    { "Typography" = "typography.md" },
+    { "Linux Shortcuts" = "linux_shortcuts.md" },
+  ] },
+]
+
+# ----------------------------------------------------------------
+# THEME
+# ----------------------------------------------------------------
+[project.theme]
+custom_dir = "overrides"
+favicon = "images/favicon.png"
+language = "en"
+font = false
+features = [
+  "navigation.tabs",
+  "content.action.edit",
+]
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+# ----------------------------------------------------------------
+# MARKDOWN EXTENSIONS
+# ----------------------------------------------------------------
+[project.markdown_extensions.pymdownx.snippets]
+base_path = "docs"
+check_paths = true
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+
+[project.markdown_extensions.pymdownx.betterem]
+smart_enable = "all"
+
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.critic]
+[project.markdown_extensions.pymdownx.details]
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.markdown_extensions.pymdownx.highlight]
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+
+[project.markdown_extensions.pymdownx.magiclink]
+repo_url_shorthand = true
+user = "squidfunk"
+repo = "mkdocs-material"
+
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.markdown_extensions.pymdownx.tabbed]
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[project.markdown_extensions.pymdownx.tilde]
