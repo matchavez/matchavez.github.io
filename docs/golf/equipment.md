@@ -25,7 +25,7 @@ title: equipment
 | Club           | Model             | Shaft           | Detail         | Loft  | SW    | Length |
 | -------------- | ----------------- | --------------- | -------------- | ----- | ----- | ------ |
 | Driver         | Rogue ST LS ♢♢♢ 9 | Graphite Design | UB 6S          | 10º   | D2    | 45.50" |
-| Driver         | Ai Smoke Max 10.5 | Graphite Design | XC 5S<br>DI 6X | 11.5º | D2    | 45.50" |
+| Driver         |                   | Graphite Design | XC 5S<br>DI 6X |       |       |        |
 | Fairway        | G425 LST 14.5     | Ping Tour 1.0   | 75 X           | 14.5º | D0    | 43.00" |
 | 2-iron         | Rapture           | Recoil Proto    | 95 F5          | 18º   | D2.5  | 39.50" |
 | 6-Iron         | i230              | Fujikura Axiom  | 105 S          | 28º   | D2    | 37.63" |
