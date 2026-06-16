@@ -8,8 +8,10 @@
 {% block extrahead %}
   {#- Preload the primary body font (woff2) so it paints sooner; font-display:swap already set in extra.css -#}
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/InterMC.var.woff2">
-  {#- Brand colour for mobile browser UI (address bar / task switcher) -#}
-  <meta name="theme-color" content="#a80000">
+  {#- Browser-UI colour matched to each scheme's page background, so it never
+      tints the chrome/scrollbar with brand red (see extra.css day/night bg). -#}
+  <meta name="theme-color" content="#ebe2c1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1014" media="(prefers-color-scheme: dark)">
   {% set og_title = page.meta.title if page.meta and page.meta.title else page.title %}
   {% if not og_title or og_title == "index" %}{% set og_title = config.site_name %}{% endif %}
   {% set og_desc = page.meta.description if page.meta and page.meta.description else config.site_description %}
