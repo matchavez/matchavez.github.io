@@ -3,3 +3,6 @@ site/
 
 # Scratch / temporary image exports
 docs/images/_t_*
+
+# macOS Finder droppings
+.DS_Store
