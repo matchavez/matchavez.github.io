@@ -1,151 +1,27 @@
 /* ============================================================
-   matchavez.com - theme
+   matchavez.com — "LEDGER"
+   Clean-slate redesign, July 2026.
 
-   Scoped to the "default" (light) and "slate" (dark) schemes that the
-   palette in mkdocs.yml actually selects, so it renders without any
-   name mismatch. Works the same under Zensical or Material for MkDocs.
+   The system:
+     · ONE ink, ONE accent (the Chavez vermilion), hairlines for
+       structure — no boxes, no rainbow headings.
+     · ONE typeface, two cuts (both Mat's own Inter freezes):
+         InterVariable MC       → all prose
+         InterMC Machine        → the machinery + code: header, tabs,
+                                  nav, TOC, labels, table headers,
+                                  captions (alt a·u·f·t glyph set)
+     · Numbered H2 sections, ledger-style: hairline overline +
+       mono counter (§ 01, § 02 …).
+     · Light = warm oat paper + near-black ink.
+       Dark  = warm charcoal + bone text. No blue-black.
 
-   Shared accents (Solarized-style: tuned to read on both bases).
-     H1 red #e0322f (same hex both modes)
-     Dark base  #0b161b   ·  Light paper #ebe2c1
-     Headings   red · cyan/teal · amber · lime · grey
-     Links      #3b82f6 (dark)  ·  #1d4ed8 (light)
-   Brand red (header/nav): #a80000
-   Admonitions: left on Material defaults, intentionally not overridden.
-   Font: InterVariable MC (Mat's own build: case, ss02, ss03, cv01-04, cv09, cv10, cpsp), self-hosted
+   Carried over from the 2026 polish layer (kept, re-tuned):
+   self-hosted fonts, measure/rhythm, view transitions, table
+   scroll fades, focus/selection/scrollbar styling, CLS guards.
    ============================================================ */
 
 
-/* ---------- LIGHT MODE (default scheme) ---------- */
-/* Warm legal-pad paper; heading hues deepened to stay legible on it. */
-
-[data-md-color-scheme="default"] {
-  --md-default-bg-color:        #ebe2c1;
-  --md-default-bg-color--light: #e3d9b3;
-  --md-default-fg-color:        #2f2d27;
-  --md-typeset-color:           #2f2d27;
-
-  --md-primary-fg-color:        #a80000;
-  --md-primary-fg-color--light: #c62828;
-  --md-primary-fg-color--dark:  #7a0000;
-  --md-primary-bg-color:        #ffffff;
-  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
-
-  --md-accent-fg-color:         #1d4ed8;   /* blue, matches link colour */
-  --md-accent-fg-color--transparent: rgba(29, 78, 216, 0.1);
-  --md-typeset-a-color:         #1d4ed8;
-
-  --md-code-bg-color:           #e3d9b3;
-  --md-code-fg-color:           #3a3730;
-}
-
-[data-md-color-scheme="default"] .md-typeset h1 { color: #e0322f; font-weight: 600; line-height: 1.2; }
-[data-md-color-scheme="default"] .md-typeset h2 {
-  color: #0e7490;
-  font-weight: 200;
-  border-bottom: 1px solid rgba(14, 116, 144, 0.35);
-  padding-bottom: 0.2em;
-}
-[data-md-color-scheme="default"] .md-typeset h3 { color: #b45309; }
-[data-md-color-scheme="default"] .md-typeset h4 { color: #4d7c0f; }
-[data-md-color-scheme="default"] .md-typeset h5 {
-  color: #5c6360; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700;
-}
-[data-md-color-scheme="default"] .md-typeset h6 { color: #8a8a86; font-weight: 700; }
-
-[data-md-color-scheme="default"] .md-typeset code {
-  color: #92400e; background-color: rgba(0, 0, 0, 0.06);
-}
-
-[data-md-color-scheme="default"] .md-typeset blockquote {
-  border-left: 0.25rem solid #e0322f;
-}
-
-[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
-  border-bottom: 2px solid rgba(14, 116, 144, 0.5);
-}
-
-
-/* ---------- DARK MODE (slate scheme) ---------- */
-
-[data-md-color-scheme="slate"] {
-  /* Surfaces — near-black with a whisper of teal */
-  --md-default-bg-color:          #0a1014;
-  --md-default-bg-color--light:   #122027;
-  --md-default-bg-color--lighter: rgba(255, 255, 255, 0.07);
-  --md-default-bg-color--lightest: rgba(255, 255, 255, 0.04);
-
-  /* Foreground / text */
-  --md-default-fg-color:          rgba(233, 237, 236, 0.90);
-  --md-default-fg-color--light:   rgba(233, 237, 236, 0.62);
-  --md-default-fg-color--lighter: rgba(233, 237, 236, 0.34);
-  --md-default-fg-color--lightest: rgba(233, 237, 236, 0.12);
-  --md-typeset-color:             #c9cdcc;
-
-  /* Brand red carries the header/nav bar */
-  --md-primary-fg-color:          #a80000;
-  --md-primary-fg-color--light:   #c62828;
-  --md-primary-fg-color--dark:    #7a0000;
-  --md-primary-bg-color:          #f4f4f5;
-  --md-primary-bg-color--light:   rgba(244, 244, 245, 0.7);
-
-  /* Blue for interactive states / links */
-  --md-accent-fg-color:           #3b82f6;
-  --md-accent-fg-color--transparent: rgba(59, 130, 246, 0.1);
-  --md-typeset-a-color:           #3b82f6;
-
-  /* Code */
-  --md-code-bg-color:             #122027;
-  --md-code-fg-color:             #e4e4e7;
-
-  /* Footer */
-  --md-footer-bg-color:           #070f12;
-  --md-footer-bg-color--dark:     #050b0d;
-}
-
-/* Heading palette: distinct hues, shared red H1, bright on the near-black. */
-[data-md-color-scheme="slate"] .md-typeset h1 { color: #e0322f; font-weight: 600; line-height: 1.2; }
-[data-md-color-scheme="slate"] .md-typeset h2 {
-  color: #22d3ee; font-weight: 200;
-  border-bottom: 1px solid rgba(34, 211, 238, 0.35);
-  padding-bottom: 0.2em;
-}
-[data-md-color-scheme="slate"] .md-typeset h3 { color: #f5a623; font-weight: 600; }
-[data-md-color-scheme="slate"] .md-typeset h4 { color: #bef264; font-weight: 600; }
-[data-md-color-scheme="slate"] .md-typeset h5 {
-  color: #9ca3af; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700;
-}
-[data-md-color-scheme="slate"] .md-typeset h6 { color: #6b7280; font-weight: 700; }
-
-/* Inline code: amber text on a faint translucent grey chip */
-[data-md-color-scheme="slate"] .md-typeset code {
-  color: #f5a623; background-color: rgba(255, 255, 255, 0.07);
-}
-
-/* Blockquotes (your callout convention) get a red left rule */
-[data-md-color-scheme="slate"] .md-typeset blockquote {
-  border-left: 0.25rem solid #e0322f; color: #c4c4c8;
-}
-
-/* Tables: cyan header underline to match the H2 treatment */
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
-  background-color: #122027;
-  border-bottom: 2px solid rgba(34, 211, 238, 0.5);
-}
-
-
-/* ============================================================
-   POLISH LAYER — colours untouched, everything else refined
-   Added June 2026. Sections:
-     1. Self-hosted fonts (replaces Google Fonts request)
-     2. Typographic rhythm
-     3. Links & micro-interactions
-     4. Code, tables, images
-     5. Selection, focus, scrollbars
-     6. View transitions (page-to-page cross-fade + theme reveal)
-   ============================================================ */
-
-/* ---------- 1. Self-hosted fonts (variable woff2, latin + latin-ext) */
+/* ---------- 0. Self-hosted fonts (variable woff2, latin + latin-ext) */
 
 @font-face {
   font-family: "Inter";
@@ -161,39 +37,118 @@
   font-style: italic;
   font-display: swap;
 }
+/* InterMC Machine — a second feature-freeze of Mat's own InterVariable MC:
+   his base freeze (tnum, slashed zero, ss01, ss02) plus alternate glyphs
+   cv06 (u), cv11 (single-storey a), cv12 (f), cv13 (t). One typeface,
+   two cuts: prose speaks in InterMC, the machinery + code speak in Machine. */
 @font-face {
-  font-family: "Intel One Mono";
-  src: url("fonts/IntelOneMono.var.woff2") format("woff2");
-  font-weight: 200 700;
+  font-family: "InterMC Machine";
+  src: url("fonts/InterMCMachine.var.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Intel One Mono";
-  src: url("fonts/IntelOneMono-Italic.var.woff2") format("woff2");
-  font-weight: 200 700;
-  font-style: italic;
   font-display: swap;
 }
 
 :root {
   --md-text-font: "Inter";
-  --md-code-font: "Intel One Mono";
+  /* The machinery/code voice. To run everything in the prose cut instead,
+     change this to just "Inter". */
+  --md-code-font: "InterMC Machine", "Inter";
 }
 
-/* ---------- 2. Typographic rhythm */
+
+/* ---------- 1. Palette — LIGHT ("paper") */
+
+[data-md-color-scheme="default"] {
+  /* Ledger tokens */
+  --ink:        #201d18;
+  --ink-muted:  #6e6858;
+  --ink-faint:  #a39c8a;
+  --paper:      #f3efe5;
+  --paper-lift: #eae5d4;
+  --hairline:   rgba(32, 29, 24, 0.16);
+  --accent:     #a8201d;   /* Chavez vermilion, deepened for paper */
+  --accent-dim: #7e1613;
+
+  /* Theme mapping */
+  --md-default-bg-color:        var(--paper);
+  --md-default-bg-color--light: var(--paper-lift);
+  --md-default-fg-color:        var(--ink);
+  --md-default-fg-color--light: var(--ink-muted);
+  --md-default-fg-color--lighter: var(--ink-faint);
+  --md-default-fg-color--lightest: rgba(32, 29, 24, 0.07);
+  --md-typeset-color:           var(--ink);
+
+  --md-primary-fg-color:        var(--paper);
+  --md-primary-fg-color--light: var(--paper-lift);
+  --md-primary-fg-color--dark:  var(--paper-lift);
+  --md-primary-bg-color:        var(--ink);
+  --md-primary-bg-color--light: var(--ink-muted);
+
+  --md-accent-fg-color:         var(--accent);
+  --md-accent-fg-color--transparent: rgba(168, 32, 29, 0.08);
+  --md-typeset-a-color:         var(--accent);
+
+  --md-code-bg-color:           rgba(32, 29, 24, 0.055);
+  --md-code-fg-color:           #3d3a32;
+
+  --md-footer-bg-color:         var(--paper);
+  --md-footer-bg-color--dark:   var(--paper);
+  --md-footer-fg-color:         var(--ink-muted);
+  --md-footer-fg-color--light:  var(--ink-faint);
+}
+
+
+/* ---------- 1b. Palette — DARK ("night ledger") */
+
+[data-md-color-scheme="slate"] {
+  --ink:        #d9d4c7;
+  --ink-muted:  #948d7c;
+  --ink-faint:  #645e50;
+  --paper:      #141310;
+  --paper-lift: #1d1b16;
+  --hairline:   rgba(217, 212, 199, 0.14);
+  --accent:     #e2574e;   /* vermilion, lifted to glow on charcoal */
+  --accent-dim: #f0857d;
+
+  --md-default-bg-color:        var(--paper);
+  --md-default-bg-color--light: var(--paper-lift);
+  --md-default-bg-color--lighter:  rgba(217, 212, 199, 0.07);
+  --md-default-bg-color--lightest: rgba(217, 212, 199, 0.04);
+  --md-default-fg-color:        rgba(217, 212, 199, 0.92);
+  --md-default-fg-color--light: var(--ink-muted);
+  --md-default-fg-color--lighter: var(--ink-faint);
+  --md-default-fg-color--lightest: rgba(217, 212, 199, 0.10);
+  --md-typeset-color:           #cdc8bb;
+
+  --md-primary-fg-color:        var(--paper);
+  --md-primary-fg-color--light: var(--paper-lift);
+  --md-primary-fg-color--dark:  var(--paper);
+  --md-primary-bg-color:        var(--ink);
+  --md-primary-bg-color--light: var(--ink-muted);
+
+  --md-accent-fg-color:         var(--accent);
+  --md-accent-fg-color--transparent: rgba(226, 87, 78, 0.10);
+  --md-typeset-a-color:         var(--accent);
+
+  --md-code-bg-color:           var(--paper-lift);
+  --md-code-fg-color:           #d5d0c3;
+
+  --md-footer-bg-color:         var(--paper);
+  --md-footer-bg-color--dark:   var(--paper);
+  --md-footer-fg-color:         var(--ink-muted);
+  --md-footer-fg-color--light:  var(--ink-faint);
+}
+
+
+/* ---------- 2. Rhythm & measure (carried over, re-tuned) */
 
 .md-typeset {
   font-size: 0.85rem;          /* ~17px */
   line-height: 1.65;
 }
 
-/* The theme caps the whole main column at .md-grid { max-width: 61rem }. Note
-   root font-size here is 137.5% (~22px/rem), so that's ~1342px — and once the
-   two ~266px sidebars are subtracted the content column is only ~760px, too
-   narrow for the 7-column WITB table (~835px). The table then scroll-wraps and
-   hides the Length column. Widening the grid gives the column room to show the
-   whole table; verified live that the table fits at 70rem. */
+/* Wider grid so the 7-column WITB table fits (verified at 70rem). */
 .md-grid { max-width: 70rem; }
 
 .md-content__inner {
@@ -202,26 +157,99 @@
   margin-right: auto;
 }
 
-/* Keep body text at a comfortable measure even on the now-wider column; tables,
-   code blocks and images are free to use the full width. */
+/* Comfortable prose measure; tables/code/images may run wider. */
 .md-typeset > :is(p, ul, ol, dl, blockquote, h1, h2, h3, h4, h5, h6, hr) {
   max-width: 40rem;
 }
 
+
+/* ---------- 3. Headings — one ink, hierarchy by weight & structure */
+
 .md-typeset h1 {
-  font-size: 1.7rem;            /* 34px — Mat's pick, 11 Jun 2026 */
-  letter-spacing: -0.015em;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 1.25rem + 1.6vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
   margin-bottom: 0.9em;
 }
-.md-typeset h2 {
-  font-size: 1.32rem;
-  letter-spacing: -0.01em;
-  margin-top: 1.8em;
+/* The signature: every page title ends on the vermilion full stop. */
+.md-typeset h1::after {
+  content: ".";
+  color: var(--accent);
 }
-.md-typeset h3 { font-size: 1.08rem; }
-.md-typeset h4 { font-size: 0.94rem; }
+/* No ¶ on the page title — it leaves a gap before the full stop. */
+.md-typeset h1 .headerlink { display: none; }
 
-/* ---------- 3. Links & micro-interactions */
+/* H2 = ledger section: hairline overline + mono counter, light weight */
+.md-content { counter-reset: ledger; }
+.md-typeset h2 {
+  counter-increment: ledger;
+  color: var(--ink);
+  font-size: 1.32rem;
+  font-weight: 320;
+  letter-spacing: -0.01em;
+  border-top: 1px solid var(--hairline);
+  border-bottom: none;
+  padding-top: 1.15em;
+  margin-top: 2.1em;
+}
+.md-typeset h2::before {
+  content: "§ " counter(ledger, decimal-leading-zero);
+  display: block;
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 0.65em;
+}
+
+.md-typeset h3 {
+  color: var(--ink);
+  font-size: 1.06rem;
+  font-weight: 620;
+  letter-spacing: -0.005em;
+}
+
+/* H4–H6 = mono labels, descending emphasis */
+.md-typeset h4 {
+  color: var(--ink);
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.md-typeset h5 {
+  color: var(--ink-muted);
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.md-typeset h6 {
+  color: var(--ink-faint);
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Heading permalinks: quiet mono section-marks */
+.md-typeset .headerlink {
+  font-family: var(--md-code-font), monospace;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.md-typeset :hover > .headerlink,
+.md-typeset .headerlink:focus-visible { opacity: 1; }
+
+
+/* ---------- 4. Prose details */
 
 .md-typeset a {
   text-underline-offset: 0.18em;
@@ -229,45 +257,219 @@
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 .md-typeset a:not(:hover) {
-  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+}
+.md-typeset a:hover { color: var(--accent-dim); }
+
+/* Vermilion list markers — tiny, everywhere, quietly yours */
+.md-typeset ul li::marker { color: var(--accent); }
+.md-typeset ol li::marker {
+  color: var(--ink-muted);
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.8em;
 }
 
-.md-tabs__link,
+.md-typeset blockquote {
+  border-left: 2px solid var(--accent);
+  color: var(--md-default-fg-color--light);
+}
+
+/* Horizontal rule: a short quiet break, not a fence */
+.md-typeset hr {
+  border: none;
+  height: 1px;
+  width: 5rem;
+  margin: 2.6em auto;
+  background-color: var(--hairline);
+}
+
+/* Lede paragraph (homepage) */
+.md-typeset .lede {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--md-typeset-color);
+}
+
+
+/* ---------- 5. The machinery: header, tabs, nav, TOC, footer */
+
+/* Header: paper-coloured, hairline seam, no shadow, mono voice */
+.md-header {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+.md-header--shadow { box-shadow: none; }
+.md-header__topic,
+.md-header__topic span {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+.md-header__topic:first-child { font-weight: 600; }
+
+/* Logo: replace the stock book icon with the MC mark (echoes favicon) */
+.md-header__button.md-logo svg { display: none; }
+.md-header__button.md-logo::before {
+  content: "MC";
+  display: inline-block;
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #f3efe5;
+  background-color: var(--accent);
+  padding: 0.32em 0.38em 0.28em;
+  border-radius: 0.22em;
+}
+[data-md-color-scheme="slate"] .md-header__button.md-logo::before {
+  color: #141310;
+}
+
+/* Tabs: mono, lowercase, hairline seam under; vermilion underline on active */
+.md-tabs {
+  background-color: var(--paper);
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--hairline);
+}
+.md-tabs__link {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  opacity: 1;
+  color: var(--ink-muted);
+  transition: color 0.15s ease;
+}
+.md-tabs__link:hover { color: var(--ink); }
+.md-tabs__item--active .md-tabs__link,
+.md-tabs__link--active {
+  color: var(--ink);
+  box-shadow: 0 2px 0 0 var(--accent);
+}
+
+/* Sidebars: mono machinery, muted until it matters */
+.md-nav { font-size: 0.62rem; }
 .md-nav__link {
+  font-family: var(--md-code-font), monospace;
+  letter-spacing: 0.01em;
   transition: color 0.15s ease, opacity 0.15s ease;
 }
-
-/* Heading permalinks: hidden until heading hover, gentle fade */
-.md-typeset .headerlink {
-  opacity: 0;
-  transition: opacity 0.15s ease;
+.md-nav__title {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
 }
-.md-typeset :hover > .headerlink,
-.md-typeset .headerlink:focus-visible { opacity: 1; }
+.md-nav__item .md-nav__link--active,
+.md-nav__item .md-nav__link--active code {
+  color: var(--accent);
+}
 
-/* ---------- 4. Code, tables, images */
+/* Search: quiet outlined field, mono */
+.md-search__form {
+  background-color: var(--paper-lift);
+  border: 1px solid var(--hairline);
+  border-radius: 0.35rem;
+  box-shadow: none;
+}
+.md-search__form:hover {
+  background-color: var(--paper-lift);
+  border-color: var(--ink-faint);
+}
+.md-search__input {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.68rem;
+}
+.md-search__input::placeholder { color: var(--ink-faint); }
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background-color: var(--paper);
+  border-color: var(--hairline);
+}
 
-.md-typeset code { border-radius: 0.25rem; }
-.md-typeset pre > code { border-radius: 0.45rem; }
-.md-typeset .highlight { border-radius: 0.45rem; }
+/* Footer: hairline seam, mono whisper */
+.md-footer { border-top: 1px solid var(--hairline); }
+.md-footer-meta { background-color: var(--paper); }
+.md-copyright,
+.md-copyright__highlight {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+}
+.md-footer-meta.md-typeset a { color: var(--ink-muted); }
+.md-footer-meta.md-typeset a:hover { color: var(--accent); }
+
+/* Back-to-top pill: paper + hairline, not a coloured blob */
+.md-top {
+  background-color: var(--paper-lift);
+  color: var(--ink-muted);
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+}
+.md-top:hover {
+  background-color: var(--paper-lift);
+  color: var(--accent);
+}
+
+
+/* ---------- 6. Code, tables, images */
+
+.md-typeset code {
+  border-radius: 0.25rem;
+  border: 1px solid var(--hairline);
+  padding: 0.06em 0.35em;
+}
+.md-typeset pre > code {
+  border: none;
+  border-radius: 0;
+  padding: 0.85em 1.1em;
+}
+.md-typeset .highlight,
+.md-typeset pre {
+  border-radius: 0.45rem;
+}
+.md-typeset .highlight { border: 1px solid var(--hairline); }
 
 .md-typeset table:not([class]) {
+  border: 1px solid var(--hairline);
   border-radius: 0.45rem;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
 }
-/* Tighter cells lower the table's minimum width (~834px → ~780px), so the
-   7-column WITB table fits the content column down to ~1366px-wide laptops. */
+.md-typeset table:not([class]) th {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  background-color: transparent;
+  border-bottom: 1px solid var(--hairline);
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--hairline);
+}
 .md-typeset table:not([class]) :is(th, td) {
   padding: 0.5em 0.62em;
 }
-/* When a table still can't fit (narrow laptops / the band where both sidebars
-   are shown, phones), it scrolls horizontally with a clear cue — a thin
-   scrollbar plus edge fades — so it reads as scrollable, not cut off, at every
-   width. Material/Zensical wraps tables in .md-typeset__scrollwrap. */
+.md-typeset table:not([class]) tbody tr:nth-child(odd) {
+  background: var(--md-default-fg-color--lightest);
+}
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  box-shadow: none;
+}
+
+/* Table overflow: thin scrollbar + edge fades (kept — functional) */
 .md-typeset__scrollwrap {
   scrollbar-width: thin;
   --tbl-fade: var(--md-default-bg-color);
-  --tbl-shadow: rgba(0, 0, 0, 0.18);
+  --tbl-shadow: rgba(0, 0, 0, 0.16);
   background:
     linear-gradient(to right, var(--tbl-fade) 30%, rgba(0, 0, 0, 0)) 0 0 / 36px 100%,
     linear-gradient(to right, rgba(0, 0, 0, 0), var(--tbl-fade) 70%) 100% 0 / 36px 100%,
@@ -280,56 +482,101 @@
   --tbl-shadow: rgba(0, 0, 0, 0.55);
 }
 
-[data-md-color-scheme="default"] .md-typeset table:not([class]) {
-  border: 1px solid rgba(47, 45, 39, 0.16);
-}
-[data-md-color-scheme="default"] .md-typeset table:not([class]) tbody tr:nth-child(odd) {
-  background: rgba(47, 45, 39, 0.03);
-}
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
-  border: 1px solid rgba(233, 237, 236, 0.14);
-}
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(odd) {
-  background: rgba(255, 255, 255, 0.025);
-}
-
-/* Content images mounted, not pasted (emoji excluded) */
+/* Images: mounted prints — hairline frame on paper */
 .md-typeset img:not(.twemoji) {
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--hairline);
 }
-[data-md-color-scheme="default"] .md-typeset img:not(.twemoji) {
-  border: 1px solid rgba(47, 45, 39, 0.14);
-}
-[data-md-color-scheme="slate"] .md-typeset img:not(.twemoji) {
-  border: 1px solid rgba(233, 237, 236, 0.12);
+.md-typeset img { height: auto; }   /* CLS guard */
+
+/* Figures: mono caption, like a print label */
+.md-typeset figcaption,
+.md-typeset .img-caption {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  text-align: left;
+  margin-top: 0.7em;
+  max-width: none;
 }
 
-/* ---------- 5. Selection, focus, scrollbars, native widget hinting */
+
+/* ---------- 7. Homepage: the garden index */
+
+.garden-index {
+  max-width: 40rem;
+  margin: 1.8em 0 2.4em;
+  border-top: 1px solid var(--hairline);
+}
+.garden-index a {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  align-items: baseline;
+  gap: 0 0.8rem;
+  padding: 0.72em 0.2em;
+  border-bottom: 1px solid var(--hairline);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background-color 0.15s ease, padding-left 0.15s ease;
+}
+.garden-index a:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  padding-left: 0.55em;
+  color: var(--ink);
+}
+.garden-index .gi-num {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.garden-index .gi-name {
+  font-weight: 560;
+  font-size: 0.9rem;
+  letter-spacing: -0.005em;
+}
+.garden-index .gi-desc {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+  text-align: right;
+}
+.garden-index a:hover .gi-desc { color: var(--ink-muted); }
+@media screen and (max-width: 44em) {
+  .garden-index .gi-desc { display: none; }
+}
+
+/* Homepage hero as a mounted print */
+.site-hero { margin: 2.4em 0 0; }
+.site-hero img { display: block; }
+
+
+/* ---------- 8. Selection, focus, scrollbars */
 
 [data-md-color-scheme="default"] { color-scheme: light; }
 [data-md-color-scheme="slate"]   { color-scheme: dark; }
 
-[data-md-color-scheme="default"] ::selection { background: rgba(168, 0, 0, 0.16); }
-[data-md-color-scheme="slate"] ::selection   { background: rgba(224, 50, 47, 0.30); }
+[data-md-color-scheme="default"] ::selection { background: rgba(168, 32, 29, 0.16); }
+[data-md-color-scheme="slate"] ::selection   { background: rgba(226, 87, 78, 0.28); }
 
 :focus-visible {
   outline: 2px solid var(--md-accent-fg-color);
   outline-offset: 2px;
 }
 
-/* Scrollbars track each scheme's page background, with a thumb tuned to read
-   against it — muted ink on the light paper by day, soft light on the
-   near-black base by night. Track set to the bg so the gutter blends in. */
 [data-md-color-scheme="default"] {
-  scrollbar-color: rgba(47, 45, 39, 0.38) var(--md-default-bg-color);
+  scrollbar-color: rgba(32, 29, 24, 0.35) var(--md-default-bg-color);
 }
 [data-md-color-scheme="slate"] {
-  scrollbar-color: rgba(233, 237, 236, 0.30) var(--md-default-bg-color);
+  scrollbar-color: rgba(217, 212, 199, 0.28) var(--md-default-bg-color);
 }
 
-/* ---------- 6. View transitions (progressive enhancement) */
 
-/* Page-to-page cross-fade on same-origin navigation */
+/* ---------- 9. View transitions (progressive enhancement, kept) */
+
 @view-transition { navigation: auto; }
 
 ::view-transition-old(root),
@@ -338,10 +585,8 @@
   animation-timing-function: ease;
 }
 
-/* Keep the header visually stable across page transitions */
 .md-header { view-transition-name: site-header; }
 
-/* Theme toggle: JS drives a circular reveal; suppress the default fade */
 html.vt-theme::view-transition-old(root),
 html.vt-theme::view-transition-new(root) {
   animation: none;
@@ -356,8 +601,6 @@ html.vt-theme .md-header { view-transition-name: none; }
   .md-typeset a,
   .md-typeset .headerlink,
   .md-tabs__link,
-  .md-nav__link { transition: none; }
+  .md-nav__link,
+  .garden-index a { transition: none; }
 }
-
-/* Reserve image aspect-ratio to prevent layout shift (CLS); keep responsive */
-.md-typeset img { height: auto; }
