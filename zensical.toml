@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------
-# Zensical configuration (native) — replaces mkdocs.yml
+# Zensical configuration
 # Docs: https://zensical.org/docs/setup/basics/
 # ----------------------------------------------------------------
 
@@ -50,6 +50,7 @@ nav = [
 # THEME
 # ----------------------------------------------------------------
 [project.theme]
+variant = "modern" # pin the current default so future default changes can't restyle the site
 custom_dir = "overrides"
 favicon = "images/favicon.png"
 language = "en"
@@ -107,8 +108,8 @@ emoji_generator = "zensical.extensions.emoji.to_svg"
 
 [project.markdown_extensions.pymdownx.magiclink]
 repo_url_shorthand = true
-user = "squidfunk"
-repo = "mkdocs-material"
+user = "matchavez"
+repo = "matchavez.github.io"
 
 [project.markdown_extensions.pymdownx.mark]
 [project.markdown_extensions.pymdownx.smartsymbols]
@@ -119,6 +120,7 @@ custom_fences = [
 ]
 
 [project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true # the only tab style Zensical supports
 
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
