@@ -48,12 +48,31 @@
   font-style: normal;
   font-display: swap;
 }
+/* Geist Mono — actual code voice only (inline `code` and fenced blocks).
+   Kept separate from --md-code-font, which still drives the InterMC
+   Machine "machinery" voice: header, tabs, nav, TOC, labels, captions. */
+@font-face {
+  font-family: "Geist Mono";
+  src: url("fonts/GeistMono.var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("fonts/GeistMono-Italic.var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   --md-text-font: "Inter";
-  /* The machinery/code voice. To run everything in the prose cut instead,
-     change this to just "Inter". */
+  /* The machinery voice: header, tabs, nav, TOC, labels, captions.
+     To run everything in the prose cut instead, change this to just "Inter". */
   --md-code-font: "InterMC Machine", "Inter";
+  /* The actual code voice: inline `code` and fenced blocks only. */
+  --md-code-block-font: "Geist Mono", monospace;
 }
 
 
@@ -419,6 +438,12 @@
 
 
 /* ---------- 6. Code, tables, images */
+
+/* Actual code speaks in Geist Mono — the machinery voice above (headers,
+   nav, tabs, TOC, labels) stays in InterMC Machine, untouched. */
+code, kbd, pre {
+  font-family: var(--md-code-block-font);
+}
 
 .md-typeset code {
   border-radius: 0.25rem;
