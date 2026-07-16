@@ -14,9 +14,10 @@
        green fill, gold serif headline, pictogram in a Ranginui
        blue chip (yellow alert diamond for the caution set).
        Solid in both schemes: a sign is a sign at night.
-     · Serif headlines, as on the signs: Aleo, a free rounded
-       slab standing in for Archer (DOC's actual brand serif,
-       a commercial Hoefler&Co face) — green by day, gold by night.
+     · Serif headlines, as on the signs: Crimson Pro ExtraBold,
+       a free carved-headline serif standing in for Archer (DOC's
+       actual brand serif, a commercial Hoefler&Co face) — green
+       by day, gold by night.
      · Dark mode is the sign at night — deep conservation green,
        not charcoal, not navy. The homepage keeps its own night.
      · The handbook textures (pp. 35–37), hand-drawn and dealt
@@ -31,7 +32,7 @@
      InterVariable MC  → prose
      InterMC Machine   → machinery (header, tabs, nav, TOC, labels)
      Geist Mono        → actual code
-     Aleo              → display (H1/H2) — Archer stand-in, subset,
+     Crimson Pro 800   → display (H1/H2) — Archer stand-in, subset,
                           self-hosted
      Archivo ExtraBold → sign titles (subset, self-hosted)
 
@@ -82,25 +83,23 @@
   font-style: italic;
   font-display: swap;
 }
-/* The display voice: Aleo (Alessio Laiso, OFL) — a rounded,
-   ball-terminal slab in Archer's own family of gesture. Archer
-   itself is a commercial Hoefler&Co face sold via Cloud.typography
-   with no free/personal self-hosting tier, so it can't be
-   embedded here; Aleo is the closest open-license stand-in,
-   warmer and rounder than Zilla Slab's blockier grotesque-slab
-   cut. Subset to latin + latin-ext (macrons for te reo), two
-   weights, instanced from the variable source. */
+/* The display voice: Crimson Pro (Jacques Le Bailly, OFL) at its
+   heaviest cut (800/ExtraBold) — a confident, bracketed-serif
+   headline face. Tried against Archer's actual role (DOC's real
+   brand/print serif, a commercial Hoefler&Co face with no free
+   self-hosting tier) and against Aleo and EB Garamond as open
+   alternatives; this weight read the most like a carved/painted
+   sign headline of the three — monumental and high-contrast where
+   Aleo was rounder/softer and EB Garamond leaned more bookish.
+   Single static instance (no lighter cut fetched, matching the
+   Archivo sign-font pattern), so the face is declared across the
+   full weight axis: every h1/h2/topic/masthead font-weight in
+   this file requests this one file. Subset to latin + latin-ext
+   (macrons for te reo). */
 @font-face {
-  font-family: "Aleo";
-  src: url("fonts/Aleo-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Aleo";
-  src: url("fonts/Aleo-SemiBold.woff2") format("woff2");
-  font-weight: 600;
+  font-family: "Crimson Pro";
+  src: url("fonts/CrimsonPro-800.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -129,7 +128,7 @@
   --md-code-block-font: "Geist Mono", monospace;
   /* Display voice: page titles, section heads. Georgia fallback —
      DOC's own substitute for Archer, kept as the last resort. */
-  --display-font: "Aleo", Georgia, serif;
+  --display-font: "Crimson Pro", Georgia, serif;
   /* Sign voice: the components that are literally painted signs —
      admonition titles, the MC monogram. Arial fallback — DOC's own
      substitute font family for their sans (Helvetica Neue). */
@@ -475,6 +474,14 @@
 .md-tabs__link--active {
   color: var(--sign-gold);
   box-shadow: 0 2px 0 0 var(--sign-gold);
+}
+/* The theme also draws its own bold border-bottom on the active
+   item (var(--md-default-fg-color), full brightness) — redundant
+   with the gold underline above and reads as a second, competing
+   highlight. Kill it so the active tab differs only by colour +
+   the one gold line, same as every inactive tab's hairline. */
+.md-tabs__item--active {
+  border-bottom-color: transparent;
 }
 /* Tabs hidden on small screens: the header carries the gold bar */
 @media screen and (max-width: 76.1875em) {
