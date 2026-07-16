@@ -18,7 +18,6 @@ extra_javascript = ["javascripts/extra.js"]
 # ----------------------------------------------------------------
 nav = [
   { "Welcome" = "index.md" },
-  { "Hockey" = "https://matchavez.com/hockey/" },
   { "Projects" = [
     # { "Stream Test" = "projects/streaming.md" },
     { "Tellyhoova" = "projects/tellyhoova.md" },
@@ -40,6 +39,7 @@ nav = [
   #   { "Fixes" = "apple/fixes.md" },
   #   { "Commands" = "apple/commands.md" },
   # ] },
+  { "Hockey" = "https://matchavez.com/hockey/" },
   { "Test Pages" = [
     { "Typography" = "typography.md" },
     { "Linux Shortcuts" = "linux_shortcuts.md" },
