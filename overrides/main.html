@@ -9,6 +9,7 @@
   {#- Preload the primary body font (woff2) so it paints sooner; font-display:swap already set in extra.css -#}
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/InterMC.var.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/InterMCMachine.var.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/ZillaSlab-SemiBold.woff2">
   {#- Browser-UI colour matched to each scheme's page background, so it never
       tints the chrome/scrollbar with brand red (see extra.css day/night bg). -#}
   <meta name="theme-color" content="#f4f1e6" media="(prefers-color-scheme: light)">
@@ -25,10 +26,10 @@
   <meta property="og:image" content="{{ og_image }}">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="1200">
-  <meta property="og:image:alt" content="Foliage near Arthur's Pass, New Zealand — MatChavez.com">
+  <meta property="og:image:alt" content="Golden tussock flats below snow-covered ranges near Arthur's Pass, New Zealand — MatChavez.com">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ og_title | striptags }}">
   {% if og_desc %}<meta name="twitter:description" content="{{ og_desc }}">{% endif %}
   <meta name="twitter:image" content="{{ og_image }}">
-  <meta name="twitter:image:alt" content="Foliage near Arthur's Pass, New Zealand — MatChavez.com">
+  <meta name="twitter:image:alt" content="Golden tussock flats below snow-covered ranges near Arthur's Pass, New Zealand — MatChavez.com">
 {% endblock %}

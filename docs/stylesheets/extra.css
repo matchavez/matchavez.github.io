@@ -1,14 +1,21 @@
 /* ============================================================
-   matchavez.com — "FIELD & MAP"
+   matchavez.com — "FIELD & MAP", Te Papa Atawhai cut
    Redesign, July 2026. Supersedes "Ledger" (July 2026).
 
    The thesis: the homepage is the territory — Mat's own photograph
    of tussock country near Arthur's Pass, full bleed, with the
    greeting set in the sky. Every other page is the map of it,
-   in NZ Topo50 / DOC wayfinding language:
+   in NZ Topo50 / DOC wayfinding language — now taken all the way
+   to the sign standard in DOC's own brand handbook (Sept 2020):
 
-     · DOC-orange triangle trail markers replace the § counters
-       (markers show the route; they don't number it).
+     · The sign system is the component language: DOC green
+       (#194036, PMS 553) panels under a DOC gold (#ffc51d,
+       PMS 123) top bar — admonitions, table headers, the footer.
+       Solid in both schemes: a sign is a sign at night.
+     · Serif headlines, as on the signs themselves: Zilla Slab
+       (the face DOC's own website uses) for H1/H2 and sign titles.
+     · Orange retreats to what it really is — track markers:
+       H2 triangles, list bullets, "you are here" in the nav.
      · Links take the cobalt of that sky.
      · Dark mode is the same sky after dusk — deep cobalt,
        not charcoal, not black.
@@ -16,10 +23,15 @@
      · One true detail: NZTopo50 sheet BV20 (Arthur's Pass)
        in the footer.
 
-   Typefaces unchanged — Mat's own Inter freezes:
+   Typefaces — Mat's own Inter freezes, plus the sign voice:
      InterVariable MC  → prose
      InterMC Machine   → machinery (header, tabs, nav, TOC, labels)
      Geist Mono        → actual code
+     Zilla Slab        → display + sign titles (subset, self-hosted)
+
+   Deliberately NOT borrowed: the kōwhaiwhai. DOC's handbook is
+   explicit that it isn't decoration and its use sits with Kāhui
+   Kaupapa Atawhai. The textures and signage give us plenty.
 
    Carried over intact: self-hosted fonts, measure/rhythm, view
    transitions, table scroll fades, focus/selection/scrollbars,
@@ -64,6 +76,23 @@
   font-style: italic;
   font-display: swap;
 }
+/* The sign voice: Zilla Slab (Typotheque for Mozilla, OFL) — the
+   slab DOC's own website sets alongside Archer in print. Subset to
+   latin + latin-ext (macrons for te reo), two weights only. */
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("fonts/ZillaSlab-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("fonts/ZillaSlab-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --md-text-font: "Inter";
@@ -71,6 +100,15 @@
   --md-code-font: "InterMC Machine", "Inter";
   /* Actual code voice: inline `code` and fenced blocks only. */
   --md-code-block-font: "Geist Mono", monospace;
+  /* Display voice: page titles, section heads, sign titles.
+     Georgia fallback — DOC's own substitute for Archer. */
+  --display-font: "Zilla Slab", Georgia, serif;
+
+  /* The sign standard, straight off the DOC swatch page (p33):
+     identical in both schemes — a sign is a sign at night. */
+  --sign-green: #194036;   /* DOC green, PMS 553 */
+  --sign-gold:  #ffc51d;   /* DOC gold, PMS 123 */
+  --sign-cream: #f0ede0;   /* painted letter white */
 }
 
 
@@ -189,21 +227,24 @@
 }
 
 
-/* ---------- 3. Headings — ink hierarchy, markers not numbers */
+/* ---------- 3. Headings — the sign voice over ink hierarchy.
+   H1 and H2 are set in the slab, like the painted headlines on the
+   signs; everything below stays in Mat's Inter machinery. */
 
 .md-typeset h1 {
   color: var(--ink);
+  font-family: var(--display-font);
   font-size: clamp(1.6rem, 1.25rem + 1.6vw, 2rem);
-  font-weight: 650;
-  letter-spacing: -0.022em;
+  font-weight: 600;
+  letter-spacing: -0.008em;
   line-height: 1.15;
   margin-bottom: 0.9em;
 }
 /* The signature survives: every page title ends on a full stop —
-   now in track-marker orange. */
+   now painted tussock gold. */
 .md-typeset h1::after {
   content: ".";
-  color: var(--marker);
+  color: var(--gold);
 }
 .md-typeset h1 .headerlink { display: none; }
 
@@ -211,9 +252,10 @@
    sitting on it, like a marker nailed to a post. No numbers. */
 .md-typeset h2 {
   color: var(--ink);
-  font-size: 1.32rem;
-  font-weight: 340;
-  letter-spacing: -0.01em;
+  font-family: var(--display-font);
+  font-size: 1.28rem;
+  font-weight: 500;
+  letter-spacing: 0;
   border-top: 1px solid var(--hairline);
   border-bottom: none;
   position: relative;
@@ -337,7 +379,8 @@
 }
 .md-header__topic:first-child { font-weight: 600; }
 
-/* Logo: the MC mark, now a track-marker chip */
+/* Logo: the MC mark — a little DOC sign now, gold letters on
+   conservation green, same by day and night */
 .md-header__button.md-logo svg { display: none; }
 .md-header__button.md-logo::before {
   content: "MC";
@@ -347,16 +390,13 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.02em;
-  color: #f4f1e6;
-  background-color: var(--marker);
+  color: var(--sign-gold);
+  background-color: var(--sign-green);
   padding: 0.32em 0.38em 0.28em;
   border-radius: 0.22em;
 }
-[data-md-color-scheme="slate"] .md-header__button.md-logo::before {
-  color: #0e1c33;
-}
 
-/* Tabs: mono, lowercase, hairline seam; orange underline when active */
+/* Tabs: mono, lowercase, hairline seam; gold underline when active */
 .md-tabs {
   background-color: var(--paper);
   color: var(--ink-muted);
@@ -376,7 +416,7 @@
 .md-tabs__item--active .md-tabs__link,
 .md-tabs__link--active {
   color: var(--ink);
-  box-shadow: 0 2px 0 0 var(--marker);
+  box-shadow: 0 2px 0 0 var(--sign-gold);
 }
 
 /* Sidebars: mono machinery, muted until it matters */
@@ -421,27 +461,31 @@
   border-color: var(--hairline);
 }
 
-/* Footer: hairline seam, mono whisper, one true coordinate */
-.md-footer { border-top: 1px solid var(--hairline); }
-.md-footer-meta { background-color: var(--paper); }
+/* Footer: the sign at the end of the track — DOC green panel under
+   a gold bar, in both schemes, with the one true coordinate on it */
+.md-footer { border-top: none; }
+.md-footer-meta {
+  background-color: var(--sign-green);
+  border-top: 0.22rem solid var(--sign-gold);
+}
 .md-copyright,
 .md-copyright__highlight {
   font-family: var(--md-code-font), monospace;
   font-size: 0.58rem;
   letter-spacing: 0.03em;
-  color: var(--ink-faint);
+  color: rgba(240, 237, 224, 0.66);
 }
 /* The photo's map sheet — NZTopo50 BV20 covers Arthur's Pass */
 .md-copyright::before {
   content: "nztopo50 bv20 · ";
-  color: var(--gold);
+  color: var(--sign-gold);
 }
 /* And the site signs off properly */
 .md-copyright::after {
   content: " · ka kite anō";
 }
-.md-footer-meta.md-typeset a { color: var(--ink-muted); }
-.md-footer-meta.md-typeset a:hover { color: var(--marker); }
+.md-footer-meta.md-typeset a { color: rgba(240, 237, 224, 0.85); }
+.md-footer-meta.md-typeset a:hover { color: var(--sign-gold); }
 
 /* Back-to-top pill: paper + hairline */
 .md-top {
@@ -478,8 +522,11 @@ code, kbd, pre {
 }
 .md-typeset .highlight { border: 1px solid var(--hairline); }
 
+/* Tables read as orientation signs: gold bar, green header band,
+   painted mono labels — the body stays on the page's own paper */
 .md-typeset table:not([class]) {
   border: 1px solid var(--hairline);
+  border-top: 0.22rem solid var(--sign-gold);
   border-radius: 0.45rem;
   font-size: 0.72rem;
 }
@@ -489,9 +536,9 @@ code, kbd, pre {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--ink-muted);
-  background-color: transparent;
-  border-bottom: 1px solid var(--hairline);
+  color: var(--sign-cream);
+  background-color: var(--sign-green);
+  border-bottom: none;
 }
 .md-typeset table:not([class]) td {
   border-top: 1px solid var(--hairline);
@@ -544,50 +591,47 @@ code, kbd, pre {
 }
 
 
-/* ---------- 6b. Admonitions — DOC signage
-   Two kinds of sign on a track: green tells you where you are and
-   what's ahead; yellow makes you stop and read. Title bands are
-   solid like painted sign panels, in both schemes — a sign is a
-   sign at night. Body text stays on the page's own paper. */
+/* ---------- 6b. Admonitions — the DOC sign standard, properly this
+   time (handbook pp. 38–41). Every sign on a track is the same
+   panel: conservation green under a solid gold bar, with a gold
+   serif headline — "Danger" and "Welcome to Athenree" are painted
+   exactly alike. What changes is the pictogram. So all admonitions
+   share one anatomy, and the type icon does the differentiating —
+   gold, like the yellow diamond on an alert sign. Solid in both
+   schemes: a sign is a sign at night. Body text stays on paper. */
 
 .md-typeset :is(.admonition, details) {
   border: 1px solid var(--hairline);
+  border-left-width: 1px;
   border-radius: 0.45rem;
   box-shadow: none;
   font-size: 0.72rem;
-  background-color: transparent;
+  /* !important: the theme tints bodies per type (pale blue for
+     info/note etc.) at higher specificity — the sign body stays
+     on the page's own paper */
+  background-color: transparent !important;
   overflow: hidden;
 }
 .md-typeset :is(.admonition-title, summary) {
-  background-color: #1c4230 !important;   /* conservation green */
-  color: #f0ede0 !important;
-  font-family: var(--md-code-font), monospace;
-  font-size: 0.62rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: none;
+  background-color: var(--sign-green) !important;
+  color: var(--sign-gold) !important;
+  border-top: 0.22rem solid var(--sign-gold);
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
   margin: 0;
+  font-family: var(--display-font);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
+/* The pictogram, painted gold like the alert diamond */
 .md-typeset :is(.admonition-title, summary)::before {
-  background-color: #f0ede0 !important;
+  background-color: var(--sign-gold) !important;
 }
 .md-typeset details > summary::after {
-  color: #f0ede0 !important;
-}
-/* Caution set: the yellow panels — dark bush-green text, like the signs */
-.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .danger, .error, .failure, .fail, .missing, .bug)
-  > :is(.admonition-title, summary) {
-  background-color: #dfa716 !important;   /* sign yellow */
-  color: #21331f !important;
-}
-.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .danger, .error, .failure, .fail, .missing, .bug)
-  > :is(.admonition-title, summary)::before {
-  background-color: #21331f !important;
-}
-/* No coloured left borders fighting the panels */
-.md-typeset :is(.admonition, details) {
-  border-left-width: 1px;
+  color: var(--sign-gold) !important;
 }
 
 
@@ -610,10 +654,16 @@ body.has-masthead :is(.md-main__inner, .md-content__inner) {
   margin: 0;
   padding: 0;
 }
-/* The content column must span the full grid, or the 50%-anchored
-   full-bleed drifts left and strands a photo-less strip on the right */
-body:has(.masthead) .md-content__inner,
-body.has-masthead .md-content__inner { max-width: none; }
+/* Every ancestor must span the full viewport, or the 50%-anchored
+   full-bleed drifts left and strands a photo-less strip on the right.
+   Measured live (16 Jul 2026): .md-main__inner kept its 70rem
+   max-width — with the auto margins zeroed above it pinned LEFT,
+   shifting the anchor ~67px; and the root's reserved scrollbar
+   gutter added another 15px of bare page background at the edge.
+   The cover doesn't scroll, so the gutter can simply go. */
+body:has(.masthead) :is(.md-main__inner, .md-content__inner),
+body.has-masthead :is(.md-main__inner, .md-content__inner) { max-width: none; }
+html:has(.masthead) { scrollbar-gutter: auto; }
 body:has(.masthead) .md-content__inner::before,
 body.has-masthead .md-content__inner::before { display: none; }
 body:has(.masthead) .md-footer,
@@ -708,20 +758,21 @@ body.has-masthead .masthead {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.8s ease;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMin slice"><g fill="white"><circle cx="360" cy="44" r="0.8" opacity="0.38"/><circle cx="171" cy="249" r="0.8" opacity="0.25"/><circle cx="338" cy="270" r="0.6" opacity="0.23"/><circle cx="490" cy="80" r="1.0" opacity="0.34"/><circle cx="600" cy="73" r="1.0" opacity="0.36"/><circle cx="771" cy="55" r="0.7" opacity="0.33"/><circle cx="612" cy="238" r="1.0" opacity="0.23"/><circle cx="96" cy="156" r="0.7" opacity="0.34"/><circle cx="958" cy="55" r="1.2" opacity="0.4"/><circle cx="101" cy="157" r="1.1" opacity="0.3"/><circle cx="1155" cy="68" r="1.0" opacity="0.4"/><circle cx="749" cy="246" r="0.6" opacity="0.26"/><circle cx="564" cy="195" r="0.9" opacity="0.29"/><circle cx="26" cy="145" r="0.9" opacity="0.3"/><circle cx="632" cy="46" r="0.9" opacity="0.41"/><circle cx="138" cy="54" r="0.6" opacity="0.36"/><circle cx="1143" cy="144" r="1.2" opacity="0.29"/><circle cx="574" cy="38" r="1.0" opacity="0.37"/><circle cx="320" cy="86" r="0.7" opacity="0.33"/><circle cx="1023" cy="45" r="1.2" opacity="0.42"/><circle cx="147" cy="135" r="0.8" opacity="0.35"/><circle cx="1166" cy="157" r="0.8" opacity="0.32"/><circle cx="1092" cy="42" r="0.7" opacity="0.43"/><circle cx="914" cy="57" r="1.0" opacity="0.36"/><circle cx="958" cy="118" r="2.4" opacity="0.1"/><circle cx="958" cy="118" r="1.0" opacity="0.8"/><circle cx="994" cy="147" r="2.2" opacity="0.09"/><circle cx="994" cy="147" r="0.8" opacity="0.68"/><circle cx="922" cy="164" r="2.4" opacity="0.1"/><circle cx="922" cy="164" r="0.9" opacity="0.75"/><circle cx="969" cy="194" r="2.8" opacity="0.12"/><circle cx="969" cy="194" r="1.2" opacity="0.9"/><circle cx="906" cy="208" r="2.2" opacity="0.09"/><circle cx="906" cy="208" r="0.9" opacity="0.7"/><circle cx="879" cy="231" r="2.5" opacity="0.1"/><circle cx="879" cy="231" r="1.1" opacity="0.8"/></g></svg>') 0 0 / cover no-repeat;
-  -webkit-mask: linear-gradient(180deg, black 60%, transparent 92%);
-  mask: linear-gradient(180deg, black 60%, transparent 92%);
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMin slice"><g fill="white"><circle cx="360" cy="44" r="0.8" opacity="0.38"/><circle cx="171" cy="249" r="0.8" opacity="0.25"/><circle cx="338" cy="270" r="0.6" opacity="0.23"/><circle cx="490" cy="80" r="1.0" opacity="0.34"/><circle cx="600" cy="73" r="1.0" opacity="0.36"/><circle cx="771" cy="55" r="0.7" opacity="0.33"/><circle cx="612" cy="238" r="1.0" opacity="0.23"/><circle cx="96" cy="156" r="0.7" opacity="0.34"/><circle cx="958" cy="55" r="1.2" opacity="0.4"/><circle cx="101" cy="157" r="1.1" opacity="0.3"/><circle cx="1155" cy="68" r="1.0" opacity="0.4"/><circle cx="749" cy="246" r="0.6" opacity="0.26"/><circle cx="564" cy="195" r="0.9" opacity="0.29"/><circle cx="26" cy="145" r="0.9" opacity="0.3"/><circle cx="632" cy="46" r="0.9" opacity="0.41"/><circle cx="138" cy="54" r="0.6" opacity="0.36"/><circle cx="1143" cy="144" r="1.2" opacity="0.29"/><circle cx="574" cy="38" r="1.0" opacity="0.37"/><circle cx="320" cy="86" r="0.7" opacity="0.33"/><circle cx="1023" cy="45" r="1.2" opacity="0.42"/><circle cx="147" cy="135" r="0.8" opacity="0.35"/><circle cx="1166" cy="157" r="0.8" opacity="0.32"/><circle cx="1092" cy="42" r="0.7" opacity="0.43"/><circle cx="914" cy="57" r="1.0" opacity="0.36"/><circle cx="959" cy="103" r="2.4" opacity="0.13"/><circle cx="959" cy="103" r="1.0" opacity="0.85"/><circle cx="984" cy="124" r="2.2" opacity="0.11"/><circle cx="984" cy="124" r="0.8" opacity="0.74"/><circle cx="934" cy="136" r="2.4" opacity="0.12"/><circle cx="934" cy="136" r="0.9" opacity="0.8"/><circle cx="967" cy="157" r="2.9" opacity="0.18"/><circle cx="967" cy="157" r="1.25" opacity="1.0"/><circle cx="906" cy="182" r="2.2" opacity="0.1"/><circle cx="906" cy="182" r="0.9" opacity="0.75"/><circle cx="879" cy="205" r="2.5" opacity="0.11"/><circle cx="879" cy="205" r="1.1" opacity="0.85"/></g></svg>') 0 0 / cover no-repeat;
+  -webkit-mask: linear-gradient(180deg, black 66%, transparent 96%);
+  mask: linear-gradient(180deg, black 66%, transparent 96%);
 }
-[data-md-color-scheme="slate"] .masthead::before { opacity: 0.55; }
+[data-md-color-scheme="slate"] .masthead::before { opacity: 0.62; }
 
-/* Dusk grade: the same land, the light nearly gone */
+/* Dusk grade: the same land, the light nearly gone — a touch
+   darker again (16 Jul 2026), so the stars carry the sky */
 [data-md-color-scheme="slate"] .masthead img {
-  filter: brightness(0.55) saturate(0.68) contrast(0.98);
+  filter: brightness(0.47) saturate(0.63) contrast(0.98);
 }
 [data-md-color-scheme="slate"] .masthead::after {
   background:
-    linear-gradient(180deg, rgba(8, 15, 26, 0.55), rgba(10, 18, 30, 0.30) 40%, rgba(11, 21, 34, 0.16) 62%, rgba(11, 21, 34, 0.10)),
-    linear-gradient(0deg, rgba(11, 21, 34, 0.45), rgba(11, 21, 34, 0) 30%);
+    linear-gradient(180deg, rgba(8, 15, 26, 0.62), rgba(10, 18, 30, 0.36) 40%, rgba(11, 21, 34, 0.20) 62%, rgba(11, 21, 34, 0.13)),
+    linear-gradient(0deg, rgba(11, 21, 34, 0.52), rgba(11, 21, 34, 0) 30%);
 }
 
 /* The greeting, set in the sky (clear of the glass bars) */
@@ -744,17 +795,19 @@ body.has-masthead .masthead {
   text-shadow: 0 1px 8px rgba(7, 14, 30, 0.5);
 }
 .masthead h1 {
+  font-family: var(--display-font);
   font-size: clamp(2.4rem, 1.6rem + 4.5vw, 4.1rem);
-  font-weight: 650;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.05;
   color: #f4f6fa;
   margin: 0;
   text-shadow: 0 2px 18px rgba(7, 14, 30, 0.45);
 }
+/* The full stop, painted DOC gold — the sign in the sky */
 .masthead h1::after {
   content: ".";
-  color: var(--marker);
+  color: var(--sign-gold);
 }
 
 /* Map-margin locator, bottom right of the photograph */
