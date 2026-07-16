@@ -14,8 +14,9 @@
        green fill, gold serif headline, pictogram in a Ranginui
        blue chip (yellow alert diamond for the caution set).
        Solid in both schemes: a sign is a sign at night.
-     · Serif headlines, as on the signs: Zilla Slab (the face
-       DOC's own website uses), green by day, gold by night.
+     · Serif headlines, as on the signs: Aleo, a free rounded
+       slab standing in for Archer (DOC's actual brand serif,
+       a commercial Hoefler&Co face) — green by day, gold by night.
      · Dark mode is the sign at night — deep conservation green,
        not charcoal, not navy. The homepage keeps its own night.
      · The handbook textures (pp. 35–37), hand-drawn and dealt
@@ -30,7 +31,9 @@
      InterVariable MC  → prose
      InterMC Machine   → machinery (header, tabs, nav, TOC, labels)
      Geist Mono        → actual code
-     Zilla Slab        → display + sign titles (subset, self-hosted)
+     Aleo              → display (H1/H2) — Archer stand-in, subset,
+                          self-hosted
+     Archivo ExtraBold → sign titles (subset, self-hosted)
 
    Deliberately NOT borrowed: the kōwhaiwhai. DOC's handbook is
    explicit that it isn't decoration and its use sits with Kāhui
@@ -79,19 +82,24 @@
   font-style: italic;
   font-display: swap;
 }
-/* The sign voice: Zilla Slab (Typotheque for Mozilla, OFL) — the
-   slab DOC's own website sets alongside Archer in print. Subset to
-   latin + latin-ext (macrons for te reo), two weights only. */
+/* The display voice: Aleo (Alessio Laiso, OFL) — a rounded,
+   ball-terminal slab in Archer's own family of gesture. Archer
+   itself is a commercial Hoefler&Co face sold via Cloud.typography
+   with no free/personal self-hosting tier, so it can't be
+   embedded here; Aleo is the closest open-license stand-in,
+   warmer and rounder than Zilla Slab's blockier grotesque-slab
+   cut. Subset to latin + latin-ext (macrons for te reo), two
+   weights, instanced from the variable source. */
 @font-face {
-  font-family: "Zilla Slab";
-  src: url("fonts/ZillaSlab-Medium.woff2") format("woff2");
+  font-family: "Aleo";
+  src: url("fonts/Aleo-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Zilla Slab";
-  src: url("fonts/ZillaSlab-SemiBold.woff2") format("woff2");
+  font-family: "Aleo";
+  src: url("fonts/Aleo-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -120,8 +128,8 @@
   /* Actual code voice: inline `code` and fenced blocks only. */
   --md-code-block-font: "Geist Mono", monospace;
   /* Display voice: page titles, section heads. Georgia fallback —
-     DOC's own substitute for Archer. */
-  --display-font: "Zilla Slab", Georgia, serif;
+     DOC's own substitute for Archer, kept as the last resort. */
+  --display-font: "Aleo", Georgia, serif;
   /* Sign voice: the components that are literally painted signs —
      admonition titles, the MC monogram. Arial fallback — DOC's own
      substitute font family for their sans (Helvetica Neue). */
