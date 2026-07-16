@@ -1,19 +1,29 @@
+---
+title: Typography
+description: A typography specimen for MatChavez.com — character sets, weights and styles in the site's custom Inter typeface.
+share: "true"
+---
+
 # Typography
 
 ---
 
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
-
 abcdefghijklmnopqrstuvwxyz
-
 0123456789!?.
 
+rn m Illegal LliI
 Pixel preview  Resize to fit zenith zone
-
 Frame  Group  Feedback  Reset
 
----
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789!?.
+rn m Illegal LliI
+```
 
+---
 
 # H1 Heading 
 
@@ -177,13 +187,22 @@ a#logo h1 {
 CREATE TABLE clowns;
 ```
 
-Admonitions:
+```
+ABCDEFGHIJKLM
+NOPQRSTUVWXYZ
+abcdefghijklm
+nopqrstuvwxyz
+1234567890
+rn m LliI O0o
+```
+
+Admonitions:%%  %%
 
 Default, Multi-paragraph, Collapsible
 
 !!! Nothing
     Boring default
-
+- [ ] 
 
 !!! info "Hello World"
     Very Handy
@@ -244,8 +263,6 @@ All styles:
 
 
 ---
-
-Later that day...
 
 :smile:
 
