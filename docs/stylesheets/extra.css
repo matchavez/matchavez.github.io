@@ -810,6 +810,29 @@ body.has-masthead .md-search__input { color: #f2f4fa; }
 body:has(.masthead) .md-search__input::placeholder,
 body.has-masthead .md-search__input::placeholder { color: rgba(242, 244, 250, 0.6); }
 
+/* Light mode only: the top bar is the sign, not glass. In daylight
+   the photograph carries its own brightness and a translucent bar
+   read as washed-out; dark mode's glass-over-night-sky stays as is. */
+body[data-md-color-scheme="default"]:has(.masthead) .md-header,
+body[data-md-color-scheme="default"].has-masthead .md-header {
+  background-color: var(--sign-green);
+  color: var(--sign-cream);
+}
+body[data-md-color-scheme="default"]:has(.masthead) .md-tabs,
+body[data-md-color-scheme="default"].has-masthead .md-tabs {
+  background-color: var(--sign-green);
+  border-bottom: 0.22rem solid var(--sign-gold);
+  color: rgba(240, 237, 224, 0.75);
+}
+body[data-md-color-scheme="default"]:has(.masthead) .md-tabs__link,
+body[data-md-color-scheme="default"].has-masthead .md-tabs__link { color: rgba(240, 237, 224, 0.75); }
+body[data-md-color-scheme="default"]:has(.masthead) .md-tabs__link:hover,
+body[data-md-color-scheme="default"].has-masthead .md-tabs__link:hover { color: #ffffff; }
+body[data-md-color-scheme="default"]:has(.masthead) .md-tabs__item--active .md-tabs__link,
+body[data-md-color-scheme="default"]:has(.masthead) .md-tabs__link--active,
+body[data-md-color-scheme="default"].has-masthead .md-tabs__item--active .md-tabs__link,
+body[data-md-color-scheme="default"].has-masthead .md-tabs__link--active { color: var(--sign-gold); }
+
 /* Full-bleed masthead (banner by default; cover when the class/​:has applies) */
 .masthead {
   position: relative;
