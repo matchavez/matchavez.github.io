@@ -817,7 +817,10 @@ body.has-masthead .md-search__input::placeholder { color: rgba(242, 244, 250, 0.
    this one bar specifically — not the site-wide --sign-green, so
    it's kept as its own token rather than touching that variable. */
 :root {
-  --home-bar-green: #0d1f17;
+  /* Confirmed by Mat: the same tone as the dark-scheme page
+     background (--paper in [data-md-color-scheme="slate"]),
+     not a new colour of its own. */
+  --home-bar-green: #0d211b;
 }
 body[data-md-color-scheme="default"]:has(.masthead) .md-header,
 body[data-md-color-scheme="default"].has-masthead .md-header {
