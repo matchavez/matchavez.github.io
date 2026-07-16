@@ -22,6 +22,19 @@ jobs:
           python-version: 3.x
       - run: pip install zensical
       - run: zensical build --clean
+      - name: Cache-bust custom assets
+        # extra.css/extra.js (zensical's extra_css/extra_javascript) are
+        # emitted with plain, unversioned filenames — unlike the theme's
+        # own bundled CSS, which gets a content hash baked into its name.
+        # Browsers then keep serving a stale copy after a deploy with no
+        # way to know it changed. Stamping every reference with the
+        # commit SHA forces a fresh fetch on every push, automatically.
+        run: |
+          SHA=$(git rev-parse --short HEAD)
+          grep -rlZ -e 'stylesheets/extra\.css"' -e 'javascripts/extra\.js"' site --include='*.html' \
+            | xargs -0 -r sed -i -E \
+              -e "s#(stylesheets/extra\.css)\"#\1?v=${SHA}\"#g" \
+              -e "s#(javascripts/extra\.js)\"#\1?v=${SHA}\"#g"
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
