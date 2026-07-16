@@ -96,6 +96,22 @@
   font-style: normal;
   font-display: swap;
 }
+/* The carved-sign voice: Archivo ExtraBold (Omnibus-Type, OFL) —
+   the closest free match to DOC Sign, their own proprietary
+   signage face (handbook p27: "DOC Sign is the only font used on
+   signs, and signs are the only place we use DOC Sign" — not
+   licensable, so this stands in for it). Weight picked by
+   rendering WAIKARI RESERVE WALKS at Medium/SemiBold/Bold/
+   ExtraBold/Black and matching stroke-to-counter proportion
+   against three photographed boards — ExtraBold kept the counters
+   open the way the real signs do; Black closed them up. */
+@font-face {
+  font-family: "Archivo Sign";
+  src: url("fonts/Archivo-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --md-text-font: "Inter";
@@ -103,9 +119,13 @@
   --md-code-font: "InterMC Machine", "Inter";
   /* Actual code voice: inline `code` and fenced blocks only. */
   --md-code-block-font: "Geist Mono", monospace;
-  /* Display voice: page titles, section heads, sign titles.
-     Georgia fallback — DOC's own substitute for Archer. */
+  /* Display voice: page titles, section heads. Georgia fallback —
+     DOC's own substitute for Archer. */
   --display-font: "Zilla Slab", Georgia, serif;
+  /* Sign voice: the components that are literally painted signs —
+     admonition titles, the MC monogram. Arial fallback — DOC's own
+     substitute font family for their sans (Helvetica Neue). */
+  --sign-font: "Archivo Sign", Arial, sans-serif;
 
   /* The sign standard, straight off the DOC swatch page (p33):
      identical in both schemes — a sign is a sign at night. */
@@ -415,9 +435,9 @@
   height: 1.5rem;
   padding-bottom: 0.28rem;
   box-sizing: border-box;
-  font-family: var(--display-font);
+  font-family: var(--sign-font);
   font-size: 0.6rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   letter-spacing: 0.01em;
   color: var(--sign-green);
@@ -705,9 +725,9 @@ code, kbd, pre {
   border-left: none;
   margin: 0;
   padding: 0.55rem 0.8rem 0.4rem 2.3rem !important;
-  font-family: var(--display-font);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-family: var(--sign-font);
+  font-size: 0.72rem;
+  font-weight: 800;
   letter-spacing: 0.01em;
   text-transform: none;
 }
