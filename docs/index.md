@@ -12,6 +12,7 @@ title: index
   </div>
   <p class="mh-locator">&#9651; near arthur&rsquo;s pass &middot; nztopo50 bv20</p>
 </header>
+<script>document.body.classList.add("has-masthead")</script>
 
 <!-- Default Statcounter code for GitHub
 https://matchavez.com -->

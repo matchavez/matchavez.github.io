@@ -592,46 +592,64 @@ code, kbd, pre {
 
 
 /* ---------- 7. Homepage — the territory, cover to cover
-   Scoped with :has(.masthead) so only the homepage changes layout.
-   The photograph fills the viewport; the header and tabs float over
-   it as the only navigation. Without :has support, the page falls
-   back to a normal banner below paper-coloured bars. */
+   Primary scope: body.has-masthead, a class added by a tiny inline
+   script the instant the masthead markup is parsed (see docs/index.md).
+   :has(.masthead) is kept alongside it for zero-JS visitors, but the
+   class is what the layout actually depends on now — :has() support
+   turned out to be inconsistent in the wild, and losing it silently
+   left the sidebars visible and the photo boxed into the content
+   column (the "blue/white strip" bug, 16 Jul 2026). */
 
-body:has(.masthead) { overflow-x: clip; }
-.md-main:has(.masthead) .md-sidebar { display: none; }
-.md-main:has(.masthead) .md-content__button { display: none; }
-body:has(.masthead) :is(.md-main__inner, .md-content__inner) {
+body:has(.masthead), body.has-masthead { overflow-x: clip; }
+.md-main:has(.masthead) .md-sidebar,
+body.has-masthead .md-sidebar { display: none; }
+.md-main:has(.masthead) .md-content__button,
+body.has-masthead .md-content__button { display: none; }
+body:has(.masthead) :is(.md-main__inner, .md-content__inner),
+body.has-masthead :is(.md-main__inner, .md-content__inner) {
   margin: 0;
   padding: 0;
 }
 /* The content column must span the full grid, or the 50%-anchored
    full-bleed drifts left and strands a photo-less strip on the right */
-body:has(.masthead) .md-content__inner { max-width: none; }
-body:has(.masthead) .md-content__inner::before { display: none; }
-body:has(.masthead) .md-footer { display: none; }
+body:has(.masthead) .md-content__inner,
+body.has-masthead .md-content__inner { max-width: none; }
+body:has(.masthead) .md-content__inner::before,
+body.has-masthead .md-content__inner::before { display: none; }
+body:has(.masthead) .md-footer,
+body.has-masthead .md-footer { display: none; }
 
 /* The bars become glass over the photograph */
-body:has(.masthead) .md-header {
+body:has(.masthead) .md-header,
+body.has-masthead .md-header {
   background-color: rgba(10, 12, 24, 0.10);
   color: #f2f4fa;
 }
-body:has(.masthead) .md-tabs {
+body:has(.masthead) .md-tabs,
+body.has-masthead .md-tabs {
   background-color: transparent;
   border-bottom: none;
   color: rgba(242, 244, 250, 0.78);
 }
-body:has(.masthead) .md-tabs__link { color: rgba(242, 244, 250, 0.78); }
-body:has(.masthead) .md-tabs__link:hover { color: #ffffff; }
+body:has(.masthead) .md-tabs__link,
+body.has-masthead .md-tabs__link { color: rgba(242, 244, 250, 0.78); }
+body:has(.masthead) .md-tabs__link:hover,
+body.has-masthead .md-tabs__link:hover { color: #ffffff; }
 body:has(.masthead) .md-tabs__item--active .md-tabs__link,
-body:has(.masthead) .md-tabs__link--active { color: #ffffff; }
-body:has(.masthead) .md-search__form {
+body:has(.masthead) .md-tabs__link--active,
+body.has-masthead .md-tabs__item--active .md-tabs__link,
+body.has-masthead .md-tabs__link--active { color: #ffffff; }
+body:has(.masthead) .md-search__form,
+body.has-masthead .md-search__form {
   background-color: rgba(242, 244, 250, 0.14);
   border-color: rgba(242, 244, 250, 0.25);
 }
-body:has(.masthead) .md-search__input { color: #f2f4fa; }
-body:has(.masthead) .md-search__input::placeholder { color: rgba(242, 244, 250, 0.6); }
+body:has(.masthead) .md-search__input,
+body.has-masthead .md-search__input { color: #f2f4fa; }
+body:has(.masthead) .md-search__input::placeholder,
+body.has-masthead .md-search__input::placeholder { color: rgba(242, 244, 250, 0.6); }
 
-/* Full-bleed masthead (banner by default; cover when :has works) */
+/* Full-bleed masthead (banner by default; cover when the class/​:has applies) */
 .masthead {
   position: relative;
   width: 100vw;
@@ -641,14 +659,16 @@ body:has(.masthead) .md-search__input::placeholder { color: rgba(242, 244, 250, 
   overflow: hidden;
 }
 /* Cover: slide under the glass bars, fill the viewport */
-body:has(.masthead) .masthead {
+body:has(.masthead) .masthead,
+body.has-masthead .masthead {
   margin-top: -4.8rem;   /* header 2.4rem + tabs 2.4rem */
   height: 100vh;
   height: 100dvh;
   border-bottom: none;
 }
 @media screen and (max-width: 76.1875em) {
-  body:has(.masthead) .masthead { margin-top: -2.4rem; }  /* tabs hidden */
+  body:has(.masthead) .masthead,
+  body.has-masthead .masthead { margin-top: -2.4rem; }  /* tabs hidden */
 }
 
 .masthead img {
@@ -772,7 +792,7 @@ body[data-md-color-scheme="slate"] {
   background-position: right clamp(2rem, 9vw, 12rem) center;
   background-size: auto min(92vh, 50rem);
 }
-body:has(.masthead) { background-image: none; }
+body:has(.masthead), body.has-masthead { background-image: none; }
 
 
 /* ---------- 8. Selection, focus, scrollbars */
