@@ -8,20 +8,23 @@
    in NZ Topo50 / DOC wayfinding language — now taken all the way
    to the sign standard in DOC's own brand handbook (Sept 2020):
 
-     · The sign system is the component language: DOC green
-       (#194036, PMS 553) panels under a DOC gold (#ffc51d,
-       PMS 123) top bar — admonitions, table headers, the footer.
+     · The sign system IS the site: the header and footer are
+       DOC green (#194036, PMS 553) panels with a DOC gold
+       (#ffc51d, PMS 123) bar; admonitions are whole signs —
+       green fill, gold serif headline, pictogram in a Ranginui
+       blue chip (yellow alert diamond for the caution set).
        Solid in both schemes: a sign is a sign at night.
-     · Serif headlines, as on the signs themselves: Zilla Slab
-       (the face DOC's own website uses) for H1/H2 and sign titles.
+     · Serif headlines, as on the signs: Zilla Slab (the face
+       DOC's own website uses), green by day, gold by night.
+     · Dark mode is the sign at night — deep conservation green,
+       not charcoal, not navy. The homepage keeps its own night.
+     · The handbook textures (pp. 35–37), hand-drawn and dealt
+       one per page load, never twice in a row.
      · Orange retreats to what it really is — track markers:
        H2 triangles, list bullets, "you are here" in the nav.
-     · Links take the cobalt of that sky.
-     · Dark mode is the same sky after dusk — deep cobalt,
-       not charcoal, not black.
      · Horizontal rules are contour lines.
-     · One true detail: NZTopo50 sheet BV20 (Arthur's Pass)
-       in the footer.
+     · Two true details: NZTopo50 sheet BV20 (Arthur's Pass) and
+       Te Waipounamu itself, both on the footer sign.
 
    Typefaces — Mat's own Inter freezes, plus the sign voice:
      InterVariable MC  → prose
@@ -109,6 +112,7 @@
   --sign-green: #194036;   /* DOC green, PMS 553 */
   --sign-gold:  #ffc51d;   /* DOC gold, PMS 123 */
   --sign-cream: #f0ede0;   /* painted letter white */
+  --picto-blue: #1d87c9;   /* Ranginui — the pictogram chips */
 }
 
 
@@ -124,11 +128,12 @@
   --paper:      #f4f1e6;
   --paper-lift: #eae5d2;
   --hairline:   rgba(38, 34, 24, 0.16);
-  --cobalt:     #1d4e9e;   /* the sky, as a link */
-  --cobalt-dim: #163d7c;
+  --cobalt:     #0f6597;   /* Ranginui, deepened until it can carry text */
+  --cobalt-dim: #0b4d74;
   --marker:     #d4520a;   /* DOC track-marker orange */
   --gold:       #a87a1f;   /* tussock — sparingly */
   --pounamu:    #2f7d5a;   /* greenstone — reserved for quoted words */
+  --head-ink:   #194036;   /* headings painted DOC green, as on the posters */
 
   --md-default-bg-color:        var(--paper);
   --md-default-bg-color--light: var(--paper-lift);
@@ -158,32 +163,35 @@
 }
 
 
-/* ---------- 1b. Palette — DARK ("dusty dusk")
-   The sky's last dusty blue before night, taken a shade darker —
-   one continuous hue from the masthead cobalt down to the page. */
+/* ---------- 1b. Palette — DARK ("the sign at night")
+   Not charcoal, not navy: the deep conservation green of a DOC
+   panel after dark, headlines painted gold, letters cream.
+   Any New Zealander with a torch knows exactly where they are.
+   (The homepage keeps its own night — the photograph.) */
 
 [data-md-color-scheme="slate"] {
-  --ink:        #dfe4ea;
-  --ink-muted:  #8f9cad;
-  --ink-faint:  #5c6a7c;
-  --paper:      #0b1522;
-  --paper-lift: #131f30;
-  --hairline:   rgba(223, 228, 234, 0.14);
-  --cobalt:     #8ab4f5;   /* the day sky, remembered at dusk */
-  --cobalt-dim: #aecbf8;
+  --ink:        #e9e5d6;
+  --ink-muted:  #a4b2a2;
+  --ink-faint:  #6c7f6f;
+  --paper:      #0d211b;
+  --paper-lift: #143028;
+  --hairline:   rgba(233, 229, 214, 0.14);
+  --cobalt:     #6fd0bb;   /* Hokianga, lifted until it reads at night */
+  --cobalt-dim: #94e2d2;
   --marker:     #ff7d33;
-  --gold:       #d9a84e;
+  --gold:       #ffc51d;   /* true sign gold after dark */
   --pounamu:    #63c19b;
+  --head-ink:   #ffc51d;   /* headlines painted gold, as on the signs */
 
   --md-default-bg-color:        var(--paper);
   --md-default-bg-color--light: var(--paper-lift);
-  --md-default-bg-color--lighter:  rgba(223, 228, 234, 0.07);
-  --md-default-bg-color--lightest: rgba(223, 228, 234, 0.04);
-  --md-default-fg-color:        rgba(223, 228, 234, 0.92);
+  --md-default-bg-color--lighter:  rgba(233, 229, 214, 0.07);
+  --md-default-bg-color--lightest: rgba(233, 229, 214, 0.04);
+  --md-default-fg-color:        rgba(233, 229, 214, 0.92);
   --md-default-fg-color--light: var(--ink-muted);
   --md-default-fg-color--lighter: var(--ink-faint);
-  --md-default-fg-color--lightest: rgba(223, 228, 234, 0.10);
-  --md-typeset-color:           #ccd3db;
+  --md-default-fg-color--lightest: rgba(233, 229, 214, 0.10);
+  --md-typeset-color:           #d4d2c1;
 
   --md-primary-fg-color:        var(--paper);
   --md-primary-fg-color--light: var(--paper-lift);
@@ -196,12 +204,23 @@
   --md-typeset-a-color:         var(--cobalt);
 
   --md-code-bg-color:           var(--paper-lift);
-  --md-code-fg-color:           #d3d8e3;
+  --md-code-fg-color:           #d8ddcb;
 
   --md-footer-bg-color:         var(--paper);
   --md-footer-bg-color--dark:   var(--paper);
   --md-footer-fg-color:         var(--ink-muted);
   --md-footer-fg-color--light:  var(--ink-faint);
+}
+
+/* The theme's palette.css re-sets link colour per primary colour
+   with a two-attribute selector — match its specificity or lose */
+[data-md-color-scheme="default"][data-md-color-primary] {
+  --md-typeset-a-color: var(--cobalt);
+  --md-accent-fg-color: var(--marker);
+}
+[data-md-color-scheme="slate"][data-md-color-primary] {
+  --md-typeset-a-color: var(--cobalt);
+  --md-accent-fg-color: var(--marker);
 }
 
 
@@ -232,28 +251,29 @@
    signs; everything below stays in Mat's Inter machinery. */
 
 .md-typeset h1 {
-  color: var(--ink);
+  color: var(--head-ink);
   font-family: var(--display-font);
-  font-size: clamp(1.6rem, 1.25rem + 1.6vw, 2rem);
+  font-size: clamp(1.7rem, 1.3rem + 1.7vw, 2.15rem);
   font-weight: 600;
   letter-spacing: -0.008em;
   line-height: 1.15;
   margin-bottom: 0.9em;
 }
 /* The signature survives: every page title ends on a full stop —
-   now painted tussock gold. */
+   painted gold by day, orange marker at night (gold-on-gold hides). */
 .md-typeset h1::after {
   content: ".";
   color: var(--gold);
 }
+[data-md-color-scheme="slate"] .md-typeset h1::after { color: var(--marker); }
 .md-typeset h1 .headerlink { display: none; }
 
 /* H2 = a leg of the route: hairline overline with a DOC triangle
    sitting on it, like a marker nailed to a post. No numbers. */
 .md-typeset h2 {
-  color: var(--ink);
+  color: var(--head-ink);
   font-family: var(--display-font);
-  font-size: 1.28rem;
+  font-size: 1.32rem;
   font-weight: 500;
   letter-spacing: 0;
   border-top: 1px solid var(--hairline);
@@ -362,61 +382,75 @@
 }
 
 
-/* ---------- 5. The machinery: header, tabs, nav, TOC, footer */
+/* ---------- 5. The machinery: header, tabs, nav, TOC, footer.
+   The header IS the sign now: conservation green band, painted
+   cream and gold, same by day and night — walk up to any page
+   and you know whose track you're on. */
 
 .md-header {
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--sign-green);
+  color: var(--sign-cream);
 }
 .md-header--shadow { box-shadow: none; }
 .md-header__topic,
 .md-header__topic span {
-  font-family: var(--md-code-font), monospace;
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
+  font-family: var(--display-font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-transform: none;
 }
 .md-header__topic:first-child { font-weight: 600; }
 
-/* Logo: the MC mark — a little DOC sign now, gold letters on
-   conservation green, same by day and night */
+/* The MC mark: a plain gold monogram shield. Deliberately NOT the
+   tohu — no wave, no fern, no white band, different colourway and
+   silhouette. A crest, not their crest. */
 .md-header__button.md-logo svg { display: none; }
 .md-header__button.md-logo::before {
   content: "MC";
-  display: inline-block;
-  font-family: var(--md-code-font), monospace;
-  font-size: 0.62rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.5rem;
+  padding-bottom: 0.28rem;
+  box-sizing: border-box;
+  font-family: var(--display-font);
+  font-size: 0.6rem;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.02em;
-  color: var(--sign-gold);
-  background-color: var(--sign-green);
-  padding: 0.32em 0.38em 0.28em;
-  border-radius: 0.22em;
+  letter-spacing: 0.01em;
+  color: var(--sign-green);
+  background-color: var(--sign-gold);
+  clip-path: path("M2 0 L25 0 Q27 0 27 2 L27 15 Q27 23 13.5 30 Q0 23 0 15 L0 2 Q0 0 2 0 Z");
 }
 
-/* Tabs: mono, lowercase, hairline seam; gold underline when active */
+/* Tabs: cream on the green band, Normal Case, gold underline when
+   active; the sign's gold bar closes the band underneath */
 .md-tabs {
-  background-color: var(--paper);
-  color: var(--ink-muted);
-  border-bottom: 1px solid var(--hairline);
+  background-color: var(--sign-green);
+  color: rgba(240, 237, 224, 0.75);
+  border-bottom: 0.22rem solid var(--sign-gold);
 }
 .md-tabs__link {
-  font-family: var(--md-code-font), monospace;
-  font-size: 0.6rem;
+  font-family: var(--md-text-font), sans-serif;
+  font-size: 0.64rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: lowercase;
+  letter-spacing: 0.01em;
+  text-transform: none;
   opacity: 1;
-  color: var(--ink-muted);
+  color: rgba(240, 237, 224, 0.75);
   transition: color 0.15s ease;
 }
-.md-tabs__link:hover { color: var(--ink); }
+.md-tabs__link:hover { color: #ffffff; }
 .md-tabs__item--active .md-tabs__link,
 .md-tabs__link--active {
-  color: var(--ink);
+  color: var(--sign-gold);
   box-shadow: 0 2px 0 0 var(--sign-gold);
+}
+/* Tabs hidden on small screens: the header carries the gold bar */
+@media screen and (max-width: 76.1875em) {
+  .md-header { border-bottom: 0.22rem solid var(--sign-gold); }
 }
 
 /* Sidebars: mono machinery, muted until it matters */
@@ -440,33 +474,46 @@
   color: var(--marker);
 }
 
-/* Search: quiet outlined field, mono */
+/* Search: a quiet recess in the sign panel, mono */
 .md-search__form {
-  background-color: var(--paper-lift);
-  border: 1px solid var(--hairline);
+  background-color: rgba(240, 237, 224, 0.12);
+  border: 1px solid rgba(240, 237, 224, 0.22);
   border-radius: 0.35rem;
   box-shadow: none;
 }
 .md-search__form:hover {
-  background-color: var(--paper-lift);
-  border-color: var(--ink-faint);
+  background-color: rgba(240, 237, 224, 0.16);
+  border-color: rgba(240, 237, 224, 0.4);
 }
 .md-search__input {
   font-family: var(--md-code-font), monospace;
   font-size: 0.68rem;
+  color: var(--sign-cream);
 }
-.md-search__input::placeholder { color: var(--ink-faint); }
+.md-search__input::placeholder { color: rgba(240, 237, 224, 0.55); }
 [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
   background-color: var(--paper);
   border-color: var(--hairline);
 }
+[data-md-toggle="search"]:checked ~ .md-header .md-search__input {
+  color: var(--ink);
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__input::placeholder {
+  color: var(--ink-faint);
+}
 
 /* Footer: the sign at the end of the track — DOC green panel under
-   a gold bar, in both schemes, with the one true coordinate on it */
+   a gold bar, in both schemes, with the one true coordinate on it.
+   Te Waipounamu itself stands quietly at the right of the panel:
+   the one place the map keeps its shape. */
 .md-footer { border-top: none; }
 .md-footer-meta {
   background-color: var(--sign-green);
   border-top: 0.22rem solid var(--sign-gold);
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 498"><g fill="none" stroke="%23f0ede0" stroke-opacity="0.22" stroke-width="2.5"><path d="M335.7,204.6L334.7,214.6L337.3,225.1L340.2,228.3L332.1,231.1L341.3,230.5L345.3,234.5L350.4,233.8L354.8,235.3L355.2,243.0L354.1,246.9L348.9,249.5L347.3,250.7L339.4,249.0L318.3,247.0L322.2,237.2L316.6,241.0L315.8,247.7L309.0,248.9L299.0,254.5L288.6,262.0L280.7,265.4L271.7,270.0L264.5,276.9L257.2,285.1L256.7,291.5L254.1,296.6L252.7,299.4L253.7,312.3L251.5,315.6L253.6,317.6L253.1,324.4L247.1,336.8L241.2,342.8L235.7,357.6L237.2,361.0L234.8,364.3L231.7,370.3L229.2,372.7L228.4,376.8L226.1,381.4L222.3,383.4L225.9,385.3L229.4,388.6L223.3,392.4L218.6,397.4L227.7,390.8L231.1,390.9L226.2,398.2L215.2,399.3L206.6,403.7L202.7,409.7L200.4,417.8L193.9,421.5L183.4,430.4L180.7,439.5L173.9,440.3L174.7,444.4L169.3,447.6L161.0,449.4L156.3,452.4L149.6,453.3L145.7,452.9L143.6,453.8L138.8,452.0L137.3,455.3L129.4,453.4L127.1,446.3L117.5,447.9L114.9,445.4L113.5,450.3L104.3,449.4L104.7,446.4L101.4,447.6L99.0,447.9L96.2,443.8L102.5,441.8L101.6,435.7L100.2,439.3L93.5,431.1L85.1,431.1L79.1,432.3L75.4,433.2L68.0,428.7L66.6,421.1L60.0,416.8L52.7,416.1L50.2,423.5L44.3,425.2L37.8,425.1L33.1,422.5L15.8,421.2L10.9,416.3L15.3,412.6L22.2,404.1L17.0,406.3L15.2,410.2L8.0,411.5L10.2,405.0L17.4,401.6L12.0,400.6L14.8,394.8L8.7,402.5L1.2,406.0L0.0,393.3L8.4,390.3L22.6,388.6L29.6,382.8L22.7,383.3L16.4,384.3L22.7,379.2L16.2,376.3L23.8,372.7L29.2,372.7L31.4,367.6L19.9,372.1L13.2,373.8L14.6,367.1L18.5,360.3L26.0,363.5L18.3,357.7L22.7,352.2L26.3,355.4L31.0,358.0L29.1,362.8L33.7,359.5L39.5,366.6L31.0,355.4L38.1,352.3L42.3,355.8L41.5,353.7L41.7,350.0L31.0,351.2L28.9,345.7L31.9,340.4L37.6,345.0L33.9,339.9L34.8,334.2L38.1,340.7L43.2,338.3L36.6,331.9L46.4,334.1L39.1,328.7L42.9,324.4L45.0,322.2L50.9,319.6L52.0,326.7L53.1,330.8L55.1,327.5L52.4,319.3L54.5,314.2L58.5,316.6L58.9,322.7L57.8,311.8L62.4,313.1L60.3,309.1L64.4,306.5L68.7,302.1L76.7,305.8L78.7,306.0L73.2,294.9L78.9,288.1L83.4,281.3L89.4,278.6L91.0,275.2L98.3,268.7L100.8,263.4L101.7,260.6L109.1,259.1L116.4,255.1L121.8,258.4L135.5,249.0L140.2,244.4L145.6,239.9L155.7,234.6L161.2,231.7L169.9,228.8L177.2,222.0L180.6,218.0L182.1,214.0L190.4,209.5L193.5,205.2L198.3,200.6L205.0,196.0L200.5,196.8L204.3,191.9L209.4,189.9L213.1,187.9L216.3,184.5L223.1,181.1L226.3,180.7L234.7,172.5L242.5,162.3L248.8,154.0L254.3,143.5L257.4,135.4L260.0,121.2L264.6,110.8L268.4,97.8L267.3,93.1L276.4,92.5L284.1,88.0L287.9,85.7L289.8,82.6L293.2,76.1L299.5,67.2L300.6,58.7L301.8,55.2L301.4,28.3L306.1,22.0L315.1,15.7L324.8,5.6L330.0,0.6L340.5,0.0L335.3,1.4L332.4,8.7L331.0,10.7L333.2,13.7L332.8,18.3L335.0,19.4L341.4,25.2L346.1,21.4L348.5,20.5L350.4,25.5L352.6,28.3L352.2,34.0L348.9,37.9L351.5,42.7L352.6,47.0L350.8,47.7L353.2,49.7L354.8,56.2L354.7,59.4L364.3,55.9L372.5,46.8L377.9,44.0L382.3,40.8L389.1,39.4L394.7,31.2L398.0,31.3L404.4,31.8L400.2,34.4L394.7,37.5L390.3,44.0L398.8,40.2L395.0,46.2L395.8,50.3L389.9,56.2L399.1,54.1L406.1,55.1L413.2,56.2L415.7,60.4L409.7,60.3L405.3,68.9L406.7,75.0L411.8,79.3L414.6,90.0L414.1,99.8L402.8,112.6L400.1,122.0L396.7,128.1L390.5,134.6L386.7,138.2L387.4,143.0L379.0,146.5L375.8,155.3L369.8,169.3L366.4,173.1L364.5,180.6L356.6,186.4L344.6,191.6L339.0,196.5L335.7,204.6Z"/><path d="M92.6,482.2L92.1,483.6L89.8,485.6L83.1,487.3L76.7,492.6L69.4,488.8L66.6,492.3L62.4,495.3L61.0,498.6L56.3,498.8L57.6,492.6L61.3,489.6L64.4,481.4L67.9,475.4L72.0,472.2L69.0,464.5L70.6,456.4L77.7,455.3L89.6,467.8L92.2,469.6L90.9,472.1L82.4,471.0L84.5,473.7L88.9,478.1L95.9,478.6L92.6,482.2Z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1.4rem center;
+  background-size: auto 150%;
 }
 .md-copyright,
 .md-copyright__highlight {
@@ -487,16 +534,17 @@
 .md-footer-meta.md-typeset a { color: rgba(240, 237, 224, 0.85); }
 .md-footer-meta.md-typeset a:hover { color: var(--sign-gold); }
 
-/* Back-to-top pill: paper + hairline */
+/* Back-to-top pill: a little sign pointing up the track */
 .md-top {
-  background-color: var(--paper-lift);
-  color: var(--ink-muted);
-  border: 1px solid var(--hairline);
-  box-shadow: none;
+  background-color: var(--sign-green);
+  color: var(--sign-cream);
+  border: none;
+  border-top: 3px solid var(--sign-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 .md-top:hover {
-  background-color: var(--paper-lift);
-  color: var(--marker);
+  background-color: var(--sign-green);
+  color: var(--sign-gold);
 }
 
 
@@ -591,47 +639,90 @@ code, kbd, pre {
 }
 
 
-/* ---------- 6b. Admonitions — the DOC sign standard, properly this
-   time (handbook pp. 38–41). Every sign on a track is the same
-   panel: conservation green under a solid gold bar, with a gold
-   serif headline — "Danger" and "Welcome to Athenree" are painted
-   exactly alike. What changes is the pictogram. So all admonitions
-   share one anatomy, and the type icon does the differentiating —
-   gold, like the yellow diamond on an alert sign. Solid in both
-   schemes: a sign is a sign at night. Body text stays on paper. */
+/* ---------- 6b. Admonitions — the whole sign this time (handbook
+   pp. 38–41). The entire panel is conservation green under the gold
+   bar: gold serif headline, cream painted letters, and the type's
+   pictogram sitting in a Ranginui-blue chip — exactly the grammar
+   of "Short Loop Track 🚶" on an orientation panel. The caution set
+   swaps the blue chip for the yellow alert diamond. Solid in both
+   schemes: a sign is a sign at night. */
 
 .md-typeset :is(.admonition, details) {
-  border: 1px solid var(--hairline);
-  border-left-width: 1px;
+  border: none;
   border-radius: 0.45rem;
   box-shadow: none;
   font-size: 0.72rem;
-  /* !important: the theme tints bodies per type (pale blue for
-     info/note etc.) at higher specificity — the sign body stays
-     on the page's own paper */
-  background-color: transparent !important;
+  /* !important: the theme tints panels per type at higher
+     specificity — every sign is green */
+  background-color: var(--sign-green) !important;
+  color: #ece8d8;
   overflow: hidden;
 }
+.md-typeset :is(.admonition, details) :is(p, ul, ol, dl, li) { color: #ece8d8; }
+.md-typeset :is(.admonition, details) a { color: var(--sign-gold); }
+.md-typeset :is(.admonition, details) a:hover { color: #ffd763; }
+.md-typeset :is(.admonition, details) strong { color: #ffffff; }
+.md-typeset :is(.admonition, details) code {
+  background-color: rgba(240, 237, 224, 0.14);
+  color: #f4f1e4;
+  border: none;
+}
+.md-typeset :is(.admonition, details) ul li::marker { color: var(--sign-gold); }
+.md-typeset :is(.admonition, details) blockquote {
+  border-left-color: var(--sign-gold);
+  color: rgba(236, 232, 216, 0.8);
+}
+
 .md-typeset :is(.admonition-title, summary) {
-  background-color: var(--sign-green) !important;
+  position: relative;
+  /* One shorthand: the pictogram chip (white icon on Ranginui blue)
+     painted as a background layer, everything else transparent so
+     the green panel shows through */
+  background: linear-gradient(var(--picto-blue), var(--picto-blue))
+              0.55rem 50% / 1.2rem 1.2rem no-repeat transparent !important;
   color: var(--sign-gold) !important;
   border-top: 0.22rem solid var(--sign-gold);
   border-right: none;
   border-bottom: none;
   border-left: none;
   margin: 0;
+  padding: 0.55rem 0.8rem 0.4rem 2.3rem !important;
   font-family: var(--display-font);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: none;
 }
-/* The pictogram, painted gold like the alert diamond */
 .md-typeset :is(.admonition-title, summary)::before {
-  background-color: var(--sign-gold) !important;
+  /* !important throughout: the theme positions the icon with
+     [dir="ltr"] attribute selectors that outrank anything sane */
+  position: absolute !important;
+  margin: 0 !important;
+  background-color: #ffffff !important;
+  left: 0.7rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 0.9rem !important;
+  height: 0.9rem !important;
+}
+/* Caution set: the chip becomes the yellow alert diamond,
+   its pictogram painted bush-dark — straight off page 41 */
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .danger, .error, .failure, .fail, .missing, .bug)
+  > :is(.admonition-title, summary) {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0.8 23.2 12 12 23.2 0.8 12Z" fill="%23ffc51d"/></svg>')
+              0.48rem 50% / 1.35rem 1.35rem no-repeat transparent !important;
+}
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .danger, .error, .failure, .fail, .missing, .bug)
+  > :is(.admonition-title, summary)::before {
+  background-color: #21331f !important;
+  width: 0.78rem !important;
+  height: 0.78rem !important;
+  left: 0.77rem !important;
 }
 .md-typeset details > summary::after {
   color: var(--sign-gold) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 
@@ -669,11 +760,13 @@ body.has-masthead .md-content__inner::before { display: none; }
 body:has(.masthead) .md-footer,
 body.has-masthead .md-footer { display: none; }
 
-/* The bars become glass over the photograph */
+/* The bars become glass over the photograph — no sign band, no
+   gold bar; the cover is the territory, not a sign */
 body:has(.masthead) .md-header,
 body.has-masthead .md-header {
   background-color: rgba(10, 12, 24, 0.10);
   color: #f2f4fa;
+  border-bottom: none;
 }
 body:has(.masthead) .md-tabs,
 body.has-masthead .md-tabs {
@@ -804,8 +897,12 @@ body.has-masthead .masthead {
   margin: 0;
   text-shadow: 0 2px 18px rgba(7, 14, 30, 0.45);
 }
-/* The full stop, painted DOC gold — the sign in the sky */
-.masthead h1::after {
+/* The full stop, painted DOC gold — the sign in the sky.
+   (Repeated with scheme scope: the content-page dark rule
+   outranks the bare selector.) */
+.masthead h1::after,
+[data-md-color-scheme="default"] .md-typeset .masthead h1::after,
+[data-md-color-scheme="slate"] .md-typeset .masthead h1::after {
   content: ".";
   color: var(--sign-gold);
 }
@@ -825,27 +922,65 @@ body.has-masthead .masthead {
   margin: 0;
 }
 
-/* ---------- 7b. The map under the words — Te Waipounamu itself
-   The real coastline of the South Island (Natural Earth 1:10m data),
-   with Rakiura, standing quietly behind every content page. Just the
-   silhouette. It holds still while the text moves over it.
-   The homepage needs no map: it has the territory. */
+/* ---------- 7b. Textures — the handbook set, hand-drawn, one per
+   page (pp. 35–37): tussock, water, ridgelines, harakeke, scree.
+   A single quiet band along the foot of every content page, in one
+   brand colour, never the same one twice in a row — extra.js deals
+   a different texture each load (sessionStorage remembers the last
+   deal; no JS gets the tussock). The territory (homepage) needs no
+   texture, and Te Waipounamu keeps its shape on the footer sign.
+   Deliberately absent, as ever: the kōwhaiwhai. */
 
-body[data-md-color-scheme="default"] {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 498"><g fill="none" stroke="%23262218" stroke-opacity="0.11" stroke-width="1"><path d="M335.7,204.6L335.4,213.1L334.7,214.6L337.3,225.1L337.2,226.3L336.5,225.4L335.6,225.8L336.9,227.4L340.2,228.3L333.5,229.8L332.1,231.1L335.4,232.3L336.5,230.9L341.3,230.5L342.5,233.3L343.4,229.3L345.2,230.8L345.3,234.5L348.0,231.8L349.6,232.2L350.4,233.8L352.6,231.8L352.8,233.1L354.8,235.3L354.4,237.3L355.1,238.9L355.2,243.0L354.1,246.9L353.4,245.9L352.1,247.7L351.1,247.4L350.8,249.5L349.9,248.8L348.9,249.5L347.0,241.7L347.1,239.7L346.4,239.4L345.2,240.4L346.0,241.9L345.2,245.9L347.3,250.7L342.5,250.5L340.6,248.6L339.4,249.0L335.5,244.8L336.5,242.4L318.3,247.0L318.0,245.9L319.2,245.0L330.3,241.7L328.4,240.1L325.1,239.9L322.2,237.2L318.0,238.3L316.6,241.0L316.6,246.4L315.8,247.7L309.0,248.9L299.0,254.5L288.6,262.0L285.3,262.2L280.7,265.4L277.9,266.2L276.1,268.0L271.7,270.0L264.5,276.9L260.7,278.2L257.2,285.1L256.7,291.5L254.4,294.4L254.1,296.6L251.5,298.0L252.7,299.4L253.7,312.3L253.4,313.7L251.5,315.6L253.1,315.8L253.6,317.6L253.1,324.4L247.1,336.8L241.2,342.8L238.3,348.9L235.7,357.6L237.3,359.3L237.2,361.0L234.8,364.3L235.1,366.9L231.7,370.3L232.1,372.1L231.5,373.0L229.2,372.7L229.9,375.7L228.4,376.8L225.4,377.1L226.2,378.6L227.4,378.7L226.1,381.4L222.3,383.4L222.5,385.3L225.2,386.2L225.9,385.3L229.4,387.6L229.4,388.6L224.8,390.3L223.3,392.4L221.7,393.0L221.1,394.8L219.1,396.1L218.6,397.4L225.5,394.1L227.7,390.8L230.3,388.8L231.1,390.9L230.4,395.9L227.2,396.4L226.2,398.2L215.2,399.3L210.6,400.8L206.6,403.7L202.7,409.7L201.4,416.4L200.4,417.8L193.9,421.5L190.8,425.4L183.4,430.4L181.6,432.9L180.7,439.5L177.5,441.3L173.9,440.3L170.6,441.3L175.7,441.8L174.7,444.4L173.0,445.5L169.3,447.6L165.7,446.6L161.0,449.4L162.2,450.9L157.3,450.7L156.3,452.4L152.1,451.2L149.6,453.3L146.4,453.6L145.7,452.9L145.8,450.6L145.0,450.4L143.6,453.8L141.7,454.0L138.8,452.0L138.7,454.5L137.3,455.3L129.4,453.4L127.1,446.3L117.5,447.9L120.0,446.4L114.9,445.4L116.4,447.6L115.7,448.4L116.4,449.4L113.5,450.3L104.3,449.4L106.5,447.2L112.1,448.1L109.4,446.3L104.7,446.4L101.5,444.8L101.4,447.6L103.6,450.9L102.1,450.7L99.0,447.9L98.4,446.2L96.6,445.3L96.2,443.8L98.5,443.3L99.4,444.6L102.5,441.8L103.0,439.9L101.6,435.7L100.3,435.7L100.7,437.6L100.2,439.3L98.1,440.3L93.5,431.1L91.1,429.8L85.1,431.1L85.1,433.2L79.1,432.3L77.8,434.0L75.4,433.2L73.3,434.0L68.0,428.7L70.7,426.7L66.6,421.1L66.6,419.6L60.0,416.8L52.7,416.1L50.2,423.5L47.6,423.6L44.3,425.2L39.9,424.2L37.8,425.1L33.1,422.5L15.8,421.2L12.8,419.1L10.9,416.3L15.3,412.6L19.5,405.1L22.2,404.1L26.0,400.9L18.0,404.5L17.0,406.3L17.2,408.0L15.2,410.2L14.2,407.4L13.5,409.7L8.0,411.5L8.2,409.1L9.5,409.0L10.2,405.0L12.8,403.0L17.4,401.6L18.3,399.9L14.6,401.4L12.0,400.6L15.2,395.9L14.8,394.8L13.1,395.9L8.7,402.5L3.6,403.9L1.2,406.0L0.4,404.7L0.0,393.3L1.2,390.8L8.4,390.3L8.4,391.4L11.3,389.9L22.6,388.6L28.9,384.3L29.6,382.8L26.5,383.8L22.7,383.3L17.7,384.7L16.4,384.3L18.1,381.4L22.7,379.2L16.6,379.7L16.2,376.3L16.8,375.1L23.8,372.7L28.1,373.7L29.2,372.7L27.4,372.7L26.0,371.6L31.0,369.4L31.4,367.6L24.3,371.2L19.9,372.1L17.0,373.7L13.2,373.8L12.6,371.3L14.6,367.1L16.1,361.5L18.5,360.3L26.0,363.5L23.7,359.3L23.0,361.0L18.3,357.7L19.2,354.7L22.7,352.2L24.1,354.4L26.3,355.4L24.9,357.5L29.5,356.5L31.0,358.0L31.5,360.1L29.1,362.8L32.0,362.6L33.7,359.5L36.3,361.8L37.7,366.1L39.5,366.6L39.2,364.2L31.0,355.4L32.7,353.9L38.1,352.3L39.1,352.4L40.6,354.8L42.3,355.8L44.4,355.4L45.0,354.4L41.5,353.7L40.8,352.6L41.7,350.0L36.3,351.3L31.0,351.2L30.1,347.3L28.9,345.7L29.1,341.1L31.9,340.4L35.3,344.2L37.6,345.0L37.7,344.0L33.9,339.9L31.4,338.8L34.8,334.2L36.0,334.5L38.0,337.8L38.1,340.7L38.8,341.4L39.1,338.3L43.2,338.3L38.2,335.6L36.6,331.9L38.6,330.3L46.4,334.1L47.2,333.3L39.1,328.7L40.3,326.6L42.9,324.4L46.1,323.7L45.0,322.2L49.1,319.7L50.9,319.6L52.5,323.2L52.0,326.7L53.4,329.4L53.1,330.8L56.0,330.8L55.1,327.5L54.0,326.5L54.0,323.5L52.4,319.3L53.0,315.8L54.5,314.2L56.5,314.0L58.2,315.6L58.5,316.6L57.2,320.0L58.9,322.7L60.3,316.1L57.8,311.8L60.0,310.4L62.4,313.1L64.8,314.1L60.3,309.1L61.6,307.3L64.4,306.5L65.5,304.6L68.7,302.1L71.8,301.8L76.7,305.8L78.3,309.0L78.7,306.0L74.3,301.5L73.2,294.9L78.9,288.1L83.7,283.7L83.4,281.3L88.7,281.0L89.4,278.6L87.4,276.7L91.0,275.2L98.3,268.7L100.1,266.4L100.8,263.4L103.2,261.6L101.7,260.6L109.1,259.1L116.4,255.1L119.3,258.1L121.8,258.4L124.9,257.5L135.5,249.0L138.9,247.2L140.2,244.4L143.6,242.4L145.6,239.9L155.7,234.6L157.8,231.9L161.2,231.7L166.5,228.4L169.9,228.8L173.7,226.3L177.2,222.0L177.5,220.2L180.6,218.0L181.0,215.4L182.1,214.0L190.4,209.5L191.6,206.4L193.5,205.2L194.4,203.0L198.3,200.6L201.6,201.5L205.0,196.0L203.3,195.6L199.5,200.0L200.5,196.8L203.7,193.6L204.3,191.9L209.4,191.0L209.4,189.9L211.1,188.1L213.1,187.9L213.2,186.7L216.3,184.5L221.1,182.8L223.1,181.1L226.3,180.7L234.7,172.5L239.2,164.4L242.5,162.3L248.8,154.0L254.3,143.5L254.8,139.5L257.4,135.4L258.5,132.1L260.0,121.2L261.7,115.0L264.6,110.8L268.4,97.8L267.4,97.0L267.3,93.1L276.4,92.5L284.1,88.0L285.9,85.9L287.9,85.7L288.3,84.0L289.8,82.6L293.2,76.1L295.4,69.9L299.5,67.2L299.2,65.8L300.6,58.7L303.1,58.1L301.8,55.2L301.4,28.3L303.4,27.1L306.1,22.0L315.1,15.7L322.8,6.4L324.8,5.6L323.8,8.9L324.6,9.2L325.5,7.6L327.3,7.5L327.4,6.1L329.1,4.6L328.3,3.6L326.9,4.8L325.5,4.6L327.5,1.9L330.0,0.6L340.5,0.0L348.9,1.6L335.3,1.4L333.2,7.9L332.4,8.7L332.9,10.2L331.0,10.7L331.7,12.7L333.2,13.7L332.8,18.3L334.3,17.3L335.0,19.4L341.4,25.2L345.1,23.8L346.1,21.4L347.1,22.3L348.5,20.5L350.0,21.7L350.4,25.5L349.6,26.9L352.0,27.2L352.6,28.3L351.9,31.9L352.2,34.0L348.9,37.9L350.8,37.9L351.5,42.7L352.8,45.8L352.6,47.0L351.1,45.0L350.8,47.7L352.2,50.6L353.2,49.7L353.6,50.6L354.8,56.2L353.4,57.6L354.7,59.4L360.5,58.9L364.3,55.9L367.3,51.9L372.5,46.8L373.4,46.8L373.1,48.5L375.8,47.1L377.9,44.0L379.3,44.3L379.7,43.5L379.2,42.7L380.6,40.8L382.3,40.8L383.7,43.1L383.7,44.5L384.6,43.6L385.2,44.5L385.9,44.0L385.2,42.3L389.1,39.4L387.9,37.9L385.5,39.2L385.6,37.8L386.9,36.3L392.0,34.4L394.7,31.2L394.5,34.6L395.8,34.9L397.6,32.9L398.0,31.3L402.1,29.3L403.8,29.8L404.4,31.8L400.9,31.3L401.3,32.3L400.2,34.4L398.0,34.9L399.1,35.9L398.2,36.8L394.7,37.5L393.2,36.6L390.8,37.5L392.1,39.0L390.8,40.1L391.8,41.0L390.3,44.0L390.7,44.6L391.9,44.4L393.4,41.0L398.8,40.2L400.2,41.0L399.1,41.1L398.6,42.9L396.3,42.1L396.5,44.5L395.4,44.5L395.0,46.2L393.4,47.0L392.9,48.1L394.7,48.5L395.8,50.3L395.1,53.6L389.9,56.2L390.5,57.6L391.4,58.1L399.1,54.1L396.5,52.6L402.9,53.0L405.0,52.1L403.8,51.0L407.0,51.4L409.7,49.6L403.7,49.8L402.0,51.0L400.9,50.6L401.3,49.6L397.0,50.8L396.8,47.4L398.7,45.6L398.7,44.2L399.8,43.7L399.8,42.5L401.7,43.0L401.0,45.3L401.3,47.5L403.4,43.5L405.0,43.5L403.9,41.3L404.8,39.9L404.4,37.9L403.5,37.9L402.6,40.6L399.8,37.5L401.7,37.5L401.2,35.8L402.4,35.9L402.5,34.4L407.6,38.1L409.4,36.4L410.3,37.4L411.2,37.0L411.5,34.4L412.3,34.7L414.1,37.7L414.1,39.1L412.4,39.9L413.6,41.9L418.8,36.7L419.6,36.4L420.0,37.4L416.5,44.0L416.3,46.0L413.6,47.5L413.2,43.4L412.3,45.6L411.5,45.2L414.1,50.6L410.8,53.0L401.0,55.1L399.1,57.3L403.6,56.8L406.1,55.1L410.5,54.1L413.2,56.2L420.0,52.6L415.7,60.4L411.9,62.2L413.2,59.4L411.6,60.4L410.8,60.2L411.2,59.1L409.7,60.3L405.3,68.9L406.0,73.6L405.7,74.8L406.7,75.0L408.1,78.0L409.0,76.3L408.1,73.4L408.8,74.0L411.8,79.3L414.6,90.0L418.2,90.5L414.1,99.8L402.8,112.6L400.5,117.0L400.1,122.0L396.7,128.1L392.1,131.9L390.5,134.6L389.0,134.9L386.7,138.2L386.8,140.1L388.1,142.0L387.8,142.5L387.4,143.0L385.7,141.1L384.1,141.2L379.0,146.5L375.8,155.3L373.5,156.5L374.6,157.6L369.8,169.3L368.0,172.2L366.4,173.1L366.5,176.9L364.5,180.6L357.3,184.2L356.6,186.4L353.6,189.0L344.6,191.6L339.0,196.5L335.5,203.6L335.7,204.6Z"/><path d="M92.6,482.2L95.8,484.9L92.1,483.6L91.6,486.3L89.8,485.6L90.4,486.7L83.1,487.3L76.7,492.6L70.7,491.3L69.4,488.8L67.0,490.3L66.6,492.3L61.4,494.3L62.4,495.3L67.3,493.8L64.4,497.9L63.7,496.1L61.0,498.6L56.3,498.8L57.6,492.6L62.2,490.3L61.3,489.6L62.0,483.5L64.4,481.4L68.2,480.7L67.9,475.4L70.1,475.0L72.0,472.2L71.9,469.5L69.0,464.5L70.6,456.4L75.6,456.6L77.7,455.3L80.2,456.6L89.6,467.8L91.5,468.7L92.2,469.6L91.1,470.6L92.2,471.6L90.9,472.1L86.0,471.6L86.4,470.6L82.4,471.0L82.8,473.2L80.1,476.7L84.5,473.7L90.0,476.2L88.9,478.1L94.2,476.6L95.9,478.6L95.1,481.7L92.6,482.2Z"/></g></svg>');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: right clamp(2rem, 9vw, 12rem) center;
-  background-size: auto min(92vh, 50rem);
+body:not(.has-masthead)::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(24vh, 13rem);
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  background-size: auto 100%;
+  -webkit-mask: linear-gradient(180deg, transparent, black 60%);
+  mask: linear-gradient(180deg, transparent, black 60%);
 }
-body[data-md-color-scheme="slate"] {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 498"><g fill="none" stroke="%23dfe4ea" stroke-opacity="0.10" stroke-width="1"><path d="M335.7,204.6L335.4,213.1L334.7,214.6L337.3,225.1L337.2,226.3L336.5,225.4L335.6,225.8L336.9,227.4L340.2,228.3L333.5,229.8L332.1,231.1L335.4,232.3L336.5,230.9L341.3,230.5L342.5,233.3L343.4,229.3L345.2,230.8L345.3,234.5L348.0,231.8L349.6,232.2L350.4,233.8L352.6,231.8L352.8,233.1L354.8,235.3L354.4,237.3L355.1,238.9L355.2,243.0L354.1,246.9L353.4,245.9L352.1,247.7L351.1,247.4L350.8,249.5L349.9,248.8L348.9,249.5L347.0,241.7L347.1,239.7L346.4,239.4L345.2,240.4L346.0,241.9L345.2,245.9L347.3,250.7L342.5,250.5L340.6,248.6L339.4,249.0L335.5,244.8L336.5,242.4L318.3,247.0L318.0,245.9L319.2,245.0L330.3,241.7L328.4,240.1L325.1,239.9L322.2,237.2L318.0,238.3L316.6,241.0L316.6,246.4L315.8,247.7L309.0,248.9L299.0,254.5L288.6,262.0L285.3,262.2L280.7,265.4L277.9,266.2L276.1,268.0L271.7,270.0L264.5,276.9L260.7,278.2L257.2,285.1L256.7,291.5L254.4,294.4L254.1,296.6L251.5,298.0L252.7,299.4L253.7,312.3L253.4,313.7L251.5,315.6L253.1,315.8L253.6,317.6L253.1,324.4L247.1,336.8L241.2,342.8L238.3,348.9L235.7,357.6L237.3,359.3L237.2,361.0L234.8,364.3L235.1,366.9L231.7,370.3L232.1,372.1L231.5,373.0L229.2,372.7L229.9,375.7L228.4,376.8L225.4,377.1L226.2,378.6L227.4,378.7L226.1,381.4L222.3,383.4L222.5,385.3L225.2,386.2L225.9,385.3L229.4,387.6L229.4,388.6L224.8,390.3L223.3,392.4L221.7,393.0L221.1,394.8L219.1,396.1L218.6,397.4L225.5,394.1L227.7,390.8L230.3,388.8L231.1,390.9L230.4,395.9L227.2,396.4L226.2,398.2L215.2,399.3L210.6,400.8L206.6,403.7L202.7,409.7L201.4,416.4L200.4,417.8L193.9,421.5L190.8,425.4L183.4,430.4L181.6,432.9L180.7,439.5L177.5,441.3L173.9,440.3L170.6,441.3L175.7,441.8L174.7,444.4L173.0,445.5L169.3,447.6L165.7,446.6L161.0,449.4L162.2,450.9L157.3,450.7L156.3,452.4L152.1,451.2L149.6,453.3L146.4,453.6L145.7,452.9L145.8,450.6L145.0,450.4L143.6,453.8L141.7,454.0L138.8,452.0L138.7,454.5L137.3,455.3L129.4,453.4L127.1,446.3L117.5,447.9L120.0,446.4L114.9,445.4L116.4,447.6L115.7,448.4L116.4,449.4L113.5,450.3L104.3,449.4L106.5,447.2L112.1,448.1L109.4,446.3L104.7,446.4L101.5,444.8L101.4,447.6L103.6,450.9L102.1,450.7L99.0,447.9L98.4,446.2L96.6,445.3L96.2,443.8L98.5,443.3L99.4,444.6L102.5,441.8L103.0,439.9L101.6,435.7L100.3,435.7L100.7,437.6L100.2,439.3L98.1,440.3L93.5,431.1L91.1,429.8L85.1,431.1L85.1,433.2L79.1,432.3L77.8,434.0L75.4,433.2L73.3,434.0L68.0,428.7L70.7,426.7L66.6,421.1L66.6,419.6L60.0,416.8L52.7,416.1L50.2,423.5L47.6,423.6L44.3,425.2L39.9,424.2L37.8,425.1L33.1,422.5L15.8,421.2L12.8,419.1L10.9,416.3L15.3,412.6L19.5,405.1L22.2,404.1L26.0,400.9L18.0,404.5L17.0,406.3L17.2,408.0L15.2,410.2L14.2,407.4L13.5,409.7L8.0,411.5L8.2,409.1L9.5,409.0L10.2,405.0L12.8,403.0L17.4,401.6L18.3,399.9L14.6,401.4L12.0,400.6L15.2,395.9L14.8,394.8L13.1,395.9L8.7,402.5L3.6,403.9L1.2,406.0L0.4,404.7L0.0,393.3L1.2,390.8L8.4,390.3L8.4,391.4L11.3,389.9L22.6,388.6L28.9,384.3L29.6,382.8L26.5,383.8L22.7,383.3L17.7,384.7L16.4,384.3L18.1,381.4L22.7,379.2L16.6,379.7L16.2,376.3L16.8,375.1L23.8,372.7L28.1,373.7L29.2,372.7L27.4,372.7L26.0,371.6L31.0,369.4L31.4,367.6L24.3,371.2L19.9,372.1L17.0,373.7L13.2,373.8L12.6,371.3L14.6,367.1L16.1,361.5L18.5,360.3L26.0,363.5L23.7,359.3L23.0,361.0L18.3,357.7L19.2,354.7L22.7,352.2L24.1,354.4L26.3,355.4L24.9,357.5L29.5,356.5L31.0,358.0L31.5,360.1L29.1,362.8L32.0,362.6L33.7,359.5L36.3,361.8L37.7,366.1L39.5,366.6L39.2,364.2L31.0,355.4L32.7,353.9L38.1,352.3L39.1,352.4L40.6,354.8L42.3,355.8L44.4,355.4L45.0,354.4L41.5,353.7L40.8,352.6L41.7,350.0L36.3,351.3L31.0,351.2L30.1,347.3L28.9,345.7L29.1,341.1L31.9,340.4L35.3,344.2L37.6,345.0L37.7,344.0L33.9,339.9L31.4,338.8L34.8,334.2L36.0,334.5L38.0,337.8L38.1,340.7L38.8,341.4L39.1,338.3L43.2,338.3L38.2,335.6L36.6,331.9L38.6,330.3L46.4,334.1L47.2,333.3L39.1,328.7L40.3,326.6L42.9,324.4L46.1,323.7L45.0,322.2L49.1,319.7L50.9,319.6L52.5,323.2L52.0,326.7L53.4,329.4L53.1,330.8L56.0,330.8L55.1,327.5L54.0,326.5L54.0,323.5L52.4,319.3L53.0,315.8L54.5,314.2L56.5,314.0L58.2,315.6L58.5,316.6L57.2,320.0L58.9,322.7L60.3,316.1L57.8,311.8L60.0,310.4L62.4,313.1L64.8,314.1L60.3,309.1L61.6,307.3L64.4,306.5L65.5,304.6L68.7,302.1L71.8,301.8L76.7,305.8L78.3,309.0L78.7,306.0L74.3,301.5L73.2,294.9L78.9,288.1L83.7,283.7L83.4,281.3L88.7,281.0L89.4,278.6L87.4,276.7L91.0,275.2L98.3,268.7L100.1,266.4L100.8,263.4L103.2,261.6L101.7,260.6L109.1,259.1L116.4,255.1L119.3,258.1L121.8,258.4L124.9,257.5L135.5,249.0L138.9,247.2L140.2,244.4L143.6,242.4L145.6,239.9L155.7,234.6L157.8,231.9L161.2,231.7L166.5,228.4L169.9,228.8L173.7,226.3L177.2,222.0L177.5,220.2L180.6,218.0L181.0,215.4L182.1,214.0L190.4,209.5L191.6,206.4L193.5,205.2L194.4,203.0L198.3,200.6L201.6,201.5L205.0,196.0L203.3,195.6L199.5,200.0L200.5,196.8L203.7,193.6L204.3,191.9L209.4,191.0L209.4,189.9L211.1,188.1L213.1,187.9L213.2,186.7L216.3,184.5L221.1,182.8L223.1,181.1L226.3,180.7L234.7,172.5L239.2,164.4L242.5,162.3L248.8,154.0L254.3,143.5L254.8,139.5L257.4,135.4L258.5,132.1L260.0,121.2L261.7,115.0L264.6,110.8L268.4,97.8L267.4,97.0L267.3,93.1L276.4,92.5L284.1,88.0L285.9,85.9L287.9,85.7L288.3,84.0L289.8,82.6L293.2,76.1L295.4,69.9L299.5,67.2L299.2,65.8L300.6,58.7L303.1,58.1L301.8,55.2L301.4,28.3L303.4,27.1L306.1,22.0L315.1,15.7L322.8,6.4L324.8,5.6L323.8,8.9L324.6,9.2L325.5,7.6L327.3,7.5L327.4,6.1L329.1,4.6L328.3,3.6L326.9,4.8L325.5,4.6L327.5,1.9L330.0,0.6L340.5,0.0L348.9,1.6L335.3,1.4L333.2,7.9L332.4,8.7L332.9,10.2L331.0,10.7L331.7,12.7L333.2,13.7L332.8,18.3L334.3,17.3L335.0,19.4L341.4,25.2L345.1,23.8L346.1,21.4L347.1,22.3L348.5,20.5L350.0,21.7L350.4,25.5L349.6,26.9L352.0,27.2L352.6,28.3L351.9,31.9L352.2,34.0L348.9,37.9L350.8,37.9L351.5,42.7L352.8,45.8L352.6,47.0L351.1,45.0L350.8,47.7L352.2,50.6L353.2,49.7L353.6,50.6L354.8,56.2L353.4,57.6L354.7,59.4L360.5,58.9L364.3,55.9L367.3,51.9L372.5,46.8L373.4,46.8L373.1,48.5L375.8,47.1L377.9,44.0L379.3,44.3L379.7,43.5L379.2,42.7L380.6,40.8L382.3,40.8L383.7,43.1L383.7,44.5L384.6,43.6L385.2,44.5L385.9,44.0L385.2,42.3L389.1,39.4L387.9,37.9L385.5,39.2L385.6,37.8L386.9,36.3L392.0,34.4L394.7,31.2L394.5,34.6L395.8,34.9L397.6,32.9L398.0,31.3L402.1,29.3L403.8,29.8L404.4,31.8L400.9,31.3L401.3,32.3L400.2,34.4L398.0,34.9L399.1,35.9L398.2,36.8L394.7,37.5L393.2,36.6L390.8,37.5L392.1,39.0L390.8,40.1L391.8,41.0L390.3,44.0L390.7,44.6L391.9,44.4L393.4,41.0L398.8,40.2L400.2,41.0L399.1,41.1L398.6,42.9L396.3,42.1L396.5,44.5L395.4,44.5L395.0,46.2L393.4,47.0L392.9,48.1L394.7,48.5L395.8,50.3L395.1,53.6L389.9,56.2L390.5,57.6L391.4,58.1L399.1,54.1L396.5,52.6L402.9,53.0L405.0,52.1L403.8,51.0L407.0,51.4L409.7,49.6L403.7,49.8L402.0,51.0L400.9,50.6L401.3,49.6L397.0,50.8L396.8,47.4L398.7,45.6L398.7,44.2L399.8,43.7L399.8,42.5L401.7,43.0L401.0,45.3L401.3,47.5L403.4,43.5L405.0,43.5L403.9,41.3L404.8,39.9L404.4,37.9L403.5,37.9L402.6,40.6L399.8,37.5L401.7,37.5L401.2,35.8L402.4,35.9L402.5,34.4L407.6,38.1L409.4,36.4L410.3,37.4L411.2,37.0L411.5,34.4L412.3,34.7L414.1,37.7L414.1,39.1L412.4,39.9L413.6,41.9L418.8,36.7L419.6,36.4L420.0,37.4L416.5,44.0L416.3,46.0L413.6,47.5L413.2,43.4L412.3,45.6L411.5,45.2L414.1,50.6L410.8,53.0L401.0,55.1L399.1,57.3L403.6,56.8L406.1,55.1L410.5,54.1L413.2,56.2L420.0,52.6L415.7,60.4L411.9,62.2L413.2,59.4L411.6,60.4L410.8,60.2L411.2,59.1L409.7,60.3L405.3,68.9L406.0,73.6L405.7,74.8L406.7,75.0L408.1,78.0L409.0,76.3L408.1,73.4L408.8,74.0L411.8,79.3L414.6,90.0L418.2,90.5L414.1,99.8L402.8,112.6L400.5,117.0L400.1,122.0L396.7,128.1L392.1,131.9L390.5,134.6L389.0,134.9L386.7,138.2L386.8,140.1L388.1,142.0L387.8,142.5L387.4,143.0L385.7,141.1L384.1,141.2L379.0,146.5L375.8,155.3L373.5,156.5L374.6,157.6L369.8,169.3L368.0,172.2L366.4,173.1L366.5,176.9L364.5,180.6L357.3,184.2L356.6,186.4L353.6,189.0L344.6,191.6L339.0,196.5L335.5,203.6L335.7,204.6Z"/><path d="M92.6,482.2L95.8,484.9L92.1,483.6L91.6,486.3L89.8,485.6L90.4,486.7L83.1,487.3L76.7,492.6L70.7,491.3L69.4,488.8L67.0,490.3L66.6,492.3L61.4,494.3L62.4,495.3L67.3,493.8L64.4,497.9L63.7,496.1L61.0,498.6L56.3,498.8L57.6,492.6L62.2,490.3L61.3,489.6L62.0,483.5L64.4,481.4L68.2,480.7L67.9,475.4L70.1,475.0L72.0,472.2L71.9,469.5L69.0,464.5L70.6,456.4L75.6,456.6L77.7,455.3L80.2,456.6L89.6,467.8L91.5,468.7L92.2,469.6L91.1,470.6L92.2,471.6L90.9,472.1L86.0,471.6L86.4,470.6L82.4,471.0L82.8,473.2L80.1,476.7L84.5,473.7L90.0,476.2L88.9,478.1L94.2,476.6L95.9,478.6L95.1,481.7L92.6,482.2Z"/></g></svg>');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: right clamp(2rem, 9vw, 12rem) center;
-  background-size: auto min(92vh, 50rem);
+body:has(.masthead)::after,
+body.has-masthead::after { content: none; }
+
+body[data-md-color-scheme="default"][data-texture="0"]::after,
+body[data-md-color-scheme="default"]:not([data-texture])::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150"><g stroke="%23746429" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".45"><path d="M30 150C27 112 34 88 29 60"/><path d="M37 150C40 108 32 82 41 56"/><path d="M23 150C18 115 26 96 15 74"/><path d="M45 150C50 120 43 98 52 80"/><path d="M16 150C10 124 17 108 8 92"/><path d="M52 150C58 128 52 112 60 98"/><path d="M126 150C122 106 130 78 124 48"/><path d="M133 150C137 104 128 76 137 52"/><path d="M119 150C113 112 121 92 110 68"/><path d="M141 150C147 116 139 94 149 74"/><path d="M112 150C105 122 113 106 102 88"/><path d="M215 150C212 116 219 94 214 68"/><path d="M222 150C226 112 218 88 227 64"/><path d="M208 150C202 118 210 100 199 80"/><path d="M229 150C235 124 228 108 237 92"/></g></svg>');
 }
-body:has(.masthead), body.has-masthead { background-image: none; }
+body[data-md-color-scheme="slate"][data-texture="0"]::after,
+body[data-md-color-scheme="slate"]:not([data-texture])::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150"><g stroke="%23d9a84e" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".45"><path d="M30 150C27 112 34 88 29 60"/><path d="M37 150C40 108 32 82 41 56"/><path d="M23 150C18 115 26 96 15 74"/><path d="M45 150C50 120 43 98 52 80"/><path d="M16 150C10 124 17 108 8 92"/><path d="M52 150C58 128 52 112 60 98"/><path d="M126 150C122 106 130 78 124 48"/><path d="M133 150C137 104 128 76 137 52"/><path d="M119 150C113 112 121 92 110 68"/><path d="M141 150C147 116 139 94 149 74"/><path d="M112 150C105 122 113 106 102 88"/><path d="M215 150C212 116 219 94 214 68"/><path d="M222 150C226 112 218 88 227 64"/><path d="M208 150C202 118 210 100 199 80"/><path d="M229 150C235 124 228 108 237 92"/></g></svg>');
+}
+body[data-md-color-scheme="default"][data-texture="1"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><g stroke="%2305a1b0" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".45"><path d="M0 28C25 20 50 36 78 28S130 18 158 28 215 36 260 26"/><path d="M0 58C30 50 58 66 88 58S142 48 170 58 225 64 260 56"/><path d="M14 88C40 82 66 94 94 88S150 78 178 88 230 94 252 86"/><path d="M0 118C28 110 56 126 86 118S140 108 168 118 222 126 260 116"/><path d="M30 141C52 136 74 146 98 141S146 133 170 141"/></g></svg>');
+}
+body[data-md-color-scheme="slate"][data-texture="1"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150"><g stroke="%2359c3b2" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".45"><path d="M0 28C25 20 50 36 78 28S130 18 158 28 215 36 260 26"/><path d="M0 58C30 50 58 66 88 58S142 48 170 58 225 64 260 56"/><path d="M14 88C40 82 66 94 94 88S150 78 178 88 230 94 252 86"/><path d="M0 118C28 110 56 126 86 118S140 108 168 118 222 126 260 116"/><path d="M30 141C52 136 74 146 98 141S146 133 170 141"/></g></svg>');
+}
+body[data-md-color-scheme="default"][data-texture="2"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150"><g stroke="%237a94ae" stroke-width="1.2" fill="none" stroke-linejoin="round" opacity=".4"><path d="M0 112 38 62 66 90 96 74 134 40 170 98 205 58 240 106 271 84 305 118 338 70 369 94 405 48 443 102 471 66 508 112 536 88 560 98"/><path d="M0 126 36 84 66 104 96 90 134 60 170 112 205 78 240 118 271 100 305 130 338 88 369 108 405 68 443 116 471 84 508 124 536 102 560 112" opacity=".55"/><path d="M10 140 36 106 66 122 96 106 134 78 170 128 205 96 240 132 271 114 305 140 338 104 369 122 405 86 443 130 471 100 508 136 536 116 560 126" opacity=".3"/><path d="M128 50 143 66M132 58 147 74M400 56 415 72M404 64 419 80M336 80 322 66" opacity=".5"/></g></svg>');
+}
+body[data-md-color-scheme="slate"][data-texture="2"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150"><g stroke="%239fb4c8" stroke-width="1.2" fill="none" stroke-linejoin="round" opacity=".4"><path d="M0 112 38 62 66 90 96 74 134 40 170 98 205 58 240 106 271 84 305 118 338 70 369 94 405 48 443 102 471 66 508 112 536 88 560 98"/><path d="M0 126 36 84 66 104 96 90 134 60 170 112 205 78 240 118 271 100 305 130 338 88 369 108 405 68 443 116 471 84 508 124 536 102 560 112" opacity=".55"/><path d="M10 140 36 106 66 122 96 106 134 78 170 128 205 96 240 132 271 114 305 140 338 104 369 122 405 86 443 130 471 100 508 136 536 116 560 126" opacity=".3"/><path d="M128 50 143 66M132 58 147 74M400 56 415 72M404 64 419 80M336 80 322 66" opacity=".5"/></g></svg>');
+}
+body[data-md-color-scheme="default"][data-texture="3"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 160"><g stroke="%238f9752" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".45"><path d="M36 160C50 118 62 84 60 38"/><path d="M44 160C50 126 44 96 52 62"/><path d="M28 160C20 122 30 96 22 66"/><path d="M52 160C68 130 80 106 88 84"/><path d="M20 160C8 132 14 112 4 96"/><path d="M150 160C164 116 174 84 170 44"/><path d="M158 160C162 128 154 100 164 70"/><path d="M142 160C132 124 144 100 134 72"/><path d="M166 160C182 132 194 110 202 90"/><path d="M134 160C122 134 128 114 116 100"/></g></svg>');
+}
+body[data-md-color-scheme="slate"][data-texture="3"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 160"><g stroke="%23b9c78a" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".45"><path d="M36 160C50 118 62 84 60 38"/><path d="M44 160C50 126 44 96 52 62"/><path d="M28 160C20 122 30 96 22 66"/><path d="M52 160C68 130 80 106 88 84"/><path d="M20 160C8 132 14 112 4 96"/><path d="M150 160C164 116 174 84 170 44"/><path d="M158 160C162 128 154 100 164 70"/><path d="M142 160C132 124 144 100 134 72"/><path d="M166 160C182 132 194 110 202 90"/><path d="M134 160C122 134 128 114 116 100"/></g></svg>');
+}
+body[data-md-color-scheme="default"][data-texture="4"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140"><g fill="%23b58a3f" opacity=".45"><circle cx="18" cy="112" r="1.6"/><circle cx="40" cy="126" r="1.1"/><circle cx="56" cy="104" r="1.9"/><circle cx="74" cy="120" r="1.3"/><circle cx="92" cy="132" r="1.7"/><circle cx="108" cy="108" r="1.2"/><circle cx="126" cy="124" r="2"/><circle cx="140" cy="98" r="1.2"/><circle cx="158" cy="118" r="1.6"/><circle cx="176" cy="130" r="1.1"/><circle cx="188" cy="104" r="1.8"/><circle cx="206" cy="122" r="1.3"/><circle cx="224" cy="132" r="1.7"/><circle cx="238" cy="108" r="1.2"/><circle cx="250" cy="124" r="1.5"/><circle cx="30" cy="88" r="1"/><circle cx="66" cy="84" r="1.3"/><circle cx="120" cy="80" r="1"/><circle cx="170" cy="86" r="1.4"/><circle cx="216" cy="84" r="1"/><circle cx="86" cy="96" r="1"/><circle cx="196" cy="92" r="1.2"/><circle cx="10" cy="130" r="1.2"/><circle cx="146" cy="134" r="1.3"/><circle cx="60" cy="136" r="1"/></g></svg>');
+}
+body[data-md-color-scheme="slate"][data-texture="4"]::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140"><g fill="%23d9b877" opacity=".45"><circle cx="18" cy="112" r="1.6"/><circle cx="40" cy="126" r="1.1"/><circle cx="56" cy="104" r="1.9"/><circle cx="74" cy="120" r="1.3"/><circle cx="92" cy="132" r="1.7"/><circle cx="108" cy="108" r="1.2"/><circle cx="126" cy="124" r="2"/><circle cx="140" cy="98" r="1.2"/><circle cx="158" cy="118" r="1.6"/><circle cx="176" cy="130" r="1.1"/><circle cx="188" cy="104" r="1.8"/><circle cx="206" cy="122" r="1.3"/><circle cx="224" cy="132" r="1.7"/><circle cx="238" cy="108" r="1.2"/><circle cx="250" cy="124" r="1.5"/><circle cx="30" cy="88" r="1"/><circle cx="66" cy="84" r="1.3"/><circle cx="120" cy="80" r="1"/><circle cx="170" cy="86" r="1.4"/><circle cx="216" cy="84" r="1"/><circle cx="86" cy="96" r="1"/><circle cx="196" cy="92" r="1.2"/><circle cx="10" cy="130" r="1.2"/><circle cx="146" cy="134" r="1.3"/><circle cx="60" cy="136" r="1"/></g></svg>');
+}
 
 
 /* ---------- 8. Selection, focus, scrollbars */
@@ -853,8 +988,8 @@ body:has(.masthead), body.has-masthead { background-image: none; }
 [data-md-color-scheme="default"] { color-scheme: light; }
 [data-md-color-scheme="slate"]   { color-scheme: dark; }
 
-[data-md-color-scheme="default"] ::selection { background: rgba(29, 78, 158, 0.16); }
-[data-md-color-scheme="slate"] ::selection   { background: rgba(138, 180, 245, 0.28); }
+[data-md-color-scheme="default"] ::selection { background: rgba(15, 101, 151, 0.16); }
+[data-md-color-scheme="slate"] ::selection   { background: rgba(111, 208, 187, 0.26); }
 
 :focus-visible {
   outline: 2px solid var(--md-accent-fg-color);
@@ -865,7 +1000,7 @@ body:has(.masthead), body.has-masthead { background-image: none; }
   scrollbar-color: rgba(38, 34, 24, 0.35) var(--md-default-bg-color);
 }
 [data-md-color-scheme="slate"] {
-  scrollbar-color: rgba(223, 228, 234, 0.28) var(--md-default-bg-color);
+  scrollbar-color: rgba(233, 229, 214, 0.28) var(--md-default-bg-color);
 }
 
 
