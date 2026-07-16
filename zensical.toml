@@ -24,22 +24,22 @@ nav = [
     { "Tellyhoova" = "projects/tellyhoova.md" },
     { "Dumptruck" = "projects/dumptruck.md" },
   ] },
-  { "Notetaking" = [
-    { "All about notes" = "notetaking.md" },
-    { "Winner First" = "notetaking/winner_first.md" },
-    { "Applications" = "notetaking/applications.md" },
-    { "GFM vs. JSON" = "notetaking/gfm_json.md" },
-  ] },
+  # { "Notetaking" = [
+  #   { "All about notes" = "notetaking.md" },
+  #   { "Winner First" = "notetaking/winner_first.md" },
+  #   { "Applications" = "notetaking/applications.md" },
+  #   { "GFM vs. JSON" = "notetaking/gfm_json.md" },
+  # ] },
   { "Favourite Quotes" = "favourite_quotes.md" },
   { "Golf" = [
     { "Tournaments" = "golf/tourneys.md" },
     { "Equipment" = "golf/equipment.md" },
     { "Chch Info" = "golf/Christchurch Golf Information.md" },
   ] },
-  { "Apple" = [
-    { "Fixes" = "apple/fixes.md" },
-    { "Commands" = "apple/commands.md" },
-  ] },
+  # { "Apple" = [
+  #   { "Fixes" = "apple/fixes.md" },
+  #   { "Commands" = "apple/commands.md" },
+  # ] },
   { "Test Pages" = [
     { "Typography" = "typography.md" },
     { "Linux Shortcuts" = "linux_shortcuts.md" },
