@@ -78,4 +78,15 @@
       );
     }
   } catch (e) { /* native toggle still works */ }
+
+  /* 3. Bilingual search placeholder (te reo + english) */
+  try {
+    var rapua = function () {
+      var i = document.querySelector(".md-search__input");
+      if (i) { i.placeholder = "rapua \u00b7 search"; i.setAttribute("aria-label", "rapua \u00b7 search"); }
+    };
+    if (document.readyState === "loading")
+      document.addEventListener("DOMContentLoaded", rapua);
+    else rapua();
+  } catch (e) { /* stock placeholder remains */ }
 })();

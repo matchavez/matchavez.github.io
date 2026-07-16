@@ -1,23 +1,29 @@
 /* ============================================================
-   matchavez.com — "LEDGER"
-   Clean-slate redesign, July 2026.
+   matchavez.com — "FIELD & MAP"
+   Redesign, July 2026. Supersedes "Ledger" (July 2026).
 
-   The system:
-     · ONE ink, ONE accent (the Chavez vermilion), hairlines for
-       structure — no boxes, no rainbow headings.
-     · ONE typeface, two cuts (both Mat's own Inter freezes):
-         InterVariable MC       → all prose
-         InterMC Machine        → the machinery + code: header, tabs,
-                                  nav, TOC, labels, table headers,
-                                  captions (alt a·u·f·t glyph set)
-     · Numbered H2 sections, ledger-style: hairline overline +
-       mono counter (§ 01, § 02 …).
-     · Light = warm oat paper + near-black ink.
-       Dark  = warm charcoal + bone text. No blue-black.
+   The thesis: the homepage is the territory — Mat's own photograph
+   of tussock country near Arthur's Pass, full bleed, with the
+   greeting set in the sky. Every other page is the map of it,
+   in NZ Topo50 / DOC wayfinding language:
 
-   Carried over from the 2026 polish layer (kept, re-tuned):
-   self-hosted fonts, measure/rhythm, view transitions, table
-   scroll fades, focus/selection/scrollbar styling, CLS guards.
+     · DOC-orange triangle trail markers replace the § counters
+       (markers show the route; they don't number it).
+     · Links take the cobalt of that sky.
+     · Dark mode is the same sky after dusk — deep cobalt,
+       not charcoal, not black.
+     · Horizontal rules are contour lines.
+     · One true detail: NZTopo50 sheet BV20 (Arthur's Pass)
+       in the footer.
+
+   Typefaces unchanged — Mat's own Inter freezes:
+     InterVariable MC  → prose
+     InterMC Machine   → machinery (header, tabs, nav, TOC, labels)
+     Geist Mono        → actual code
+
+   Carried over intact: self-hosted fonts, measure/rhythm, view
+   transitions, table scroll fades, focus/selection/scrollbars,
+   CLS guards.
    ============================================================ */
 
 
@@ -37,10 +43,6 @@
   font-style: italic;
   font-display: swap;
 }
-/* InterMC Machine — a second feature-freeze of Mat's own InterVariable MC:
-   his base freeze (tnum, slashed zero, ss01, ss02) plus alternate glyphs
-   cv06 (u), cv11 (single-storey a), cv12 (f), cv13 (t). One typeface,
-   two cuts: prose speaks in InterMC, the machinery + code speak in Machine. */
 @font-face {
   font-family: "InterMC Machine";
   src: url("fonts/InterMCMachine.var.woff2") format("woff2");
@@ -48,9 +50,6 @@
   font-style: normal;
   font-display: swap;
 }
-/* Geist Mono — actual code voice only (inline `code` and fenced blocks).
-   Kept separate from --md-code-font, which still drives the InterMC
-   Machine "machinery" voice: header, tabs, nav, TOC, labels, captions. */
 @font-face {
   font-family: "Geist Mono";
   src: url("fonts/GeistMono.var.woff2") format("woff2");
@@ -68,34 +67,37 @@
 
 :root {
   --md-text-font: "Inter";
-  /* The machinery voice: header, tabs, nav, TOC, labels, captions.
-     To run everything in the prose cut instead, change this to just "Inter". */
+  /* Machinery voice: header, tabs, nav, TOC, labels, captions. */
   --md-code-font: "InterMC Machine", "Inter";
-  /* The actual code voice: inline `code` and fenced blocks only. */
+  /* Actual code voice: inline `code` and fenced blocks only. */
   --md-code-block-font: "Geist Mono", monospace;
 }
 
 
-/* ---------- 1. Palette — LIGHT ("paper") */
+/* ---------- 1. Palette — LIGHT ("the map sheet")
+   Cream of a Topo50 sheet + snow; ink from the scree.
+   Links = sky cobalt. Accent = DOC track-marker orange.
+   Tussock gold appears only in small true places. */
 
 [data-md-color-scheme="default"] {
-  /* Ledger tokens */
-  --ink:        #201d18;
-  --ink-muted:  #6e6858;
-  --ink-faint:  #a39c8a;
-  --paper:      #f3efe5;
-  --paper-lift: #eae5d4;
-  --hairline:   rgba(32, 29, 24, 0.16);
-  --accent:     #a8201d;   /* Chavez vermilion, deepened for paper */
-  --accent-dim: #7e1613;
+  --ink:        #262218;
+  --ink-muted:  #6f6857;
+  --ink-faint:  #a49b85;
+  --paper:      #f4f1e6;
+  --paper-lift: #eae5d2;
+  --hairline:   rgba(38, 34, 24, 0.16);
+  --cobalt:     #1d4e9e;   /* the sky, as a link */
+  --cobalt-dim: #163d7c;
+  --marker:     #d4520a;   /* DOC track-marker orange */
+  --gold:       #a87a1f;   /* tussock — sparingly */
+  --pounamu:    #2f7d5a;   /* greenstone — reserved for quoted words */
 
-  /* Theme mapping */
   --md-default-bg-color:        var(--paper);
   --md-default-bg-color--light: var(--paper-lift);
   --md-default-fg-color:        var(--ink);
   --md-default-fg-color--light: var(--ink-muted);
   --md-default-fg-color--lighter: var(--ink-faint);
-  --md-default-fg-color--lightest: rgba(32, 29, 24, 0.07);
+  --md-default-fg-color--lightest: rgba(38, 34, 24, 0.07);
   --md-typeset-color:           var(--ink);
 
   --md-primary-fg-color:        var(--paper);
@@ -104,12 +106,12 @@
   --md-primary-bg-color:        var(--ink);
   --md-primary-bg-color--light: var(--ink-muted);
 
-  --md-accent-fg-color:         var(--accent);
-  --md-accent-fg-color--transparent: rgba(168, 32, 29, 0.08);
-  --md-typeset-a-color:         var(--accent);
+  --md-accent-fg-color:         var(--marker);
+  --md-accent-fg-color--transparent: rgba(212, 82, 10, 0.08);
+  --md-typeset-a-color:         var(--cobalt);
 
-  --md-code-bg-color:           rgba(32, 29, 24, 0.055);
-  --md-code-fg-color:           #3d3a32;
+  --md-code-bg-color:           rgba(38, 34, 24, 0.055);
+  --md-code-fg-color:           #3d3930;
 
   --md-footer-bg-color:         var(--paper);
   --md-footer-bg-color--dark:   var(--paper);
@@ -118,27 +120,32 @@
 }
 
 
-/* ---------- 1b. Palette — DARK ("night ledger") */
+/* ---------- 1b. Palette — DARK ("dusty dusk")
+   The sky's last dusty blue before night, taken a shade darker —
+   one continuous hue from the masthead cobalt down to the page. */
 
 [data-md-color-scheme="slate"] {
-  --ink:        #d9d4c7;
-  --ink-muted:  #948d7c;
-  --ink-faint:  #645e50;
-  --paper:      #141310;
-  --paper-lift: #1d1b16;
-  --hairline:   rgba(217, 212, 199, 0.14);
-  --accent:     #e2574e;   /* vermilion, lifted to glow on charcoal */
-  --accent-dim: #f0857d;
+  --ink:        #dfe4ea;
+  --ink-muted:  #8f9cad;
+  --ink-faint:  #5c6a7c;
+  --paper:      #0b1522;
+  --paper-lift: #131f30;
+  --hairline:   rgba(223, 228, 234, 0.14);
+  --cobalt:     #8ab4f5;   /* the day sky, remembered at dusk */
+  --cobalt-dim: #aecbf8;
+  --marker:     #ff7d33;
+  --gold:       #d9a84e;
+  --pounamu:    #63c19b;
 
   --md-default-bg-color:        var(--paper);
   --md-default-bg-color--light: var(--paper-lift);
-  --md-default-bg-color--lighter:  rgba(217, 212, 199, 0.07);
-  --md-default-bg-color--lightest: rgba(217, 212, 199, 0.04);
-  --md-default-fg-color:        rgba(217, 212, 199, 0.92);
+  --md-default-bg-color--lighter:  rgba(223, 228, 234, 0.07);
+  --md-default-bg-color--lightest: rgba(223, 228, 234, 0.04);
+  --md-default-fg-color:        rgba(223, 228, 234, 0.92);
   --md-default-fg-color--light: var(--ink-muted);
   --md-default-fg-color--lighter: var(--ink-faint);
-  --md-default-fg-color--lightest: rgba(217, 212, 199, 0.10);
-  --md-typeset-color:           #cdc8bb;
+  --md-default-fg-color--lightest: rgba(223, 228, 234, 0.10);
+  --md-typeset-color:           #ccd3db;
 
   --md-primary-fg-color:        var(--paper);
   --md-primary-fg-color--light: var(--paper-lift);
@@ -146,12 +153,12 @@
   --md-primary-bg-color:        var(--ink);
   --md-primary-bg-color--light: var(--ink-muted);
 
-  --md-accent-fg-color:         var(--accent);
-  --md-accent-fg-color--transparent: rgba(226, 87, 78, 0.10);
-  --md-typeset-a-color:         var(--accent);
+  --md-accent-fg-color:         var(--marker);
+  --md-accent-fg-color--transparent: rgba(255, 125, 51, 0.10);
+  --md-typeset-a-color:         var(--cobalt);
 
   --md-code-bg-color:           var(--paper-lift);
-  --md-code-fg-color:           #d5d0c3;
+  --md-code-fg-color:           #d3d8e3;
 
   --md-footer-bg-color:         var(--paper);
   --md-footer-bg-color--dark:   var(--paper);
@@ -160,7 +167,7 @@
 }
 
 
-/* ---------- 2. Rhythm & measure (carried over, re-tuned) */
+/* ---------- 2. Rhythm & measure (carried over) */
 
 .md-typeset {
   font-size: 0.85rem;          /* ~17px */
@@ -182,7 +189,7 @@
 }
 
 
-/* ---------- 3. Headings — one ink, hierarchy by weight & structure */
+/* ---------- 3. Headings — ink hierarchy, markers not numbers */
 
 .md-typeset h1 {
   color: var(--ink);
@@ -192,36 +199,36 @@
   line-height: 1.15;
   margin-bottom: 0.9em;
 }
-/* The signature: every page title ends on the vermilion full stop. */
+/* The signature survives: every page title ends on a full stop —
+   now in track-marker orange. */
 .md-typeset h1::after {
   content: ".";
-  color: var(--accent);
+  color: var(--marker);
 }
-/* No ¶ on the page title — it leaves a gap before the full stop. */
 .md-typeset h1 .headerlink { display: none; }
 
-/* H2 = ledger section: hairline overline + mono counter, light weight */
-.md-content { counter-reset: ledger; }
+/* H2 = a leg of the route: hairline overline with a DOC triangle
+   sitting on it, like a marker nailed to a post. No numbers. */
 .md-typeset h2 {
-  counter-increment: ledger;
   color: var(--ink);
   font-size: 1.32rem;
-  font-weight: 320;
+  font-weight: 340;
   letter-spacing: -0.01em;
   border-top: 1px solid var(--hairline);
   border-bottom: none;
-  padding-top: 1.15em;
-  margin-top: 2.1em;
+  position: relative;
+  padding-top: 0.95em;
+  margin-top: 2.2em;
 }
 .md-typeset h2::before {
-  content: "§ " counter(ledger, decimal-leading-zero);
-  display: block;
-  font-family: var(--md-code-font), monospace;
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  margin-bottom: 0.65em;
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 11px;
+  height: 10px;
+  background-color: var(--marker);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
 .md-typeset h3 {
@@ -257,7 +264,7 @@
   letter-spacing: 0.08em;
 }
 
-/* Heading permalinks: quiet mono section-marks */
+/* Heading permalinks: quiet mono marks */
 .md-typeset .headerlink {
   font-family: var(--md-code-font), monospace;
   font-weight: 400;
@@ -278,28 +285,31 @@
 .md-typeset a:not(:hover) {
   text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
 }
-.md-typeset a:hover { color: var(--accent-dim); }
+.md-typeset a:hover { color: var(--cobalt-dim); }
 
-/* Vermilion list markers — tiny, everywhere, quietly yours */
-.md-typeset ul li::marker { color: var(--accent); }
+/* Orange list markers — tiny trail markers through the prose */
+.md-typeset ul li::marker { color: var(--marker); }
 .md-typeset ol li::marker {
   color: var(--ink-muted);
   font-family: var(--md-code-font), monospace;
   font-size: 0.8em;
 }
 
+/* Quoted words are taonga: blockquotes carry pounamu, not orange */
 .md-typeset blockquote {
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--pounamu);
   color: var(--md-default-fg-color--light);
 }
 
-/* Horizontal rule: a short quiet break, not a fence */
+/* Horizontal rule = a contour line */
 .md-typeset hr {
   border: none;
-  height: 1px;
-  width: 5rem;
+  height: 10px;
+  width: 7rem;
   margin: 2.6em auto;
-  background-color: var(--hairline);
+  background-color: var(--ink-faint);
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 12"><path d="M0 8 C 14 3, 26 11, 40 7 S 66 2, 82 7 S 112 11, 126 6 S 136 5, 140 7" fill="none" stroke="black" stroke-width="1.3"/><path d="M8 11 C 24 8, 40 12, 58 10 S 96 7, 118 10" fill="none" stroke="black" stroke-width="0.9" opacity="0.6"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 12"><path d="M0 8 C 14 3, 26 11, 40 7 S 66 2, 82 7 S 112 11, 126 6 S 136 5, 140 7" fill="none" stroke="black" stroke-width="1.3"/><path d="M8 11 C 24 8, 40 12, 58 10 S 96 7, 118 10" fill="none" stroke="black" stroke-width="0.9" opacity="0.6"/></svg>') center / contain no-repeat;
 }
 
 /* Lede paragraph (homepage) */
@@ -312,7 +322,6 @@
 
 /* ---------- 5. The machinery: header, tabs, nav, TOC, footer */
 
-/* Header: paper-coloured, hairline seam, no shadow, mono voice */
 .md-header {
   background-color: var(--paper);
   color: var(--ink);
@@ -328,7 +337,7 @@
 }
 .md-header__topic:first-child { font-weight: 600; }
 
-/* Logo: replace the stock book icon with the MC mark (echoes favicon) */
+/* Logo: the MC mark, now a track-marker chip */
 .md-header__button.md-logo svg { display: none; }
 .md-header__button.md-logo::before {
   content: "MC";
@@ -338,16 +347,16 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.02em;
-  color: #f3efe5;
-  background-color: var(--accent);
+  color: #f4f1e6;
+  background-color: var(--marker);
   padding: 0.32em 0.38em 0.28em;
   border-radius: 0.22em;
 }
 [data-md-color-scheme="slate"] .md-header__button.md-logo::before {
-  color: #141310;
+  color: #0e1c33;
 }
 
-/* Tabs: mono, lowercase, hairline seam under; vermilion underline on active */
+/* Tabs: mono, lowercase, hairline seam; orange underline when active */
 .md-tabs {
   background-color: var(--paper);
   color: var(--ink-muted);
@@ -367,7 +376,7 @@
 .md-tabs__item--active .md-tabs__link,
 .md-tabs__link--active {
   color: var(--ink);
-  box-shadow: 0 2px 0 0 var(--accent);
+  box-shadow: 0 2px 0 0 var(--marker);
 }
 
 /* Sidebars: mono machinery, muted until it matters */
@@ -385,9 +394,10 @@
   letter-spacing: 0.1em;
   color: var(--ink-faint);
 }
+/* You are here: the active page carries the marker */
 .md-nav__item .md-nav__link--active,
 .md-nav__item .md-nav__link--active code {
-  color: var(--accent);
+  color: var(--marker);
 }
 
 /* Search: quiet outlined field, mono */
@@ -411,7 +421,7 @@
   border-color: var(--hairline);
 }
 
-/* Footer: hairline seam, mono whisper */
+/* Footer: hairline seam, mono whisper, one true coordinate */
 .md-footer { border-top: 1px solid var(--hairline); }
 .md-footer-meta { background-color: var(--paper); }
 .md-copyright,
@@ -421,10 +431,19 @@
   letter-spacing: 0.03em;
   color: var(--ink-faint);
 }
+/* The photo's map sheet — NZTopo50 BV20 covers Arthur's Pass */
+.md-copyright::before {
+  content: "nztopo50 bv20 · ";
+  color: var(--gold);
+}
+/* And the site signs off properly */
+.md-copyright::after {
+  content: " · ka kite anō";
+}
 .md-footer-meta.md-typeset a { color: var(--ink-muted); }
-.md-footer-meta.md-typeset a:hover { color: var(--accent); }
+.md-footer-meta.md-typeset a:hover { color: var(--marker); }
 
-/* Back-to-top pill: paper + hairline, not a coloured blob */
+/* Back-to-top pill: paper + hairline */
 .md-top {
   background-color: var(--paper-lift);
   color: var(--ink-muted);
@@ -433,14 +452,12 @@
 }
 .md-top:hover {
   background-color: var(--paper-lift);
-  color: var(--accent);
+  color: var(--marker);
 }
 
 
 /* ---------- 6. Code, tables, images */
 
-/* Actual code speaks in Geist Mono — the machinery voice above (headers,
-   nav, tabs, TOC, labels) stays in InterMC Machine, untouched. */
 code, kbd, pre {
   font-family: var(--md-code-block-font);
 }
@@ -490,7 +507,7 @@ code, kbd, pre {
   box-shadow: none;
 }
 
-/* Table overflow: thin scrollbar + edge fades (kept — functional) */
+/* Table overflow: thin scrollbar + edge fades (functional, kept) */
 .md-typeset__scrollwrap {
   scrollbar-width: thin;
   --tbl-fade: var(--md-default-bg-color);
@@ -507,14 +524,14 @@ code, kbd, pre {
   --tbl-shadow: rgba(0, 0, 0, 0.55);
 }
 
-/* Images: mounted prints — hairline frame on paper */
+/* Images: mounted prints — hairline frame */
 .md-typeset img:not(.twemoji) {
   border-radius: 0.35rem;
   border: 1px solid var(--hairline);
 }
 .md-typeset img { height: auto; }   /* CLS guard */
 
-/* Figures: mono caption, like a print label */
+/* Figures: mono caption, like a map margin note */
 .md-typeset figcaption,
 .md-typeset .img-caption {
   font-family: var(--md-code-font), monospace;
@@ -527,56 +544,235 @@ code, kbd, pre {
 }
 
 
-/* ---------- 7. Homepage: the garden index */
+/* ---------- 6b. Admonitions — DOC signage
+   Two kinds of sign on a track: green tells you where you are and
+   what's ahead; yellow makes you stop and read. Title bands are
+   solid like painted sign panels, in both schemes — a sign is a
+   sign at night. Body text stays on the page's own paper. */
 
-.garden-index {
-  max-width: 40rem;
-  margin: 1.8em 0 2.4em;
-  border-top: 1px solid var(--hairline);
+.md-typeset :is(.admonition, details) {
+  border: 1px solid var(--hairline);
+  border-radius: 0.45rem;
+  box-shadow: none;
+  font-size: 0.72rem;
+  background-color: transparent;
+  overflow: hidden;
 }
-.garden-index a {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr auto;
-  align-items: baseline;
-  gap: 0 0.8rem;
-  padding: 0.72em 0.2em;
-  border-bottom: 1px solid var(--hairline);
-  text-decoration: none;
-  color: var(--ink);
-  transition: background-color 0.15s ease, padding-left 0.15s ease;
-}
-.garden-index a:hover {
-  background-color: var(--md-accent-fg-color--transparent);
-  padding-left: 0.55em;
-  color: var(--ink);
-}
-.garden-index .gi-num {
+.md-typeset :is(.admonition-title, summary) {
+  background-color: #1c4230 !important;   /* conservation green */
+  color: #f0ede0 !important;
   font-family: var(--md-code-font), monospace;
-  font-size: 0.6rem;
-  font-weight: 500;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent);
+  border: none;
+  margin: 0;
 }
-.garden-index .gi-name {
-  font-weight: 560;
-  font-size: 0.9rem;
-  letter-spacing: -0.005em;
+.md-typeset :is(.admonition-title, summary)::before {
+  background-color: #f0ede0 !important;
 }
-.garden-index .gi-desc {
-  font-family: var(--md-code-font), monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.03em;
-  color: var(--ink-faint);
-  text-align: right;
+.md-typeset details > summary::after {
+  color: #f0ede0 !important;
 }
-.garden-index a:hover .gi-desc { color: var(--ink-muted); }
-@media screen and (max-width: 44em) {
-  .garden-index .gi-desc { display: none; }
+/* Caution set: the yellow panels — dark bush-green text, like the signs */
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .danger, .error, .failure, .fail, .missing, .bug)
+  > :is(.admonition-title, summary) {
+  background-color: #dfa716 !important;   /* sign yellow */
+  color: #21331f !important;
+}
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .danger, .error, .failure, .fail, .missing, .bug)
+  > :is(.admonition-title, summary)::before {
+  background-color: #21331f !important;
+}
+/* No coloured left borders fighting the panels */
+.md-typeset :is(.admonition, details) {
+  border-left-width: 1px;
 }
 
-/* Homepage hero as a mounted print */
-.site-hero { margin: 2.4em 0 0; }
-.site-hero img { display: block; }
+
+/* ---------- 7. Homepage — the territory, cover to cover
+   Scoped with :has(.masthead) so only the homepage changes layout.
+   The photograph fills the viewport; the header and tabs float over
+   it as the only navigation. Without :has support, the page falls
+   back to a normal banner below paper-coloured bars. */
+
+body:has(.masthead) { overflow-x: clip; }
+.md-main:has(.masthead) .md-sidebar { display: none; }
+.md-main:has(.masthead) .md-content__button { display: none; }
+body:has(.masthead) :is(.md-main__inner, .md-content__inner) {
+  margin: 0;
+  padding: 0;
+}
+/* The content column must span the full grid, or the 50%-anchored
+   full-bleed drifts left and strands a photo-less strip on the right */
+body:has(.masthead) .md-content__inner { max-width: none; }
+body:has(.masthead) .md-content__inner::before { display: none; }
+body:has(.masthead) .md-footer { display: none; }
+
+/* The bars become glass over the photograph */
+body:has(.masthead) .md-header {
+  background-color: rgba(10, 12, 24, 0.10);
+  color: #f2f4fa;
+}
+body:has(.masthead) .md-tabs {
+  background-color: transparent;
+  border-bottom: none;
+  color: rgba(242, 244, 250, 0.78);
+}
+body:has(.masthead) .md-tabs__link { color: rgba(242, 244, 250, 0.78); }
+body:has(.masthead) .md-tabs__link:hover { color: #ffffff; }
+body:has(.masthead) .md-tabs__item--active .md-tabs__link,
+body:has(.masthead) .md-tabs__link--active { color: #ffffff; }
+body:has(.masthead) .md-search__form {
+  background-color: rgba(242, 244, 250, 0.14);
+  border-color: rgba(242, 244, 250, 0.25);
+}
+body:has(.masthead) .md-search__input { color: #f2f4fa; }
+body:has(.masthead) .md-search__input::placeholder { color: rgba(242, 244, 250, 0.6); }
+
+/* Full-bleed masthead (banner by default; cover when :has works) */
+.masthead {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin: 0 0 0 -50vw;
+  height: min(74vh, 46rem);
+  overflow: hidden;
+}
+/* Cover: slide under the glass bars, fill the viewport */
+body:has(.masthead) .masthead {
+  margin-top: -4.8rem;   /* header 2.4rem + tabs 2.4rem */
+  height: 100vh;
+  height: 100dvh;
+  border-bottom: none;
+}
+@media screen and (max-width: 76.1875em) {
+  body:has(.masthead) .masthead { margin-top: -2.4rem; }  /* tabs hidden */
+}
+
+.masthead img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 58%;
+  border: none;
+  border-radius: 0;
+}
+
+/* Legibility wash: settle the sky behind the bars and the greeting */
+.masthead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 14, 30, 0.38), rgba(7, 14, 30, 0.10) 42%, rgba(0, 0, 0, 0) 58%);
+  pointer-events: none;
+}
+
+/* The night sky, above the fade line. A tight band across the top
+   third only — stars can never touch the ranges. Te Punga o
+   Tama-rereti among a faint field: γ head, δ high arm, β low arm,
+   α brightest at the foot — four, as on the flag — with the two
+   Pointers (Hadar, Rigel Kent) below, aiming at the Cross.
+   Invisible by day. */
+.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMin slice"><g fill="white"><circle cx="360" cy="44" r="0.8" opacity="0.38"/><circle cx="171" cy="249" r="0.8" opacity="0.25"/><circle cx="338" cy="270" r="0.6" opacity="0.23"/><circle cx="490" cy="80" r="1.0" opacity="0.34"/><circle cx="600" cy="73" r="1.0" opacity="0.36"/><circle cx="771" cy="55" r="0.7" opacity="0.33"/><circle cx="612" cy="238" r="1.0" opacity="0.23"/><circle cx="96" cy="156" r="0.7" opacity="0.34"/><circle cx="958" cy="55" r="1.2" opacity="0.4"/><circle cx="101" cy="157" r="1.1" opacity="0.3"/><circle cx="1155" cy="68" r="1.0" opacity="0.4"/><circle cx="749" cy="246" r="0.6" opacity="0.26"/><circle cx="564" cy="195" r="0.9" opacity="0.29"/><circle cx="26" cy="145" r="0.9" opacity="0.3"/><circle cx="632" cy="46" r="0.9" opacity="0.41"/><circle cx="138" cy="54" r="0.6" opacity="0.36"/><circle cx="1143" cy="144" r="1.2" opacity="0.29"/><circle cx="574" cy="38" r="1.0" opacity="0.37"/><circle cx="320" cy="86" r="0.7" opacity="0.33"/><circle cx="1023" cy="45" r="1.2" opacity="0.42"/><circle cx="147" cy="135" r="0.8" opacity="0.35"/><circle cx="1166" cy="157" r="0.8" opacity="0.32"/><circle cx="1092" cy="42" r="0.7" opacity="0.43"/><circle cx="914" cy="57" r="1.0" opacity="0.36"/><circle cx="958" cy="118" r="2.4" opacity="0.1"/><circle cx="958" cy="118" r="1.0" opacity="0.8"/><circle cx="994" cy="147" r="2.2" opacity="0.09"/><circle cx="994" cy="147" r="0.8" opacity="0.68"/><circle cx="922" cy="164" r="2.4" opacity="0.1"/><circle cx="922" cy="164" r="0.9" opacity="0.75"/><circle cx="969" cy="194" r="2.8" opacity="0.12"/><circle cx="969" cy="194" r="1.2" opacity="0.9"/><circle cx="906" cy="208" r="2.2" opacity="0.09"/><circle cx="906" cy="208" r="0.9" opacity="0.7"/><circle cx="879" cy="231" r="2.5" opacity="0.1"/><circle cx="879" cy="231" r="1.1" opacity="0.8"/></g></svg>') 0 0 / cover no-repeat;
+  -webkit-mask: linear-gradient(180deg, black 60%, transparent 92%);
+  mask: linear-gradient(180deg, black 60%, transparent 92%);
+}
+[data-md-color-scheme="slate"] .masthead::before { opacity: 0.55; }
+
+/* Dusk grade: the same land, the light nearly gone */
+[data-md-color-scheme="slate"] .masthead img {
+  filter: brightness(0.55) saturate(0.68) contrast(0.98);
+}
+[data-md-color-scheme="slate"] .masthead::after {
+  background:
+    linear-gradient(180deg, rgba(8, 15, 26, 0.55), rgba(10, 18, 30, 0.30) 40%, rgba(11, 21, 34, 0.16) 62%, rgba(11, 21, 34, 0.10)),
+    linear-gradient(0deg, rgba(11, 21, 34, 0.45), rgba(11, 21, 34, 0) 30%);
+}
+
+/* The greeting, set in the sky (clear of the glass bars) */
+.masthead-inner {
+  position: absolute;
+  top: clamp(7rem, 22vh, 12rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90vw, 46rem);
+  z-index: 1;
+}
+.mh-kicker {
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: #ecd9a8;
+  margin: 0 0 0.9em;
+  text-shadow: 0 1px 8px rgba(7, 14, 30, 0.5);
+}
+.masthead h1 {
+  font-size: clamp(2.4rem, 1.6rem + 4.5vw, 4.1rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: #f4f6fa;
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(7, 14, 30, 0.45);
+}
+.masthead h1::after {
+  content: ".";
+  color: var(--marker);
+}
+
+/* Map-margin locator, bottom right of the photograph */
+.mh-locator {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.8rem;
+  z-index: 1;
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(244, 246, 250, 0.82);
+  text-shadow: 0 1px 6px rgba(7, 14, 30, 0.6);
+  margin: 0;
+}
+
+/* ---------- 7b. The map under the words — Te Waipounamu itself
+   The real coastline of the South Island (Natural Earth 1:10m data),
+   with Rakiura, standing quietly behind every content page. Just the
+   silhouette. It holds still while the text moves over it.
+   The homepage needs no map: it has the territory. */
+
+body[data-md-color-scheme="default"] {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 498"><g fill="none" stroke="%23262218" stroke-opacity="0.11" stroke-width="1"><path d="M335.7,204.6L335.4,213.1L334.7,214.6L337.3,225.1L337.2,226.3L336.5,225.4L335.6,225.8L336.9,227.4L340.2,228.3L333.5,229.8L332.1,231.1L335.4,232.3L336.5,230.9L341.3,230.5L342.5,233.3L343.4,229.3L345.2,230.8L345.3,234.5L348.0,231.8L349.6,232.2L350.4,233.8L352.6,231.8L352.8,233.1L354.8,235.3L354.4,237.3L355.1,238.9L355.2,243.0L354.1,246.9L353.4,245.9L352.1,247.7L351.1,247.4L350.8,249.5L349.9,248.8L348.9,249.5L347.0,241.7L347.1,239.7L346.4,239.4L345.2,240.4L346.0,241.9L345.2,245.9L347.3,250.7L342.5,250.5L340.6,248.6L339.4,249.0L335.5,244.8L336.5,242.4L318.3,247.0L318.0,245.9L319.2,245.0L330.3,241.7L328.4,240.1L325.1,239.9L322.2,237.2L318.0,238.3L316.6,241.0L316.6,246.4L315.8,247.7L309.0,248.9L299.0,254.5L288.6,262.0L285.3,262.2L280.7,265.4L277.9,266.2L276.1,268.0L271.7,270.0L264.5,276.9L260.7,278.2L257.2,285.1L256.7,291.5L254.4,294.4L254.1,296.6L251.5,298.0L252.7,299.4L253.7,312.3L253.4,313.7L251.5,315.6L253.1,315.8L253.6,317.6L253.1,324.4L247.1,336.8L241.2,342.8L238.3,348.9L235.7,357.6L237.3,359.3L237.2,361.0L234.8,364.3L235.1,366.9L231.7,370.3L232.1,372.1L231.5,373.0L229.2,372.7L229.9,375.7L228.4,376.8L225.4,377.1L226.2,378.6L227.4,378.7L226.1,381.4L222.3,383.4L222.5,385.3L225.2,386.2L225.9,385.3L229.4,387.6L229.4,388.6L224.8,390.3L223.3,392.4L221.7,393.0L221.1,394.8L219.1,396.1L218.6,397.4L225.5,394.1L227.7,390.8L230.3,388.8L231.1,390.9L230.4,395.9L227.2,396.4L226.2,398.2L215.2,399.3L210.6,400.8L206.6,403.7L202.7,409.7L201.4,416.4L200.4,417.8L193.9,421.5L190.8,425.4L183.4,430.4L181.6,432.9L180.7,439.5L177.5,441.3L173.9,440.3L170.6,441.3L175.7,441.8L174.7,444.4L173.0,445.5L169.3,447.6L165.7,446.6L161.0,449.4L162.2,450.9L157.3,450.7L156.3,452.4L152.1,451.2L149.6,453.3L146.4,453.6L145.7,452.9L145.8,450.6L145.0,450.4L143.6,453.8L141.7,454.0L138.8,452.0L138.7,454.5L137.3,455.3L129.4,453.4L127.1,446.3L117.5,447.9L120.0,446.4L114.9,445.4L116.4,447.6L115.7,448.4L116.4,449.4L113.5,450.3L104.3,449.4L106.5,447.2L112.1,448.1L109.4,446.3L104.7,446.4L101.5,444.8L101.4,447.6L103.6,450.9L102.1,450.7L99.0,447.9L98.4,446.2L96.6,445.3L96.2,443.8L98.5,443.3L99.4,444.6L102.5,441.8L103.0,439.9L101.6,435.7L100.3,435.7L100.7,437.6L100.2,439.3L98.1,440.3L93.5,431.1L91.1,429.8L85.1,431.1L85.1,433.2L79.1,432.3L77.8,434.0L75.4,433.2L73.3,434.0L68.0,428.7L70.7,426.7L66.6,421.1L66.6,419.6L60.0,416.8L52.7,416.1L50.2,423.5L47.6,423.6L44.3,425.2L39.9,424.2L37.8,425.1L33.1,422.5L15.8,421.2L12.8,419.1L10.9,416.3L15.3,412.6L19.5,405.1L22.2,404.1L26.0,400.9L18.0,404.5L17.0,406.3L17.2,408.0L15.2,410.2L14.2,407.4L13.5,409.7L8.0,411.5L8.2,409.1L9.5,409.0L10.2,405.0L12.8,403.0L17.4,401.6L18.3,399.9L14.6,401.4L12.0,400.6L15.2,395.9L14.8,394.8L13.1,395.9L8.7,402.5L3.6,403.9L1.2,406.0L0.4,404.7L0.0,393.3L1.2,390.8L8.4,390.3L8.4,391.4L11.3,389.9L22.6,388.6L28.9,384.3L29.6,382.8L26.5,383.8L22.7,383.3L17.7,384.7L16.4,384.3L18.1,381.4L22.7,379.2L16.6,379.7L16.2,376.3L16.8,375.1L23.8,372.7L28.1,373.7L29.2,372.7L27.4,372.7L26.0,371.6L31.0,369.4L31.4,367.6L24.3,371.2L19.9,372.1L17.0,373.7L13.2,373.8L12.6,371.3L14.6,367.1L16.1,361.5L18.5,360.3L26.0,363.5L23.7,359.3L23.0,361.0L18.3,357.7L19.2,354.7L22.7,352.2L24.1,354.4L26.3,355.4L24.9,357.5L29.5,356.5L31.0,358.0L31.5,360.1L29.1,362.8L32.0,362.6L33.7,359.5L36.3,361.8L37.7,366.1L39.5,366.6L39.2,364.2L31.0,355.4L32.7,353.9L38.1,352.3L39.1,352.4L40.6,354.8L42.3,355.8L44.4,355.4L45.0,354.4L41.5,353.7L40.8,352.6L41.7,350.0L36.3,351.3L31.0,351.2L30.1,347.3L28.9,345.7L29.1,341.1L31.9,340.4L35.3,344.2L37.6,345.0L37.7,344.0L33.9,339.9L31.4,338.8L34.8,334.2L36.0,334.5L38.0,337.8L38.1,340.7L38.8,341.4L39.1,338.3L43.2,338.3L38.2,335.6L36.6,331.9L38.6,330.3L46.4,334.1L47.2,333.3L39.1,328.7L40.3,326.6L42.9,324.4L46.1,323.7L45.0,322.2L49.1,319.7L50.9,319.6L52.5,323.2L52.0,326.7L53.4,329.4L53.1,330.8L56.0,330.8L55.1,327.5L54.0,326.5L54.0,323.5L52.4,319.3L53.0,315.8L54.5,314.2L56.5,314.0L58.2,315.6L58.5,316.6L57.2,320.0L58.9,322.7L60.3,316.1L57.8,311.8L60.0,310.4L62.4,313.1L64.8,314.1L60.3,309.1L61.6,307.3L64.4,306.5L65.5,304.6L68.7,302.1L71.8,301.8L76.7,305.8L78.3,309.0L78.7,306.0L74.3,301.5L73.2,294.9L78.9,288.1L83.7,283.7L83.4,281.3L88.7,281.0L89.4,278.6L87.4,276.7L91.0,275.2L98.3,268.7L100.1,266.4L100.8,263.4L103.2,261.6L101.7,260.6L109.1,259.1L116.4,255.1L119.3,258.1L121.8,258.4L124.9,257.5L135.5,249.0L138.9,247.2L140.2,244.4L143.6,242.4L145.6,239.9L155.7,234.6L157.8,231.9L161.2,231.7L166.5,228.4L169.9,228.8L173.7,226.3L177.2,222.0L177.5,220.2L180.6,218.0L181.0,215.4L182.1,214.0L190.4,209.5L191.6,206.4L193.5,205.2L194.4,203.0L198.3,200.6L201.6,201.5L205.0,196.0L203.3,195.6L199.5,200.0L200.5,196.8L203.7,193.6L204.3,191.9L209.4,191.0L209.4,189.9L211.1,188.1L213.1,187.9L213.2,186.7L216.3,184.5L221.1,182.8L223.1,181.1L226.3,180.7L234.7,172.5L239.2,164.4L242.5,162.3L248.8,154.0L254.3,143.5L254.8,139.5L257.4,135.4L258.5,132.1L260.0,121.2L261.7,115.0L264.6,110.8L268.4,97.8L267.4,97.0L267.3,93.1L276.4,92.5L284.1,88.0L285.9,85.9L287.9,85.7L288.3,84.0L289.8,82.6L293.2,76.1L295.4,69.9L299.5,67.2L299.2,65.8L300.6,58.7L303.1,58.1L301.8,55.2L301.4,28.3L303.4,27.1L306.1,22.0L315.1,15.7L322.8,6.4L324.8,5.6L323.8,8.9L324.6,9.2L325.5,7.6L327.3,7.5L327.4,6.1L329.1,4.6L328.3,3.6L326.9,4.8L325.5,4.6L327.5,1.9L330.0,0.6L340.5,0.0L348.9,1.6L335.3,1.4L333.2,7.9L332.4,8.7L332.9,10.2L331.0,10.7L331.7,12.7L333.2,13.7L332.8,18.3L334.3,17.3L335.0,19.4L341.4,25.2L345.1,23.8L346.1,21.4L347.1,22.3L348.5,20.5L350.0,21.7L350.4,25.5L349.6,26.9L352.0,27.2L352.6,28.3L351.9,31.9L352.2,34.0L348.9,37.9L350.8,37.9L351.5,42.7L352.8,45.8L352.6,47.0L351.1,45.0L350.8,47.7L352.2,50.6L353.2,49.7L353.6,50.6L354.8,56.2L353.4,57.6L354.7,59.4L360.5,58.9L364.3,55.9L367.3,51.9L372.5,46.8L373.4,46.8L373.1,48.5L375.8,47.1L377.9,44.0L379.3,44.3L379.7,43.5L379.2,42.7L380.6,40.8L382.3,40.8L383.7,43.1L383.7,44.5L384.6,43.6L385.2,44.5L385.9,44.0L385.2,42.3L389.1,39.4L387.9,37.9L385.5,39.2L385.6,37.8L386.9,36.3L392.0,34.4L394.7,31.2L394.5,34.6L395.8,34.9L397.6,32.9L398.0,31.3L402.1,29.3L403.8,29.8L404.4,31.8L400.9,31.3L401.3,32.3L400.2,34.4L398.0,34.9L399.1,35.9L398.2,36.8L394.7,37.5L393.2,36.6L390.8,37.5L392.1,39.0L390.8,40.1L391.8,41.0L390.3,44.0L390.7,44.6L391.9,44.4L393.4,41.0L398.8,40.2L400.2,41.0L399.1,41.1L398.6,42.9L396.3,42.1L396.5,44.5L395.4,44.5L395.0,46.2L393.4,47.0L392.9,48.1L394.7,48.5L395.8,50.3L395.1,53.6L389.9,56.2L390.5,57.6L391.4,58.1L399.1,54.1L396.5,52.6L402.9,53.0L405.0,52.1L403.8,51.0L407.0,51.4L409.7,49.6L403.7,49.8L402.0,51.0L400.9,50.6L401.3,49.6L397.0,50.8L396.8,47.4L398.7,45.6L398.7,44.2L399.8,43.7L399.8,42.5L401.7,43.0L401.0,45.3L401.3,47.5L403.4,43.5L405.0,43.5L403.9,41.3L404.8,39.9L404.4,37.9L403.5,37.9L402.6,40.6L399.8,37.5L401.7,37.5L401.2,35.8L402.4,35.9L402.5,34.4L407.6,38.1L409.4,36.4L410.3,37.4L411.2,37.0L411.5,34.4L412.3,34.7L414.1,37.7L414.1,39.1L412.4,39.9L413.6,41.9L418.8,36.7L419.6,36.4L420.0,37.4L416.5,44.0L416.3,46.0L413.6,47.5L413.2,43.4L412.3,45.6L411.5,45.2L414.1,50.6L410.8,53.0L401.0,55.1L399.1,57.3L403.6,56.8L406.1,55.1L410.5,54.1L413.2,56.2L420.0,52.6L415.7,60.4L411.9,62.2L413.2,59.4L411.6,60.4L410.8,60.2L411.2,59.1L409.7,60.3L405.3,68.9L406.0,73.6L405.7,74.8L406.7,75.0L408.1,78.0L409.0,76.3L408.1,73.4L408.8,74.0L411.8,79.3L414.6,90.0L418.2,90.5L414.1,99.8L402.8,112.6L400.5,117.0L400.1,122.0L396.7,128.1L392.1,131.9L390.5,134.6L389.0,134.9L386.7,138.2L386.8,140.1L388.1,142.0L387.8,142.5L387.4,143.0L385.7,141.1L384.1,141.2L379.0,146.5L375.8,155.3L373.5,156.5L374.6,157.6L369.8,169.3L368.0,172.2L366.4,173.1L366.5,176.9L364.5,180.6L357.3,184.2L356.6,186.4L353.6,189.0L344.6,191.6L339.0,196.5L335.5,203.6L335.7,204.6Z"/><path d="M92.6,482.2L95.8,484.9L92.1,483.6L91.6,486.3L89.8,485.6L90.4,486.7L83.1,487.3L76.7,492.6L70.7,491.3L69.4,488.8L67.0,490.3L66.6,492.3L61.4,494.3L62.4,495.3L67.3,493.8L64.4,497.9L63.7,496.1L61.0,498.6L56.3,498.8L57.6,492.6L62.2,490.3L61.3,489.6L62.0,483.5L64.4,481.4L68.2,480.7L67.9,475.4L70.1,475.0L72.0,472.2L71.9,469.5L69.0,464.5L70.6,456.4L75.6,456.6L77.7,455.3L80.2,456.6L89.6,467.8L91.5,468.7L92.2,469.6L91.1,470.6L92.2,471.6L90.9,472.1L86.0,471.6L86.4,470.6L82.4,471.0L82.8,473.2L80.1,476.7L84.5,473.7L90.0,476.2L88.9,478.1L94.2,476.6L95.9,478.6L95.1,481.7L92.6,482.2Z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right clamp(2rem, 9vw, 12rem) center;
+  background-size: auto min(92vh, 50rem);
+}
+body[data-md-color-scheme="slate"] {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 498"><g fill="none" stroke="%23dfe4ea" stroke-opacity="0.10" stroke-width="1"><path d="M335.7,204.6L335.4,213.1L334.7,214.6L337.3,225.1L337.2,226.3L336.5,225.4L335.6,225.8L336.9,227.4L340.2,228.3L333.5,229.8L332.1,231.1L335.4,232.3L336.5,230.9L341.3,230.5L342.5,233.3L343.4,229.3L345.2,230.8L345.3,234.5L348.0,231.8L349.6,232.2L350.4,233.8L352.6,231.8L352.8,233.1L354.8,235.3L354.4,237.3L355.1,238.9L355.2,243.0L354.1,246.9L353.4,245.9L352.1,247.7L351.1,247.4L350.8,249.5L349.9,248.8L348.9,249.5L347.0,241.7L347.1,239.7L346.4,239.4L345.2,240.4L346.0,241.9L345.2,245.9L347.3,250.7L342.5,250.5L340.6,248.6L339.4,249.0L335.5,244.8L336.5,242.4L318.3,247.0L318.0,245.9L319.2,245.0L330.3,241.7L328.4,240.1L325.1,239.9L322.2,237.2L318.0,238.3L316.6,241.0L316.6,246.4L315.8,247.7L309.0,248.9L299.0,254.5L288.6,262.0L285.3,262.2L280.7,265.4L277.9,266.2L276.1,268.0L271.7,270.0L264.5,276.9L260.7,278.2L257.2,285.1L256.7,291.5L254.4,294.4L254.1,296.6L251.5,298.0L252.7,299.4L253.7,312.3L253.4,313.7L251.5,315.6L253.1,315.8L253.6,317.6L253.1,324.4L247.1,336.8L241.2,342.8L238.3,348.9L235.7,357.6L237.3,359.3L237.2,361.0L234.8,364.3L235.1,366.9L231.7,370.3L232.1,372.1L231.5,373.0L229.2,372.7L229.9,375.7L228.4,376.8L225.4,377.1L226.2,378.6L227.4,378.7L226.1,381.4L222.3,383.4L222.5,385.3L225.2,386.2L225.9,385.3L229.4,387.6L229.4,388.6L224.8,390.3L223.3,392.4L221.7,393.0L221.1,394.8L219.1,396.1L218.6,397.4L225.5,394.1L227.7,390.8L230.3,388.8L231.1,390.9L230.4,395.9L227.2,396.4L226.2,398.2L215.2,399.3L210.6,400.8L206.6,403.7L202.7,409.7L201.4,416.4L200.4,417.8L193.9,421.5L190.8,425.4L183.4,430.4L181.6,432.9L180.7,439.5L177.5,441.3L173.9,440.3L170.6,441.3L175.7,441.8L174.7,444.4L173.0,445.5L169.3,447.6L165.7,446.6L161.0,449.4L162.2,450.9L157.3,450.7L156.3,452.4L152.1,451.2L149.6,453.3L146.4,453.6L145.7,452.9L145.8,450.6L145.0,450.4L143.6,453.8L141.7,454.0L138.8,452.0L138.7,454.5L137.3,455.3L129.4,453.4L127.1,446.3L117.5,447.9L120.0,446.4L114.9,445.4L116.4,447.6L115.7,448.4L116.4,449.4L113.5,450.3L104.3,449.4L106.5,447.2L112.1,448.1L109.4,446.3L104.7,446.4L101.5,444.8L101.4,447.6L103.6,450.9L102.1,450.7L99.0,447.9L98.4,446.2L96.6,445.3L96.2,443.8L98.5,443.3L99.4,444.6L102.5,441.8L103.0,439.9L101.6,435.7L100.3,435.7L100.7,437.6L100.2,439.3L98.1,440.3L93.5,431.1L91.1,429.8L85.1,431.1L85.1,433.2L79.1,432.3L77.8,434.0L75.4,433.2L73.3,434.0L68.0,428.7L70.7,426.7L66.6,421.1L66.6,419.6L60.0,416.8L52.7,416.1L50.2,423.5L47.6,423.6L44.3,425.2L39.9,424.2L37.8,425.1L33.1,422.5L15.8,421.2L12.8,419.1L10.9,416.3L15.3,412.6L19.5,405.1L22.2,404.1L26.0,400.9L18.0,404.5L17.0,406.3L17.2,408.0L15.2,410.2L14.2,407.4L13.5,409.7L8.0,411.5L8.2,409.1L9.5,409.0L10.2,405.0L12.8,403.0L17.4,401.6L18.3,399.9L14.6,401.4L12.0,400.6L15.2,395.9L14.8,394.8L13.1,395.9L8.7,402.5L3.6,403.9L1.2,406.0L0.4,404.7L0.0,393.3L1.2,390.8L8.4,390.3L8.4,391.4L11.3,389.9L22.6,388.6L28.9,384.3L29.6,382.8L26.5,383.8L22.7,383.3L17.7,384.7L16.4,384.3L18.1,381.4L22.7,379.2L16.6,379.7L16.2,376.3L16.8,375.1L23.8,372.7L28.1,373.7L29.2,372.7L27.4,372.7L26.0,371.6L31.0,369.4L31.4,367.6L24.3,371.2L19.9,372.1L17.0,373.7L13.2,373.8L12.6,371.3L14.6,367.1L16.1,361.5L18.5,360.3L26.0,363.5L23.7,359.3L23.0,361.0L18.3,357.7L19.2,354.7L22.7,352.2L24.1,354.4L26.3,355.4L24.9,357.5L29.5,356.5L31.0,358.0L31.5,360.1L29.1,362.8L32.0,362.6L33.7,359.5L36.3,361.8L37.7,366.1L39.5,366.6L39.2,364.2L31.0,355.4L32.7,353.9L38.1,352.3L39.1,352.4L40.6,354.8L42.3,355.8L44.4,355.4L45.0,354.4L41.5,353.7L40.8,352.6L41.7,350.0L36.3,351.3L31.0,351.2L30.1,347.3L28.9,345.7L29.1,341.1L31.9,340.4L35.3,344.2L37.6,345.0L37.7,344.0L33.9,339.9L31.4,338.8L34.8,334.2L36.0,334.5L38.0,337.8L38.1,340.7L38.8,341.4L39.1,338.3L43.2,338.3L38.2,335.6L36.6,331.9L38.6,330.3L46.4,334.1L47.2,333.3L39.1,328.7L40.3,326.6L42.9,324.4L46.1,323.7L45.0,322.2L49.1,319.7L50.9,319.6L52.5,323.2L52.0,326.7L53.4,329.4L53.1,330.8L56.0,330.8L55.1,327.5L54.0,326.5L54.0,323.5L52.4,319.3L53.0,315.8L54.5,314.2L56.5,314.0L58.2,315.6L58.5,316.6L57.2,320.0L58.9,322.7L60.3,316.1L57.8,311.8L60.0,310.4L62.4,313.1L64.8,314.1L60.3,309.1L61.6,307.3L64.4,306.5L65.5,304.6L68.7,302.1L71.8,301.8L76.7,305.8L78.3,309.0L78.7,306.0L74.3,301.5L73.2,294.9L78.9,288.1L83.7,283.7L83.4,281.3L88.7,281.0L89.4,278.6L87.4,276.7L91.0,275.2L98.3,268.7L100.1,266.4L100.8,263.4L103.2,261.6L101.7,260.6L109.1,259.1L116.4,255.1L119.3,258.1L121.8,258.4L124.9,257.5L135.5,249.0L138.9,247.2L140.2,244.4L143.6,242.4L145.6,239.9L155.7,234.6L157.8,231.9L161.2,231.7L166.5,228.4L169.9,228.8L173.7,226.3L177.2,222.0L177.5,220.2L180.6,218.0L181.0,215.4L182.1,214.0L190.4,209.5L191.6,206.4L193.5,205.2L194.4,203.0L198.3,200.6L201.6,201.5L205.0,196.0L203.3,195.6L199.5,200.0L200.5,196.8L203.7,193.6L204.3,191.9L209.4,191.0L209.4,189.9L211.1,188.1L213.1,187.9L213.2,186.7L216.3,184.5L221.1,182.8L223.1,181.1L226.3,180.7L234.7,172.5L239.2,164.4L242.5,162.3L248.8,154.0L254.3,143.5L254.8,139.5L257.4,135.4L258.5,132.1L260.0,121.2L261.7,115.0L264.6,110.8L268.4,97.8L267.4,97.0L267.3,93.1L276.4,92.5L284.1,88.0L285.9,85.9L287.9,85.7L288.3,84.0L289.8,82.6L293.2,76.1L295.4,69.9L299.5,67.2L299.2,65.8L300.6,58.7L303.1,58.1L301.8,55.2L301.4,28.3L303.4,27.1L306.1,22.0L315.1,15.7L322.8,6.4L324.8,5.6L323.8,8.9L324.6,9.2L325.5,7.6L327.3,7.5L327.4,6.1L329.1,4.6L328.3,3.6L326.9,4.8L325.5,4.6L327.5,1.9L330.0,0.6L340.5,0.0L348.9,1.6L335.3,1.4L333.2,7.9L332.4,8.7L332.9,10.2L331.0,10.7L331.7,12.7L333.2,13.7L332.8,18.3L334.3,17.3L335.0,19.4L341.4,25.2L345.1,23.8L346.1,21.4L347.1,22.3L348.5,20.5L350.0,21.7L350.4,25.5L349.6,26.9L352.0,27.2L352.6,28.3L351.9,31.9L352.2,34.0L348.9,37.9L350.8,37.9L351.5,42.7L352.8,45.8L352.6,47.0L351.1,45.0L350.8,47.7L352.2,50.6L353.2,49.7L353.6,50.6L354.8,56.2L353.4,57.6L354.7,59.4L360.5,58.9L364.3,55.9L367.3,51.9L372.5,46.8L373.4,46.8L373.1,48.5L375.8,47.1L377.9,44.0L379.3,44.3L379.7,43.5L379.2,42.7L380.6,40.8L382.3,40.8L383.7,43.1L383.7,44.5L384.6,43.6L385.2,44.5L385.9,44.0L385.2,42.3L389.1,39.4L387.9,37.9L385.5,39.2L385.6,37.8L386.9,36.3L392.0,34.4L394.7,31.2L394.5,34.6L395.8,34.9L397.6,32.9L398.0,31.3L402.1,29.3L403.8,29.8L404.4,31.8L400.9,31.3L401.3,32.3L400.2,34.4L398.0,34.9L399.1,35.9L398.2,36.8L394.7,37.5L393.2,36.6L390.8,37.5L392.1,39.0L390.8,40.1L391.8,41.0L390.3,44.0L390.7,44.6L391.9,44.4L393.4,41.0L398.8,40.2L400.2,41.0L399.1,41.1L398.6,42.9L396.3,42.1L396.5,44.5L395.4,44.5L395.0,46.2L393.4,47.0L392.9,48.1L394.7,48.5L395.8,50.3L395.1,53.6L389.9,56.2L390.5,57.6L391.4,58.1L399.1,54.1L396.5,52.6L402.9,53.0L405.0,52.1L403.8,51.0L407.0,51.4L409.7,49.6L403.7,49.8L402.0,51.0L400.9,50.6L401.3,49.6L397.0,50.8L396.8,47.4L398.7,45.6L398.7,44.2L399.8,43.7L399.8,42.5L401.7,43.0L401.0,45.3L401.3,47.5L403.4,43.5L405.0,43.5L403.9,41.3L404.8,39.9L404.4,37.9L403.5,37.9L402.6,40.6L399.8,37.5L401.7,37.5L401.2,35.8L402.4,35.9L402.5,34.4L407.6,38.1L409.4,36.4L410.3,37.4L411.2,37.0L411.5,34.4L412.3,34.7L414.1,37.7L414.1,39.1L412.4,39.9L413.6,41.9L418.8,36.7L419.6,36.4L420.0,37.4L416.5,44.0L416.3,46.0L413.6,47.5L413.2,43.4L412.3,45.6L411.5,45.2L414.1,50.6L410.8,53.0L401.0,55.1L399.1,57.3L403.6,56.8L406.1,55.1L410.5,54.1L413.2,56.2L420.0,52.6L415.7,60.4L411.9,62.2L413.2,59.4L411.6,60.4L410.8,60.2L411.2,59.1L409.7,60.3L405.3,68.9L406.0,73.6L405.7,74.8L406.7,75.0L408.1,78.0L409.0,76.3L408.1,73.4L408.8,74.0L411.8,79.3L414.6,90.0L418.2,90.5L414.1,99.8L402.8,112.6L400.5,117.0L400.1,122.0L396.7,128.1L392.1,131.9L390.5,134.6L389.0,134.9L386.7,138.2L386.8,140.1L388.1,142.0L387.8,142.5L387.4,143.0L385.7,141.1L384.1,141.2L379.0,146.5L375.8,155.3L373.5,156.5L374.6,157.6L369.8,169.3L368.0,172.2L366.4,173.1L366.5,176.9L364.5,180.6L357.3,184.2L356.6,186.4L353.6,189.0L344.6,191.6L339.0,196.5L335.5,203.6L335.7,204.6Z"/><path d="M92.6,482.2L95.8,484.9L92.1,483.6L91.6,486.3L89.8,485.6L90.4,486.7L83.1,487.3L76.7,492.6L70.7,491.3L69.4,488.8L67.0,490.3L66.6,492.3L61.4,494.3L62.4,495.3L67.3,493.8L64.4,497.9L63.7,496.1L61.0,498.6L56.3,498.8L57.6,492.6L62.2,490.3L61.3,489.6L62.0,483.5L64.4,481.4L68.2,480.7L67.9,475.4L70.1,475.0L72.0,472.2L71.9,469.5L69.0,464.5L70.6,456.4L75.6,456.6L77.7,455.3L80.2,456.6L89.6,467.8L91.5,468.7L92.2,469.6L91.1,470.6L92.2,471.6L90.9,472.1L86.0,471.6L86.4,470.6L82.4,471.0L82.8,473.2L80.1,476.7L84.5,473.7L90.0,476.2L88.9,478.1L94.2,476.6L95.9,478.6L95.1,481.7L92.6,482.2Z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right clamp(2rem, 9vw, 12rem) center;
+  background-size: auto min(92vh, 50rem);
+}
+body:has(.masthead) { background-image: none; }
 
 
 /* ---------- 8. Selection, focus, scrollbars */
@@ -584,8 +780,8 @@ code, kbd, pre {
 [data-md-color-scheme="default"] { color-scheme: light; }
 [data-md-color-scheme="slate"]   { color-scheme: dark; }
 
-[data-md-color-scheme="default"] ::selection { background: rgba(168, 32, 29, 0.16); }
-[data-md-color-scheme="slate"] ::selection   { background: rgba(226, 87, 78, 0.28); }
+[data-md-color-scheme="default"] ::selection { background: rgba(29, 78, 158, 0.16); }
+[data-md-color-scheme="slate"] ::selection   { background: rgba(138, 180, 245, 0.28); }
 
 :focus-visible {
   outline: 2px solid var(--md-accent-fg-color);
@@ -593,10 +789,10 @@ code, kbd, pre {
 }
 
 [data-md-color-scheme="default"] {
-  scrollbar-color: rgba(32, 29, 24, 0.35) var(--md-default-bg-color);
+  scrollbar-color: rgba(38, 34, 24, 0.35) var(--md-default-bg-color);
 }
 [data-md-color-scheme="slate"] {
-  scrollbar-color: rgba(217, 212, 199, 0.28) var(--md-default-bg-color);
+  scrollbar-color: rgba(223, 228, 234, 0.28) var(--md-default-bg-color);
 }
 
 
@@ -627,5 +823,6 @@ html.vt-theme .md-header { view-transition-name: none; }
   .md-typeset .headerlink,
   .md-tabs__link,
   .md-nav__link,
-  .garden-index a { transition: none; }
+  .garden-index a,
+  .garden-index .gi-marker { transition: none; }
 }
