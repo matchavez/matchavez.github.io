@@ -474,7 +474,13 @@
   color: var(--marker);
 }
 
-/* Search: a quiet recess in the sign panel, mono */
+/* Search: a quiet recess in the sign panel, mono.
+   NOTE (17 Jul 2026): this build's search launcher is a single
+   <button class="md-search__button"> — not the classic
+   .md-search__form/__input pair those rules below were written
+   for (kept harmlessly in case a template swap brings them back).
+   The stock button sets color: var(--md-default-fg-color), which
+   is dark ink in light mode — invisible on the green header. */
 .md-search__form {
   background-color: rgba(240, 237, 224, 0.12);
   border: 1px solid rgba(240, 237, 224, 0.22);
@@ -500,6 +506,18 @@
 }
 [data-md-toggle="search"]:checked ~ .md-header .md-search__input::placeholder {
   color: var(--ink-faint);
+}
+
+/* The actual launcher in this build: cream on the sign, regardless
+   of scheme — the header is always the green panel */
+.md-search__button {
+  background-color: rgba(240, 237, 224, 0.14);
+  color: var(--sign-cream);
+  font-family: var(--md-code-font), monospace;
+}
+.md-search__button:hover {
+  background-color: rgba(240, 237, 224, 0.22);
+  color: var(--sign-gold);
 }
 
 /* Footer: the sign at the end of the track — DOC green panel under
