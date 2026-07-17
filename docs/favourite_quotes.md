@@ -1,6 +1,6 @@
 ---
 path: /docs
-title: favourite_quotes
+title: Favourite Quotes
 share: "true"
 ---
 
