@@ -269,8 +269,13 @@
 
 .md-content__inner {
   max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
+  /* max(): centers on wide screens same as plain auto, but never
+     collapses below the stock theme's own 0.8rem edge gutter once
+     the viewport gets narrower than the measure (auto alone hits 0
+     there — the left margin vanishing on small screens, Mat, 17 Jul
+     2026). */
+  margin-left: max(0.8rem, calc((100% - 50rem) / 2));
+  margin-right: max(0.8rem, calc((100% - 50rem) / 2));
 }
 
 /* Comfortable prose measure; tables/code/images may run wider. */
@@ -433,8 +438,8 @@
   align-items: center;
   justify-content: center;
   width: 1.35rem;
-  height: 1.5rem;
-  padding-bottom: 0.28rem;
+  height: 1.6rem;
+  padding-bottom: 0.22rem;
   box-sizing: border-box;
   font-family: var(--sign-font);
   font-size: 0.6rem;
@@ -443,7 +448,13 @@
   letter-spacing: 0.01em;
   color: var(--picto-blue);
   background-color: #ebe5d7;
-  clip-path: path("M2 0 L25 0 Q27 0 27 2 L27 15 Q27 23 13.5 30 Q0 23 0 15 L0 2 Q0 0 2 0 Z");
+  /* DOC's actual ranger-badge shield has a generous rounded top and
+     a soft, gently-tapered bottom point — not the angular heraldic
+     cusp this had before (Mat, 17 Jul 2026: "you'll notice DOC's is
+     rounded"). Bigger top-corner radius; the bottom curves use a
+     control point level with the endpoint so both sides meet with a
+     matching horizontal tangent — a smooth nose, not a sharp V. */
+  clip-path: path("M3 0 L24 0 Q27 0 27 3 L27 18 Q22 32 13.5 32 Q5 32 0 18 L0 3 Q0 0 3 0 Z");
 }
 
 /* Tabs: cream on the green band, Normal Case, gold underline when
