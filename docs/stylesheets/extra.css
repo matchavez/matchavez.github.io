@@ -294,8 +294,8 @@
 }
 .md-typeset h1 .headerlink { display: none; }
 
-/* H2 = a leg of the route: hairline overline with a small
-   information-blue dot sitting on it. No numbers. */
+/* H2 = a leg of the route: plain hairline overline. No numbers,
+   no leading dot/marker — that read as leftover clutter. */
 .md-typeset h2 {
   color: var(--head-ink);
   font-family: var(--display-font);
@@ -304,21 +304,8 @@
   letter-spacing: 0;
   border-top: 1px solid var(--hairline);
   border-bottom: none;
-  position: relative;
   padding-top: 0.95em;
   margin-top: 2.2em;
-}
-/* A simple dot, not a marker triangle — orange retired sitewide;
-   this reads as a bullet before the rule, not a track sign. */
-.md-typeset h2::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: 1px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--info-blue);
 }
 
 .md-typeset h3 {
@@ -533,12 +520,22 @@
   .md-overlay { background-color: rgba(13, 20, 15, 0.5); }
 }
 
-/* Sidebars: mono machinery, muted until it matters */
+/* Sidebars: mono machinery, muted until it matters — except the
+   left-hand primary nav (the site's own pages, including its
+   mirror in the mobile drawer), which reads in the display serif
+   at a slightly larger size, per Mat's direction. The right-hand
+   TOC stays mono. */
 .md-nav { font-size: 0.62rem; }
 .md-nav__link {
   font-family: var(--md-code-font), monospace;
   letter-spacing: 0.01em;
   transition: color 0.15s ease, opacity 0.15s ease;
+}
+.md-nav--primary { font-size: 0.72rem; }
+.md-nav--primary .md-nav__link {
+  font-family: var(--display-font);
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .md-nav__title {
   font-family: var(--md-code-font), monospace;
@@ -856,6 +853,16 @@ body:has(.masthead), body.has-masthead { overflow-x: clip; }
   .md-main:has(.masthead) .md-sidebar,
   body.has-masthead .md-sidebar { display: none; }
 }
+/* The TOC sidebar (secondary) has no reason to exist on the homepage
+   at any width — but the stock theme only takes it off-canvas below
+   59.984375em, while tabs (and the tabs breakpoint this file keys
+   off of) disappear below 76.234375em. In that gap it sat sticky at
+   its full 12.1rem, widening the row and breaking the 100vw cover
+   math — a blank strip down the right edge the instant the layout
+   crossed into the mobile/hamburger range (Mat, 17 Jul 2026). Hidden
+   unconditionally so there's no tweener zone left for it to hide in. */
+.md-main:has(.masthead) .md-sidebar--secondary,
+body.has-masthead .md-sidebar--secondary { display: none; }
 .md-main:has(.masthead) .md-content__button,
 body.has-masthead .md-content__button { display: none; }
 body:has(.masthead) :is(.md-main__inner, .md-content__inner),
