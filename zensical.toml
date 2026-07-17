@@ -33,7 +33,7 @@ nav = [
   { "Golf" = [
     { "Tournaments" = "golf/tourneys.md" },
     { "Equipment" = "golf/equipment.md" },
-    { "Chch Info" = "golf/Christchurch Golf Information.md" },
+    # { "Chch Info" = "golf/Christchurch Golf Information.md" },
   ] },
   # { "Apple" = [
   #   { "Fixes" = "apple/fixes.md" },
@@ -42,7 +42,7 @@ nav = [
   { "Hockey" = "https://matchavez.com/hockey/" },
   { "Test Pages" = [
     { "Typography" = "typography.md" },
-    { "Linux Shortcuts" = "linux_shortcuts.md" },
+    # { "Linux Shortcuts" = "linux_shortcuts.md" },
   ] },
 ]
 
