@@ -557,7 +557,7 @@
 .md-nav--primary .md-nav__link {
   font-family: var(--display-font);
   font-weight: 600;
-  font-size: 2.52rem;  /* 0.72rem + 250% (Mat, 17 Jul 2026) */
+  font-size: 1.5rem;  /* 0.72rem + 250%, then -40%, rounded to a clean number (Mat, 17 Jul 2026) */
   letter-spacing: 0;
 }
 .md-nav__title {
