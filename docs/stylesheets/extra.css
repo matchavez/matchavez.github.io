@@ -14,10 +14,9 @@
        green fill, gold serif headline, pictogram in a Ranginui
        blue chip (yellow alert diamond for the caution set).
        Solid in both schemes: a sign is a sign at night.
-     · Serif headlines, as on the signs: Crimson Pro ExtraBold,
-       a free carved-headline serif standing in for Archer (DOC's
-       actual brand serif, a commercial Hoefler&Co face) — green
-       by day, gold by night.
+     · Serif headlines, as on the signs: EB Garamond, standing in
+       for Archer (DOC's actual brand serif, a commercial Hoefler&Co
+       face) — green by day, gold by night.
      · Dark mode is the sign at night — deep conservation green,
        not charcoal, not navy. The homepage keeps its own night.
      · The handbook textures (pp. 35–37), hand-drawn and dealt
@@ -33,7 +32,7 @@
      InterVariable MC  → prose
      InterMC Machine   → machinery (header, tabs, nav, TOC, labels)
      Geist Mono        → actual code
-     Crimson Pro 800   → display (H1/H2) — Archer stand-in, subset,
+     EB Garamond 400/800 → display (H1/H2) — Archer stand-in, subset,
                           self-hosted
      Archivo ExtraBold → sign titles (subset, self-hosted)
 
@@ -84,32 +83,27 @@
   font-style: italic;
   font-display: swap;
 }
-/* The display voice: Crimson Pro (Jacques Le Bailly, OFL) at its
-   heaviest cut (800/ExtraBold) — a confident, bracketed-serif
-   headline face. Tried against Archer's actual role (DOC's real
-   brand/print serif, a commercial Hoefler&Co face with no free
-   self-hosting tier) and against Aleo and EB Garamond as open
-   alternatives; this weight read the most like a carved/painted
-   sign headline of the three — monumental and high-contrast where
-   Aleo was rounder/softer and EB Garamond leaned more bookish.
-   H1/H2/masthead/nav all stay on this cut (weight 450+). Subset to
-   latin + latin-ext (macrons for te reo). */
+/* The display voice: EB Garamond (Georg Duffner / Octavio Pardo,
+   OFL) — swapped in for Crimson Pro (Mat, 17 Jul 2026, supplying
+   the variable font file directly). Crimson Pro's 800 cut had
+   previously won a head-to-head against Aleo and EB Garamond itself
+   for reading like a carved sign headline; this is a deliberate
+   reversal of that call, not a re-litigation of it. Same two-weight
+   pattern as before: an 800 instance for h1/h2/masthead/nav/tabs
+   (weight 450+) and a genuinely lighter 400 instance for the header
+   title. Both instanced from the single variable file (wght axis
+   400–800) via fontTools, subset to latin + latin-ext (macrons for
+   te reo). */
 @font-face {
-  font-family: "Crimson Pro";
-  src: url("fonts/CrimsonPro-800.woff2") format("woff2");
+  font-family: "EB Garamond";
+  src: url("fonts/EBGaramond-800.woff2") format("woff2");
   font-weight: 450 900;
   font-style: normal;
   font-display: swap;
 }
-/* A second, genuinely lighter static instance (Regular/400) — added
-   so the header title could actually try a lighter weight (Mat, 17
-   Jul 2026: "let's see what it looks like with a font weight of
-   400"). Without this, font-weight: 400 on --display-font would
-   have silently rendered as the 800 file above with no visible
-   change, since that was the only weight self-hosted. Same subset. */
 @font-face {
-  font-family: "Crimson Pro";
-  src: url("fonts/CrimsonPro-400.woff2") format("woff2");
+  font-family: "EB Garamond";
+  src: url("fonts/EBGaramond-400.woff2") format("woff2");
   font-weight: 100 449;
   font-style: normal;
   font-display: swap;
@@ -139,7 +133,7 @@
   --md-code-block-font: "Geist Mono", monospace;
   /* Display voice: page titles, section heads. Georgia fallback —
      DOC's own substitute for Archer, kept as the last resort. */
-  --display-font: "Crimson Pro", Georgia, serif;
+  --display-font: "EB Garamond", Georgia, serif;
   /* Sign voice: the components that are literally painted signs —
      admonition titles, the MC monogram. Arial fallback — DOC's own
      substitute font family for their sans (Helvetica Neue). */
