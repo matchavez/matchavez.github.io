@@ -2,12 +2,28 @@
 share: "true"
 path: /docs/golf
 title: tourneys
+description: Mat Chavez's competitive golf record — interclub pennant results and event wins across Christchurch metro teams.
 ---
 # Tournament Results
 
 ## Interclub
 
-#### 2025-26 Metro A for McLeans Island:
+### 2026 Simon Cup for McLeans Island
+
+| Date   | Opponent                 | Result   | Score     | Team     |
+| ------ | ------------------------ | -------- | --------- | -------- |
+| 02 Aug | Avondale @ Avondale      | DNP-H    |           | 2-6 Loss |
+| 09 Aug | Russley @ Templeton      |          |           |          |
+| 16 Aug | Rawhiti @ McLeans Island |          |           |          |
+| 30 Aug | Christchurch @ Russley   |          |           |          |
+| 06 Sep | Harewood @ Rawhiti       |          |           |          |
+| 13 Sep | Templeton @ Rangiora     |          |           |          |
+| 20 Sep | Weedons @ Weedons        |          |           |          |
+| 27 Sep | Rangiora @ Clearwater    |          |           |          |
+| 04 Oct | Clearwater @ Harewood    |          |           |          |
+| 2026   | Season Record            | 0w 0d 0l | r.s. 0/18 | 0w 0d 0l |
+
+### 2025-26 Metro A for McLeans Island:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
 
 | Date    | Opponent                  | Result       | Score          | Team         |
@@ -24,9 +40,9 @@ title: tourneys
 | 29 Mar  | Clearwater @ Christchurch | Draw         | AS             | 3.5-4.5 Loss |
 | 2025-26 | Season Record             | 6w 1d <br>2l | r.s. 13/18 pts | 5w 2d 3l     |
 
-##### 2026 Metro B Substitute, McLeans Island (0-0-1)
+#### 2026 Metro B Substitute, McLeans Island (0-0-1)
 
-#### 2025 Thompson MacDonald for McLean's Island
+### 2025 Thompson MacDonald for McLean's Island
 [http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ ](https://www.canterburygolf.co.nz/thompson-macdonald-trophy/)(Non-index)
 
 | Date   | Opponent                             | Result   | Score     | Team         |
@@ -43,8 +59,8 @@ title: tourneys
 | 02 Nov | Semifinal - Christchurch @ Greendale | Loss     | _1 Down_  | 2-4 Loss     |
 | 2025   | Season Record (3rd r.s.)             | 2w 1d 2l | r.s. 5/10 | 5w 1d 3l     |
 
-##### 2025 Metro B Substitute, McLeans Island (1-0-0)
-#### 2024 Thompson MacDonald for McLean's Island
+#### 2025 Metro B Substitute, McLeans Island (1-0-0)
+### 2024 Thompson MacDonald for McLean's Island
 http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-index)
 
 | Date   | Opponent                          | Result   | Score     | Team             |
@@ -62,10 +78,10 @@ http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-i
 | 10 Nov | Final -Harewood<br>@ Avondale     | Loss     | *2&1*     | 3-3 lost playoff |
 | 2024   | Season Record                     | 3w 0d 5l | r.s. 6/12 | 5w 2d 3l         |
 
-##### 2023 Simon Cup substitute, McLean's Island (1-1-1)
+#### 2023 Simon Cup substitute, McLean's Island (1-1-1)
 
-##### 2021 Manager Waimairi Beach Simon Cup
-#### 2020-21 Metro B for Waimairi Beach:
+#### 2021 Manager Waimairi Beach Simon Cup
+### 2020-21 Metro B for Waimairi Beach:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/](http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-b/)
 
 | Date    | Opponent                       | Result   | Score          | Team         |
@@ -83,7 +99,7 @@ http://www.canterburygolf.co.nz/interclub/mens/thompson-macdonald-trophy/ (Non-i
 
 Team finish: 5th. Top team individual record.
 
-#### 2019-20 Metro B for Waimairi Beach:
+### 2019-20 Metro B for Waimairi Beach:
 
 | Date    | Opponent                          | Result   | Score          | Team              |
 | ------- | --------------------------------- | -------- | -------------- | ----------------- |
