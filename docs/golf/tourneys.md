@@ -21,7 +21,7 @@ description: Mat Chavez's competitive golf record — interclub pennant results 
 | 20 Sep | Weedons @ Weedons        |          |           |          |
 | 27 Sep | Rangiora @ Clearwater    |          |           |          |
 | 04 Oct | Clearwater @ Harewood    |          |           |          |
-| 2026   | Season Record            | 0w 0d 0l | r.s. 0/18 | 0w 0d 0l |
+| 2026   | Season Record            | 0w 0d 0l | r.s. 0/18 | 0w 0d 1l |
 
 ### 2025-26 Metro A for McLeans Island:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
