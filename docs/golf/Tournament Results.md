@@ -12,7 +12,7 @@ description: Mat Chavez's competitive golf record — interclub pennant results 
 
 | Date   | Opponent                 | Result   | Score     | Team     |
 | ------ | ------------------------ | -------- | --------- | -------- |
-| 02 Aug | Avondale @ Avondale      | DNP-H    |           |          |
+| 02 Aug | Avondale @ Avondale      | DNP-H    |           | 2-6 Loss |
 | 09 Aug | Russley @ Templeton      |          |           |          |
 | 16 Aug | Rawhiti @ McLeans Island |          |           |          |
 | 30 Aug | Christchurch @ Russley   |          |           |          |
