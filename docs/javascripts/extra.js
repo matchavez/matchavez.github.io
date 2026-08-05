@@ -89,24 +89,4 @@
       document.addEventListener("DOMContentLoaded", rapua);
     else rapua();
   } catch (e) { /* stock placeholder remains */ }
-
-  /* 4. Texture dealer: every content page gets one of the five
-     handbook textures (tussock, water, ridgeline, harakeke, scree)
-     as a pair of vertical rails in the left/right margins \u2014 never
-     the same one twice in a row. The homepage deals itself out (it
-     has the territory). Without JS, CSS falls back to the tussock. */
-  try {
-    var deal = function () {
-      if (document.body.classList.contains("has-masthead")) return;
-      var N = 5;
-      var last = parseInt(sessionStorage.getItem("mc-texture"), 10);
-      var pick = Math.floor(Math.random() * N);
-      if (!isNaN(last) && pick === last) pick = (pick + 1 + Math.floor(Math.random() * (N - 1))) % N;
-      sessionStorage.setItem("mc-texture", String(pick));
-      document.body.setAttribute("data-texture", String(pick));
-    };
-    if (document.readyState === "loading")
-      document.addEventListener("DOMContentLoaded", deal);
-    else deal();
-  } catch (e) { /* the tussock stands in */ }
 })();
