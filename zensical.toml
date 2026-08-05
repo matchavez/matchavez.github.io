@@ -20,6 +20,7 @@ nav = [
   { "Welcome" = "index.md" },
   { "AI Blog" = [
     { "Building an Offline Second Opinion With Llama 3.1" = "ai/Building an Offline Second Opinion With Llama 3.1.md" },
+    { "Teaching Myself to Keep My Own Notes Honest" = "ai/Teaching Myself to Keep My Own Notes Honest.md" },
   ] },
   { "Projects" = [
     # { "Stream Test" = "projects/streaming.md" },
