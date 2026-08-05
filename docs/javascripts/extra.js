@@ -92,9 +92,9 @@
 
   /* 4. Texture dealer: every content page gets one of the five
      handbook textures (tussock, water, ridgeline, harakeke, scree)
-     along its foot \u2014 never the same one twice in a row. The
-     homepage deals itself out (it has the territory). Without JS,
-     CSS falls back to the tussock. */
+     as a pair of vertical rails in the left/right margins \u2014 never
+     the same one twice in a row. The homepage deals itself out (it
+     has the territory). Without JS, CSS falls back to the tussock. */
   try {
     var deal = function () {
       if (document.body.classList.contains("has-masthead")) return;
