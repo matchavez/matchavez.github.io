@@ -419,8 +419,8 @@
 .md-header__topic,
 .md-header__topic span {
   font-family: var(--display-font);
-  font-size: 0.78rem;
-  font-weight: 400;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.005em;
   text-transform: none;
 }
@@ -428,7 +428,7 @@
 .md-header__topic span {
   color: #ebe5d7;
 }
-.md-header__topic:first-child { font-weight: 400; }
+.md-header__topic:first-child { font-weight: 700; }
 
 /* The MC mark: a plain shield monogram. Deliberately NOT the tohu —
    no wave, no fern, no white band, different colourway and
