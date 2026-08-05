@@ -11,13 +11,16 @@ site_author = "Mat Chavez"
 repo_url = "https://github.com/matchavez/matchavez.github.io"
 edit_uri = "edit/main/docs/"
 extra_css = ["stylesheets/extra.css"]
-extra_javascript = ["javascripts/extra.js"]
+extra_javascript = ["javascripts/extra.js", "javascripts/statcounter.js"]
 
 # ----------------------------------------------------------------
 # NAV PAGE TREE
 # ----------------------------------------------------------------
 nav = [
   { "Welcome" = "index.md" },
+  { "AI Blog" = [
+    { "Building an Offline Second Opinion With Llama 3.1" = "ai/Building an Offline Second Opinion With Llama 3.1.md" },
+  ] },
   { "Projects" = [
     # { "Stream Test" = "projects/streaming.md" },
     { "Tellyhoova" = "projects/tellyhoova.md" },
