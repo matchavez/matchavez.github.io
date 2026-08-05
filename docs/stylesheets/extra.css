@@ -1123,12 +1123,12 @@ body.has-masthead .masthead {
    (Mat, 2026-08-05: the band crossed content mid-page and obscured
    text; margin rails stay clear of the reading column at any content
    length). Same artwork, same SVGs, same repeat-x/bottom-left
-   background — the whole finished band is built exactly as it always
-   was, then the entire box is rotated 90deg on its side (see the
-   :root comment below for the transform-origin/translate geometry)
-   so every hand-drawn "piece" keeps its original orientation instead
-   of lying sideways. The fade mask runs horizontally inward from each
-   edge instead of vertically from the bottom, so the rails stay quiet
+   background sizing — the pattern itself is never re-flowed or
+   stretched, only the whole finished band is spun 90deg as one rigid
+   piece (see the :root comment below for exactly how), so every
+   hand-drawn "piece" keeps its own orientation instead of lying
+   sideways. The fade mask runs horizontally inward from each edge
+   instead of vertically from the bottom, so the rails stay quiet
    against the content rather than the foot of the page. Only shows
    once the viewport is wide enough to have real margin outside the
    70rem content column (.md-grid, see section above) — narrower than
@@ -1136,40 +1136,45 @@ body.has-masthead .masthead {
 
 :root {
   /* Same band thickness as the original horizontal version — the
-     artwork itself is unrotated and still sized against --tex-h
-     exactly as before. Each rail is built as the ordinary horizontal
-     band exactly like the old footer version (background-repeat:
-     repeat-x, positioned bottom, width = full viewport height, height
-     = --tex-h), then the whole box is turned on its side with
-     `rotate` (a dedicated CSS property, not `transform`) so every
-     hand-drawn "piece" (grass blade, wave, etc.) keeps its original
-     orientation, just spun with the rail instead of lying sideways
-     inside an unrotated box.
+     artwork is unrotated and still sized against --tex-h exactly as
+     before; only the finished band's orientation changes.
 
-     `rotate` alone pivots the box around its own center by default,
-     which does not land a rotated tall/thin box flush against a
-     viewport edge. Verified live in Chrome devtools (2026-08-05) with
-     a real probe element + getBoundingClientRect() rather than
-     assumed: pivoting at transform-origin: top left (or top right)
-     and rotating -90deg (or 90deg) swings the box up and out of the
-     viewport by exactly its own width, in the box's pre-rotation
-     local axis. `translate: 0 var(--tex-h)` afterward — applied in
-     the box's own rotated frame, per spec — brings it back flush with
-     top:0, confirmed by measurement, not derived by inspection alone
-     after an earlier attempt without transform-origin/translate
-     shipped broken (band floated near the top instead of running the
-     full rail). Don't strip transform-origin or translate without
-     re-verifying live; the geometry is not obvious from the CSS
-     alone. */
+     Getting the rotation to actually land in the right place took
+     three tries, logged in Claude/Memory/known-issues.md (2026-08-05)
+     so the mistake doesn't repeat. The two things that didn't work:
+     (1) switching background-repeat from repeat-x to repeat-y to
+     re-flow the pattern vertically — positions correctly but leaves
+     each individual line/piece still drawn sideways, since re-flowing
+     the repeat axis never rotates the artwork itself; (2) rotating
+     the whole box with a corner as transform-origin (top left / top
+     right) plus a compensating translate — the corner-pivot sweep
+     direction is easy to get backwards, and it shipped broken twice
+     (once landing near the top of the page instead of a side rail,
+     once with the artwork still sideways) before being caught live.
+
+     What actually works, verified directly against the real page via
+     Chrome devtools (a disposable probe element + getBoundingClientRect(),
+     not derived by inspection): build the band as a plain horizontal
+     strip — 100vh wide, --tex-h tall, ordinary repeat-x/bottom-left
+     background exactly like the footer version — then rotate it
+     -90deg/90deg around its own CENTER (transform-origin: center,
+     the default) while it's positioned so that its center sits at
+     (rail-width / 2, 50vh). A box rotated around its own center keeps
+     that center point fixed and swaps its effective width/height, so
+     centering it there first means the post-rotation footprint lands
+     exactly on the rail with no separate position correction needed.
+     getBoundingClientRect() on a rotated element already reports its
+     tight rotated bounding box, so there's no leftover overflow to
+     clip — a single pseudo-element does the whole job, no wrapper. */
   --tex-h: min(16vh, 8.7rem);
 }
 body:not(.has-masthead)::before,
 body:not(.has-masthead)::after {
   content: "";
   position: fixed;
-  top: 0;
-  height: 100vh;
-  width: var(--tex-h);
+  top: 50%;
+  width: 100vh;
+  height: var(--tex-h);
   z-index: -1;
   pointer-events: none;
   background-repeat: repeat-x;
@@ -1182,18 +1187,17 @@ body:not(.has-masthead)::after {
   body:not(.has-masthead)::after { display: block; }
 }
 body:not(.has-masthead)::before {
-  left: 0;
-  transform-origin: top left;
+  left: calc(var(--tex-h) / 2);
+  translate: -50% -50%;
   rotate: -90deg;
-  translate: 0 var(--tex-h);
   -webkit-mask: linear-gradient(90deg, black 60%, transparent);
   mask: linear-gradient(90deg, black 60%, transparent);
 }
 body:not(.has-masthead)::after {
-  right: 0;
-  transform-origin: top right;
+  left: calc(100vw - var(--tex-h) / 2);
+  translate: -50% -50%;
   rotate: 90deg;
-  translate: 0 var(--tex-h);
+  scale: -1 1;
   -webkit-mask: linear-gradient(270deg, black 60%, transparent);
   mask: linear-gradient(270deg, black 60%, transparent);
 }
