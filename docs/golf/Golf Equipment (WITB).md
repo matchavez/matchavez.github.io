@@ -10,8 +10,8 @@ description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter w
 | Driver         | Quantum ♢♢♢Max 9  | Denali Frost      | 50 S     | 10º   | D2    | 45.50" |
 | Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 7S    | 16º   | D2    | 43.25" |
 | Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 19º   | D2    | 40.25" |
-| 4-Iron         | G425 5-iron       | Ping Alta         | 85 R     | 22º   | D2    | 38.50" |
-| 5-Iron         | i230              | Fujikura Axiom    | 105 S    | 25º   | D2    | 38.25" |
+| 4-Iron         | i530              | Fujikura Axiom    | 105 S    | 19º   | D2    | 39.00" |
+| 5-Iron         | G425 5-iron       | Ping Alta         | 85 R     | 22º   | D2    | 38.50" |
 | 6-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 29º   | D2    | 37.50" |
 | 7-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 33º   | D2    | 37.00" |
 | 8-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 37º   | D2    | 36.50" |
@@ -23,7 +23,7 @@ description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter w
 | Putter         | 2021 Fetch        | Breakthrough Tour | Blackout | 3.5º  | E4.5  | 33.60" |
 |                |                   |                   |          |       |       |        |
 | WINTER:        |                   |                   |          |       |       |        |
-| 4-Iron         | i530              | Fujikura Axiom    | 105 S    | 19º   | D2    | 39.00" |
+| 5-Iron         | i230              | Fujikura Axiom    | 105 S    | 25º   | D2    | 38.25" |
 | 6-Iron         | i230              | Fujikura Axiom    | 105 S    | 28º   | D2    | 37.63" |
 | 7-Iron         | i230              | Fujikura Axiom    | 105 S    | 31.5º | D2    | 37.00" |
 | 8-Iron         | i230              | Fujikura Axiom    | 105 S    | 35.5º | D2    | 36.50" |
