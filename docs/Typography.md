@@ -15,6 +15,7 @@ abcdefghijklmnopqrstuvwxyz
 rn m Illegal LliI
 Pixel preview  Resize to fit zenith zone
 Frame  Group  Feedback  Reset
+This is an additional sentence.
 
 ```
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
