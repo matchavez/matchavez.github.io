@@ -10,18 +10,18 @@ description: Mat Chavez's competitive golf record — interclub pennant results 
 
 ### 2026 Simon Cup for McLeans Island
 
-| Date   | Opponent                 | Result   | Score    | Team     |
-| ------ | ------------------------ | -------- | -------- | -------- |
-| 02 Aug | Avondale @ Avondale      | DNP-H    |          | 2-6 Loss |
-| 09 Aug | Russley @ Templeton      | Loss     | _1 Down_ | 4-4 Draw |
-| 16 Aug | Rawhiti @ McLeans Island |          |          |          |
-| 30 Aug | Christchurch @ Russley   |          |          |          |
-| 06 Sep | Harewood @ Rawhiti       |          |          |          |
-| 13 Sep | Templeton @ Rangiora     |          |          |          |
-| 20 Sep | Weedons @ Weedons        |          |          |          |
-| 27 Sep | Rangiora @ Clearwater    |          |          |          |
-| 04 Oct | Clearwater @ Harewood    |          |          |          |
-| 2026   | Season Record            | 0w 0d 1l | r.s. 0/2 | 0w 1d 1l |
+| Date   | Opponent                 | Result   | Score    | Team           |
+| ------ | ------------------------ | -------- | -------- | -------------- |
+| 02 Aug | Avondale @ Avondale      | DNP-H    |          | 2-6 Loss       |
+| 09 Aug | Russley @ Templeton      | Loss     | _1 Down_ | 4-4 Draw       |
+| 16 Aug | Rawhiti @ McLeans Island | Loss     | _2 Down_ | 2.5 - 5.5 Loss |
+| 30 Aug | Christchurch @ Russley   |          |          |                |
+| 06 Sep | Harewood @ Rawhiti       |          |          |                |
+| 13 Sep | Templeton @ Rangiora     |          |          |                |
+| 20 Sep | Weedons @ Weedons        |          |          |                |
+| 27 Sep | Rangiora @ Clearwater    |          |          |                |
+| 04 Oct | Clearwater @ Harewood    |          |          |                |
+| 2026   | Season Record            | 0w 0d 1l | r.s. 0/2 | 0w 1d 1l       |
 
 ### 2025-26 Metro A for McLeans Island:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
