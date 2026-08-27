@@ -270,6 +270,51 @@
 
 /* Wider grid so the 7-column WITB table fits (verified at 70rem). */
 .md-grid { max-width: 70rem; }
+/* Shrink every .md-grid instance's max-width by 2 x --post-w
+   (defined further down, with the sign posts) whenever the posts
+   are showing, instead of trying to add margin equal to the post's
+   width. A narrower box under the theme's own margin:0 auto centres
+   itself with exactly half the removed width free on each side,
+   automatically, with no separate arithmetic -- this is what
+   guarantees the post can never overlap the header's logo/tabs or
+   the sidebar/content/TOC.
+
+   Earlier versions tried computing margin directly (max(0.8rem,
+   (100% - grid-max)/2 + post-w)), which only works once the
+   viewport already exceeds the grid's own max-width -- below that,
+   the calc term goes negative and the 0.8rem floor wins outright,
+   silently ignoring --post-w and letting the post overlap real
+   content (confirmed live: at 1600px viewport the post rendered at
+   23px while the margin floored at a flat 16px). Shrinking the max-
+   width instead has no such dead zone: it works identically whether
+   the viewport is above or below the grid's max-width, because
+   auto-centering a smaller box is the browser's own arithmetic, not
+   a hand-written formula that can silently stop applying.
+
+   This also needs to win against the theme's own rule on the same
+   elements: .md-header__inner.md-grid, the tabs' .md-grid, and
+   .md-main__inner.md-grid all carry max-width:1400px (87.5rem at
+   this site's actual 20px root font-size, not the 16px assumed
+   earlier in debugging this -- rem/em math elsewhere in this file
+   should always be checked against the real root size, not the
+   browser default) via a two-class selector, beating a plain
+   one-class .md-grid rule on specificity. Repeating the class here
+   matches that, and calc() reduces from the true 87.5rem instead of
+   this file's separate 70rem value. */
+.md-grid.md-grid {
+  /* min() against 100% minus the post space on both sides: without
+     this, reducing 87.5rem alone does nothing once the viewport is
+     already narrower than 87.5rem (very common -- most laptop and
+     even many desktop widths), because the grid was never actually
+     centred at that width to begin with; it was already flush to
+     the viewport edges, so shrinking its theoretical max-width left
+     it still wider than the viewport and it just kept filling edge
+     to edge, sidebar included, with the post drawn on top of it
+     (confirmed live: at 1450px viewport, post 66px wide, the grid's
+     reduced max-width of 1618px was still wider than the 1450px
+     viewport, so the sidebar sat at x=0, directly under the post). */
+  max-width: min(calc(87.5rem - 2 * var(--post-w)), calc(100% - 2 * var(--post-w)));
+}
 
 .md-content__inner {
   max-width: 50rem;
@@ -423,17 +468,6 @@
   border-top: 1.35rem solid var(--sign-gold);
   padding-top: 0.3rem;
   position: relative;
-  /* Inset from the true viewport edges by the post width (see the
-     body::before/::after post rule below) whenever posts are shown.
-     This sits the header and the post side by side instead of one
-     stacked on top of the other -- so there's no z-index race on
-     first paint (the gold bar used to visibly flash across the
-     post's space for a frame before the post's z-index caught up
-     and covered it). Zeroed below the 82em post breakpoint via the
-     media query further down, so mobile/narrow layouts get the
-     full-width header back exactly as before. */
-  margin-left: 3.3rem;
-  margin-right: 3.3rem;
   /* The Paihia-style sign panel sits proud of the page on its
      posts, not flush -- a soft drop shadow plus a thin highlight
      along the top edge of the gold bar gives it that raised-box
@@ -461,6 +495,19 @@
    stacked behind it -- the posts need to beat that to reach the
    very top.
 
+   Sizing: earlier versions tried to fit the post into whatever
+   margin happened to exist outside the content grid, guessed at a
+   breakpoint, or hid the post outright below it -- all three broke
+   at some width, either overlapping the sidebar or vanishing with
+   an abrupt, awkward cutoff. The actual fix is --post-w: one width,
+   computed with clamp() so it shrinks smoothly instead of snapping
+   on/off, shared by both the post's own width AND .md-grid's inset
+   margin (below) so the two are ALWAYS in sync by construction --
+   the post can never overlap the grid's content because they're
+   sized from the same number, not two separately-tuned ones. Floors
+   at 0 below the tabs/drawer breakpoint, where the header itself
+   goes edge-to-edge and the hamburger drawer needs that space back.
+
    Wood grain: the pattern is built with SVG's own <pattern> element
    (not CSS background-size/repeat-y math on a plain image) so the
    browser handles the infinite vertical tile natively -- an earlier
@@ -469,21 +516,16 @@
    tiling vs. the SVG's own intrinsic size) didn't agree past the
    first tile. Each grain line's start and end x-coordinate match,
    so the pattern has no seam where one tile meets the next. */
+:root {
+  --post-w: clamp(0rem, (100vw - 76.1875em) * 0.3, 3.3rem);
+}
 body::before,
 body::after {
   content: "";
   position: fixed;
   top: 0;
   bottom: 0;
-  /* Never wider than the actual free margin outside the 70rem grid
-     (.md-grid, see above), with a 1rem safety gap so the post can
-     never touch the sidebar/content edge even if that grid's own
-     width or padding changes later. Caps at 3.3rem so it doesn't
-     grow unbounded on ultra-wide screens either. This -- not a
-     hand-picked breakpoint -- is what actually keeps it off content:
-     a breakpoint alone broke the moment the real margin at that
-     width turned out to be a few px narrower than assumed. */
-  width: min(3.3rem, calc((100% - 70rem) / 2 - 1rem));
+  width: var(--post-w);
   background-color: color-mix(in srgb, var(--sign-green) 55%, black);
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='240'><defs><pattern id='g' x='0' y='0' width='80' height='240' patternUnits='userSpaceOnUse'><path d='M2.2 0L0.8 20L1.6 40L3.8 60L5.2 80L4.4 100L2.2 120L0.8 140L1.6 160L3.8 180L5.2 200L4.4 220L2.2 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.27'/><path d='M6.9 0L6.2 20L6.2 40L6.7 60L7.7 80L8.8 100L9.9 120L10.6 140L10.7 160L10.1 180L9.2 200L8.0 220L6.9 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.24'/><path d='M14.6 0L16.5 20L15.8 40L13.1 60L11.1 80L11.9 100L14.6 120L16.5 140L15.8 160L13.1 180L11.1 200L11.9 220L14.6 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.38'/><path d='M17.1 0L16.5 20L16.2 40L16.1 60L16.4 80L16.9 100L17.5 120L18.1 140L18.5 160L18.5 180L18.3 200L17.7 220L17.1 240' stroke='black' stroke-width='0.4' fill='none' opacity='0.38'/><path d='M21.6 0L20.9 20L20.7 40L21.0 60L21.8 80L22.7 100L23.7 120L24.4 140L24.6 160L24.3 180L23.5 200L22.6 220L21.6 240' stroke='black' stroke-width='0.9' fill='none' opacity='0.35'/><path d='M29.9 0L29.4 20L28.4 40L27.2 60L26.2 80L25.5 100L25.4 120L25.9 140L26.9 160L28.0 180L29.1 200L29.8 220L29.9 240' stroke='black' stroke-width='1.0' fill='none' opacity='0.28'/><path d='M30.1 0L30.9 20L32.3 40L32.9 60L32.1 80L30.7 100L30.1 120L30.9 140L32.3 160L32.9 180L32.1 200L30.7 220L30.1 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.24'/><path d='M37.3 0L37.2 20L36.5 40L35.2 60L33.7 80L32.5 100L31.9 120L31.9 140L32.7 160L33.9 180L35.4 200L36.6 220L37.3 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.32'/><path d='M35.2 0L36.9 20L39.5 40L40.4 60L38.7 80L36.1 100L35.2 120L36.9 140L39.5 160L40.4 180L38.7 200L36.1 220L35.2 240' stroke='black' stroke-width='0.7' fill='none' opacity='0.22'/><path d='M44.5 0L45.3 20L45.2 40L44.2 60L42.7 80L41.0 100L39.5 120L38.7 140L38.8 160L39.8 180L41.3 200L43.1 220L44.5 240' stroke='black' stroke-width='0.4' fill='none' opacity='0.35'/><path d='M47.0 0L46.2 20L45.6 40L45.4 60L45.7 80L46.3 100L47.1 120L47.9 140L48.5 160L48.7 180L48.4 200L47.8 220L47.0 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.32'/><path d='M52.1 0L53.2 20L54.2 40L53.9 60L52.8 80L51.9 100L52.1 120L53.2 140L54.2 160L53.9 180L52.8 200L51.9 220L52.1 240' stroke='%23ffe7b4' stroke-width='1.3' fill='none' opacity='0.15'/><path d='M57.8 0L56.8 20L56.4 40L56.7 60L57.6 80L58.9 100L60.2 120L61.2 140L61.6 160L61.3 180L60.4 200L59.1 220L57.8 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.29'/><path d='M66.2 0L65.7 20L64.8 40L63.8 60L62.9 80L62.4 100L62.4 120L63.0 140L63.9 160L64.9 180L65.7 200L66.2 220L66.2 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.39'/><path d='M66.0 0L65.4 20L65.4 40L65.9 60L66.8 80L67.9 100L68.8 120L69.3 140L69.4 160L68.8 180L67.9 200L66.9 220L66.0 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.37'/><path d='M74.3 0L74.6 20L74.4 40L73.9 60L73.1 80L72.3 100L71.6 120L71.4 140L71.5 160L72.1 180L72.8 200L73.7 220L74.3 240' stroke='black' stroke-width='1.1' fill='none' opacity='0.27'/></pattern></defs><rect width='100%25' height='100%25' fill='url(%23g)'/></svg>");
   background-repeat: repeat-y;
@@ -504,31 +546,10 @@ body:has(.masthead)::before,
 body:has(.masthead)::after,
 body.has-masthead::before,
 body.has-masthead::after { display: none; }
-/* Posts are OFF by default, below 82em (~1312px). Only turn on once
-   the viewport is wide enough that the min() above already resolves
-   to the full 3.3rem -- i.e. only ever show the post at full width,
-   never as a half-clipped sliver creeping toward the sidebar. This
-   matters because two different things can put real content in
-   that left/right strip depending on width: below the tabs/drawer
-   breakpoint (76.1875em) it's the mobile hamburger toggle; between
-   that and roughly 76.6em it's the desktop sidebar (.md-grid caps
-   at 70rem, so the free margin outside it only just clears 3.3rem a
-   little past 76.1875em -- a previous version cut the post off
-   exactly at the drawer breakpoint and still clipped the sidebar in
-   that narrow gap). 82em gives real headroom past the calculated
-   76.6em minimum instead of a razor's-edge threshold. */
-@media screen and (max-width: 82em) {
-  body::before,
-  body::after { display: none; }
-  /* No posts at this width means no need to inset the header/tabs
-     from the true edges either -- back to full-width, exactly the
-     layout before the posts existed. */
-  .md-header,
-  .md-tabs {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
+/* Below the tabs/drawer breakpoint, --post-w has already clamped to
+   0 (see the :root rule above), so the posts are invisible there
+   without needing a separate display:none -- one definition, no
+   second number to keep in sync with the first. */
 .md-header__topic,
 .md-header__topic span {
   font-family: var(--display-font);
@@ -583,10 +604,6 @@ body.has-masthead::after { display: none; }
   background-color: var(--sign-green);
   color: rgba(240, 237, 224, 0.75);
   position: relative;
-  /* Same edge-inset reasoning as .md-header above -- sits beside
-     the post instead of racing it for top billing on first paint. */
-  margin-left: 3.3rem;
-  margin-right: 3.3rem;
   /* Continues the header's raised-panel shadow down the bottom
      edge of the sign, so the header+tabs read as one panel. */
   box-shadow: 0 0.35rem 0.9rem rgba(0, 0, 0, 0.35);
