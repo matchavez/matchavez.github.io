@@ -485,6 +485,20 @@ body:has(.masthead)::before,
 body:has(.masthead)::after,
 body.has-masthead::before,
 body.has-masthead::after { display: none; }
+/* Below the tabs/drawer breakpoint (same 76.1875em the theme itself
+   uses to fold the tabs into the hamburger menu), the posts get
+   suppressed entirely. Two reasons: the mobile drawer and its
+   hamburger toggle live in the same left strip the post occupies,
+   so a static 3.3rem post sits on top of real controls; and the
+   page's own content gutter (.md-content__inner) floors out at
+   0.8rem on narrow screens, well under the post's width, so body
+   text starts overlapping the post before the drawer breakpoint
+   even arrives. Simplest fix is one shared cutoff rather than
+   trying to shrink the post to fit alongside shrinking content. */
+@media screen and (max-width: 76.1875em) {
+  body::before,
+  body::after { display: none; }
+}
 .md-header__topic,
 .md-header__topic span {
   font-family: var(--display-font);
