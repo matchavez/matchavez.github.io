@@ -124,7 +124,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 :root {
   --md-text-font: "Inter";
   /* Machinery voice: header, tabs, nav, TOC, labels, captions. */
@@ -591,9 +590,12 @@ body.has-masthead::after { display: none; }
   height: 1.6rem;
   padding-bottom: 0.22rem;
   box-sizing: border-box;
-  font-family: var(--sign-font);
+  /* Switched from Archivo to the site's own machinery voice, weight
+     200 (Mat). InterMC Machine is a variable font (100-900) so this
+     weight renders as an actual thin cut, not a fallback. */
+  font-family: "InterMC Machine", "Inter";
   font-size: 0.6rem;
-  font-weight: 800;
+  font-weight: 300;
   line-height: 1;
   letter-spacing: 0.01em;
   color: #ffffff;
