@@ -414,8 +414,88 @@
 .md-header {
   background-color: var(--sign-green);
   color: var(--sign-cream);
+  border-top: 1.35rem solid var(--sign-gold);
+  padding-top: 0.3rem;
+  position: relative;
 }
 .md-header--shadow { box-shadow: none; }
+/* The sign posts: two darker green pillars framing the full page,
+   left and right, like the wooden posts either side of a real DOC
+   sign. Fixed to the viewport (not the header) so they run the
+   entire page height, including behind the header and tabs, and
+   stay put while the page scrolls instead of scrolling away with
+   the banner. The theme sets .md-header to z-index:4 (relative),
+   which otherwise paints over anything lower stacked behind it --
+   the posts need to beat that to actually reach the very top. */
+/* Wood grain: real DOC posts are stained timber, not flat green.
+   Grain runs the length of the post (top to bottom, since the post
+   stands upright) as uneven vertical streaks -- built from several
+   repeating gradients at slightly different widths/opacities/
+   offsets so it reads as grain, not a clean regular stripe pattern.
+   All on top of the same dark base tone used before. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 3.3rem;
+  background-color: color-mix(in srgb, var(--sign-green) 55%, black);
+  background-image:
+    /* A soft knot/burl, off to one side, low contrast */
+    radial-gradient(
+      ellipse 60% 5% at 35% 22%,
+      rgba(0, 0, 0, 0.35) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 4% at 68% 61%,
+      rgba(0, 0, 0, 0.28) 0%,
+      transparent 70%
+    ),
+    /* Fine grain: near-vertical parallel streaks, three passes at
+       slightly different widths/angles so they don't repeat in an
+       obvious pattern, but stay roughly parallel like real grain
+       rather than crossing into a weave. */
+    repeating-linear-gradient(
+      91deg,
+      rgba(0, 0, 0, 0.30) 0px,
+      rgba(0, 0, 0, 0.30) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      89.5deg,
+      rgba(0, 0, 0, 0.20) 0px,
+      rgba(0, 0, 0, 0.20) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(
+      90.3deg,
+      rgba(255, 231, 180, 0.12) 0px,
+      rgba(255, 231, 180, 0.12) 1px,
+      transparent 1px,
+      transparent 17px
+    ),
+    /* Rounded-post shading: darker at both edges, lighter centre */
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.30) 0%,
+      transparent 15%,
+      transparent 85%,
+      rgba(0, 0, 0, 0.30) 100%
+    );
+  z-index: 5;
+  pointer-events: none;
+}
+body::before { left: 0; }
+body::after { right: 0; }
+/* The cover/masthead is glass over a photo, not a sign — no posts */
+body:has(.masthead)::before,
+body:has(.masthead)::after,
+body.has-masthead::before,
+body.has-masthead::after { display: none; }
 .md-header__topic,
 .md-header__topic span {
   font-family: var(--display-font);
@@ -463,11 +543,13 @@
 }
 
 /* Tabs: cream on the green band, Normal Case, gold underline when
-   active; the sign's gold bar closes the band underneath */
+   active. The sign's gold bar sits above the whole header+tabs
+   band (see .md-header below) — the real DOC sign has the gold
+   strip on top of the green panel, not underneath it. */
 .md-tabs {
   background-color: var(--sign-green);
   color: rgba(240, 237, 224, 0.75);
-  border-bottom: 0.22rem solid var(--sign-gold);
+  position: relative;
 }
 .md-tabs__link {
   font-family: var(--display-font);
@@ -495,10 +577,8 @@
 .md-tabs__item--active {
   border-bottom-color: transparent;
 }
-/* Tabs hidden on small screens: the header carries the gold bar */
-@media screen and (max-width: 76.1875em) {
-  .md-header { border-bottom: 0.22rem solid var(--sign-gold); }
-}
+/* Tabs hidden on small screens: the header still carries the top
+   gold bar via .md-header below, so no extra rule is needed here. */
 
 /* The mobile drawer — same sign, folded up. Stock theme colours it
    as a plain paper card; this makes it the green panel with a gold
@@ -909,11 +989,13 @@ body:has(.masthead) .md-footer,
 body.has-masthead .md-footer { display: none; }
 
 /* The bars become glass over the photograph — no sign band, no
-   gold bar; the cover is the territory, not a sign */
+   gold bar; the cover is the territory, not a sign. (Posts are
+   suppressed separately, up in the body::before/::after rule.) */
 body:has(.masthead) .md-header,
 body.has-masthead .md-header {
   background-color: rgba(10, 12, 24, 0.10);
   color: #f2f4fa;
+  border-top: none;
   border-bottom: none;
 }
 body:has(.masthead) .md-tabs,
@@ -957,17 +1039,20 @@ body[data-md-color-scheme="default"].has-masthead .md-header {
   background-color: var(--home-bar-green);
   color: var(--sign-cream);
 }
+body[data-md-color-scheme="default"]:has(.masthead) .md-header,
+body[data-md-color-scheme="default"].has-masthead .md-header {
+  /* Same inset-shadow reasoning as the tabs rule below: a real
+     border-top here would make the light-mode bar 1.35rem taller
+     than dark mode's (which stays border-top:none), and the
+     masthead's -4.8rem offset assumes both schemes are the same
+     height — so the photo would hop a few px on scheme switch. */
+  border-top: none;
+  box-shadow: inset 0 1.35rem 0 0 var(--sign-gold);
+}
 body[data-md-color-scheme="default"]:has(.masthead) .md-tabs,
 body[data-md-color-scheme="default"].has-masthead .md-tabs {
   background-color: var(--home-bar-green);
-  /* An inset shadow, not a real border: a real border-bottom here
-     made the light-mode bar 0.22rem taller than dark mode's (which
-     stays border-bottom:none), and the masthead's -4.8rem offset
-     assumes both schemes are the same height — so the photo hopped
-     a few px on scheme switch. Inset shadows never add layout
-     height, so the two schemes now line up exactly. */
   border-bottom: none;
-  box-shadow: inset 0 -0.22rem 0 0 var(--sign-gold);
   color: rgba(240, 237, 224, 0.75);
 }
 body[data-md-color-scheme="default"]:has(.masthead) .md-tabs__link,
