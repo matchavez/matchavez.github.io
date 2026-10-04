@@ -18,10 +18,10 @@ description: Mat Chavez's competitive golf record — interclub pennant results 
 | 30 Aug | Christchurch @ Russley   | DNP      |          | 4-4 Draw       |
 | 06 Sep | Harewood @ Rawhiti       | DNP      |          | 4-4 Draw       |
 | 13 Sep | Templeton @ Rangiora     | Loss     | _3 & 2_  | 4-4 Draw       |
-| 20 Sep | Weedons @ Weedons        |          |          |                |
-| 27 Sep | Rangiora @ Clearwater    |          |          |                |
+| 20 Sep | Weedons @ Weedons        | DNP      |          | Loss           |
+| 27 Sep | Rangiora @ Clearwater    | Loss     | _4 & 3_  | 6-2 Loss       |
 | 04 Oct | Clearwater @ Harewood    |          |          |                |
-| 2026   | Season Record            | 0w 0d 3l | r.s. 0/6 | 0w 4d 2l       |
+| 2026   | Season Record            | 0w 0d 4l | r.s. 0/8 | 0w 4d 4l       |
 
 ### 2025-26 Metro A for McLeans Island:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
