@@ -9,20 +9,21 @@ description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter w
 | -------------- | ----------------- | ----------------- | -------- | ----- | ----- | ------ |
 | Driver         | Quantum ♢♢♢Max 9  | Denali Frost      | 50 S     | 10º   | D2    | 45.50" |
 | Fairway        | Ai Smoke ♢♢♢  15  | Graphite Design   | XC 7S    | 16º   | D2    | 43.25" |
-| Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 19º   | D2    | 40.25" |
-| 4-Iron         | i530              | Fujikura Axiom    | 105 S    | 19º   | D2    | 39.00" |
-| 5-Iron         | G425              | Ping Alta         | 85 R     | 22º   | D2    | 38.25" |
+| Utility        | Apex UW           | MMT               | S        | 19º   |       |        |
+| 4-iron         | G440              | Alta CB           | S        | 19º   | C7    | 38.50" |
+| 5-iron         | G440              | Alta CB           | S        | 22º   | C9.5  | 38.00" |
 | 6-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 29º   | D2    | 37.50" |
 | 7-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 33º   | D2    | 37.00" |
 | 8-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 37º   | D2    | 36.50" |
 | 9-Iron         | Blueprint S       | Fujikura Axiom    | 105 S    | 41º   | D2.5  | 36.00" |
 | Pitching Wedge | Blueprint S       | Fujikura Axiom    | 105 S    | 45º   | D3    | 35.50" |
-| Gap Wedge      | S159M - 50S       | Recoil DART       | 105 F4   | 49º   | D3    | 35.50" |
+| Gap Wedge      | S259 - 50S        | Fujikura Axiom    | 105 S    | 49º   | D3    | 35.50" |
 | Sand Wedge     | S159M - 54H       | Recoil DART       | 105 F4   | 54º   | D3.25 | 35.50" |
 | Lob Wedge      | S159M - 58H       | Recoil DART       | 105 F4   | 58º   | D3.5  | 35.50" |
-| Putter         | 2021 Fetch        | Breakthrough Tour | Blackout | 3.5º  | E4.5  | 33.60" |
+| Putter         | Ally Blue Onset   | Ping              |          |       |       | 34.00" |
 |                |                   |                   |          |       |       |        |
 | WINTER:        |                   |                   |          |       |       |        |
+| 4-Iron         | i530              | Fujikura Axiom    | 105 S    | 19º   | D2    | 39.00" |
 | 5-Iron         | i230              | Fujikura Axiom    | 105 S    | 25º   | D2    | 38.25" |
 | 6-Iron         | i230              | Fujikura Axiom    | 105 S    | 28º   | D2    | 37.63" |
 | 7-Iron         | i230              | Fujikura Axiom    | 105 S    | 31.5º | D2    | 37.00" |
@@ -37,8 +38,11 @@ description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter w
 |                |                   | Graphite Design   | XC 5S    |       |       |        |
 |                |                   | Graphite Design   | DI 6X    |       |       |        |
 | Fairway        | G425 LST 14.5     | Ping Tour 1.0     | 75 X     | 14.5º | D0    | 43.00" |
-| 2-iron         | Rapture           | Recoil Proto      | 95 F5    | 18º   | D2.5  | 39.50" |
+| Hybrid         | G430 19           | Hzrdus Smoke Red  | 80 6.0   | 19º   | D2    | 40.25" |
+| 5-Iron         | G425              | Ping Alta         | 85 R     | 22º   | D2    | 38.25" |
 | Pitching Wedge | S159M - 46S       | Recoil DART       | 105 F4   | 45º   | D2.75 | 35.50" |
+| Gap Wedge      | S159M - 50S       | Recoil DART       | 105 F4   | 49º   | D3    | 35.50" |
+| Putter         | 2021 Fetch        | Breakthrough Tour | Blackout | 3.5º  | E4.5  | 33.60" |
 
 ---
 
@@ -46,9 +50,10 @@ description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter w
 
 * Clubs - All clubs are Ping or Callaway
 * Grips:
-    + GolfPride MCC Plus4 Midsize or Standard +3
+    + GolfPride MCC Plus4 Midsize or Standard +2
     + S159s with Ping Wedge standard +3
     + Putter 2021 Ping AVS PL Jumbo
+    + Putter 2026 Ping SuperStroke
 * Bag - Ping Pioneer 2022
 * Cart - MGI Zip Navigator
 * Laser - Bushnell Pro X2
