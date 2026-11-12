@@ -21,6 +21,30 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install zensical
+      - name: Make docs file names safe for URLs
+        # zensical crashes on a file or folder name that has one of
+        # these characters: " < > \ ^ ` { | }  ("URL reference is a
+        # valid IRI"). The Obsidian publisher can make such a name from
+        # a note title. This step removes the characters in the runner
+        # only, so one bad name cannot stop the deploy of the site.
+        run: |
+          python3 - <<'PY'
+          import os, re
+          bad = re.compile(r'["<>\\^`{|}]')
+          for root, dirs, files in os.walk("docs", topdown=True):
+              for group in (dirs, files):
+                  for i, name in enumerate(group):
+                      if not bad.search(name):
+                          continue
+                      new = bad.sub("", name)
+                      src, dst = os.path.join(root, name), os.path.join(root, new)
+                      if os.path.exists(dst):
+                          print(f"::warning::Not renamed, {dst} exists: {src}")
+                          continue
+                      os.rename(src, dst)
+                      group[i] = new
+                      print(f"::warning::Renamed for the build: {src} -> {dst}")
+          PY
       - run: zensical build --clean
       - name: Cache-bust custom assets
         # extra.css/extra.js (zensical's extra_css/extra_javascript) are
