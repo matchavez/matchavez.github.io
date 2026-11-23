@@ -1825,7 +1825,6 @@ body:has(.mc-next) .md-footer__inner { display: none; }
   body.has-masthead { --sign-right: 1.6rem; --sign-w: calc(100vw - 3.2rem); --sign-drop: 1.6rem; }
   body.has-masthead .mc-sign { transform: none; }
   body.has-masthead .mc-stick { right: 1.8rem; bottom: auto; top: 3.4rem; height: 6rem; transform: none; }
-  .md-typeset figure.mc-sign__map, figure.mc-sign__map { flex-basis: 5.6rem; }
   .mc-pin__label { display: none; }
   body.has-masthead .mc-stick__pole { display: none; }
   body.has-masthead .mc-stick__panel { top: 0; }
@@ -1849,7 +1848,15 @@ body.has-masthead {
 /* The board sizes itself to its content */
 body.has-masthead .mc-sign { width: max-content; max-width: calc(100vw - 2rem); }
 .mc-sign__board { gap: 0.9rem; padding: 0.55rem 0.85rem 0.6rem 1rem; }
-.md-typeset figure.mc-sign__map, figure.mc-sign__map { flex: 0 0 7.2rem; align-self: stretch; margin: 0.15rem 0; }
+/* The map slot has a fixed width. Safari sized the board from the map
+   photo's natural width instead of this slot, and stretched the text
+   column to fill the extra room (a wide empty middle, 23 Nov 2026).
+   An explicit width plus contain: inline-size stops that. */
+body.has-masthead { --map-w: 7.2rem; }
+.md-typeset figure.mc-sign__map, figure.mc-sign__map {
+  flex: 0 0 var(--map-w); width: var(--map-w); min-width: var(--map-w); max-width: var(--map-w);
+  contain: inline-size; align-self: stretch; margin: 0.15rem 0;
+}
 .md-typeset .mc-sign__map img, .mc-sign__map img { height: 100%; object-fit: cover; }
 
 .md-typeset .mc-sign__title, .mc-sign__title {
@@ -1992,7 +1999,7 @@ body[data-md-color-scheme="default"].has-masthead .md-header:focus-within {
   body.has-masthead .mc-sign .mc-stick { right: 0; bottom: calc(100% + 0.8rem); height: 4.6rem; }
   .mc-stick .mc-stick__pole.mc-sign__post { display: none; }
   .md-typeset .mc-sign__title, .mc-sign__title { font-size: 1.2rem; }
-  .md-typeset figure.mc-sign__map, figure.mc-sign__map { flex-basis: 5rem; }
+  body.has-masthead { --map-w: 5rem; }
 }
 /* The header is 3.1rem tall (2.4rem bar + its padding), so the photo
    starts under its very top edge; with the bar now transparent, the
