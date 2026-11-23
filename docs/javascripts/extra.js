@@ -89,4 +89,39 @@
       document.addEventListener("DOMContentLoaded", rapua);
     else rapua();
   } catch (e) { /* stock placeholder remains */ }
+  /* 4. Home page at night: a hand-held torch on the track sign.
+     Points the beam at the sign board and lets it drift a little, as
+     a hand does. Runs only on the cover page in the dark scheme; holds
+     still when the visitor asks for reduced motion. */
+  try {
+    var torch = function () {
+      var night = document.querySelector(".mc-night");
+      var board = document.querySelector(".mc-sign__board");
+      if (!night || !board) return;
+      var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var t0 = performance.now();
+      var frame = function (now) {
+        if (document.body.getAttribute("data-md-color-scheme") === "slate") {
+          var r = board.getBoundingClientRect();
+          var t = (now - t0) / 1000;
+          var dx = still ? 0 : Math.sin(t * 0.41) * 14 + Math.sin(t * 1.13 + 1.7) * 5 + Math.sin(t * 2.9) * 1.2;
+          var dy = still ? 0 : Math.sin(t * 0.33 + 0.6) * 9 + Math.sin(t * 0.97 + 2.4) * 4 + Math.cos(t * 3.4) * 1;
+          var dr = still ? 0 : Math.sin(t * 0.23) * 6;
+          night.style.setProperty("--bx", (r.left + r.width * 0.42 + dx).toFixed(1) + "px");
+          night.style.setProperty("--by", (r.top + r.height * 0.5 + dy).toFixed(1) + "px");
+          night.style.setProperty("--br", (r.width * 0.46 + dr).toFixed(1) + "px");
+        }
+        if (!still) requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
+      if (still) {
+        window.addEventListener("resize", function () { requestAnimationFrame(frame); });
+        new MutationObserver(function () { requestAnimationFrame(frame); })
+          .observe(document.body, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+      }
+    };
+    if (document.readyState === "loading")
+      document.addEventListener("DOMContentLoaded", torch);
+    else torch();
+  } catch (e) { /* the beam stays in its CSS position */ }
 })();
