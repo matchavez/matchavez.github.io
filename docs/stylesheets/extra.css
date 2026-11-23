@@ -2505,7 +2505,7 @@ html body.has-masthead .mc-scene .mc-sign.mc-sign--rp {
   left: 210px;                                        /* board left edge, photo px */
   bottom: calc(1200px - 1045px + var(--expose));      /* ground line at photo y 1045 */
   width: max-content;
-  scale: calc(var(--k) * var(--rf, 1) * var(--stretch-x, 1.04)) calc(var(--k) * var(--rf, 1));   /* --rf undoes the theme's bigger root font on wide screens; 4% wider (Mat, 24 Nov) */
+  scale: calc(var(--k) * var(--rf, 1) * var(--stretch-x, 1.092)) calc(var(--k) * var(--rf, 1) * var(--stretch-y, 0.95));   /* --rf undoes the theme's bigger root font on wide screens; 4% wider, then 5% wider and 5% shorter (Mat, 24 Nov) */
   transform: rotateY(var(--turn, 30deg));             /* turned enough that the posts show their outer sides, as at Roys Peak */
   transform-origin: 0 calc(100% + var(--expose));     /* the near post foot */
   transform-style: preserve-3d;
@@ -2666,3 +2666,20 @@ html body.has-masthead .mc-sign--rp .mc-stick__panel { top: 0.35rem; }
 /* the panel is fixed on the front of the post: a little in front of
    the post face, so the 3D sort always draws it over the post */
 html body.has-masthead .mc-sign--rp .mc-stick__panel { transform: translateZ(2px); }
+
+/* The stretch above is for the main sign only: undo it on the Hockey
+   sign (a child of the main sign), about the foot of its pole */
+html body.has-masthead .mc-sign--rp .mc-stick {
+  scale: calc(1 / var(--stretch-x, 1.092)) calc(1 / var(--stretch-y, 0.95));
+  transform-origin: 50% calc(100% + var(--expose) - 0.1rem);
+}
+
+/* Post sides at the ground. A side face goes back from the post, so
+   its foot climbs as it goes back; with the tussock cut-out on such a
+   narrow face, its bottom corner showed as a dark wedge below the
+   front face's foot. The sides now fade out with a soft gradient that
+   ends higher than the front face's foot. */
+html body.has-masthead .mc-sign--rp .mc-face:not(.mc-face--cap) {
+  -webkit-mask: linear-gradient(180deg, #000 calc(100% - 3rem), rgba(0, 0, 0, 0.35) calc(100% - 2.3rem), transparent calc(100% - 1.7rem));
+  mask: linear-gradient(180deg, #000 calc(100% - 3rem), rgba(0, 0, 0, 0.35) calc(100% - 2.3rem), transparent calc(100% - 1.7rem));
+}
