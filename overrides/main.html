@@ -112,19 +112,14 @@
         its own small sign on a single timber pole. -#}
     {% set icons = {"AI Blog": "lucide/notebook-pen", "Projects": "lucide/wrench", "Favourite Quotes": "lucide/quote", "Golf": "lucide/flag-triangle-right"} %}
     {% set ns2 = namespace(ext=none) %}
-    <div class="mc-night" aria-hidden="true"><span class="mc-night__dark"></span><span class="mc-night__light"></span><span class="mc-night__shadow"></span></div>
+    <div class="mc-night" aria-hidden="true"><span class="mc-night__dark"></span><span class="mc-night__light"></span><span class="mc-night__shadow"></span><span class="mc-night__stars"></span></div>
     <nav class="mc-sign" aria-label="Where to from here">
       <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
       <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"><span class="mc-lamp"></span></span>
       <div class="mc-sign__board">
-        <figure class="mc-sign__map">
-          <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, with pins at Arthur's Pass, where the cover photo was taken, and Christchurch, home">
-          {#- DOC map symbols: a blue square with a white pictogram at the place -#}
-          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-sign__chip">{% include ".icons/lucide/camera.svg" %}</span><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
-          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-sign__chip">{% include ".icons/lucide/house.svg" %}</span><span class="mc-pin__label">Christchurch<small>home</small></span></span>
-        </figure>
         <div class="mc-sign__text">
-          <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Mat Chavez</em></span></p>
+          <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Te Waipounamu</em></span></p>
+          <p class="mc-sign__title">Mat Chavez</p>
           <ul class="mc-sign__list">
             {% for section in nav.items %}
               {% if section.title not in ["Welcome", "Test Pages"] %}
@@ -144,7 +139,8 @@
                   <li class="mc-sign__item"><a href="{{ href | url }}">
                     <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/" ~ (icons[section.title] or "lucide/footprints") ~ ".svg" %}</span>
                     <span class="mc-sign__name">{{ section.title }}</span>
-                    <span class="mc-sign__time"><span aria-hidden="true">&rarr;</span> {{ count }} {{ unit }}{{ "s" if count != 1 }}</span>
+                    <span class="mc-sign__arrow" aria-hidden="true">&rarr;</span>
+                    <span class="mc-sign__time">{{ count }} {{ unit }}{{ "s" if count != 1 }}</span>
                   </a></li>
                 {% endif %}
               {% endif %}
@@ -153,24 +149,35 @@
           <p class="mc-sign__symbols">
             <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>
             <a class="mc-sign__chip" href="https://github.com/matchavez" title="GitHub" aria-label="GitHub">{% include ".icons/fontawesome/brands/github.svg" %}</a>
+            <button type="button" class="mc-sign__chip mc-daynight" title="Day or night" aria-label="Switch between day and night" hidden>
+              <span class="mc-daynight__sun">{% include ".icons/lucide/sun.svg" %}</span><span class="mc-daynight__moon">{% include ".icons/lucide/moon.svg" %}</span>
+            </button>
             <span class="mc-sign__no" title="No ads on this site" aria-label="No ads on this site" role="img">{% include ".icons/lucide/megaphone.svg" %}</span>
           </p>
         </div>
+        <figure class="mc-sign__map">
+          <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, with symbols at Arthur's Pass, where the cover photo was taken, and Christchurch, home">
+          {#- DOC map symbols: a blue square with a white pictogram at the place -#}
+          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-sign__chip">{% include ".icons/lucide/camera.svg" %}</span><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
+          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-sign__chip">{% include ".icons/lucide/house.svg" %}</span><span class="mc-pin__label">Christchurch<small>home</small></span></span>
+        </figure>
         <span class="mc-lamp"></span>
       </div>
+      {% if ns2.ext %}
+        {#- The off-site link: a small sign on its own post, standing to the
+            left of the main sign (inside the same scene, so it turns with it) -#}
+        <a class="mc-stick" href="{{ ns2.ext.url }}" aria-label="{{ ns2.ext.title }} (other site)">
+          <span class="mc-stick__pole mc-sign__post" aria-hidden="true"><span class="mc-lamp"></span></span>
+          <span class="mc-stick__panel">
+            <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/lucide/tv.svg" %}</span>
+            <span class="mc-stick__name">{{ ns2.ext.title }}</span>
+            <span class="mc-stick__arrow" aria-hidden="true">&nearr;</span>
+            <span class="mc-stick__time">other site</span>
+            <span class="mc-lamp"></span>
+          </span>
+        </a>
+      {% endif %}
     </nav>
-    {% if ns2.ext %}
-      <a class="mc-stick" href="{{ ns2.ext.url }}" aria-label="{{ ns2.ext.title }} (other site)">
-        <span class="mc-stick__pole" aria-hidden="true"><span class="mc-lamp"></span></span>
-        <span class="mc-stick__panel">
-          <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/lucide/tv.svg" %}</span>
-          <span class="mc-stick__name">{{ ns2.ext.title }}</span>
-          <span class="mc-stick__arrow" aria-hidden="true">&nearr;</span>
-          <span class="mc-stick__time">other site</span>
-          <span class="mc-lamp"></span>
-        </span>
-      </a>
-    {% endif %}
   {% else %}
     {{ super() }}
   {% endif %}

@@ -1834,3 +1834,167 @@ body:has(.mc-next) .md-footer__inner { display: none; }
 }
 .md-typeset a.mc-sign__chip, a.mc-sign__chip { color: #fff; }
 .mc-sign__map { overflow: hidden; }
+
+/* ================================================================
+   Home sign v6 (23 Nov 2026, evening): closer still to the Roys Peak
+   Track sign. Text on the left, map on the right, rows sized to the
+   longest name, a gold title line, the Hockey sign on the same square
+   green post as the main sign, light weathering, brighter stars that
+   sit above the night (so the torch never brightens them), and a top
+   line with no background until hover.
+   ================================================================ */
+body.has-masthead {
+  --weather: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Cfilter id='w' x='0' y='0' width='100%' height='100%'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.05 .11' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .93 0 0 0 0 .91 0 0 0 0 .85 1.6 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23w)'/%3E%3Cg fill='none' stroke='%23f2efe6' stroke-opacity='.32' stroke-width='.6' stroke-linecap='round'%3E%3Cpath d='M14 38l58-4'/%3E%3Cpath d='M120 150l36 6'/%3E%3Cpath d='M210 60l52-9'/%3E%3Cpath d='M60 120l14 9'/%3E%3Cpath d='M240 170l30-2'/%3E%3Cpath d='M168 24l22 3'/%3E%3C/g%3E%3C/svg%3E");
+}
+/* The board sizes itself to its content */
+body.has-masthead .mc-sign { width: max-content; max-width: calc(100vw - 2rem); }
+.mc-sign__board { gap: 0.9rem; padding: 0.55rem 0.85rem 0.6rem 1rem; }
+.md-typeset figure.mc-sign__map, figure.mc-sign__map { flex: 0 0 7.2rem; align-self: stretch; margin: 0.15rem 0; }
+.md-typeset .mc-sign__map img, .mc-sign__map img { height: 100%; object-fit: cover; }
+
+.md-typeset .mc-sign__title, .mc-sign__title {
+  margin: 0.05rem 0 0.35rem;
+  font-family: var(--display-font); font-weight: 800;
+  font-size: 1.55rem; line-height: 1.05;
+  color: var(--sign-gold);
+}
+/* Rows: chip | name | arrow | count. The name column is as wide as the
+   longest name, so the arrow sits right after it, the same distance
+   from the name as the count is from the arrow. */
+.md-typeset ul.mc-sign__list, .mc-sign__list {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 0.4rem;
+  justify-content: start;
+}
+.md-typeset ul.mc-sign__list > li.mc-sign__item, .mc-sign__item {
+  display: grid; grid-column: 1 / -1; grid-template-columns: subgrid;
+}
+.mc-sign__item a {
+  display: grid; grid-column: 1 / -1; grid-template-columns: subgrid;
+  column-gap: 0.4rem; align-items: center;
+}
+.mc-sign__arrow, .mc-sign__time {
+  font-family: var(--display-font); font-weight: 800;
+  font-size: 0.95rem; color: var(--sign-gold); white-space: nowrap;
+}
+.mc-sign__time { justify-self: start; }
+
+/* Day/night symbol on the bottom row (shown by extra.js) */
+button.mc-sign__chip {
+  border: 0; padding: 0; margin: 0; cursor: pointer; font: inherit;
+}
+.mc-daynight[hidden] { display: none; }
+.mc-daynight__sun { display: none; }
+body[data-md-color-scheme="slate"] .mc-daynight__sun { display: contents; }
+body[data-md-color-scheme="slate"] .mc-daynight__moon { display: none; }
+.mc-daynight:hover { background: color-mix(in srgb, var(--picto) 70%, white); }
+
+/* ---- Hockey: inside the sign's scene, on the same square green post ---- */
+body.has-masthead .mc-sign .mc-stick {
+  right: calc(100% + 2.8rem);
+  bottom: 1.2rem;
+  width: 4.1rem;
+  height: 9rem;
+  transform: none;
+}
+.mc-stick .mc-stick__pole.mc-sign__post {
+  left: calc(50% - 0.65rem);
+  right: auto;
+  width: 1.3rem;
+  top: 0;
+  bottom: calc(-1 * var(--sign-drop) - 1.2rem - 0.6rem);
+  border-radius: 0;
+  background:
+    var(--weather),
+    var(--grain),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--post-paint) 88%, white) 0,
+      var(--post-paint) 14%,
+      var(--post-paint) 70%,
+      color-mix(in srgb, var(--post-paint) 60%, black) 72%,
+      color-mix(in srgb, var(--post-paint) 50%, black) 100%);
+  background-size: 300px 200px, 160px 160px, 100% 100%;
+  background-blend-mode: soft-light, soft-light, normal;
+  box-shadow: inset 0 0.18rem 0 rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Weathering: faded, scuffed paint on boards and posts ---- */
+.mc-sign__post {
+  background:
+    var(--weather),
+    var(--grain),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--post-paint) 88%, white) 0,
+      var(--post-paint) 14%,
+      var(--post-paint) 70%,
+      color-mix(in srgb, var(--post-paint) 60%, black) 72%,
+      color-mix(in srgb, var(--post-paint) 50%, black) 100%);
+  background-size: 300px 200px, 160px 160px, 100% 100%;
+  background-blend-mode: soft-light, soft-light, normal;
+}
+.mc-sign__board::before {
+  background:
+    var(--weather),
+    var(--grain),
+    linear-gradient(105deg, rgba(255, 244, 214, 0.16), rgba(255, 244, 214, 0) 45%, rgba(0, 0, 0, 0.2));
+  background-size: 300px 200px, 160px 160px, 100% 100%;
+}
+.mc-stick__panel::before {
+  content: "";
+  position: absolute;
+  inset: -0.25rem 0 0 0;
+  pointer-events: none;
+  z-index: 2;
+  background: var(--weather), var(--grain);
+  background-size: 300px 200px, 160px 160px;
+  background-position: 120px 40px, 0 0;
+  mix-blend-mode: soft-light;
+}
+/* edges wear first */
+.mc-sign__board, .mc-stick__panel {
+  box-shadow:
+    0.25rem 0.3rem 0.6rem rgba(0, 0, 0, 0.35),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.3),
+    inset 0 0 0.5rem rgba(225, 220, 200, 0.12);
+}
+
+/* ---- Stars: brighter, and drawn above the night layer ---- */
+.mc-night__stars { display: none; }
+body[data-md-color-scheme="slate"].has-masthead .mc-night__stars {
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 30vh;
+  height: 30dvh;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMin slice"><g fill="white"><circle cx="360" cy="44" r="1.0" opacity="0.72"/><circle cx="171" cy="249" r="1.0" opacity="0.47"/><circle cx="338" cy="270" r="0.75" opacity="0.44"/><circle cx="490" cy="80" r="1.25" opacity="0.65"/><circle cx="600" cy="73" r="1.25" opacity="0.68"/><circle cx="771" cy="55" r="0.88" opacity="0.63"/><circle cx="612" cy="238" r="1.25" opacity="0.44"/><circle cx="96" cy="156" r="0.88" opacity="0.65"/><circle cx="958" cy="55" r="1.5" opacity="0.76"/><circle cx="101" cy="157" r="1.38" opacity="0.57"/><circle cx="1155" cy="68" r="1.25" opacity="0.76"/><circle cx="749" cy="246" r="0.75" opacity="0.49"/><circle cx="564" cy="195" r="1.12" opacity="0.55"/><circle cx="26" cy="145" r="1.12" opacity="0.57"/><circle cx="632" cy="46" r="1.12" opacity="0.78"/><circle cx="138" cy="54" r="0.75" opacity="0.68"/><circle cx="1143" cy="144" r="1.5" opacity="0.55"/><circle cx="574" cy="38" r="1.25" opacity="0.7"/><circle cx="320" cy="86" r="0.88" opacity="0.63"/><circle cx="1023" cy="45" r="1.5" opacity="0.8"/><circle cx="147" cy="135" r="1.0" opacity="0.66"/><circle cx="1166" cy="157" r="1.0" opacity="0.61"/><circle cx="1092" cy="42" r="0.88" opacity="0.82"/><circle cx="914" cy="57" r="1.25" opacity="0.68"/><circle cx="959" cy="103" r="3.0" opacity="0.25"/><circle cx="959" cy="103" r="1.25" opacity="1.0"/><circle cx="984" cy="124" r="2.75" opacity="0.21"/><circle cx="984" cy="124" r="1.0" opacity="1.0"/><circle cx="934" cy="136" r="3.0" opacity="0.23"/><circle cx="934" cy="136" r="1.12" opacity="1.0"/><circle cx="967" cy="157" r="3.62" opacity="0.34"/><circle cx="967" cy="157" r="1.56" opacity="1.0"/><circle cx="906" cy="182" r="2.75" opacity="0.19"/><circle cx="906" cy="182" r="1.12" opacity="1.0"/><circle cx="879" cy="205" r="3.12" opacity="0.21"/><circle cx="879" cy="205" r="1.38" opacity="1.0"/></g></svg>') 0 0 / cover no-repeat;
+  -webkit-mask: linear-gradient(180deg, black 66%, transparent 96%);
+  mask: linear-gradient(180deg, black 66%, transparent 96%);
+}
+[data-md-color-scheme="slate"] .masthead::before { opacity: 0; }
+
+/* ---- Top line on the home page: no background until hover ---- */
+body.has-masthead .md-header,
+body[data-md-color-scheme="default"].has-masthead .md-header,
+body[data-md-color-scheme="slate"].has-masthead .md-header {
+  background-color: transparent;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  transition: background-color 0.25s ease;
+}
+body.has-masthead .md-header:hover,
+body.has-masthead .md-header:focus-within,
+body[data-md-color-scheme="default"].has-masthead .md-header:hover,
+body[data-md-color-scheme="default"].has-masthead .md-header:focus-within {
+  background-color: rgba(9, 22, 18, 0.88);
+}
+
+@media screen and (max-width: 44.9375em) {
+  body.has-masthead .mc-sign .mc-stick { right: 0; bottom: calc(100% + 0.8rem); height: 4.6rem; }
+  .mc-stick .mc-stick__pole.mc-sign__post { display: none; }
+  .md-typeset .mc-sign__title, .mc-sign__title { font-size: 1.2rem; }
+  .md-typeset figure.mc-sign__map, figure.mc-sign__map { flex-basis: 5rem; }
+}
+/* The header is 3.1rem tall (2.4rem bar + its padding), so the photo
+   starts under its very top edge; with the bar now transparent, the
+   old 2.4rem offset left a strip of page colour showing. */
+body.has-masthead .masthead { margin-top: -3.1rem; }

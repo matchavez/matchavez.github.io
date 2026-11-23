@@ -166,4 +166,25 @@
       document.addEventListener("DOMContentLoaded", torch);
     else torch();
   } catch (e) { /* the beam stays in its CSS position */ }
+  /* 5. Day/night symbol on the home-page sign: works the theme's own
+     palette switch, so it gets the same circular reveal. */
+  try {
+    var dn = function () {
+      var b = document.querySelector(".mc-daynight");
+      if (!b) return;
+      b.hidden = false;
+      b.addEventListener("click", function () {
+        var labels = document.querySelectorAll("label[for^='__palette']");
+        for (var i = 0; i < labels.length; i++) {
+          if (labels[i].offsetParent !== null || getComputedStyle(labels[i]).display !== "none") {
+            labels[i].click();
+            return;
+          }
+        }
+      });
+    };
+    if (document.readyState === "loading")
+      document.addEventListener("DOMContentLoaded", dn);
+    else dn();
+  } catch (e) { /* the header switch still works */ }
 })();
