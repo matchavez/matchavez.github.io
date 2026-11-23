@@ -13,6 +13,5 @@ title: Mat Chavez
     <p class="mh-kicker">ōtautahi &middot; te waipounamu &middot; aotearoa</p>
     <h1 id="tena-koutou">Tēnā Koutou</h1>
   </div>
-  <p class="mh-locator">&#9651; near arthur&rsquo;s pass &middot; nztopo50 bv20</p>
 </header>
 <script>document.body.classList.add("has-masthead")</script>
