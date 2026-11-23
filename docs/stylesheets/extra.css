@@ -2462,3 +2462,37 @@ body.has-masthead .md-header [data-md-component="palette"] { display: none; }
    header rule that set only a background-color transition */
 body[data-md-color-scheme].has-masthead .md-header { transition: opacity 0.6s ease 1s, background-color 0.25s ease; }
 body[data-md-color-scheme].has-masthead.mc-idle .md-header { transition: opacity 0.6s ease 0s, background-color 0.25s ease; }
+
+/* ================================================================
+   Sign test 8 (24 Nov 2026, Mat): the sign group moves to the left of
+   the photo, as a mirror of before, and is planted in the photo.
+   extra.js finds where a fixed spot of tussock is on screen (the photo
+   is "cover" sized, so it moves when the window changes size) and puts
+   the left post there (--anchor-l, --ground). The vanishing point is
+   also tied to the photo (--vp-x, --vp-y). Values below are the
+   fallback when the script does not run.
+   ================================================================ */
+@media screen and (min-width: 45em) {
+  body.has-masthead .mc-scene {
+    perspective-origin: var(--vp-x, 50%) var(--vp-y, 50%);
+  }
+  body.has-masthead .mc-sign.mc-sign--rp {
+    right: auto;
+    left: var(--anchor-l, calc(clamp(1.4rem, 8vw, 7rem) + 3.7rem));
+    bottom: calc(var(--ground) + var(--expose));
+    transform: rotateY(calc(-1 * var(--tilt, -25deg)));
+    transform-origin: left center;
+  }
+  /* Hockey stands on the inside now, further back */
+  body.has-masthead .mc-sign--rp .mc-stick {
+    right: auto;
+    left: calc(100% + var(--post-w2) + 2.6rem);
+  }
+  /* the near post is now the left one */
+  .mc-sign--rp .mc-sign__post--l { top: -0.45rem; }
+  .mc-sign--rp .mc-sign__post--r { top: -0.75rem; }
+}
+/* the "k" in Track stays inside the map's right edge */
+.md-typeset .mc-sign--rp .mc-sign__title, .mc-sign--rp .mc-sign__title {
+  font-size: 1.42rem;
+}
