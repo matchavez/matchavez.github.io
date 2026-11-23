@@ -107,7 +107,7 @@
     {#- A DOC trailhead sign standing in the cover photo, laid out like the
         Roys Peak Track sign: white serif title across the top, a white
         "starts here" label, a column of destinations on the left, a big
-        map on the right with blue "YOU ARE HERE" labels, a symbol row
+        map on the right with the camera and house symbols, a symbol row
         under the map, and the site mark bottom left (where DOC puts its
         own). Rows come from the menu. An off-site menu entry (Hockey) gets
         its own narrow sign on one post, like the "No drones / Keep to
@@ -159,9 +159,10 @@
         </div>
         <figure class="mc-sign__map">
           <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, marking Arthur's Pass, where this photo was taken, and Christchurch, home">
-          {#- The sign stands near Arthur's Pass, so that is "you are here" -#}
-          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-pin__label">YOU ARE HERE</span></span>
-          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-pin__label">HOME</span></span>
+          {#- DOC map symbols, as Mat approved on 23 Nov: a blue square with a
+              white pictogram on the place, and the place name beside it -#}
+          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-sign__chip">{% include ".icons/lucide/camera.svg" %}</span><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
+          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-sign__chip">{% include ".icons/lucide/house.svg" %}</span><span class="mc-pin__label">Christchurch<small>home</small></span></span>
         </figure>
         <p class="mc-sign__symbols">
           <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>

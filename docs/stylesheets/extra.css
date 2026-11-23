@@ -2087,7 +2087,7 @@ body.has-masthead {
    Home sign v7 (23 Nov 2026): laid out like the Roys Peak Track
    trailhead sign. Board: white serif title across the top; under it,
    a white "starts here" label and a column of destinations on the
-   left, a large map on the right with blue "YOU ARE HERE" labels, a
+   left, a large map on the right with the camera and house symbols, a
    symbol row under the map, the site mark bottom left. Posts: square,
    dark green, standing a little above the board. The narrow Hockey
    sign follows the "No drones / Keep to track" post: yellow text,
@@ -2201,30 +2201,14 @@ body.has-masthead .mc-sign.mc-sign--rp {
 .md-typeset .mc-sign--rp .mc-sign__map img, .mc-sign--rp .mc-sign__map img {
   width: 100%; height: auto; object-fit: fill;
 }
-/* map labels: blue boxes with white capitals, as "YOU ARE HERE" */
-.mc-sign--rp .mc-pin {
-  position: absolute; width: 0; height: 0;
-}
-.mc-sign--rp .mc-pin::before {
-  content: ""; position: absolute; left: -0.17rem; top: -0.17rem;
-  width: 0.34rem; height: 0.34rem; border-radius: 50%;
-  background: #1d6fb0; box-shadow: 0 0 0 1.5px #fff;
-}
-.mc-sign--rp .mc-pin > .mc-sign__chip { display: none; }
-.mc-sign--rp .mc-pin__label {
-  position: absolute; top: 0; left: auto; right: auto;
-  transform: none;
-  padding: 0.08rem 0.22rem 0.06rem;
-  background: #1d6fb0;
-  color: #fff;
-  font-family: var(--sign-font);
-  font-size: 0.38rem; line-height: 1.1; letter-spacing: 0.04em;
-  text-shadow: none;
-  white-space: nowrap;
-  box-shadow: 0 0 0 1px #fff;
-}
-.mc-sign--rp .mc-pin--photo .mc-pin__label { right: 0.32rem; top: -0.32rem; }
-.mc-sign--rp .mc-pin--home .mc-pin__label { left: -0.6rem; top: 0.34rem; }
+/* map pins: the camera and house symbols with place names (the v5 style
+   Mat approved), sized for the bigger map */
+.mc-sign--rp .mc-pin > .mc-sign__chip { width: 0.85rem; height: 0.85rem; }
+.mc-sign--rp .mc-pin > .mc-sign__chip svg { width: 0.58rem; height: 0.58rem; }
+.mc-sign--rp .mc-pin__label { font-size: 0.46rem; }
+.mc-sign--rp .mc-pin__label small { font-size: 0.44rem; }
+.mc-sign--rp .mc-pin--photo .mc-pin__label { right: 0.6rem; }
+.mc-sign--rp .mc-pin--home .mc-pin__label { top: 0.55rem; }
 /* symbol row under the map */
 .md-typeset .mc-sign--rp .mc-sign__symbols, .mc-sign--rp .mc-sign__symbols {
   grid-area: symbols;
