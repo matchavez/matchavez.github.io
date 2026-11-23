@@ -2464,35 +2464,167 @@ body[data-md-color-scheme].has-masthead .md-header { transition: opacity 0.6s ea
 body[data-md-color-scheme].has-masthead.mc-idle .md-header { transition: opacity 0.6s ease 0s, background-color 0.25s ease; }
 
 /* ================================================================
-   Sign test 8 (24 Nov 2026, Mat): the sign group moves to the left of
-   the photo, as a mirror of before, and is planted in the photo.
-   extra.js finds where a fixed spot of tussock is on screen (the photo
-   is "cover" sized, so it moves when the window changes size) and puts
-   the left post there (--anchor-l, --ground). The vanishing point is
-   also tied to the photo (--vp-x, --vp-y). Values below are the
-   fallback when the script does not run.
+   Sign test 9 (24 Nov 2026, Mat): the sign is part of the photo.
+   .mc-scene is a layer the size of the photo (1600 x 1200 px) and
+   extra.js moves and scales it exactly as object-fit: cover moves and
+   scales the photo (--ox, --oy, --s). Everything inside is placed in
+   photo pixels, so on any screen, phone included, the sign stands on
+   the same tussock at the same size against the land. The vanishing
+   point is a fixed point of the photo. The rules use "html body" so
+   they win over all the older phone rules: the sign is the same
+   everywhere.
    ================================================================ */
-@media screen and (min-width: 45em) {
-  body.has-masthead .mc-scene {
-    perspective-origin: var(--vp-x, 50%) var(--vp-y, 50%);
-  }
-  body.has-masthead .mc-sign.mc-sign--rp {
-    right: auto;
-    left: var(--anchor-l, calc(clamp(1.4rem, 8vw, 7rem) + 3.7rem));
-    bottom: calc(var(--ground) + var(--expose));
-    transform: rotateY(calc(-1 * var(--tilt, -25deg)));
-    transform-origin: left center;
-  }
-  /* Hockey stands on the inside now, further back */
-  body.has-masthead .mc-sign--rp .mc-stick {
-    right: auto;
-    left: calc(100% + var(--post-w2) + 2.6rem);
-  }
-  /* the near post is now the left one */
-  .mc-sign--rp .mc-sign__post--l { top: -0.45rem; }
-  .mc-sign--rp .mc-sign__post--r { top: -0.75rem; }
+html body.has-masthead {
+  --expose: 3.6rem;
+  --post-w2: 1.9rem;
+  --text-w: 5.8rem;
+  --map-w: 7rem;
+  --board-w: 23rem;
+  --k: 1.72;          /* sign size against the photo: just fits an iPhone */
 }
-/* the "k" in Track stays inside the map's right edge */
-.md-typeset .mc-sign--rp .mc-sign__title, .mc-sign--rp .mc-sign__title {
-  font-size: 1.42rem;
+/* the photo: on narrow screens keep the left side (the sign) in view */
+html body.has-masthead .masthead img { object-position: 12.5% 58%; }
+
+html body.has-masthead .mc-scene {
+  position: fixed;
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: 1600px;
+  height: 1200px;
+  transform: translate(var(--ox, 0px), var(--oy, -104px)) scale(var(--s, 0.9));
+  transform-origin: 0 0;
+  perspective: 933px;
+  perspective-origin: 800px 615px;
+}
+html body.has-masthead .mc-scene .mc-sign.mc-sign--rp {
+  display: block;
+  position: absolute;
+  top: auto;
+  right: auto;
+  left: 210px;                                        /* board left edge, photo px */
+  bottom: calc(1200px - 1045px + var(--expose));      /* ground line at photo y 1045 */
+  width: max-content;
+  scale: calc(var(--k) * var(--rf, 1));               /* --rf undoes the theme's bigger root font on wide screens */
+  transform: rotateY(25deg);
+  transform-origin: 0 calc(100% + var(--expose));     /* the near post foot */
+  transform-style: preserve-3d;
+}
+html body.has-masthead .md-typeset .mc-sign--rp .mc-sign__title,
+html body.has-masthead .mc-sign--rp .mc-sign__title { font-size: 1.42rem; }
+html body.has-masthead .mc-sign--rp .mc-sign__start { display: block; }
+html body.has-masthead .mc-sign--rp .mc-pin__label { display: block; }
+
+/* posts: square, flush with the board face, tops just above the board */
+html body.has-masthead .mc-sign--rp .mc-sign__post--l,
+html body.has-masthead .mc-sign--rp .mc-sign__post--r { top: -0.4rem; }
+html body.has-masthead .mc-sign--rp .mc-sign__post--l { left: calc(-1 * var(--post-w2)); }
+html body.has-masthead .mc-sign--rp .mc-sign__post--r { right: calc(-1 * var(--post-w2)); }
+/* the front face is lit evenly; the edges are a touch darker */
+html body.has-masthead .mc-sign--rp .mc-sign__post {
+  background:
+    var(--weather),
+    linear-gradient(180deg, rgba(232, 236, 222, 0.14) 0, rgba(232, 236, 222, 0) 16%, rgba(0, 0, 0, 0) 52%, rgba(44, 38, 20, 0.5) 80%),
+    var(--grain),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--post-paint) 75%, black) 0,
+      var(--post-paint) 5%,
+      color-mix(in srgb, var(--post-paint) 94%, white) 45%,
+      var(--post-paint) 92%,
+      color-mix(in srgb, var(--post-paint) 70%, black) 100%);
+  background-size: 260px 60%, 100% 100%, 160px 160px, 100% 100%;
+  background-repeat: repeat-x, no-repeat, repeat, no-repeat;
+  background-blend-mode: soft-light, normal, soft-light, normal;
+}
+
+/* The post sides that face the camera. Each is a real face, turned
+   back 90 degrees from the board's plane, so the perspective draws it.
+   The board hides it above the board's bottom edge, as in the Roys
+   Peak photo, where the side shows only under the board. */
+.mc-sign__side, .mc-stick__side, .mc-sign__ground, .mc-stick__ground { display: none; }
+html body.has-masthead .mc-sign--rp .mc-sign__side,
+html body.has-masthead .mc-sign--rp .mc-stick__side {
+  display: block;
+  position: absolute;
+  top: -0.4rem;
+  bottom: calc(-1 * var(--expose) - 0.55rem);
+  width: var(--post-w2);
+  transform-origin: 0 50%;
+  transform: rotateY(90deg);
+  background:
+    var(--grain),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 52%, rgba(30, 26, 12, 0.55) 82%),
+    linear-gradient(90deg, color-mix(in srgb, #18392d 62%, black), color-mix(in srgb, #18392d 50%, black));
+  background-size: 160px 160px, 100% 100%, 100% 100%;
+  background-blend-mode: soft-light, normal, normal;
+  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
+  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
+}
+/* the sign is bigger in the picture now, so the tussock in front of the
+   post feet is taller too */
+html body.has-masthead .mc-sign--rp .mc-sign__post,
+html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
+  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
+  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
+}
+html body.has-masthead .mc-sign--rp .mc-sign__side--l { left: 0; }        /* right face of the near post */
+html body.has-masthead .mc-sign--rp .mc-sign__side--r { left: 100%; }     /* left face of the far post */
+
+/* Ground shadow. The sun in the photo is high, so the shadow is short
+   and falls just behind the sign: a soft patch lying flat on the
+   ground (rotateX 90deg), under the board and around the post feet. */
+html body.has-masthead .mc-sign--rp .mc-sign__ground,
+html body.has-masthead .mc-sign--rp .mc-stick__ground {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  transform-origin: 50% 100%;
+  transform: translateZ(-2px) rotateX(90deg);
+  filter: blur(5px);
+  transition: opacity 0.6s ease;
+}
+html body.has-masthead .mc-sign--rp .mc-sign__ground {
+  left: calc(-1 * var(--post-w2) - 0.6rem);
+  right: calc(-1 * var(--post-w2) - 0.6rem);
+  bottom: calc(-1 * var(--expose));
+  height: 8rem;
+  background:
+    radial-gradient(1.8rem 2rem at calc(var(--post-w2) * 0.5 + 0.6rem) 100%, rgba(18, 14, 4, 0.75), rgba(18, 14, 4, 0) 100%),
+    radial-gradient(1.8rem 2rem at calc(100% - var(--post-w2) * 0.5 - 0.6rem) 100%, rgba(18, 14, 4, 0.7), rgba(18, 14, 4, 0) 100%),
+    radial-gradient(54% 42% at 50% 58%, rgba(18, 14, 4, 0.66), rgba(18, 14, 4, 0.3) 62%, rgba(18, 14, 4, 0) 100%);
+}
+html body.has-masthead .mc-sign--rp .mc-stick__ground {
+  left: calc(50% - var(--post-w2) * 0.5 - 1.2rem);
+  width: calc(var(--post-w2) + 2.4rem);
+  bottom: calc(-1 * var(--expose) + 0.1rem);
+  height: 4.4rem;
+  background: radial-gradient(50% 50% at 50% 60%, rgba(18, 14, 4, 0.62), rgba(18, 14, 4, 0) 100%);
+}
+[data-md-color-scheme="slate"] .mc-sign--rp .mc-sign__ground,
+[data-md-color-scheme="slate"] .mc-sign--rp .mc-stick__ground { opacity: 0; }
+
+/* Hockey: on the inside, further back; one square post, the panel on
+   its front, the post top just above the panel. Same on every screen. */
+html body.has-masthead .mc-sign--rp .mc-stick {
+  display: block;
+  top: auto;
+  right: auto;
+  left: calc(100% + var(--post-w2) + 3.2rem);
+  bottom: 0.4rem;
+  width: 3.4rem;
+  height: 10.2rem;
+  transform: none;
+  transform-style: preserve-3d;
+}
+html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
+  display: block;
+  left: calc(50% - var(--post-w2) / 2);
+  width: var(--post-w2);
+  top: 0;
+}
+html body.has-masthead .mc-sign--rp .mc-stick__panel { top: 0.35rem; }
+html body.has-masthead .mc-sign--rp .mc-stick__side {
+  left: calc(50% - var(--post-w2) / 2);
+  top: 0;
+  bottom: calc(-1 * var(--expose) + 0.5rem - 0.4rem - 0.55rem);
 }

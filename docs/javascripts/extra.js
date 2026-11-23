@@ -250,48 +250,44 @@
   } catch (e) { /* the bar stays visible */ }
 })();
 
-/* 6. Home page: plant the sign in the photo. The cover photo (1600 x
+/* 6. Home page: the sign is part of the photo. The cover photo (1600 x
    1200, object-fit: cover) moves and scales when the window changes
-   size. Keep the sign's left post on one spot of tussock, and keep the
-   vanishing point on one spot of the photo, so the sign does not slide
-   over the ground. Phones keep the simple layout. */
+   size. .mc-scene is a 1600 x 1200 layer; move and scale it the same
+   way, so the sign (placed in photo pixels) never moves or changes
+   size against the land. */
 (function () {
   try {
-    var PX = 238, PY = 1045;     /* board left edge, ground line (photo px) */
-    var VX = 800, VY = 615;      /* vanishing point (photo px) */
-    var plant = function () {
+    var place = function () {
       var body = document.body;
       if (!body || !body.classList.contains("has-masthead")) return;
       var img = document.querySelector(".masthead img");
       var scene = document.querySelector(".mc-scene");
       if (!img || !scene) return;
-      var W = window.innerWidth, H = window.innerHeight;
-      if (W < 720) {
-        body.style.removeProperty("--anchor-l");
-        body.style.removeProperty("--ground");
-        scene.style.removeProperty("--vp-x");
-        scene.style.removeProperty("--vp-y");
-        return;
-      }
-      /* photo px are px of the 1600 x 1200 original; naturalWidth is no
-         use here, as srcset changes it with the window */
+      var r = img.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      /* photo px are px of the 1600 x 1200 original (naturalWidth is no
+         use here, as srcset changes it with the window) */
       var iw = 1600, ih = 1200;
-      var s = Math.max(W / iw, H / ih);
+      var s = Math.max(r.width / iw, r.height / ih);
       var pos = getComputedStyle(img).objectPosition.split(" ");
       var fx = (parseFloat(pos[0]) || 50) / 100, fy = (parseFloat(pos[1]) || 50) / 100;
-      var ox = (W - iw * s) * fx, oy = (H - ih * s) * fy;
-      var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      var left = Math.max(2.6 * rem, ox + PX * s);
-      var ground = Math.max(-2 * rem, H - (oy + PY * s));
-      body.style.setProperty("--anchor-l", left.toFixed(1) + "px");
-      body.style.setProperty("--ground", ground.toFixed(1) + "px");
-      scene.style.setProperty("--vp-x", (ox + VX * s).toFixed(1) + "px");
-      scene.style.setProperty("--vp-y", (oy + VY * s).toFixed(1) + "px");
+      var ox = r.left + (r.width - iw * s) * fx, oy = r.top + (r.height - ih * s) * fy;
+      scene.style.setProperty("--ox", ox.toFixed(2) + "px");
+      scene.style.setProperty("--oy", oy.toFixed(2) + "px");
+      scene.style.setProperty("--s", s.toFixed(5));
+      /* the theme makes the root font bigger on wide screens; the sign is
+         sized in rem, so undo that here (20 px is the base size) */
+      var rf = 20 / (parseFloat(getComputedStyle(document.documentElement).fontSize) || 20);
+      scene.style.setProperty("--rf", rf.toFixed(4));
     };
     if (document.readyState === "loading")
-      document.addEventListener("DOMContentLoaded", plant);
-    else plant();
-    window.addEventListener("resize", plant, { passive: true });
-    window.addEventListener("load", plant);
+      document.addEventListener("DOMContentLoaded", place);
+    else place();
+    window.addEventListener("resize", place, { passive: true });
+    window.addEventListener("load", place);
+    if (window.ResizeObserver) {
+      var im = document.querySelector(".masthead img");
+      if (im) new ResizeObserver(place).observe(im);
+    }
   } catch (e) { /* CSS fallback position */ }
 })();
