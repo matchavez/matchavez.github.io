@@ -2410,3 +2410,19 @@ body.has-masthead .mc-sign.mc-sign--rp { width: max-content; }
 .md-typeset .mc-sign--rp .mc-sign__map img, .mc-sign--rp .mc-sign__map img {
   display: block; width: 100%; height: 100%; object-fit: fill;
 }
+/* Sign test 3: the tall map frame Mat approved (v5/v6 look): narrow
+   portrait frame with a cream border, about 0.58 wide to 1 high, the
+   island anchored on the east coast. */
+body.has-masthead { --map-w: 7rem; }
+.md-typeset .mc-sign--rp figure.mc-sign__map, .mc-sign--rp figure.mc-sign__map {
+  border: 0.15rem solid var(--sign-cream);
+  border-radius: 0.1rem;
+  background: #b0cdde;
+}
+/* centre-crop like the approved version, so the whole island from
+   Golden Bay to Rakiura stays in the frame */
+.mc-sign--rp .mc-sign__mapimg { right: auto; left: 50%; transform: translateX(-50%); }
+/* Match the approved v5/v6 map exactly: the picture fills the tall
+   frame (object-fit: fill), which narrows the island sideways. Pins
+   are placed in % of the picture, so they stay on their places. */
+.mc-sign--rp .mc-sign__mapimg { inset: 0; left: 0; transform: none; aspect-ratio: auto; width: auto; }
