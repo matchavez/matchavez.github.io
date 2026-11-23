@@ -2683,3 +2683,110 @@ html body.has-masthead .mc-sign--rp .mc-face:not(.mc-face--cap) {
   -webkit-mask: linear-gradient(180deg, #000 calc(100% - 3rem), rgba(0, 0, 0, 0.35) calc(100% - 2.3rem), transparent calc(100% - 1.7rem));
   mask: linear-gradient(180deg, #000 calc(100% - 3rem), rgba(0, 0, 0, 0.35) calc(100% - 2.3rem), transparent calc(100% - 1.7rem));
 }
+
+/* ================================================================
+   Lighting (24 Nov 2026, Mat): match the photo's sun. In the photo the
+   tussocks are lit on their left and throw their shadows to the right
+   and a little back, in warm, fairly low winter sun. With the sign
+   turned 30 degrees, that sun comes in almost along the board, from
+   the left:
+   - the left sides of the posts face the sun: lit, warm (brightest)
+   - the post tops: lit
+   - the fronts of the board, posts and Hockey panel: the sun only
+     grazes them, so they sit in soft sky light: a touch darker, cooler
+   - the right sides of the posts: in shade (darkest)
+   - the far post's left side is shaded by the board above the board's
+     bottom edge; under the board the sun gets in
+   - ground shadows: long, thin bands that run to the right and a
+     little back from each post and panel
+   Day only; the night torch is not changed.
+   ================================================================ */
+body[data-md-color-scheme="default"].has-masthead { --sun: #f0d29c; }
+
+/* fronts in soft sky light */
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-sign__board,
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-stick__panel {
+  filter: saturate(0.86) contrast(0.95) brightness(0.88);
+}
+/* post fronts: a thin warm edge on the left, where the sunlit side
+   meets the front; slightly darker towards the right */
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-sign__post {
+  background:
+    var(--weather),
+    linear-gradient(180deg, rgba(232, 236, 222, 0.08) 0, rgba(232, 236, 222, 0) 16%, rgba(0, 0, 0, 0) 52%, rgba(44, 38, 20, 0.5) 80%),
+    var(--grain),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--post-paint) 55%, var(--sun)) 0,
+      color-mix(in srgb, var(--post-paint) 88%, var(--sun)) 4%,
+      color-mix(in srgb, var(--post-paint) 92%, black) 14%,
+      color-mix(in srgb, var(--post-paint) 90%, black) 80%,
+      color-mix(in srgb, var(--post-paint) 74%, black) 100%);
+  background-size: 260px 60%, 100% 100%, 160px 160px, 100% 100%;
+  background-repeat: repeat-x, no-repeat, repeat, no-repeat;
+  background-blend-mode: soft-light, normal, soft-light, normal;
+}
+/* sides facing the sun: the near post's left side, the Hockey pole's
+   left side */
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--l-out,
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--h-left {
+  background:
+    var(--grain),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(60, 46, 18, 0.45) 85%),
+    linear-gradient(90deg, color-mix(in srgb, #2b5c3e 76%, var(--sun)), color-mix(in srgb, #2b5c3e 82%, var(--sun)));
+  background-size: 160px 160px, 100% 100%, 100% 100%;
+  background-blend-mode: soft-light, normal, normal;
+}
+/* the far post's left side: in the board's shadow above the board's
+   bottom edge, in sun below it */
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--r-in {
+  background:
+    var(--grain),
+    linear-gradient(180deg,
+      color-mix(in srgb, #18392d 80%, black) 0,
+      color-mix(in srgb, #18392d 80%, black) calc(100% - 4.4rem),
+      color-mix(in srgb, #2b5c3e 76%, var(--sun)) calc(100% - 3.9rem),
+      color-mix(in srgb, #2b5c3e 82%, var(--sun)) 100%);
+  background-size: 160px 160px, 100% 100%;
+  background-blend-mode: soft-light, normal;
+}
+/* sides away from the sun */
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--l-in,
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--r-out,
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--h-right {
+  background:
+    var(--grain),
+    linear-gradient(90deg, color-mix(in srgb, #18392d 58%, black), color-mix(in srgb, #18392d 50%, black));
+  background-size: 160px 160px, 100% 100%;
+  background-blend-mode: soft-light, normal;
+}
+/* tops in the sun */
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--cap {
+  background:
+    var(--grain),
+    linear-gradient(90deg, color-mix(in srgb, #2b5c3e 66%, var(--sun)), color-mix(in srgb, #2b5c3e 72%, var(--sun)));
+  background-size: 160px 160px, 100% 100%;
+  background-blend-mode: soft-light, normal;
+}
+
+/* ground shadows: shapes worked out from the sun (about 50 degrees up,
+   from the left and a little in front) and the sign's size; blurred,
+   broken up like shadow on tussock, and fading with distance */
+html body.has-masthead .mc-sign--rp .mc-sign__ground {
+  left: -3rem;
+  right: auto;
+  width: 40rem;
+  height: 6rem;
+  bottom: calc(-1 * var(--expose));
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='30' y1='0' x2='400' y2='0'%3E%3Cstop offset='0' stop-color='%231a1406' stop-opacity='0.5'/%3E%3Cstop offset='1' stop-color='%231a1406' stop-opacity='0.06'/%3E%3C/linearGradient%3E%3Cfilter id='b' x='-5%25' y='-40%25' width='110%25' height='180%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='5' result='s'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.06 .25' numOctaves='2' seed='7' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 -0.55' result='m'/%3E%3CfeComposite in='s' in2='m' operator='in'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='url%28%23f%29' filter='url%28%23b%29'%3E%3Cpolygon points='59.9,55.8 202.4,35.6 354.9,35.6 212.4,55.8'/%3E%3Cpolygon points='11.0,60.0 30.0,60.0 205.7,35.2 205.7,16.2 186.7,16.2 11.0,41.0'/%3E%3Cpolygon points='182.5,60.0 201.5,60.0 377.2,35.2 377.2,16.2 358.2,16.2 182.5,41.0'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+  filter: none;
+}
+html body.has-masthead .mc-sign--rp .mc-stick__ground {
+  left: -1rem;
+  width: 17rem;
+  height: 5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 50' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='10' y1='0' x2='170' y2='0'%3E%3Cstop offset='0' stop-color='%231a1406' stop-opacity='0.5'/%3E%3Cstop offset='1' stop-color='%231a1406' stop-opacity='0.08'/%3E%3C/linearGradient%3E%3Cfilter id='b' x='-5%25' y='-40%25' width='110%25' height='180%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='5' result='s'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.06 .25' numOctaves='2' seed='3' result='n'/%3E%3CfeColorMatrix in='n' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 -0.55' result='m'/%3E%3CfeComposite in='s' in2='m' operator='in'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='url%28%23f%29' filter='url%28%23b%29'%3E%3Cpolygon points='65.7,42.1 120.9,34.3 154.9,34.3 99.7,42.1'/%3E%3Cpolygon points='17.5,50.0 36.5,50.0 150.3,33.9 150.3,14.9 131.3,14.9 17.5,31.0'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+  filter: none;
+}
+/* night: the post sides and tops have no torch layer of their own, so
+   keep them in the dark with the rest of the land */
+html body[data-md-color-scheme="slate"].has-masthead .mc-sign--rp .mc-face { filter: brightness(0.16) saturate(0.6); }
