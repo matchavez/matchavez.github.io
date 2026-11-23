@@ -140,11 +140,15 @@
         picture. One vanishing point, on the photo. -#}
     <div class="mc-scene">
     <nav class="mc-sign mc-sign--rp" aria-label="Where to from here">
-      {#- ground shadow, then the side of each post that faces the camera
-          (3D faces, turned back from the board's plane) -#}
+      {#- ground shadow, then the sides and tops of the two square posts
+          (real 3D faces; each one shows only when it faces the camera) -#}
       <span class="mc-sign__ground" aria-hidden="true"></span>
-      <span class="mc-sign__side mc-sign__side--l" aria-hidden="true"></span>
-      <span class="mc-sign__side mc-sign__side--r" aria-hidden="true"></span>
+      <span class="mc-face mc-face--l-out" aria-hidden="true"></span>
+      <span class="mc-face mc-face--l-in" aria-hidden="true"></span>
+      <span class="mc-face mc-face--r-in" aria-hidden="true"></span>
+      <span class="mc-face mc-face--r-out" aria-hidden="true"></span>
+      <span class="mc-face mc-face--cap mc-face--l-cap" aria-hidden="true"></span>
+      <span class="mc-face mc-face--cap mc-face--r-cap" aria-hidden="true"></span>
       <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
       <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"><span class="mc-lamp"></span></span>
       <div class="mc-sign__board">
@@ -184,7 +188,9 @@
       {% if ns2.ext %}
         <a class="mc-stick" href="{{ ns2.ext.url }}" aria-label="{{ ns2.ext.title }} (other site)">
           <span class="mc-stick__ground" aria-hidden="true"></span>
-          <span class="mc-stick__side" aria-hidden="true"></span>
+          <span class="mc-face mc-face--h-left" aria-hidden="true"></span>
+          <span class="mc-face mc-face--h-right" aria-hidden="true"></span>
+          <span class="mc-face mc-face--cap mc-face--h-cap" aria-hidden="true"></span>
           <span class="mc-stick__pole mc-sign__post" aria-hidden="true"><span class="mc-lamp"></span></span>
           <span class="mc-stick__panel">
             <span class="mc-stick__name">{{ ns2.ext.title }}</span>

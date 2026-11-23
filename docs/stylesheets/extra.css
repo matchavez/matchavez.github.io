@@ -2494,7 +2494,7 @@ html body.has-masthead .mc-scene {
   height: 1200px;
   transform: translate(var(--ox, 0px), var(--oy, -104px)) scale(var(--s, 0.9));
   transform-origin: 0 0;
-  perspective: 933px;
+  perspective: var(--lens-px, 2400px);   /* a longer lens: gentle slopes, so the turn can be bigger */
   perspective-origin: 800px 615px;
 }
 html body.has-masthead .mc-scene .mc-sign.mc-sign--rp {
@@ -2506,7 +2506,7 @@ html body.has-masthead .mc-scene .mc-sign.mc-sign--rp {
   bottom: calc(1200px - 1045px + var(--expose));      /* ground line at photo y 1045 */
   width: max-content;
   scale: calc(var(--k) * var(--rf, 1));               /* --rf undoes the theme's bigger root font on wide screens */
-  transform: rotateY(18deg);                          /* was 25deg; a little less angle (Mat, 24 Nov) */
+  transform: rotateY(var(--turn, 35deg));             /* turned enough that the posts show their outer sides, as at Roys Peak */
   transform-origin: 0 calc(100% + var(--expose));     /* the near post foot */
   transform-style: preserve-3d;
 }
@@ -2537,39 +2537,76 @@ html body.has-masthead .mc-sign--rp .mc-sign__post {
   background-blend-mode: soft-light, normal, soft-light, normal;
 }
 
-/* The post sides that face the camera. Each is a real face, turned
-   back 90 degrees from the board's plane, so the perspective draws it.
-   The board hides it above the board's bottom edge, as in the Roys
-   Peak photo, where the side shows only under the board. */
-.mc-sign__side, .mc-stick__side, .mc-sign__ground, .mc-stick__ground { display: none; }
-html body.has-masthead .mc-sign--rp .mc-sign__side,
-html body.has-masthead .mc-sign--rp .mc-stick__side {
+/* Post sides and tops: real 3D faces of square posts. Each post has a
+   left side, a right side and a top; backface-visibility hides any
+   face that points away from the camera, so the posts always show the
+   faces that a camera at the middle of the photo would see. The board
+   and the Hockey panel hide the parts of the sides that are behind
+   them. The tops get the high sun. */
+.mc-face, .mc-sign__ground, .mc-stick__ground { display: none; }
+html body.has-masthead .mc-sign--rp .mc-face {
   display: block;
   position: absolute;
+  width: var(--post-w2);
   top: -0.4rem;
   bottom: calc(-1 * var(--expose) - 0.55rem);
-  width: var(--post-w2);
-  transform-origin: 0 50%;
-  transform: rotateY(90deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
   background:
     var(--grain),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 52%, rgba(30, 26, 12, 0.55) 82%),
-    linear-gradient(90deg, color-mix(in srgb, #18392d 62%, black), color-mix(in srgb, #18392d 50%, black));
+    linear-gradient(90deg, color-mix(in srgb, #18392d 70%, black), color-mix(in srgb, #18392d 58%, black));
   background-size: 160px 160px, 100% 100%, 100% 100%;
   background-blend-mode: soft-light, normal, normal;
   -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
   mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
 }
-/* the tussock in front of the post feet; the solid part of the mask
-   overlaps the top of the tussock picture, so the blur on its top edge
-   does not show as a light line across the post */
-html body.has-masthead .mc-sign--rp .mc-sign__post,
-html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
-  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
-  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
+/* a face that looks left: its right edge on the post edge, turned back */
+html body.has-masthead .mc-sign--rp .mc-face--l-out,
+html body.has-masthead .mc-sign--rp .mc-face--r-in,
+html body.has-masthead .mc-sign--rp .mc-face--h-left {
+  transform-origin: 100% 50%;
+  transform: rotateY(-90deg);
 }
-html body.has-masthead .mc-sign--rp .mc-sign__side--l { left: 0; }        /* right face of the near post */
-html body.has-masthead .mc-sign--rp .mc-sign__side--r { left: 100%; }     /* left face of the far post */
+/* a face that looks right: its left edge on the post edge, turned back */
+html body.has-masthead .mc-sign--rp .mc-face--l-in,
+html body.has-masthead .mc-sign--rp .mc-face--r-out,
+html body.has-masthead .mc-sign--rp .mc-face--h-right {
+  transform-origin: 0 50%;
+  transform: rotateY(90deg);
+}
+html body.has-masthead .mc-sign--rp .mc-face--l-out { left: calc(-2 * var(--post-w2)); }
+html body.has-masthead .mc-sign--rp .mc-face--l-in  { left: 0; }
+html body.has-masthead .mc-sign--rp .mc-face--r-in  { left: calc(100% - var(--post-w2)); }
+html body.has-masthead .mc-sign--rp .mc-face--r-out { left: calc(100% + var(--post-w2)); }
+/* Hockey pole: sides only under the panel (the panel is 0.35rem +
+   6.65rem tall and sits in front of the pole) */
+html body.has-masthead .mc-sign--rp .mc-face--h-left,
+html body.has-masthead .mc-sign--rp .mc-face--h-right {
+  top: 7rem;
+  bottom: calc(-1 * var(--expose) + 0.5rem - 0.4rem - 0.55rem);
+}
+html body.has-masthead .mc-sign--rp .mc-face--h-left  { left: calc(50% - 1.5 * var(--post-w2)); }
+html body.has-masthead .mc-sign--rp .mc-face--h-right { left: calc(50% + 0.5 * var(--post-w2)); }
+/* tops: lie flat, going back from the top edge of the front face */
+html body.has-masthead .mc-sign--rp .mc-face--cap {
+  top: calc(-0.4rem - var(--post-w2));
+  bottom: auto;
+  height: var(--post-w2);
+  transform-origin: 50% 100%;
+  transform: rotateX(90deg);
+  -webkit-mask: none;
+  mask: none;
+  background:
+    var(--grain),
+    linear-gradient(0deg, color-mix(in srgb, #18392d 72%, white), color-mix(in srgb, #18392d 82%, white));
+  background-size: 160px 160px, 100% 100%;
+  background-blend-mode: soft-light, normal;
+}
+html body.has-masthead .mc-sign--rp .mc-face--l-cap { left: calc(-1 * var(--post-w2)); }
+html body.has-masthead .mc-sign--rp .mc-face--r-cap { left: 100%; }
+html body.has-masthead .mc-sign--rp .mc-face--h-cap { left: calc(50% - var(--post-w2) / 2); top: calc(-1 * var(--post-w2)); }
 
 /* Ground shadow. The sun in the photo is high, so the shadow is short
    and falls just behind the sign: a soft patch lying flat on the
@@ -2611,11 +2648,11 @@ html body.has-masthead .mc-sign--rp .mc-stick {
   display: block;
   top: auto;
   left: auto;
-  right: calc(100% + var(--post-w2) + 4.6rem);   /* more space between the signs */
+  right: calc(100% + var(--post-w2) + 1.5rem);   /* with the -6rem below: well apart on screen, and further back */
   bottom: 0.4rem;
   width: 3.4rem;
   height: 10.2rem;
-  transform: translateZ(var(--hockey-z, -7rem));
+  transform: translateZ(var(--hockey-z, -6rem));
   transform-style: preserve-3d;
 }
 html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
@@ -2625,13 +2662,7 @@ html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
   top: 0;
 }
 html body.has-masthead .mc-sign--rp .mc-stick__panel { top: 0.35rem; }
-/* Hockey stands left of the camera line, so its pole shows the right
-   side face (under the panel), not the left one */
-html body.has-masthead .mc-sign--rp .mc-stick__side {
-  left: calc(50% + var(--post-w2) / 2);
-  top: 7rem;   /* only under the panel (the panel is 0.35rem + 6.65rem tall) */
-  bottom: calc(-1 * var(--expose) + 0.5rem - 0.4rem - 0.55rem);
-}
+
 /* the panel is fixed on the front of the post: a little in front of
    the post face, so the 3D sort always draws it over the post */
 html body.has-masthead .mc-sign--rp .mc-stick__panel { transform: translateZ(2px); }
