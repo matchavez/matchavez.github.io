@@ -90,14 +90,19 @@
     else rapua();
   } catch (e) { /* stock placeholder remains */ }
   /* 4. Home page at night: a hand-held torch on the track sign.
-     Points the beam at the sign board and lets it drift a little, as
-     a hand does. Runs only on the cover page in the dark scheme; holds
-     still when the visitor asks for reduced motion. */
+     Each frame it works out where the beam lands: on the land behind
+     (.mc-night, viewport pixels) and on each lit object (.mc-lamp,
+     in that object's own pixels, so the beam turns with the board).
+     It also places the board's shadow on the tussock. The hand drifts
+     a little; it holds still when the visitor asks for reduced motion.
+     Runs only on the cover page; does nothing by day. */
   try {
     var torch = function () {
       var night = document.querySelector(".mc-night");
       var board = document.querySelector(".mc-sign__board");
       if (!night || !board) return;
+      var shadow = night.querySelector(".mc-night__shadow");
+      var lamps = Array.prototype.slice.call(document.querySelectorAll(".mc-lamp"));
       var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var t0 = performance.now();
       var frame = function (now) {
@@ -107,9 +112,25 @@
           var dx = still ? 0 : Math.sin(t * 0.41) * 14 + Math.sin(t * 1.13 + 1.7) * 5 + Math.sin(t * 2.9) * 1.2;
           var dy = still ? 0 : Math.sin(t * 0.33 + 0.6) * 9 + Math.sin(t * 0.97 + 2.4) * 4 + Math.cos(t * 3.4) * 1;
           var dr = still ? 0 : Math.sin(t * 0.23) * 6;
-          night.style.setProperty("--bx", (r.left + r.width * 0.42 + dx).toFixed(1) + "px");
-          night.style.setProperty("--by", (r.top + r.height * 0.5 + dy).toFixed(1) + "px");
-          night.style.setProperty("--br", (r.width * 0.46 + dr).toFixed(1) + "px");
+          var bx = r.left + r.width * 0.42 + dx;
+          var by = r.top + r.height * 0.5 + dy;
+          var lr = r.width * 0.36 + dr;
+          night.style.setProperty("--bx", (bx + r.width * 0.08).toFixed(1) + "px");
+          night.style.setProperty("--by", (by - r.height * 0.15).toFixed(1) + "px");
+          night.style.setProperty("--br", (lr * 1.9).toFixed(1) + "px");
+          if (shadow) {
+            shadow.style.setProperty("--sx", (r.left + r.width * 0.1 + dx * -0.4).toFixed(1) + "px");
+            shadow.style.setProperty("--sy", (r.top - r.height * 0.32 + dy * -0.4).toFixed(1) + "px");
+            shadow.style.setProperty("--sw", (r.width * 1.08).toFixed(1) + "px");
+            shadow.style.setProperty("--sh", (r.height * 0.95).toFixed(1) + "px");
+          }
+          for (var i = 0; i < lamps.length; i++) {
+            var host = lamps[i].getBoundingClientRect();
+            var k = host.width ? lamps[i].offsetWidth / host.width : 1;   /* undo the perspective squeeze */
+            lamps[i].style.setProperty("--lx", ((bx - host.left) * k).toFixed(1) + "px");
+            lamps[i].style.setProperty("--ly", (by - host.top).toFixed(1) + "px");
+            lamps[i].style.setProperty("--lr", (lr * k).toFixed(1) + "px");
+          }
         }
         if (!still) requestAnimationFrame(frame);
       };

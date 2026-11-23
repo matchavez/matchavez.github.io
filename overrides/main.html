@@ -105,56 +105,68 @@
   {% elif page.is_homepage or page.url == "" %}
     {{ super() }}
     {#- A DOC-style trailhead sign standing in the cover photo, after the
-        Roys Peak Track signs: a blue pictogram chip, gold destination,
-        arrow and a count on each row, a symbol row along the bottom.
+        Roys Peak Track signs: a map of the South Island on the left, then a
+        blue pictogram chip, gold destination, arrow and a count on each row,
+        and a symbol row along the bottom.
         Rows come from the menu. An off-site menu entry (Hockey) gets
         its own small sign on a single timber pole. -#}
     {% set icons = {"AI Blog": "lucide/notebook-pen", "Projects": "lucide/wrench", "Favourite Quotes": "lucide/quote", "Golf": "lucide/flag-triangle-right"} %}
     {% set ns2 = namespace(ext=none) %}
-    <div class="mc-night" aria-hidden="true"><span class="mc-night__dark"></span><span class="mc-night__light"></span></div>
+    <div class="mc-night" aria-hidden="true"><span class="mc-night__dark"></span><span class="mc-night__light"></span><span class="mc-night__shadow"></span></div>
     <nav class="mc-sign" aria-label="Where to from here">
-      <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"></span>
-      <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"></span>
+      <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
+      <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"><span class="mc-lamp"></span></span>
       <div class="mc-sign__board">
-        <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Mat Chavez</em></span></p>
-        <ul class="mc-sign__list">
-          {% for section in nav.items %}
-            {% if section.title not in ["Welcome", "Test Pages"] %}
-              {% if section.url and "//" in section.url %}
-                {% if not ns2.ext %}{% set ns2.ext = section %}{% endif %}
-              {% else %}
-                {% if section.children %}
-                  {% set href = section.children[0].url %}
-                  {% if section.title == "AI Blog" %}
-                    {% set count = posts | length %}{% set unit = "post" %}
-                  {% else %}
-                    {% set count = section.children | length %}{% set unit = "page" %}
-                  {% endif %}
+        <figure class="mc-sign__map">
+          <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, with pins at Arthur's Pass, where the cover photo was taken, and Christchurch, home">
+          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
+          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-pin__label">Christchurch<small>home</small></span></span>
+        </figure>
+        <div class="mc-sign__text">
+          <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Mat Chavez</em></span></p>
+          <ul class="mc-sign__list">
+            {% for section in nav.items %}
+              {% if section.title not in ["Welcome", "Test Pages"] %}
+                {% if section.url and "//" in section.url %}
+                  {% if not ns2.ext %}{% set ns2.ext = section %}{% endif %}
                 {% else %}
-                  {% set href = section.url %}{% set count = 1 %}{% set unit = "page" %}
+                  {% if section.children %}
+                    {% set href = section.children[0].url %}
+                    {% if section.title == "AI Blog" %}
+                      {% set count = posts | length %}{% set unit = "post" %}
+                    {% else %}
+                      {% set count = section.children | length %}{% set unit = "page" %}
+                    {% endif %}
+                  {% else %}
+                    {% set href = section.url %}{% set count = 1 %}{% set unit = "page" %}
+                  {% endif %}
+                  <li class="mc-sign__item"><a href="{{ href | url }}">
+                    <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/" ~ (icons[section.title] or "lucide/footprints") ~ ".svg" %}</span>
+                    <span class="mc-sign__name">{{ section.title }}</span>
+                    <span class="mc-sign__time"><span aria-hidden="true">&rarr;</span> {{ count }} {{ unit }}{{ "s" if count != 1 }}</span>
+                  </a></li>
                 {% endif %}
-                <li class="mc-sign__item"><a href="{{ href | url }}">
-                  <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/" ~ (icons[section.title] or "lucide/footprints") ~ ".svg" %}</span>
-                  <span class="mc-sign__name">{{ section.title }}</span>
-                  <span class="mc-sign__time"><span aria-hidden="true">&rarr;</span> {{ count }} {{ unit }}{{ "s" if count != 1 }}</span>
-                </a></li>
               {% endif %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-        <p class="mc-sign__symbols">
-          <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>
-          <a class="mc-sign__chip" href="https://github.com/matchavez" title="GitHub" aria-label="GitHub">{% include ".icons/fontawesome/brands/github.svg" %}</a>
-          <span class="mc-sign__no" title="No ads on this site" aria-label="No ads on this site" role="img">{% include ".icons/lucide/megaphone.svg" %}</span>
-        </p>
+            {% endfor %}
+          </ul>
+          <p class="mc-sign__symbols">
+            <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>
+            <a class="mc-sign__chip" href="https://github.com/matchavez" title="GitHub" aria-label="GitHub">{% include ".icons/fontawesome/brands/github.svg" %}</a>
+            <span class="mc-sign__no" title="No ads on this site" aria-label="No ads on this site" role="img">{% include ".icons/lucide/megaphone.svg" %}</span>
+          </p>
+        </div>
+        <span class="mc-lamp"></span>
       </div>
     </nav>
     {% if ns2.ext %}
       <a class="mc-stick" href="{{ ns2.ext.url }}" aria-label="{{ ns2.ext.title }} (other site)">
-        <span class="mc-stick__pole" aria-hidden="true"></span>
+        <span class="mc-stick__pole" aria-hidden="true"><span class="mc-lamp"></span></span>
         <span class="mc-stick__panel">
+          <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/lucide/tv.svg" %}</span>
           <span class="mc-stick__name">{{ ns2.ext.title }}</span>
-          <span class="mc-stick__time"><span aria-hidden="true">&nearr;</span> other site</span>
+          <span class="mc-stick__arrow" aria-hidden="true">&nearr;</span>
+          <span class="mc-stick__time">other site</span>
+          <span class="mc-lamp"></span>
         </span>
       </a>
     {% endif %}
