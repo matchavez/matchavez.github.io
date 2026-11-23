@@ -270,7 +270,8 @@
       var iw = 1600, ih = 1200;
       var s = Math.max(r.width / iw, r.height / ih);
       var pos = getComputedStyle(img).objectPosition.split(" ");
-      var fx = (parseFloat(pos[0]) || 50) / 100, fy = (parseFloat(pos[1]) || 50) / 100;
+      var num = function (v) { var n = parseFloat(v); return isNaN(n) ? 50 : n; };   /* 0% is a real value */
+      var fx = num(pos[0]) / 100, fy = num(pos[1]) / 100;
       var ox = r.left + (r.width - iw * s) * fx, oy = r.top + (r.height - ih * s) * fy;
       scene.style.setProperty("--ox", ox.toFixed(2) + "px");
       scene.style.setProperty("--oy", oy.toFixed(2) + "px");

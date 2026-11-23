@@ -2480,10 +2480,10 @@ html body.has-masthead {
   --text-w: 5.8rem;
   --map-w: 7rem;
   --board-w: 23rem;
-  --k: 1.72;          /* sign size against the photo: just fits an iPhone */
+  --k: 0.86;          /* sign size against the photo: half of test 9 (Mat, 24 Nov) */
 }
 /* the photo: on narrow screens keep the left side (the sign) in view */
-html body.has-masthead .masthead img { object-position: 12.5% 58%; }
+html body.has-masthead .masthead img { object-position: 0% 58%; }
 
 html body.has-masthead .mc-scene {
   position: fixed;
@@ -2604,17 +2604,18 @@ html body.has-masthead .mc-sign--rp .mc-stick__ground {
 [data-md-color-scheme="slate"] .mc-sign--rp .mc-sign__ground,
 [data-md-color-scheme="slate"] .mc-sign--rp .mc-stick__ground { opacity: 0; }
 
-/* Hockey: on the inside, further back; one square post, the panel on
+/* Hockey: to the left of the main sign and a little further back
+   (translateZ), facing the same way; one square post, the panel on
    its front, the post top just above the panel. Same on every screen. */
 html body.has-masthead .mc-sign--rp .mc-stick {
   display: block;
   top: auto;
-  right: auto;
-  left: calc(100% + var(--post-w2) + 3.2rem);
+  left: auto;
+  right: calc(100% + var(--post-w2) + 2.4rem);
   bottom: 0.4rem;
   width: 3.4rem;
   height: 10.2rem;
-  transform: none;
+  transform: translateZ(var(--hockey-z, -7rem));
   transform-style: preserve-3d;
 }
 html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
@@ -2624,8 +2625,13 @@ html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
   top: 0;
 }
 html body.has-masthead .mc-sign--rp .mc-stick__panel { top: 0.35rem; }
+/* Hockey stands left of the camera line, so its pole shows the right
+   side face (under the panel), not the left one */
 html body.has-masthead .mc-sign--rp .mc-stick__side {
-  left: calc(50% - var(--post-w2) / 2);
-  top: 0;
+  left: calc(50% + var(--post-w2) / 2);
+  top: 7rem;   /* only under the panel (the panel is 0.35rem + 6.65rem tall) */
   bottom: calc(-1 * var(--expose) + 0.5rem - 0.4rem - 0.55rem);
 }
+/* the panel is fixed on the front of the post: a little in front of
+   the post face, so the 3D sort always draws it over the post */
+html body.has-masthead .mc-sign--rp .mc-stick__panel { transform: translateZ(2px); }
