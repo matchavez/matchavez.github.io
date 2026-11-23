@@ -2448,3 +2448,7 @@ body.has-masthead {
 @media screen and (max-width: 44.9375em) {
   body.has-masthead { --ground: 1.2rem; --sign-right: 1.6rem; }
 }
+/* Home page: the whole top bar fades out when the pointer is still
+   (extra.js adds .mc-idle), and fades back in when it moves. */
+body.has-masthead .md-header { transition: opacity 0.6s ease, background-color 0.25s ease; }
+body.has-masthead.mc-idle .md-header { opacity: 0; pointer-events: none; }

@@ -187,4 +187,35 @@
       document.addEventListener("DOMContentLoaded", dn);
     else dn();
   } catch (e) { /* the header switch still works */ }
+  /* 5. Home page: the top bar shows only while the pointer moves.
+     It fades out after 1.5 s without pointer movement. It stays while
+     the pointer is over the bar or something in it has keyboard focus
+     (so Tab still reaches it), and a tap shows it on touch screens. */
+  try {
+    var bar = function () {
+      if (!document.body.classList.contains("has-masthead")) return;
+      var header = document.querySelector(".md-header");
+      if (!header) return;
+      var timer = null;
+      var hide = function () {
+        if (header.matches(":hover") || header.contains(document.activeElement)) {
+          timer = setTimeout(hide, 1500);
+          return;
+        }
+        document.body.classList.add("mc-idle");
+      };
+      var wake = function () {
+        document.body.classList.remove("mc-idle");
+        clearTimeout(timer);
+        timer = setTimeout(hide, 1500);
+      };
+      ["pointermove", "pointerdown", "keydown", "focusin"].forEach(function (t) {
+        document.addEventListener(t, wake, { passive: true });
+      });
+      wake();
+    };
+    if (document.readyState === "loading")
+      document.addEventListener("DOMContentLoaded", bar);
+    else bar();
+  } catch (e) { /* the bar stays visible */ }
 })();
