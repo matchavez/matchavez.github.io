@@ -173,6 +173,35 @@
       var b = document.querySelector(".mc-daynight");
       if (!b) return;
       b.hidden = false;
+      /* Home page: always opens in day. Only this moon/sun symbol on the
+         sign switches it, for this visit only; the stored site-wide
+         choice (used on every other page) is left alone. */
+      if (document.body.classList.contains("has-masthead")) {
+        var want = "default";
+        var body = document.body;
+        var keep = function () {
+          if (body.getAttribute("data-md-color-scheme") !== want)
+            body.setAttribute("data-md-color-scheme", want);
+        };
+        keep();
+        new MutationObserver(keep).observe(body, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+        b.addEventListener("click", function (ev) {
+          var flip = function () { want = want === "default" ? "slate" : "default"; keep(); };
+          if (!document.startViewTransition || matchMedia("(prefers-reduced-motion: reduce)").matches) { flip(); return; }
+          var r0 = b.getBoundingClientRect();
+          var x = r0.left + r0.width / 2, y = r0.top + r0.height / 2;
+          var rr = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+          document.documentElement.classList.add("vt-theme");
+          var t = document.startViewTransition(flip);
+          t.ready.then(function () {
+            document.documentElement.animate(
+              { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + rr + "px at " + x + "px " + y + "px)"] },
+              { duration: 380, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" });
+          }).catch(function () {});
+          t.finished.finally(function () { document.documentElement.classList.remove("vt-theme"); });
+        });
+        return;
+      }
       b.addEventListener("click", function () {
         var labels = document.querySelectorAll("label[for^='__palette']");
         for (var i = 0; i < labels.length; i++) {
@@ -188,7 +217,8 @@
     else dn();
   } catch (e) { /* the header switch still works */ }
   /* 5. Home page: the top bar shows only while the pointer moves.
-     It fades out after 1.5 s without pointer movement. It stays while
+     It fades out after 2.5 s without pointer movement, and fades back
+     in 1 s after the pointer starts moving (CSS transition delay). It stays while
      the pointer is over the bar or something in it has keyboard focus
      (so Tab still reaches it), and a tap shows it on touch screens. */
   try {
@@ -199,7 +229,7 @@
       var timer = null;
       var hide = function () {
         if (header.matches(":hover") || header.contains(document.activeElement)) {
-          timer = setTimeout(hide, 1500);
+          timer = setTimeout(hide, 2500);
           return;
         }
         document.body.classList.add("mc-idle");
@@ -207,7 +237,7 @@
       var wake = function () {
         document.body.classList.remove("mc-idle");
         clearTimeout(timer);
-        timer = setTimeout(hide, 1500);
+        timer = setTimeout(hide, 2500);
       };
       ["pointermove", "pointerdown", "keydown", "focusin"].forEach(function (t) {
         document.addEventListener(t, wake, { passive: true });

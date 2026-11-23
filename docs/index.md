@@ -11,4 +11,4 @@ title: Mat Chavez
   </picture>
   <h1 id="mat-chavez" class="mc-vh">Mat Chavez</h1>
 </header>
-<script>document.body.classList.add("has-masthead")</script>
+<script>document.body.classList.add("has-masthead");document.body.setAttribute("data-md-color-scheme","default")</script>
