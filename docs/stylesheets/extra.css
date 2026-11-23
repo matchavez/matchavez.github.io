@@ -1534,13 +1534,13 @@ body.has-masthead .mc-sign {
 
 /* ---- Map panel on the left of the board (real relief, from AWS
    Terrain Tiles; built by .github/scripts/make_sign_map.py) ---- */
-body.has-masthead { --sign-w: min(31rem, calc(100vw - 2rem)); }
-.mc-sign__board { display: flex; gap: 0.9rem; align-items: stretch; }
+body.has-masthead { --sign-w: min(25.5rem, calc(100vw - 2rem)); }
+.mc-sign__board { display: flex; gap: 0.7rem; align-items: stretch; padding-left: 0.8rem; padding-right: 0.9rem; }
 .mc-sign__text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
 .md-typeset .mc-sign__symbols, .mc-sign__symbols { margin-top: auto; padding-top: 0.5rem; }
 .md-typeset figure.mc-sign__map, figure.mc-sign__map {
   position: relative;
-  flex: 0 0 8.6rem;
+  flex: 0 0 6.9rem;
   margin: 0.1rem 0;
   padding: 0;
   align-self: center;
@@ -1555,26 +1555,32 @@ body.has-masthead { --sign-w: min(31rem, calc(100vw - 2rem)); }
 }
 .mc-pin {
   position: absolute;
-  width: 0.5rem; height: 0.5rem;
-  margin: -0.25rem 0 0 -0.25rem;
-  border-radius: 50%;
-  background: #d2232a;
-  box-shadow: 0 0 0 0.12rem #fff, 0 1px 2px rgba(0, 0, 0, 0.5);
+  width: 0; height: 0;
 }
-.mc-pin--photo { background: var(--sign-gold); }
+/* the pictogram sits on the place itself */
+.mc-pin > .mc-sign__chip {
+  position: absolute;
+  left: 0; top: 0;
+  width: 0.72rem; height: 0.72rem;
+  transform: translate(-50%, -50%);
+  border-radius: 0.08rem;
+  box-shadow: 0 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.mc-pin > .mc-sign__chip svg { width: 0.5rem; height: 0.5rem; }
 .mc-pin__label {
   position: absolute;
-  left: 0.55rem; top: 50%;
+  top: 0;
   transform: translateY(-50%);
   white-space: nowrap;
   font-family: var(--sign-font);
-  font-size: 0.42rem;
+  font-size: 0.4rem;
   line-height: 1.05;
-  color: #1a2a22;
+  color: #1a2420;
   text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff;
 }
-.mc-pin__label small { display: block; font-family: var(--display-font); font-style: italic; font-weight: 600; font-size: 0.4rem; }
-.mc-pin--photo .mc-pin__label { left: auto; right: 0.55rem; text-align: right; }
+.mc-pin__label small { display: block; font-family: var(--display-font); font-style: italic; font-weight: 600; font-size: 0.38rem; }
+.mc-pin--photo .mc-pin__label { right: 0.5rem; text-align: right; }
+.mc-pin--home .mc-pin__label { left: 50%; top: 0.45rem; transform: translateX(-62%); text-align: center; }
 
 /* ---- The off-site link: a tall, narrow sign fixed to the front of
    one round timber pole, like the track-fee sign at the Roys Peak
@@ -1827,7 +1833,4 @@ body:has(.mc-next) .md-footer__inner { display: none; }
   .md-typeset .mc-next__dir { grid-column: 1 / -1; }
 }
 .md-typeset a.mc-sign__chip, a.mc-sign__chip { color: #fff; }
-/* Christchurch sits near the coast: its label goes below the pin so it
-   stays on the map */
-.mc-pin--home .mc-pin__label { left: 50%; top: 0.5rem; transform: translateX(-62%); text-align: center; }
 .mc-sign__map { overflow: hidden; }

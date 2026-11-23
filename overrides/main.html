@@ -119,8 +119,9 @@
       <div class="mc-sign__board">
         <figure class="mc-sign__map">
           <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, with pins at Arthur's Pass, where the cover photo was taken, and Christchurch, home">
-          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
-          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-pin__label">Christchurch<small>home</small></span></span>
+          {#- DOC map symbols: a blue square with a white pictogram at the place -#}
+          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-sign__chip">{% include ".icons/lucide/camera.svg" %}</span><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
+          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-sign__chip">{% include ".icons/lucide/house.svg" %}</span><span class="mc-pin__label">Christchurch<small>home</small></span></span>
         </figure>
         <div class="mc-sign__text">
           <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Mat Chavez</em></span></p>

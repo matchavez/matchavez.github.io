@@ -89,13 +89,17 @@
       document.addEventListener("DOMContentLoaded", rapua);
     else rapua();
   } catch (e) { /* stock placeholder remains */ }
-  /* 4. Home page at night: a hand-held torch on the track sign.
-     Each frame it works out where the beam lands: on the land behind
-     (.mc-night, viewport pixels) and on each lit object (.mc-lamp,
-     in that object's own pixels, so the beam turns with the board).
-     It also places the board's shadow on the tussock. The hand drifts
-     a little; it holds still when the visitor asks for reduced motion.
-     Runs only on the cover page; does nothing by day. */
+  /* 4. Home page at night: a hand-held torch.
+     With a mouse or trackpad the torch follows the pointer, centred
+     40 px up and 40 px left of it, and trails it a little, as a hand
+     would. With no pointer (touch screens, or before the mouse moves,
+     or after it leaves the window) the torch rests on the track sign.
+     A slight hand wobble is added unless the visitor asks for reduced
+     motion. Each frame works out where the beam lands: on the land
+     behind (.mc-night, viewport pixels) and on each lit object
+     (.mc-lamp, in that object's own pixels, so the beam turns with the
+     board), and places the board's shadow, which fades as the beam
+     moves off the sign. Runs only on the cover page; idle by day. */
   try {
     var torch = function () {
       var night = document.querySelector(".mc-night");
@@ -104,6 +108,16 @@
       var shadow = night.querySelector(".mc-night__shadow");
       var lamps = Array.prototype.slice.call(document.querySelectorAll(".mc-lamp"));
       var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var mouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      var target = null;           /* pointer position, or null = rest on the sign */
+      var cx = null, cy = null;    /* where the torch points now */
+      if (mouse) {
+        document.addEventListener("pointermove", function (ev) {
+          if (ev.pointerType === "mouse" || ev.pointerType === "pen")
+            target = { x: ev.clientX - 40, y: ev.clientY - 40 };
+        }, { passive: true });
+        document.documentElement.addEventListener("mouseleave", function () { target = null; });
+      }
       var t0 = performance.now();
       var frame = function (now) {
         if (document.body.getAttribute("data-md-color-scheme") === "slate") {
@@ -112,16 +126,28 @@
           var dx = still ? 0 : Math.sin(t * 0.41) * 14 + Math.sin(t * 1.13 + 1.7) * 5 + Math.sin(t * 2.9) * 1.2;
           var dy = still ? 0 : Math.sin(t * 0.33 + 0.6) * 9 + Math.sin(t * 0.97 + 2.4) * 4 + Math.cos(t * 3.4) * 1;
           var dr = still ? 0 : Math.sin(t * 0.23) * 6;
-          var bx = r.left + r.width * 0.42 + dx;
-          var by = r.top + r.height * 0.5 + dy;
+          var gx = target ? target.x : r.left + r.width * 0.42;
+          var gy = target ? target.y : r.top + r.height * 0.5;
+          if (cx === null || still) { cx = gx; cy = gy; }
+          else { cx += (gx - cx) * 0.18; cy += (gy - cy) * 0.18; }
+          var wob = target ? 0.35 : 1;   /* a hand on a mouse wobbles less */
+          var bx = cx + dx * wob;
+          var by = cy + dy * wob;
           var lr = r.width * 0.36 + dr;
-          night.style.setProperty("--bx", (bx + r.width * 0.08).toFixed(1) + "px");
-          night.style.setProperty("--by", (by - r.height * 0.15).toFixed(1) + "px");
+          /* the spill on the land sits just past the beam on the sign */
+          night.style.setProperty("--bx", (bx + r.width * 0.03).toFixed(1) + "px");
+          night.style.setProperty("--by", (by - r.height * 0.06).toFixed(1) + "px");
           night.style.setProperty("--br", (lr * 1.9).toFixed(1) + "px");
           if (shadow) {
-            shadow.style.setProperty("--sx", (r.left + r.width * 0.1 + dx * -0.4).toFixed(1) + "px");
-            shadow.style.setProperty("--sy", (r.top - r.height * 0.32 + dy * -0.4).toFixed(1) + "px");
-            shadow.style.setProperty("--sw", (r.width * 1.08).toFixed(1) + "px");
+            /* shadow falls away from the torch; strongest when the beam
+               is on the board, gone when it is well away */
+            var mx = r.left + r.width / 2, my = r.top + r.height / 2;
+            var d = Math.hypot(bx - mx, by - my);
+            var o = Math.max(0, Math.min(1, 1.3 - d / (lr * 1.4)));
+            shadow.style.opacity = o.toFixed(2);
+            shadow.style.setProperty("--sx", (r.left + (mx - bx) * 0.22 + r.width * 0.06).toFixed(1) + "px");
+            shadow.style.setProperty("--sy", (r.top - r.height * 0.3 + (my - by) * 0.22).toFixed(1) + "px");
+            shadow.style.setProperty("--sw", (r.width * 1.06).toFixed(1) + "px");
             shadow.style.setProperty("--sh", (r.height * 0.95).toFixed(1) + "px");
           }
           for (var i = 0; i < lamps.length; i++) {
@@ -132,14 +158,9 @@
             lamps[i].style.setProperty("--lr", (lr * k).toFixed(1) + "px");
           }
         }
-        if (!still) requestAnimationFrame(frame);
+        requestAnimationFrame(frame);
       };
       requestAnimationFrame(frame);
-      if (still) {
-        window.addEventListener("resize", function () { requestAnimationFrame(frame); });
-        new MutationObserver(function () { requestAnimationFrame(frame); })
-          .observe(document.body, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
-      }
     };
     if (document.readyState === "loading")
       document.addEventListener("DOMContentLoaded", torch);
