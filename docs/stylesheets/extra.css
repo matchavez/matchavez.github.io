@@ -2506,7 +2506,7 @@ html body.has-masthead .mc-scene .mc-sign.mc-sign--rp {
   bottom: calc(1200px - 1045px + var(--expose));      /* ground line at photo y 1045 */
   width: max-content;
   scale: calc(var(--k) * var(--rf, 1));               /* --rf undoes the theme's bigger root font on wide screens */
-  transform: rotateY(25deg);
+  transform: rotateY(18deg);                          /* was 25deg; a little less angle (Mat, 24 Nov) */
   transform-origin: 0 calc(100% + var(--expose));     /* the near post foot */
   transform-style: preserve-3d;
 }
@@ -2611,7 +2611,7 @@ html body.has-masthead .mc-sign--rp .mc-stick {
   display: block;
   top: auto;
   left: auto;
-  right: calc(100% + var(--post-w2) + 2.4rem);
+  right: calc(100% + var(--post-w2) + 4.6rem);   /* more space between the signs */
   bottom: 0.4rem;
   width: 3.4rem;
   height: 10.2rem;
