@@ -1333,3 +1333,64 @@ html.vt-theme .md-header { view-transition-name: none; }
   .garden-index a,
   .garden-index .gi-marker { transition: none; }
 }
+
+/* ----------------------------------------------------------------
+   23 Nov 2026: homepage photo in <picture> (WebP first), AI Blog
+   post details and list page, footer links.
+   ---------------------------------------------------------------- */
+.masthead picture { display: block; width: 100%; height: 100%; }
+
+/* Date and reading time under an AI Blog post title */
+.md-typeset .mc-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+  margin: -0.6rem 0 1.6rem;
+  font-family: var(--md-code-font), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.03em;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .mc-post-meta time + span::before { content: "·"; margin-right: 0.5rem; }
+
+/* AI Blog list page */
+.md-typeset ol.mc-post-list { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+.md-typeset ol.mc-post-list > li.mc-post-list__item { margin: 0 0 1.8rem; padding: 0; }
+.md-typeset ol.mc-post-list > li::marker { content: none; }
+.md-typeset .mc-post-list .mc-post-meta { margin: 0 0 0.2rem; }
+.md-typeset h2.mc-post-list__title {
+  margin: 0 0 0.3rem;
+  padding-top: 0;
+  border-top: none;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+.md-typeset h2.mc-post-list__title a { color: inherit; }
+.md-typeset h2.mc-post-list__title a:hover { color: var(--md-typeset-a-color); }
+.md-typeset .mc-post-list__desc { margin: 0; color: var(--md-default-fg-color--light); }
+.md-typeset .mc-post-feed { font-size: 0.7rem; }
+
+/* Footer: every link on the green sign reads cream, gold on hover.
+   The theme sets footer links to dark ink with
+   "html .md-footer-meta.md-typeset a:not(:focus, :hover)", which
+   outranked the cream rule above, so "Zensical" was dark on green. */
+html body .md-footer-meta.md-typeset a:not(:focus, :hover) { color: var(--sign-cream); }
+html body .md-footer-meta.md-typeset a:is(:focus, :hover) { color: var(--sign-gold); }
+.md-footer-meta .md-social__link svg { fill: currentColor; }
+/* The footer sign ran under the timber posts: "nztopo50" and the
+   last footer icon were hidden behind them. Keep its content (and the
+   island outline) between the posts. --post-w is 0 on narrow screens. */
+@property --post-w-px {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+/* --post-w uses em, so it changes with font size. Resolve it once on
+   body (the posts' own font size) and pass the result down as a
+   fixed length; the footer's larger font made var(--post-w) come
+   out as 0 there. */
+body { --post-w-px: var(--post-w); }
+.md-footer-meta {
+  padding-inline: var(--post-w-px);
+  background-position: right calc(var(--post-w-px) + 1.4rem) center;
+}

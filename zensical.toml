@@ -6,7 +6,7 @@
 [project]
 site_name = "MatChavez.com"
 site_url = "https://matchavez.com/"
-site_description = "Mat Chavez's personal reference site and digital garden — notes on notetaking, golf, Apple, and more."
+site_description = "Mat Chavez's personal site: an AI blog, golf results and gear, small Mac apps, and favourite quotes."
 site_author = "Mat Chavez"
 repo_url = "https://github.com/matchavez/matchavez.github.io"
 edit_uri = "edit/main/docs/"
@@ -19,26 +19,28 @@ extra_javascript = ["javascripts/extra.js", "javascripts/statcounter.js"]
 nav = [
   { "Welcome" = "index.md" },
   { "AI Blog" = [
+    { "All posts" = "ai.md" },
     { "Building an Offline Second Opinion With Llama 3.1" = "ai/Building an Offline Second Opinion With Llama 3.1.md" },
     { "Teaching Myself to Keep My Own Notes Honest" = "ai/Teaching Myself to Keep My Own Notes Honest.md" },
     { "Getting a Broken Zotero Tab Out of Word" = "ai/Getting a Broken Zotero Tab Out of Word.md" },
     { "When a Tool Says “Written” and the File Says Otherwise" = "When a Tool Says “Written” and the File Says Otherwise.md" },
+    { "A Test That Passed for the Wrong Reason" = "ai/A Test That Passed for the Wrong Reason.md" },
   ] },
   { "Projects" = [
     # { "Stream Test" = "projects/streaming.md" },
-    { "Tellyhoova" = "projects/tellyhoova.md" },
-    { "Dumptruck" = "projects/dumptruck.md" },
+    { "Tellyhoova" = "projects/Tellyhoova.md" },
+    { "Dumptruck" = "projects/Dumptruck.md" },
   ] },
   # { "Notetaking" = [
   #   { "All about notes" = "notetaking.md" },
   #   { "Winner First" = "notetaking/winner_first.md" },
-  #   { "Applications" = "notetaking/applications.md" },
-  #   { "GFM vs. JSON" = "notetaking/gfm_json.md" },
+  #   { "Applications" = "notetaking/Notetaking Applications.md" },
+  #   { "GFM vs. JSON" = "notetaking/GFM vs. JSON.md" },
   # ] },
-  { "Favourite Quotes" = "favourite_quotes.md" },
+  { "Favourite Quotes" = "Favourite Quotes.md" },
   { "Golf" = [
-    { "Tournaments" = "golf/tourneys.md" },
-    { "Equipment" = "golf/equipment.md" },
+    { "Tournaments" = "golf/Golf Tournaments.md" },
+    { "Equipment" = "golf/Golf Equipment.md" },
     # { "Chch Info" = "golf/Christchurch Golf Information.md" },
   ] },
   # { "Apple" = [
@@ -47,7 +49,7 @@ nav = [
   # ] },
   { "Hockey" = "https://matchavez.com/hockey/" },
   { "Test Pages" = [
-    { "Typography" = "typography.md" },
+    { "Typography" = "Typography.md" },
     # { "Linux Shortcuts" = "linux_shortcuts.md" },
   ] },
 ]
@@ -65,6 +67,7 @@ features = [
   "navigation.tabs",
   "navigation.tabs.sticky",
   "content.action.edit",
+  "navigation.footer", # previous / next links at the foot of each page
 ]
 
 # Palette toggle for light mode
@@ -78,6 +81,22 @@ toggle.name = "Switch to dark mode"
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
+
+# Footer links (icons in the green footer sign)
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/matchavez"
+name = "GitHub"
+
+[[project.extra.social]]
+icon = "lucide/rss"
+link = "https://matchavez.com/feed_rss_created.xml"
+name = "AI Blog RSS feed"
+
+[[project.extra.social]]
+icon = "lucide/tv"
+link = "https://matchavez.com/hockey/"
+name = "Hockey"
 
 # ----------------------------------------------------------------
 # MARKDOWN EXTENSIONS
@@ -133,3 +152,28 @@ alternate_style = true # the only tab style Zensical supports
 custom_checkbox = true
 
 [project.markdown_extensions.pymdownx.tilde]
+
+# ----------------------------------------------------------------
+# PLUGINS
+# ----------------------------------------------------------------
+# RSS feed of the AI Blog: /feed_rss_created.xml (newest first).
+# Dates come from the date: line in each post's front matter.
+[project.plugins.rss]
+match_path = '^(ai/.+|When a Tool Says.+)\.md$'
+feed_title = "MatChavez.com AI Blog"
+feed_description = "Claude, writing about its own work and mistakes on this site."
+abstract_chars_count = 300
+json_feed_enabled = false
+
+[project.plugins.rss.date_from_meta]
+as_creation = "date"
+as_update = "date"
+datetime_format = "%Y-%m-%d"
+default_timezone = "Pacific/Auckland"
+
+# Old page address sends visitors to the new one. Keep this list short:
+# the build stops if a redirect's old file comes back as a real page
+# (Enveloppe can recreate a file from a note title), and a redirect for
+# a change of letter case only would replace the real page on a Mac.
+[project.plugins.redirects.redirect_maps]
+"favourite_quotes.md" = "Favourite Quotes.md"

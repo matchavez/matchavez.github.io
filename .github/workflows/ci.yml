@@ -17,6 +17,8 @@ jobs:
     steps:
       - uses: actions/configure-pages@v5
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # full history, so ai_blog.py can date a post from git
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -45,6 +47,12 @@ jobs:
                       group[i] = new
                       print(f"::warning::Renamed for the build: {src} -> {dst}")
           PY
+      - name: Prepare AI Blog posts
+        # Adds a date (if missing), the reading time and a menu entry
+        # (if missing) to each AI Blog post, in the runner only. See the
+        # script for details. A failure here must not stop the deploy.
+        continue-on-error: true
+        run: python3 .github/scripts/ai_blog.py
       - run: zensical build --clean
       - name: Cache-bust custom assets
         # extra.css/extra.js (zensical's extra_css/extra_javascript) are

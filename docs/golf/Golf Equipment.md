@@ -1,7 +1,7 @@
 ---
 share: "true"
 path: /docs/golf
-title: equipment
+title: Golf Equipment
 description: "Mat Chavez's current golf bag: drivers, irons, wedges and putter with shafts, lofts, swing weights and lengths — plus the clubs on the bench."
 ---
 # _WITB_    

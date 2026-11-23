@@ -1,7 +1,7 @@
 ---
 share: "true"
 path: /docs/golf
-title: tourneys
+title: Golf Tournaments
 description: Mat Chavez's competitive golf record — interclub pennant results and event wins across Christchurch metro teams.
 ---
 # Tournament Results

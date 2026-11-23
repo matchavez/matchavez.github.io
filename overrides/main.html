@@ -19,7 +19,7 @@
   {% if not og_title or og_title == "index" %}{% set og_title = config.site_name %}{% endif %}
   {% set og_desc = page.meta.description if page.meta and page.meta.description else config.site_description %}
   {% set og_image = config.site_url ~ "images/IMG_9324.jpg" %}
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ 'article' if page.meta and page.meta.category == 'AI Blog' else 'website' }}">
   <meta property="og:site_name" content="{{ config.site_name }}">
   <meta property="og:title" content="{{ og_title | striptags }}">
   {% if og_desc %}<meta property="og:description" content="{{ og_desc }}">{% endif %}
@@ -33,4 +33,31 @@
   {% if og_desc %}<meta name="twitter:description" content="{{ og_desc }}">{% endif %}
   <meta name="twitter:image" content="{{ og_image }}">
   <meta name="twitter:image:alt" content="Golden tussock flats below snow-covered ranges near Arthur's Pass, New Zealand — MatChavez.com">
+{% endblock %}
+
+{#-
+  AI Blog posts: the date and reading time sit under the title.
+  date: is in each post's front matter; minutes: is added at build
+  time by .github/scripts/ai_blog.py (not present in a plain local build).
+-#}
+{% macro long_date(d) -%}
+  {%- set d = d | string -%}
+  {%- set months = ["January","February","March","April","May","June","July","August","September","October","November","December"] -%}
+  {{ d[8:10] | int }} {{ months[(d[5:7] | int) - 1] }} {{ d[0:4] }}
+{%- endmacro %}
+
+{% block content %}
+  {% if page.meta and page.meta.category == "AI Blog" %}
+    {% include "partials/actions.html" %}
+    <h1>{{ page.title }}</h1>
+    <p class="mc-post-meta">
+      {% if page.meta.date %}<time datetime="{{ page.meta.date }}">{{ long_date(page.meta.date) }}</time>{% endif %}
+      {% if page.meta.minutes %}<span>{{ page.meta.minutes }} min read</span>{% endif %}
+    </p>
+    {{ page.content }}
+    {% include "partials/source-file.html" %}
+    {% include "partials/feedback.html" %}
+  {% else %}
+    {{ super() }}
+  {% endif %}
 {% endblock %}

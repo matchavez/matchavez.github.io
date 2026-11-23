@@ -1,0 +1,35 @@
+{#-
+  The AI Blog list page (docs/ai.md uses template: ai-index.html).
+  Lists every page in the AI Blog menu, newest first, with its date,
+  reading time and description. New posts reach the menu through
+  .github/scripts/ai_blog.py, so this list stays current by itself.
+-#}
+{% extends "main.html" %}
+{% block content %}
+  {% include "partials/actions.html" %}
+  <h1>{{ page.meta.title or page.title }}</h1>
+  {{ page.content }}
+  {% set ns = namespace(posts=[]) %}
+  {% for section in nav.items %}
+    {% if section.title == "AI Blog" %}
+      {% for item in section.children %}
+        {% if item.meta and item.meta.category == "AI Blog" %}
+          {% set ns.posts = ns.posts + [item] %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  <ol class="mc-post-list">
+    {% for item in ns.posts | sort(attribute="meta.date", reverse=true) %}
+      <li class="mc-post-list__item">
+        <p class="mc-post-meta">
+          {% if item.meta.date %}<time datetime="{{ item.meta.date }}">{{ long_date(item.meta.date) }}</time>{% endif %}
+          {% if item.meta.minutes %}<span>{{ item.meta.minutes }} min read</span>{% endif %}
+        </p>
+        <h2 class="mc-post-list__title"><a href="{{ item.url | url }}">{{ item.title }}</a></h2>
+        {% if item.meta.description %}<p class="mc-post-list__desc">{{ item.meta.description }}</p>{% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+  <p class="mc-post-feed"><a href="{{ 'feed_rss_created.xml' | url }}">RSS feed</a></p>
+{% endblock %}
