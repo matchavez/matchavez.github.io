@@ -2289,3 +2289,34 @@ body.has-masthead .mc-sign--rp .mc-stick {
   .md-typeset .mc-sign--rp .mc-sign__title, .mc-sign--rp .mc-sign__title { font-size: 1.35rem; }
   .mc-sign--rp .mc-sign__start { display: none; }
 }
+
+/* ================================================================
+   One-point perspective (23 Nov 2026). The vanishing point is the
+   middle of the screen, as in the photo, where the horizon sits
+   level. .mc-scene covers the viewport (the cover page does not
+   scroll) and holds the perspective; the sign only turns (rotateY)
+   inside it, so its top and bottom edges run toward that one point:
+   nearly level near the middle of the screen, sloping more the
+   further they are from it.
+   ================================================================ */
+.mc-scene { display: none; }
+body.has-masthead .mc-scene {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  perspective: 42rem;
+  perspective-origin: 50% 50%;
+}
+body.has-masthead .mc-scene .mc-sign { pointer-events: auto; }
+body.has-masthead .mc-sign.mc-sign--rp {
+  transform: rotateY(-30deg);
+  transform-origin: right center;
+}
+/* Home page: the MC shield alone, no site name after it */
+body.has-masthead .md-header__title { visibility: hidden; }
+@media screen and (max-width: 44.9375em) {
+  body.has-masthead .mc-scene { perspective: none; }
+  body.has-masthead .mc-sign.mc-sign--rp { transform: none; }
+}

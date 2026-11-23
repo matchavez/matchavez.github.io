@@ -135,6 +135,10 @@
       {% endif %}
     {% endfor %}
     <div class="mc-night" aria-hidden="true"><span class="mc-night__dark"></span><span class="mc-night__light"></span><span class="mc-night__shadow"></span><span class="mc-night__stars"></span></div>
+    {#- The scene: one viewport-sized layer with a single vanishing point
+        at the middle of the screen. Everything inside it (the sign, its
+        posts, the Hockey post) shares that perspective. -#}
+    <div class="mc-scene">
     <nav class="mc-sign mc-sign--rp" aria-label="Where to from here">
       <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
       <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"><span class="mc-lamp"></span></span>
@@ -182,6 +186,7 @@
         </a>
       {% endif %}
     </nav>
+    </div>
   {% else %}
     {{ super() }}
   {% endif %}
