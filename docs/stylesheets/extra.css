@@ -2557,15 +2557,16 @@ html body.has-masthead .mc-sign--rp .mc-stick__side {
     linear-gradient(90deg, color-mix(in srgb, #18392d 62%, black), color-mix(in srgb, #18392d 50%, black));
   background-size: 160px 160px, 100% 100%, 100% 100%;
   background-blend-mode: soft-light, normal, normal;
-  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
-  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
+  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
+  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
 }
-/* the sign is bigger in the picture now, so the tussock in front of the
-   post feet is taller too */
+/* the tussock in front of the post feet; the solid part of the mask
+   overlaps the top of the tussock picture, so the blur on its top edge
+   does not show as a light line across the post */
 html body.has-masthead .mc-sign--rp .mc-sign__post,
 html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
-  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
-  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 1px) no-repeat;
+  -webkit-mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
+  mask: var(--tussock) bottom / 100% 3.4rem no-repeat, linear-gradient(#000, #000) top / 100% calc(100% - 3.4rem + 0.7rem) no-repeat;
 }
 html body.has-masthead .mc-sign--rp .mc-sign__side--l { left: 0; }        /* right face of the near post */
 html body.has-masthead .mc-sign--rp .mc-sign__side--r { left: 100%; }     /* left face of the far post */
