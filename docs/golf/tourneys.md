@@ -8,20 +8,38 @@ description: Mat Chavez's competitive golf record — interclub pennant results 
 
 ## Interclub
 
+### 2026-27 Metro A for McLeans Island:
+[http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
+
+| Date    | Opponent       | Result   | Score     | Team        |
+| ------- | -------------- | -------- | --------- | ----------- |
+| 08 Nov  | @ Templeton    | Loss     | _3 & 2_   | 4.5-3.5 Win |
+| 22 Nov  | Coringa        | Win      | 2 Up      | 3.5-4.5 Loss |
+| 29 Nov  | @ Russley      |          |           |             |
+| 06 Dec  | @ Bottle Lake  |          |           |             |
+| 13 Dec  | Waimairi Beach |          |           |             |
+| 24 Jan  | @ Avondale     |          |           |             |
+| 31 Jan  | @ Waitikiri    |          |           |             |
+| 14 Feb  | Harewood       |          |           |             |
+| 28 Feb  | Christchurch   |          |           |             |
+| 21 Mar  | Clearwater     |          |           |             |
+| 2026-27 | Season Record  | 1w 0d 1l | r.s. 2/4  | 1w 0d 1l    |
+
 ### 2026 Simon Cup for McLeans Island
 
-| Date   | Opponent                 | Result   | Score    | Team           |
-| ------ | ------------------------ | -------- | -------- | -------------- |
-| 02 Aug | Avondale @ Avondale      | DNP-H    |          | 2-6 Loss       |
-| 09 Aug | Russley @ Templeton      | Loss     | _1 Down_ | 4-4 Draw       |
-| 16 Aug | Rawhiti @ McLeans Island | Loss     | _2 Down_ | 2.5 - 5.5 Loss |
-| 30 Aug | Christchurch @ Russley   | DNP      |          | 4-4 Draw       |
-| 06 Sep | Harewood @ Rawhiti       | DNP      |          | 4-4 Draw       |
-| 13 Sep | Templeton @ Rangiora     | Loss     | _3 & 2_  | 4-4 Draw       |
-| 20 Sep | Weedons @ Weedons        | DNP      |          | Loss           |
-| 27 Sep | Rangiora @ Clearwater    | Loss     | _4 & 3_  | 6-2 Loss       |
-| 04 Oct | Clearwater @ Harewood    |          |          |                |
-| 2026   | Season Record            | 0w 0d 4l | r.s. 0/8 | 0w 4d 4l       |
+| Date   | Opponent                 | Result   | Score     | Team           |
+| ------ | ------------------------ | -------- | --------- | -------------- |
+| 02 Aug | Avondale @ Avondale      | DNP-H    |           | 2-6 Loss       |
+| 09 Aug | Russley @ Templeton      | Loss     | _1 Down_  | 4-4 Draw       |
+| 16 Aug | Rawhiti @ McLeans Island | Loss     | _2 Down_  | 2.5 - 5.5 Loss |
+| 30 Aug | Christchurch @ Russley   | DNP      |           | 4-4 Draw       |
+| 06 Sep | Harewood @ Rawhiti       | DNP      |           | 4-4 Draw       |
+| 13 Sep | Templeton @ Rangiora     | Loss     | _4 & 2_   | 4-4 Draw       |
+| 20 Sep | Weedons @ Weedons        | DNP      |           | Loss           |
+| 04 Oct | Clearwater @ Harewood    | Loss     | _4 & 3_   | 2-6 Loss       |
+| 11 Oct | Rangiora @ McLeans       | Loss     | _5 & 3_   | 2.5 - 5.5 Loss |
+| 2026   | Season Record            | 0w 0d 5l | r.s. 0/10 | 0w 4d 5l       |
+|        |                          |          |           |                |
 
 ### 2025-26 Metro A for McLeans Island:
 [http://www.canterburygolf.co.nz/interclub/canterbury-mens/metro-a/](https://www.canterburygolf.co.nz/interclub/men/metro-a/)
