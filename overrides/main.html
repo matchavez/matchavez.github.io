@@ -46,17 +46,101 @@
   {{ d[8:10] | int }} {{ months[(d[5:7] | int) - 1] }} {{ d[0:4] }}
 {%- endmacro %}
 
+{#- Every AI Blog post in the menu, newest first. -#}
+{% macro ai_posts_ns(ns) -%}
+  {%- for section in nav.items -%}
+    {%- if section.title == "AI Blog" -%}
+      {%- for item in section.children -%}
+        {%- if item.meta and item.meta.category == "AI Blog" -%}
+          {%- set ns.posts = ns.posts + [item] -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro %}
+
 {% block content %}
+  {% set ns = namespace(posts=[], prev=none, next=none, found=false) %}
+  {{ ai_posts_ns(ns) }}
+  {% set posts = ns.posts | sort(attribute="meta.date", reverse=true) %}
+
   {% if page.meta and page.meta.category == "AI Blog" %}
+    {% for item in posts %}
+      {% if item.url == page.url %}
+        {% set ns.found = true %}
+        {% if not loop.first %}{% set ns.next = posts[loop.index0 - 1] %}{% endif %}
+        {% if not loop.last %}{% set ns.prev = posts[loop.index0 + 1] %}{% endif %}
+      {% endif %}
+    {% endfor %}
     {% include "partials/actions.html" %}
     <h1>{{ page.title }}</h1>
     <p class="mc-post-meta">
       {% if page.meta.date %}<time datetime="{{ page.meta.date }}">{{ long_date(page.meta.date) }}</time>{% endif %}
-      {% if page.meta.minutes %}<span>{{ page.meta.minutes }} min read</span>{% endif %}
+      {% if page.meta.minutes %}<span class="mc-post-meta__time">{{ page.meta.minutes }} min read</span>{% endif %}
     </p>
     {{ page.content }}
+    {% if ns.prev or ns.next %}
+      <nav class="mc-next" aria-label="More AI Blog posts">
+        <p class="mc-next__head">AI Blog</p>
+        {% if ns.next %}
+          <a class="mc-next__link mc-next__link--newer" href="{{ ns.next.url | url }}">
+            <span class="mc-next__dir">Newer</span>
+            <span class="mc-next__title">{{ ns.next.title }}</span>
+            {% if ns.next.meta.minutes %}<span class="mc-next__time">{{ ns.next.meta.minutes }} min</span>{% endif %}
+          </a>
+        {% endif %}
+        {% if ns.prev %}
+          <a class="mc-next__link mc-next__link--older" href="{{ ns.prev.url | url }}">
+            <span class="mc-next__dir">Older</span>
+            <span class="mc-next__title">{{ ns.prev.title }}</span>
+            {% if ns.prev.meta.minutes %}<span class="mc-next__time">{{ ns.prev.meta.minutes }} min</span>{% endif %}
+          </a>
+        {% endif %}
+        <a class="mc-next__all" href="{{ 'ai/' | url }}">All posts</a>
+      </nav>
+    {% endif %}
     {% include "partials/source-file.html" %}
     {% include "partials/feedback.html" %}
+
+  {% elif page.is_homepage or page.url == "" %}
+    {{ super() }}
+    <nav class="mc-sign" aria-label="Where to from here">
+      <div class="mc-sign__board">
+      <p class="mc-sign__head">Where to from here</p>
+      <ul class="mc-sign__list">
+        {% for section in nav.items %}
+          {% if section.title not in ["Welcome", "Test Pages"] %}
+            {% if section.children %}
+              {% set first = section.children[0] %}
+              {% if section.title == "AI Blog" %}
+                <li class="mc-sign__item">
+                  <a href="{{ first.url | url }}">
+                    <span class="mc-sign__name">AI Blog</span>
+                    <span class="mc-sign__time">{{ posts | length }} posts</span>
+                    {% if posts %}<span class="mc-sign__sub">Latest: {{ posts[0].title }}</span>{% endif %}
+                  </a>
+                </li>
+              {% else %}
+                <li class="mc-sign__item">
+                  <a href="{{ first.url | url }}">
+                    <span class="mc-sign__name">{{ section.title }}</span>
+                    <span class="mc-sign__sub">{% for c in section.children %}{{ c.title }}{% if not loop.last %} · {% endif %}{% endfor %}</span>
+                  </a>
+                </li>
+              {% endif %}
+            {% else %}
+              <li class="mc-sign__item">
+                <a href="{{ section.url | url if section.url and '//' not in section.url else section.url }}">
+                  <span class="mc-sign__name">{{ section.title }}</span>
+                  {% if section.url and "//" in section.url %}<span class="mc-sign__time" aria-label="other site">&#8599;</span>{% endif %}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+      </div>
+    </nav>
   {% else %}
     {{ super() }}
   {% endif %}

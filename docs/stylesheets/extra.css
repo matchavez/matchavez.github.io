@@ -525,6 +525,7 @@
    line if this needs revisiting again. */
 :root {
   --post-w: clamp(0rem, (100vw - 76.1875em) * 0.3, 3.3rem);
+  --timber-grain: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='240'><defs><pattern id='g' x='0' y='0' width='80' height='240' patternUnits='userSpaceOnUse'><path d='M2.2 0L0.8 20L1.6 40L3.8 60L5.2 80L4.4 100L2.2 120L0.8 140L1.6 160L3.8 180L5.2 200L4.4 220L2.2 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.27'/><path d='M6.9 0L6.2 20L6.2 40L6.7 60L7.7 80L8.8 100L9.9 120L10.6 140L10.7 160L10.1 180L9.2 200L8.0 220L6.9 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.24'/><path d='M14.6 0L16.5 20L15.8 40L13.1 60L11.1 80L11.9 100L14.6 120L16.5 140L15.8 160L13.1 180L11.1 200L11.9 220L14.6 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.38'/><path d='M17.1 0L16.5 20L16.2 40L16.1 60L16.4 80L16.9 100L17.5 120L18.1 140L18.5 160L18.5 180L18.3 200L17.7 220L17.1 240' stroke='black' stroke-width='0.4' fill='none' opacity='0.38'/><path d='M21.6 0L20.9 20L20.7 40L21.0 60L21.8 80L22.7 100L23.7 120L24.4 140L24.6 160L24.3 180L23.5 200L22.6 220L21.6 240' stroke='black' stroke-width='0.9' fill='none' opacity='0.35'/><path d='M29.9 0L29.4 20L28.4 40L27.2 60L26.2 80L25.5 100L25.4 120L25.9 140L26.9 160L28.0 180L29.1 200L29.8 220L29.9 240' stroke='black' stroke-width='1.0' fill='none' opacity='0.28'/><path d='M30.1 0L30.9 20L32.3 40L32.9 60L32.1 80L30.7 100L30.1 120L30.9 140L32.3 160L32.9 180L32.1 200L30.7 220L30.1 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.24'/><path d='M37.3 0L37.2 20L36.5 40L35.2 60L33.7 80L32.5 100L31.9 120L31.9 140L32.7 160L33.9 180L35.4 200L36.6 220L37.3 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.32'/><path d='M35.2 0L36.9 20L39.5 40L40.4 60L38.7 80L36.1 100L35.2 120L36.9 140L39.5 160L40.4 180L38.7 200L36.1 220L35.2 240' stroke='black' stroke-width='0.7' fill='none' opacity='0.22'/><path d='M44.5 0L45.3 20L45.2 40L44.2 60L42.7 80L41.0 100L39.5 120L38.7 140L38.8 160L39.8 180L41.3 200L43.1 220L44.5 240' stroke='black' stroke-width='0.4' fill='none' opacity='0.35'/><path d='M47.0 0L46.2 20L45.6 40L45.4 60L45.7 80L46.3 100L47.1 120L47.9 140L48.5 160L48.7 180L48.4 200L47.8 220L47.0 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.32'/><path d='M52.1 0L53.2 20L54.2 40L53.9 60L52.8 80L51.9 100L52.1 120L53.2 140L54.2 160L53.9 180L52.8 200L51.9 220L52.1 240' stroke='%23c98a3a' stroke-width='0.9' fill='none' opacity='0.14'/><path d='M57.8 0L56.8 20L56.4 40L56.7 60L57.6 80L58.9 100L60.2 120L61.2 140L61.6 160L61.3 180L60.4 200L59.1 220L57.8 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.29'/><path d='M66.2 0L65.7 20L64.8 40L63.8 60L62.9 80L62.4 100L62.4 120L63.0 140L63.9 160L64.9 180L65.7 200L66.2 220L66.2 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.39'/><path d='M66.0 0L65.4 20L65.4 40L65.9 60L66.8 80L67.9 100L68.8 120L69.3 140L69.4 160L68.8 180L67.9 200L66.9 220L66.0 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.37'/><path d='M74.3 0L74.6 20L74.4 40L73.9 60L73.1 80L72.3 100L71.6 120L71.4 140L71.5 160L72.1 180L72.8 200L73.7 220L74.3 240' stroke='black' stroke-width='1.1' fill='none' opacity='0.27'/></pattern></defs><rect width='100%25' height='100%25' fill='url(%23g)'/></svg>");
 }
 body::before,
 body::after {
@@ -534,7 +535,7 @@ body::after {
   bottom: 0;
   width: var(--post-w);
   background-color: color-mix(in srgb, var(--sign-green) 55%, black);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='240'><defs><pattern id='g' x='0' y='0' width='80' height='240' patternUnits='userSpaceOnUse'><path d='M2.2 0L0.8 20L1.6 40L3.8 60L5.2 80L4.4 100L2.2 120L0.8 140L1.6 160L3.8 180L5.2 200L4.4 220L2.2 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.27'/><path d='M6.9 0L6.2 20L6.2 40L6.7 60L7.7 80L8.8 100L9.9 120L10.6 140L10.7 160L10.1 180L9.2 200L8.0 220L6.9 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.24'/><path d='M14.6 0L16.5 20L15.8 40L13.1 60L11.1 80L11.9 100L14.6 120L16.5 140L15.8 160L13.1 180L11.1 200L11.9 220L14.6 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.38'/><path d='M17.1 0L16.5 20L16.2 40L16.1 60L16.4 80L16.9 100L17.5 120L18.1 140L18.5 160L18.5 180L18.3 200L17.7 220L17.1 240' stroke='black' stroke-width='0.4' fill='none' opacity='0.38'/><path d='M21.6 0L20.9 20L20.7 40L21.0 60L21.8 80L22.7 100L23.7 120L24.4 140L24.6 160L24.3 180L23.5 200L22.6 220L21.6 240' stroke='black' stroke-width='0.9' fill='none' opacity='0.35'/><path d='M29.9 0L29.4 20L28.4 40L27.2 60L26.2 80L25.5 100L25.4 120L25.9 140L26.9 160L28.0 180L29.1 200L29.8 220L29.9 240' stroke='black' stroke-width='1.0' fill='none' opacity='0.28'/><path d='M30.1 0L30.9 20L32.3 40L32.9 60L32.1 80L30.7 100L30.1 120L30.9 140L32.3 160L32.9 180L32.1 200L30.7 220L30.1 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.24'/><path d='M37.3 0L37.2 20L36.5 40L35.2 60L33.7 80L32.5 100L31.9 120L31.9 140L32.7 160L33.9 180L35.4 200L36.6 220L37.3 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.32'/><path d='M35.2 0L36.9 20L39.5 40L40.4 60L38.7 80L36.1 100L35.2 120L36.9 140L39.5 160L40.4 180L38.7 200L36.1 220L35.2 240' stroke='black' stroke-width='0.7' fill='none' opacity='0.22'/><path d='M44.5 0L45.3 20L45.2 40L44.2 60L42.7 80L41.0 100L39.5 120L38.7 140L38.8 160L39.8 180L41.3 200L43.1 220L44.5 240' stroke='black' stroke-width='0.4' fill='none' opacity='0.35'/><path d='M47.0 0L46.2 20L45.6 40L45.4 60L45.7 80L46.3 100L47.1 120L47.9 140L48.5 160L48.7 180L48.4 200L47.8 220L47.0 240' stroke='black' stroke-width='0.8' fill='none' opacity='0.32'/><path d='M52.1 0L53.2 20L54.2 40L53.9 60L52.8 80L51.9 100L52.1 120L53.2 140L54.2 160L53.9 180L52.8 200L51.9 220L52.1 240' stroke='%23c98a3a' stroke-width='0.9' fill='none' opacity='0.14'/><path d='M57.8 0L56.8 20L56.4 40L56.7 60L57.6 80L58.9 100L60.2 120L61.2 140L61.6 160L61.3 180L60.4 200L59.1 220L57.8 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.29'/><path d='M66.2 0L65.7 20L64.8 40L63.8 60L62.9 80L62.4 100L62.4 120L63.0 140L63.9 160L64.9 180L65.7 200L66.2 220L66.2 240' stroke='black' stroke-width='0.5' fill='none' opacity='0.39'/><path d='M66.0 0L65.4 20L65.4 40L65.9 60L66.8 80L67.9 100L68.8 120L69.3 140L69.4 160L68.8 180L67.9 200L66.9 220L66.0 240' stroke='black' stroke-width='1.3' fill='none' opacity='0.37'/><path d='M74.3 0L74.6 20L74.4 40L73.9 60L73.1 80L72.3 100L71.6 120L71.4 140L71.5 160L72.1 180L72.8 200L73.7 220L74.3 240' stroke='black' stroke-width='1.1' fill='none' opacity='0.27'/></pattern></defs><rect width='100%25' height='100%25' fill='url(%23g)'/></svg>");
+  background-image: var(--timber-grain);
   background-repeat: repeat-y;
   background-size: 100% 10rem;
   box-shadow:
@@ -1393,4 +1394,160 @@ body { --post-w-px: var(--post-w); }
 .md-footer-meta {
   padding-inline: var(--post-w-px);
   background-position: right calc(var(--post-w-px) + 1.4rem) center;
+}
+
+/* ================================================================
+   10-12 (23 Nov 2026): DOC track-sign design
+   ================================================================ */
+
+/* ---------- 10. Homepage: a track sign standing in the photo ----------
+   The board is bolted to two timber posts that run down into the
+   tussock. A slight turn (perspective) and a cast shadow set it in
+   the scene; the post feet fade out as if the grass hides them. */
+.mc-sign { display: none; }
+body.has-masthead .md-main { position: relative; }
+body.has-masthead .mc-sign {
+  --sign-drop: clamp(2.4rem, 11vh, 7rem);   /* board bottom to photo bottom */
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: clamp(1rem, 7vw, 6rem);
+  bottom: var(--sign-drop);
+  width: min(17.5rem, calc(100vw - 2rem));
+  transform: perspective(1100px) rotateY(9deg);
+  transform-origin: left center;
+  filter: drop-shadow(0.45rem 0.35rem 0.6rem rgba(0, 0, 0, 0.38));
+}
+/* The two posts, behind the board */
+body.has-masthead .mc-sign::before,
+body.has-masthead .mc-sign::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -0.9rem;
+  bottom: calc(-1 * var(--sign-drop) - 0.5rem);
+  width: 1.1rem;
+  border-radius: 0.12rem 0.12rem 0 0;
+  background-color: color-mix(in srgb, var(--sign-green) 55%, black);
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.12) 35%, rgba(255, 255, 255, 0.04) 50%, rgba(0, 0, 0, 0.55)),
+    var(--timber-grain);
+  background-size: 100% 100%, 100% 10rem;
+  background-repeat: no-repeat, repeat-y;
+  -webkit-mask: linear-gradient(180deg, black 82%, transparent 100%);
+  mask: linear-gradient(180deg, black 82%, transparent 100%);
+}
+body.has-masthead .mc-sign::before { left: 16%; }
+body.has-masthead .mc-sign::after { right: 16%; }
+
+/* The board itself: green panel, gold bar, painted edge */
+.mc-sign__board {
+  position: relative;
+  z-index: 1;
+  background: var(--sign-green);
+  border-top: 0.3rem solid var(--sign-gold);
+  border-radius: 0.2rem;
+  padding: 0.65rem 1rem 0.45rem;
+  box-shadow:
+    0.35rem 0.3rem 0 color-mix(in srgb, var(--sign-green) 60%, black),   /* board thickness */
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+/* Two bolt heads, where the board meets the posts */
+.mc-sign__board::before,
+.mc-sign__board::after {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #d9d4c4, #7d786a 70%);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+.mc-sign__board::before { left: calc(16% + 0.41rem); }
+.mc-sign__board::after { right: calc(16% + 0.41rem); }
+
+.mc-sign__head {
+  margin: 0 0 0.45rem;
+  font-family: var(--sign-font); font-size: 0.62rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--sign-gold);
+}
+.md-typeset ul.mc-sign__list, .mc-sign__list { list-style: none; margin: 0; padding: 0; }
+.md-typeset ul.mc-sign__list > li.mc-sign__item, .mc-sign__item { margin: 0; padding: 0; list-style: none; }
+.mc-sign__item::marker { content: none; }
+.mc-sign__item a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.3rem 0;
+  text-decoration: none;
+}
+.mc-sign__item + .mc-sign__item a { border-top: 1px solid rgba(240, 237, 224, 0.18); }
+.mc-sign__name { font-family: var(--sign-font); font-size: 0.85rem; color: var(--sign-cream); }
+.mc-sign__time { font-family: var(--sign-font); font-size: 0.72rem; color: var(--sign-gold); }
+.mc-sign__sub { grid-column: 1 / -1; line-height: 1.3; margin-top: 0.1rem; font-size: 0.62rem; color: rgba(240, 237, 224, 0.7); }
+.mc-sign__item a:hover .mc-sign__name,
+.mc-sign__item a:focus-visible .mc-sign__name { color: var(--sign-gold); }
+
+/* At dusk the sign darkens with the land around it */
+[data-md-color-scheme="slate"] body.has-masthead .mc-sign {
+  filter: drop-shadow(0.45rem 0.35rem 0.6rem rgba(0, 0, 0, 0.5)) brightness(0.8);
+}
+
+/* ---------- 11. Post page: date chip + "AI Blog" sign at the end ---------- */
+.md-typeset .mc-post-meta {
+  display: inline-flex;
+  background: var(--sign-green); color: var(--sign-gold);
+  font-family: var(--sign-font); font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.28rem 0.6rem; border-radius: 0.15rem;
+}
+.md-typeset .mc-post-meta time + span::before { color: rgba(240, 237, 224, 0.6); }
+
+.md-typeset .mc-next {
+  margin: 2.4rem 0 1rem;
+  background: var(--sign-green); border-top: 0.3rem solid var(--sign-gold);
+  border-radius: 0.2rem; padding: 0.8rem 1.1rem 0.7rem;
+}
+.md-typeset .mc-next__head {
+  margin: 0 0 0.4rem;
+  font-family: var(--sign-font); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sign-gold);
+}
+.md-typeset .mc-next__link {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr auto;
+  column-gap: 0.7rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+.md-typeset .mc-next__link + .mc-next__link { border-top: 1px solid rgba(240, 237, 224, 0.18); }
+.md-typeset .mc-next__dir { font-family: var(--sign-font); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(240, 237, 224, 0.65); }
+.md-typeset .mc-next__title { font-family: var(--sign-font); font-size: 0.82rem; color: var(--sign-cream); }
+.md-typeset .mc-next__time { font-family: var(--sign-font); font-size: 0.68rem; color: var(--sign-gold); }
+.md-typeset .mc-next__link:hover .mc-next__title { color: var(--sign-gold); }
+.md-typeset .mc-next__all { display: inline-block; margin-top: 0.5rem; font-family: var(--sign-font); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sign-gold); }
+/* AI Blog posts have their own newer/older sign, so drop the theme's
+   menu-order previous/next bar there (it pointed at other sections). */
+body:has(.mc-next) .md-footer__inner { display: none; }
+
+/* ---------- 12. AI Blog list: one sign board per post ---------- */
+.md-typeset ol.mc-post-list > li.mc-post-list__item {
+  background: var(--sign-green); border-top: 0.25rem solid var(--sign-gold);
+  border-radius: 0.2rem; padding: 0.8rem 1.1rem 0.9rem; margin-bottom: 1rem;
+}
+.md-typeset .mc-post-list .mc-post-meta {
+  display: flex; background: none; padding: 0;
+  font-size: 0.58rem; color: var(--sign-gold);
+}
+.md-typeset h2.mc-post-list__title { font-family: var(--sign-font); font-size: 1rem; }
+.md-typeset h2.mc-post-list__title a { color: var(--sign-cream); text-decoration: none; }
+.md-typeset h2.mc-post-list__title a:hover { color: var(--sign-gold); }
+.md-typeset .mc-post-list__desc { color: rgba(240, 237, 224, 0.78); font-size: 0.72rem; }
+
+@media screen and (max-width: 44.9375em) {
+  body.has-masthead .mc-sign { left: 1rem; width: calc(100vw - 2.6rem); --sign-drop: 2rem; transform: none; }
+  .md-typeset .mc-next__link { grid-template-columns: 1fr auto; }
+  .md-typeset .mc-next__dir { grid-column: 1 / -1; }
 }
