@@ -143,7 +143,7 @@
       <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
       <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"><span class="mc-lamp"></span></span>
       <div class="mc-sign__board">
-        <p class="mc-sign__title">Mat’s personal site</p>
+        <p class="mc-sign__title">Mat’s Personal Site</p>
         <div class="mc-sign__text">
           <p class="mc-sign__start"><strong>Site starts here</strong><span>{{ posts | length }} posts &middot; {{ ns2.pages }} pages</span></p>
           <ul class="mc-sign__list">
@@ -158,11 +158,13 @@
           <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Te Waipounamu</em></span></p>
         </div>
         <figure class="mc-sign__map">
+          <span class="mc-sign__mapimg">
           <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, marking Arthur's Pass, where this photo was taken, and Christchurch, home">
           {#- DOC map symbols, as Mat approved on 23 Nov: a blue square with a
               white pictogram on the place, and the place name beside it -#}
           <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-sign__chip">{% include ".icons/lucide/camera.svg" %}</span><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
           <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-sign__chip">{% include ".icons/lucide/house.svg" %}</span><span class="mc-pin__label">Christchurch<small>home</small></span></span>
+          </span>
         </figure>
         <p class="mc-sign__symbols">
           <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>

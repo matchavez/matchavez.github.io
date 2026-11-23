@@ -2378,3 +2378,35 @@ body.has-masthead .mc-sign.mc-sign--rp { width: max-content; }
 @media screen and (max-width: 44.9375em) {
   body.has-masthead { --text-w: 6.2rem; --map-w: 6.8rem; }
 }
+/* Sign test 2: the map runs from the top of the white label to the
+   bottom of the last row. The picture keeps its own proportions
+   (380 x 449): it fills the height and is anchored to the east coast,
+   so a strip of sea and Fiordland is cropped on the west, never
+   stretched. Pins sit on the picture, so they stay on their places. */
+.mc-sign--rp .mc-sign__text { display: contents; }
+.mc-sign--rp .mc-sign__board {
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "title title" "start map" "list map" "org symbols";
+  row-gap: 0;
+}
+.md-typeset .mc-sign--rp .mc-sign__title, .mc-sign--rp .mc-sign__title { margin-bottom: 0.45rem; }
+.md-typeset .mc-sign--rp .mc-sign__start, .mc-sign--rp .mc-sign__start { grid-area: start; width: var(--text-w); margin-bottom: 0.5rem; align-self: start; }
+.md-typeset .mc-sign--rp ul.mc-sign__list, .mc-sign--rp .mc-sign__list { grid-area: list; width: var(--text-w); align-self: start; }
+.md-typeset .mc-sign--rp .mc-sign__org, .mc-sign--rp .mc-sign__org { grid-area: org; align-self: end; margin-top: 0.6rem; }
+.md-typeset .mc-sign--rp .mc-sign__symbols, .mc-sign--rp .mc-sign__symbols { align-self: end; margin-top: 0.6rem; }
+.md-typeset .mc-sign--rp figure.mc-sign__map, .mc-sign--rp figure.mc-sign__map {
+  aspect-ratio: auto;
+  height: auto;
+  align-self: stretch;
+  contain: strict;
+  overflow: hidden;
+}
+.mc-sign--rp .mc-sign__mapimg {
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  aspect-ratio: 380 / 449;
+  display: block;
+}
+.md-typeset .mc-sign--rp .mc-sign__map img, .mc-sign--rp .mc-sign__map img {
+  display: block; width: 100%; height: 100%; object-fit: fill;
+}
