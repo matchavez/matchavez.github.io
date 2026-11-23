@@ -104,75 +104,79 @@
 
   {% elif page.is_homepage or page.url == "" %}
     {{ super() }}
-    {#- A DOC-style trailhead sign standing in the cover photo, after the
-        Roys Peak Track signs: a map of the South Island on the left, then a
-        blue pictogram chip, gold destination, arrow and a count on each row,
-        and a symbol row along the bottom.
-        Rows come from the menu. An off-site menu entry (Hockey) gets
-        its own small sign on a single timber pole. -#}
+    {#- A DOC trailhead sign standing in the cover photo, laid out like the
+        Roys Peak Track sign: white serif title across the top, a white
+        "starts here" label, a column of destinations on the left, a big
+        map on the right with blue "YOU ARE HERE" labels, a symbol row
+        under the map, and the site mark bottom left (where DOC puts its
+        own). Rows come from the menu. An off-site menu entry (Hockey) gets
+        its own narrow sign on one post, like the "No drones / Keep to
+        track" post beside the Roys Peak sign. -#}
     {% set icons = {"AI Blog": "lucide/notebook-pen", "Projects": "lucide/wrench", "Favourite Quotes": "lucide/quote", "Golf": "lucide/flag-triangle-right"} %}
-    {% set ns2 = namespace(ext=none) %}
+    {% set ns2 = namespace(ext=none, rows=[], pages=0) %}
+    {% for section in nav.items %}
+      {% if section.title not in ["Welcome", "Test Pages"] %}
+        {% if section.url and "//" in section.url %}
+          {% if not ns2.ext %}{% set ns2.ext = section %}{% endif %}
+        {% else %}
+          {% if section.children %}
+            {% set href = section.children[0].url %}
+            {% if section.title == "AI Blog" %}
+              {% set count = posts | length %}{% set unit = "post" %}
+            {% else %}
+              {% set count = section.children | length %}{% set unit = "page" %}
+            {% endif %}
+          {% else %}
+            {% set href = section.url %}{% set count = 1 %}{% set unit = "page" %}
+          {% endif %}
+          {% if unit == "page" %}{% set ns2.pages = ns2.pages + count %}{% endif %}
+          {% set ns2.rows = ns2.rows + [{"title": section.title, "href": href, "count": count, "unit": unit}] %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
     <div class="mc-night" aria-hidden="true"><span class="mc-night__dark"></span><span class="mc-night__light"></span><span class="mc-night__shadow"></span><span class="mc-night__stars"></span></div>
-    <nav class="mc-sign" aria-label="Where to from here">
+    <nav class="mc-sign mc-sign--rp" aria-label="Where to from here">
       <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
       <span class="mc-sign__post mc-sign__post--r" aria-hidden="true"><span class="mc-lamp"></span></span>
       <div class="mc-sign__board">
+        <p class="mc-sign__title">Mat Chavez</p>
         <div class="mc-sign__text">
-          <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Te Waipounamu</em></span></p>
-          <p class="mc-sign__title">Mat Chavez</p>
+          <p class="mc-sign__start"><strong>Site starts here</strong><span>{{ posts | length }} posts &middot; {{ ns2.pages }} pages</span></p>
           <ul class="mc-sign__list">
-            {% for section in nav.items %}
-              {% if section.title not in ["Welcome", "Test Pages"] %}
-                {% if section.url and "//" in section.url %}
-                  {% if not ns2.ext %}{% set ns2.ext = section %}{% endif %}
-                {% else %}
-                  {% if section.children %}
-                    {% set href = section.children[0].url %}
-                    {% if section.title == "AI Blog" %}
-                      {% set count = posts | length %}{% set unit = "post" %}
-                    {% else %}
-                      {% set count = section.children | length %}{% set unit = "page" %}
-                    {% endif %}
-                  {% else %}
-                    {% set href = section.url %}{% set count = 1 %}{% set unit = "page" %}
-                  {% endif %}
-                  <li class="mc-sign__item"><a href="{{ href | url }}">
-                    <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/" ~ (icons[section.title] or "lucide/footprints") ~ ".svg" %}</span>
-                    <span class="mc-sign__name">{{ section.title }}</span>
-                    <span class="mc-sign__arrow" aria-hidden="true">&rarr;</span>
-                    <span class="mc-sign__time">{{ count }} {{ unit }}{{ "s" if count != 1 }}</span>
-                  </a></li>
-                {% endif %}
-              {% endif %}
+            {% for row in ns2.rows %}
+              <li class="mc-sign__item"><a href="{{ row.href | url }}">
+                <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/" ~ (icons[row.title] or "lucide/footprints") ~ ".svg" %}</span>
+                <span class="mc-sign__name">{{ row.title }}</span>
+                <span class="mc-sign__time"><span class="mc-sign__arrow" aria-hidden="true">&rarr;</span> {{ row.count }} {{ row.unit }}{{ "s" if row.count != 1 }}</span>
+              </a></li>
             {% endfor %}
           </ul>
-          <p class="mc-sign__symbols">
-            <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>
-            <a class="mc-sign__chip" href="https://github.com/matchavez" title="GitHub" aria-label="GitHub">{% include ".icons/fontawesome/brands/github.svg" %}</a>
-            <button type="button" class="mc-sign__chip mc-daynight" title="Day or night" aria-label="Switch between day and night" hidden>
-              <span class="mc-daynight__sun">{% include ".icons/lucide/sun.svg" %}</span><span class="mc-daynight__moon">{% include ".icons/lucide/moon.svg" %}</span>
-            </button>
-            <span class="mc-sign__no" title="No ads on this site" aria-label="No ads on this site" role="img">{% include ".icons/lucide/megaphone.svg" %}</span>
-          </p>
+          <p class="mc-sign__org"><span class="mc-sign__logo">MC</span><span>matchavez.com<br><em>Te Waipounamu</em></span></p>
         </div>
         <figure class="mc-sign__map">
-          <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, with symbols at Arthur's Pass, where the cover photo was taken, and Christchurch, home">
-          {#- DOC map symbols: a blue square with a white pictogram at the place -#}
-          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-sign__chip">{% include ".icons/lucide/camera.svg" %}</span><span class="mc-pin__label">Arthur's Pass<small>this photo</small></span></span>
-          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-sign__chip">{% include ".icons/lucide/house.svg" %}</span><span class="mc-pin__label">Christchurch<small>home</small></span></span>
+          <img src="{{ 'images/sign-map-south-island.webp' | url }}" width="380" height="449" alt="Map of Te Waipounamu, the South Island, marking Arthur's Pass, where this photo was taken, and Christchurch, home">
+          {#- The sign stands near Arthur's Pass, so that is "you are here" -#}
+          <span class="mc-pin mc-pin--photo" style="left:64.2%;top:34.9%"><span class="mc-pin__label">YOU ARE HERE</span></span>
+          <span class="mc-pin mc-pin--home" style="left:77.4%;top:43.4%"><span class="mc-pin__label">HOME</span></span>
         </figure>
+        <p class="mc-sign__symbols">
+          <a class="mc-sign__chip" href="{{ 'feed_rss_created.xml' | url }}" title="AI Blog RSS feed" aria-label="AI Blog RSS feed">{% include ".icons/lucide/rss.svg" %}</a>
+          <a class="mc-sign__chip" href="https://github.com/matchavez" title="GitHub" aria-label="GitHub">{% include ".icons/fontawesome/brands/github.svg" %}</a>
+          <button type="button" class="mc-sign__chip mc-daynight" title="Day or night" aria-label="Switch between day and night" hidden>
+            <span class="mc-daynight__sun">{% include ".icons/lucide/sun.svg" %}</span><span class="mc-daynight__moon">{% include ".icons/lucide/moon.svg" %}</span>
+          </button>
+          <span class="mc-sign__no" title="No ads on this site" aria-label="No ads on this site" role="img">{% include ".icons/lucide/megaphone.svg" %}</span>
+        </p>
         <span class="mc-lamp"></span>
       </div>
       {% if ns2.ext %}
-        {#- The off-site link: a small sign on its own post, standing to the
-            left of the main sign (inside the same scene, so it turns with it) -#}
         <a class="mc-stick" href="{{ ns2.ext.url }}" aria-label="{{ ns2.ext.title }} (other site)">
           <span class="mc-stick__pole mc-sign__post" aria-hidden="true"><span class="mc-lamp"></span></span>
           <span class="mc-stick__panel">
-            <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/lucide/tv.svg" %}</span>
             <span class="mc-stick__name">{{ ns2.ext.title }}</span>
-            <span class="mc-stick__arrow" aria-hidden="true">&nearr;</span>
-            <span class="mc-stick__time">other site</span>
+            <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/lucide/tv.svg" %}</span>
+            <span class="mc-stick__time">Other<br>site</span>
+            <span class="mc-sign__chip" aria-hidden="true">{% include ".icons/lucide/arrow-up-right.svg" %}</span>
             <span class="mc-lamp"></span>
           </span>
         </a>
