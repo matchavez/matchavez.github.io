@@ -2866,3 +2866,28 @@ html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--pa
     color-mix(in srgb, #ffc51d 70%, var(--sun)) 0, color-mix(in srgb, #ffc51d 70%, var(--sun)) 0.2rem,
     color-mix(in srgb, #2b5c3e 76%, var(--sun)) 0.2rem, color-mix(in srgb, #2b5c3e 82%, var(--sun)) 100%);
 }
+
+/* ================================================================
+   Post twist test (24 Nov 2026, Mat): each post turns on its own
+   centre line, --post-twist, against the sign's turn (clockwise seen
+   from above), so the posts read less turned. Each part of a post (the
+   front, the two sides, the top) turns about the same vertical line,
+   through the middle of the square post.
+   ================================================================ */
+html body.has-masthead .mc-sign--rp { --post-twist: -10deg; --ph: calc(var(--post-w2) / 2); }
+/* parts whose turning point is already on the centre line */
+html body.has-masthead .mc-sign--rp .mc-sign__post:not(.mc-stick__pole),
+html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
+  transform: translateZ(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateZ(var(--ph));
+}
+html body.has-masthead .mc-sign--rp :is(.mc-face--l-cap, .mc-face--r-cap, .mc-face--h-cap) {
+  transform: translateZ(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateZ(var(--ph)) rotateX(90deg);
+}
+/* left sides: turning point on the post's left edge, half a post left of the centre */
+html body.has-masthead .mc-sign--rp :is(.mc-face--l-out, .mc-face--r-in, .mc-face--h-left) {
+  transform: translate3d(var(--ph), 0, calc(-1 * var(--ph))) rotateY(var(--post-twist)) translate3d(calc(-1 * var(--ph)), 0, var(--ph)) rotateY(-90deg);
+}
+/* right sides: turning point on the post's right edge */
+html body.has-masthead .mc-sign--rp :is(.mc-face--l-in, .mc-face--r-out, .mc-face--h-right) {
+  transform: translate3d(calc(-1 * var(--ph)), 0, calc(-1 * var(--ph))) rotateY(var(--post-twist)) translate3d(var(--ph), 0, var(--ph)) rotateY(90deg);
+}
