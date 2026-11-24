@@ -2494,7 +2494,7 @@ html body.has-masthead .mc-scene {
   height: 1200px;
   transform: translate(var(--ox, 0px), var(--oy, -104px)) scale(var(--s, 0.9));
   transform-origin: 0 0;
-  perspective: var(--lens-px, 4000px);   /* long lens: the posts' outer sides show clearly and the slopes stay gentle */   /* a longer lens: gentle slopes, so the turn can be bigger */
+  perspective: var(--lens-px, 3000px);   /* long lens: the posts' outer sides show and the slopes stay gentle (4000 made the board look less turned than the posts) */   /* a longer lens: gentle slopes, so the turn can be bigger */
   perspective-origin: 800px 615px;
 }
 html body.has-masthead .mc-scene .mc-sign.mc-sign--rp {
@@ -2839,4 +2839,30 @@ html body.has-masthead .mc-sign--rp .mc-face--panel-top {
 }
 html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp :is(.mc-face--board-top, .mc-face--panel-top) {
   background: linear-gradient(90deg, color-mix(in srgb, #ffc51d 70%, var(--sun)), color-mix(in srgb, #ffc51d 82%, #6b5a2a));
+}
+
+/* ================================================================
+   The Hockey panel has a real thickness (24 Nov 2026, Mat): it stands
+   0.45rem out from the pole (as thick as a real routed panel against a
+   100 mm post), and its left end shows as a lit edge, the
+   same turn cue as the pole's side. Before, the panel had no edge and
+   looked like a flat card held square to the viewer.
+   ================================================================ */
+html body.has-masthead .mc-sign--rp .mc-stick__panel { transform: translateZ(0.45rem); }
+html body.has-masthead .mc-sign--rp .mc-face--panel-top { transform: translateZ(0.45rem) rotateX(90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--panel-left {
+  left: -0.45rem;
+  width: 0.45rem;
+  top: 0.35rem;
+  bottom: auto;
+  height: 6.65rem;
+  transform-origin: 100% 50%;
+  transform: translateZ(0.45rem) rotateY(-90deg);
+  -webkit-mask: none;
+  mask: none;
+}
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--panel-left {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, #ffc51d 70%, var(--sun)) 0, color-mix(in srgb, #ffc51d 70%, var(--sun)) 0.2rem,
+    color-mix(in srgb, #2b5c3e 76%, var(--sun)) 0.2rem, color-mix(in srgb, #2b5c3e 82%, var(--sun)) 100%);
 }
