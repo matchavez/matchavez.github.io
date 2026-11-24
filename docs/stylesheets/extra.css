@@ -2868,26 +2868,28 @@ html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face--pa
 }
 
 /* ================================================================
-   Post twist test (24 Nov 2026, Mat): each post turns on its own
-   centre line, --post-twist, against the sign's turn (clockwise seen
-   from above), so the posts read less turned. Each part of a post (the
-   front, the two sides, the top) turns about the same vertical line,
-   through the middle of the square post.
+   Post twist (24 Nov 2026, Mat): each post turns 10 degrees against
+   the sign's turn (clockwise seen from above), so the posts read as
+   turned as much as the board. Each post turns about its front corner
+   where the board (or the Hockey panel) meets it, so that join stays
+   tight with no gap; the other corner goes back (main posts) or into
+   the panel's thickness (Hockey, hidden). Every part of a post (front,
+   sides, top) turns about the same line. Offsets: from each part's own
+   turning point to that corner.
    ================================================================ */
-html body.has-masthead .mc-sign--rp { --post-twist: -10deg; --ph: calc(var(--post-w2) / 2); }
-/* parts whose turning point is already on the centre line */
-html body.has-masthead .mc-sign--rp .mc-sign__post:not(.mc-stick__pole),
-html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post {
-  transform: translateZ(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateZ(var(--ph));
-}
-html body.has-masthead .mc-sign--rp :is(.mc-face--l-cap, .mc-face--r-cap, .mc-face--h-cap) {
-  transform: translateZ(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateZ(var(--ph)) rotateX(90deg);
-}
-/* left sides: turning point on the post's left edge, half a post left of the centre */
-html body.has-masthead .mc-sign--rp :is(.mc-face--l-out, .mc-face--r-in, .mc-face--h-left) {
-  transform: translate3d(var(--ph), 0, calc(-1 * var(--ph))) rotateY(var(--post-twist)) translate3d(calc(-1 * var(--ph)), 0, var(--ph)) rotateY(-90deg);
-}
-/* right sides: turning point on the post's right edge */
-html body.has-masthead .mc-sign--rp :is(.mc-face--l-in, .mc-face--r-out, .mc-face--h-right) {
-  transform: translate3d(calc(-1 * var(--ph)), 0, calc(-1 * var(--ph))) rotateY(var(--post-twist)) translate3d(var(--ph), 0, var(--ph)) rotateY(90deg);
-}
+html body.has-masthead .mc-sign--rp { --post-twist: -10deg; --ph: calc(var(--post-w2) / 2); --pw: var(--post-w2); }
+/* near post: corner at its right front edge (x = 0) */
+html body.has-masthead .mc-sign--rp .mc-sign__post--l { transform: translateX(var(--ph)) rotateY(var(--post-twist)) translateX(calc(-1 * (var(--ph)))); }
+html body.has-masthead .mc-sign--rp .mc-face--l-out { transform: translateX(var(--pw)) rotateY(var(--post-twist)) translateX(calc(-1 * (var(--pw)))) rotateY(-90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--l-in  { transform: rotateY(var(--post-twist)) rotateY(90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--l-cap { transform: translateX(var(--ph)) rotateY(var(--post-twist)) translateX(calc(-1 * (var(--ph)))) rotateX(90deg); }
+/* far post: corner at its left front edge */
+html body.has-masthead .mc-sign--rp .mc-sign__post--r { transform: translateX(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateX(calc(-1 * (calc(-1 * var(--ph))))); }
+html body.has-masthead .mc-sign--rp .mc-face--r-in  { transform: rotateY(var(--post-twist)) rotateY(-90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--r-out { transform: translateX(calc(-1 * var(--pw))) rotateY(var(--post-twist)) translateX(calc(-1 * (calc(-1 * var(--pw))))) rotateY(90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--r-cap { transform: translateX(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateX(calc(-1 * (calc(-1 * var(--ph))))) rotateX(90deg); }
+/* Hockey pole: corner at its left front edge, on the side you see */
+html body.has-masthead .mc-sign--rp .mc-stick .mc-stick__pole.mc-sign__post { transform: translateX(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateX(calc(-1 * (calc(-1 * var(--ph))))); }
+html body.has-masthead .mc-sign--rp .mc-face--h-left  { transform: rotateY(var(--post-twist)) rotateY(-90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--h-right { transform: translateX(calc(-1 * var(--pw))) rotateY(var(--post-twist)) translateX(calc(-1 * (calc(-1 * var(--pw))))) rotateY(90deg); }
+html body.has-masthead .mc-sign--rp .mc-face--h-cap   { transform: translateX(calc(-1 * var(--ph))) rotateY(var(--post-twist)) translateX(calc(-1 * (calc(-1 * var(--ph))))) rotateX(90deg); }
