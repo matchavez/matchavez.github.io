@@ -11,6 +11,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/InterMCMachine.var.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/EBGaramond-800.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ config.site_url }}stylesheets/fonts/EBGaramond-400.woff2">
+  {% if page.is_homepage or page.url == "" %}<link rel="preload" as="image" type="image/webp" href="{{ config.site_url }}images/sign-map-south-island.webp">{% endif %}
   {#- Browser-UI colour matched to each scheme's page background, so it never
       tints the chrome/scrollbar with brand red (see extra.css day/night bg). -#}
   <meta name="theme-color" content="#f4f1e6" media="(prefers-color-scheme: light)">
@@ -147,6 +148,7 @@
       <span class="mc-face mc-face--l-in" aria-hidden="true"></span>
       <span class="mc-face mc-face--r-in" aria-hidden="true"></span>
       <span class="mc-face mc-face--r-out" aria-hidden="true"></span>
+      <span class="mc-face mc-face--cap mc-face--board-top" aria-hidden="true"></span>
       <span class="mc-face mc-face--cap mc-face--l-cap" aria-hidden="true"></span>
       <span class="mc-face mc-face--cap mc-face--r-cap" aria-hidden="true"></span>
       <span class="mc-sign__post mc-sign__post--l" aria-hidden="true"><span class="mc-lamp"></span></span>
@@ -191,6 +193,7 @@
           <span class="mc-face mc-face--h-left" aria-hidden="true"></span>
           <span class="mc-face mc-face--h-right" aria-hidden="true"></span>
           <span class="mc-face mc-face--cap mc-face--h-cap" aria-hidden="true"></span>
+          <span class="mc-face mc-face--cap mc-face--panel-top" aria-hidden="true"></span>
           <span class="mc-stick__pole mc-sign__post" aria-hidden="true"><span class="mc-lamp"></span></span>
           <span class="mc-stick__panel">
             <span class="mc-stick__name">{{ ns2.ext.title }}</span>
@@ -203,6 +206,26 @@
       {% endif %}
     </nav>
     </div>
+    {#- Place the scene on the photo now, before the first paint, so the
+        sign does not jump into place when extra.js runs later. Same sums
+        as extra.js section 6 (which keeps it right on resize). -#}
+    <script>
+      (function () {
+        try {
+          var img = document.querySelector(".masthead img"), sc = document.querySelector(".mc-scene");
+          if (!img || !sc) return;
+          var r = img.getBoundingClientRect();
+          if (!r.width || !r.height) return;
+          var s = Math.max(r.width / 1600, r.height / 1200);
+          var pos = getComputedStyle(img).objectPosition.split(" ");
+          var n = function (v) { var x = parseFloat(v); return isNaN(x) ? 50 : x; };
+          sc.style.setProperty("--ox", (r.left + (r.width - 1600 * s) * n(pos[0]) / 100).toFixed(2) + "px");
+          sc.style.setProperty("--oy", (r.top + (r.height - 1200 * s) * n(pos[1]) / 100).toFixed(2) + "px");
+          sc.style.setProperty("--s", s.toFixed(5));
+          sc.style.setProperty("--rf", (20 / (parseFloat(getComputedStyle(document.documentElement).fontSize) || 20)).toFixed(4));
+        } catch (e) {}
+      })();
+    </script>
   {% else %}
     {{ super() }}
   {% endif %}

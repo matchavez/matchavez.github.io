@@ -2790,3 +2790,53 @@ html body.has-masthead .mc-sign--rp .mc-stick__ground {
 /* night: the post sides and tops have no torch layer of their own, so
    keep them in the dark with the rest of the land */
 html body[data-md-color-scheme="slate"].has-masthead .mc-sign--rp .mc-face { filter: brightness(0.16) saturate(0.6); }
+
+/* ================================================================
+   Photo match, pass 2 (24 Nov 2026)
+   - no 2D drop shadow behind the board and the Hockey panel: in the
+     photo a shadow can only fall on the ground (done in 3D above), so
+     a soft shadow "behind" the board read as a sticker
+   - the board and the panel have a thickness: their top edges are lit
+     by the sun, as the post tops are
+   - where the board meets the posts the corner is a little darker
+   - a touch of the camera's own softness on the sign, so it is no
+     sharper than the tussock beside it
+   ================================================================ */
+html body.has-masthead .mc-sign--rp .mc-sign__board,
+html body.has-masthead .mc-sign--rp .mc-stick__panel {
+  box-shadow:
+    inset 0 -2px 3px rgba(0, 0, 0, 0.3),
+    inset 0 0 10px rgba(225, 220, 200, 0.12);
+}
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-sign__board {
+  box-shadow:
+    inset 0 -2px 3px rgba(0, 0, 0, 0.3),
+    inset 0 0 10px rgba(225, 220, 200, 0.12),
+    inset 0.7rem 0 0.7rem -0.6rem rgba(8, 14, 8, 0.45),
+    inset -0.7rem 0 0.7rem -0.6rem rgba(8, 14, 8, 0.45);
+}
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-sign__board,
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-stick__panel {
+  filter: saturate(0.86) contrast(0.95) brightness(0.88) blur(0.3px);
+}
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-sign__post,
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp .mc-face {
+  filter: blur(0.3px);
+}
+/* top edges of the board and the panel (0.3rem thick), lit, in the
+   yellow of the band along the top */
+html body.has-masthead .mc-sign--rp .mc-face--board-top {
+  left: 0;
+  width: 100%;
+  top: -0.3rem;
+  height: 0.3rem;
+}
+html body.has-masthead .mc-sign--rp .mc-face--panel-top {
+  left: 0;
+  width: 100%;
+  top: 0.05rem;
+  height: 0.3rem;
+}
+html body[data-md-color-scheme="default"].has-masthead .mc-sign--rp :is(.mc-face--board-top, .mc-face--panel-top) {
+  background: linear-gradient(90deg, color-mix(in srgb, #ffc51d 70%, var(--sun)), color-mix(in srgb, #ffc51d 82%, #6b5a2a));
+}
