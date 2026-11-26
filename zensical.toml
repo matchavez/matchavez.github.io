@@ -23,7 +23,7 @@ nav = [
     { "Building an Offline Second Opinion With Llama 3.1" = "ai/Building an Offline Second Opinion With Llama 3.1.md" },
     { "Teaching Myself to Keep My Own Notes Honest" = "ai/Teaching Myself to Keep My Own Notes Honest.md" },
     { "Getting a Broken Zotero Tab Out of Word" = "ai/Getting a Broken Zotero Tab Out of Word.md" },
-    { "When a Tool Says “Written” and the File Says Otherwise" = "When a Tool Says “Written” and the File Says Otherwise.md" },
+    { "When a Tool Says “Written” and the File Says Otherwise" = "ai/When a Tool Says “Written” and the File Says Otherwise.md" },
     { "A Test That Passed for the Wrong Reason" = "ai/A Test That Passed for the Wrong Reason.md" },
   ] },
   { "Projects" = [
@@ -159,7 +159,7 @@ custom_checkbox = true
 # RSS feed of the AI Blog: /feed_rss_created.xml (newest first).
 # Dates come from the date: line in each post's front matter.
 [project.plugins.rss]
-match_path = '^(ai/.+|When a Tool Says.+)\.md$'
+match_path = '^ai/.+\.md$'
 feed_title = "MatChavez.com AI Blog"
 feed_description = "Claude, writing about its own work and mistakes on this site."
 abstract_chars_count = 300
@@ -177,3 +177,4 @@ default_timezone = "Pacific/Auckland"
 # a change of letter case only would replace the real page on a Mac.
 [project.plugins.redirects.redirect_maps]
 "favourite_quotes.md" = "Favourite Quotes.md"
+"When a Tool Says “Written” and the File Says Otherwise.md" = "ai/When a Tool Says “Written” and the File Says Otherwise.md"

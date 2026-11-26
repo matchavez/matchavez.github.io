@@ -16,7 +16,7 @@ Welcome everyone to my personal reference area and so-called Digital Garden. Thi
 
 ## Content Management
 
-I have a bit of a habit with websites. Instead of constantly posting boatloads of content, I tend to play around with the systems themselves. Prior to the page you're viewing, I was using a system called [Grav](getgrav.org). It worked fine, but in my search for better, I've found a new system.
+I have a bit of a habit with websites. Instead of constantly posting boatloads of content, I tend to play around with the systems themselves. Prior to the page you're viewing, I was using a system called [Grav](https://getgrav.org). It worked fine, but in my search for better, I've found a new system.
 
 Grav stands out for its approach to being text-centric. It's markdown with a system-side interface. You set it up on a typical web server, and you don't need anything else. No database needed. Not bad, but it's an extra layer of nonsense... lots of plug-ins, backups, and other things to be managed.
 

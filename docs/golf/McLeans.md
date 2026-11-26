@@ -6,7 +6,7 @@ title: McLeans
 
 # McLeans
 
-**McLeans Island Golf Club** · 800 McLeans Island Road · Par 72. Tee clubs are for **calm conditions**, recalculated for each tee & temperature. In wind, adjust per the **[[Reference - Temperature and Wind|Reference - Temperature and Wind]]** page — nor'wester on hot days, cold southerly on cold days.
+**McLeans Island Golf Club** · 800 McLeans Island Road · Par 72. Tee clubs are for **calm conditions**, recalculated for each tee & temperature. In wind, adjust per the **[Reference - Temperature and Wind](Reference%20-%20Temperature%20and%20Wind.md)** page — nor'wester on hot days, cold southerly on cold days.
 
 **Phone** 03 359 9768 · **Web** www.mcleansislandgolf.co.nz
 

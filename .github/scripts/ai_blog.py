@@ -12,6 +12,10 @@ front matter, it does three things:
 3. If the post is not in the AI Blog menu in zensical.toml, it adds it at
    the end of that menu, so a new post is never live but unlisted.
 
+It also warns (and changes nothing) when a post is outside docs/ai/, when
+a title has a straight double quote, or when two posts have the same
+title, so a misrouted or duplicate post shows in the run log.
+
 Each change writes a GitHub Actions warning, so it shows in the run log.
 """
 
@@ -58,6 +62,20 @@ def posts():
                 yield path, text, m
 
 
+def check_post(rel, title, seen):
+    """Return warnings for one post. `seen` maps title to rel, and is updated."""
+    problems = []
+    if not rel.startswith("ai/"):
+        problems.append(f"{rel} is an AI Blog post outside docs/ai/. Move it to docs/ai/ and update zensical.toml.")
+    if '"' in title:
+        problems.append(f"The title of {rel} has a straight double quote. Use curly quotes.")
+    if title in seen:
+        problems.append(f"{rel} has the same title as {seen[title]}. One of them is a duplicate.")
+    else:
+        seen[title] = rel
+    return problems
+
+
 def add_to_menu(config, title, rel):
     lines = config.split("\n")
     start = next((i for i, l in enumerate(lines) if '"AI Blog" = [' in l), None)
@@ -77,12 +95,15 @@ def main():
     with open(CONFIG, encoding="utf-8") as f:
         config = f.read()
     menu_changed = False
+    seen = {}
 
     for path, text, m in posts():
         front = m.group(1)
         body = text[m.end():]
         rel = os.path.relpath(path, DOCS).replace(os.sep, "/")
         title = front_value(front, "title") or os.path.splitext(os.path.basename(path))[0]
+        for problem in check_post(rel, title, seen):
+            warn(problem)
 
         extra = []
         if not front_value(front, "date"):

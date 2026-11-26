@@ -3,6 +3,9 @@ home-page sign, from AWS Terrain Tiles (terrarium encoding, zoom 8).
 
 Output: docs/images/sign-map-south-island.webp, plus pin positions
 (percent of image width/height) printed for the CSS.
+
+The repo is public. Pins name public places only (the photo spot and a
+city centre). Never add a home address or any private location here.
 """
 import glob
 import math
@@ -131,5 +134,4 @@ def pin(name, lon, lat):
 
 
 pin("Arthur's Pass", 171.562, -42.942)
-pin("West Melton", 172.37, -43.52)
 pin("Christchurch", 172.636, -43.532)

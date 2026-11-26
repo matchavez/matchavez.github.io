@@ -23,8 +23,10 @@ jobs:
           fetch-depth: 0 # full history, so ai_blog.py can date a post from git
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: pip install zensical
+          python-version: "3.13"
+      # Pinned to the version known to build this site. Upgrade on
+      # purpose: change the number, build locally, then push.
+      - run: pip install zensical==0.1.3
       - name: Make docs file names safe for URLs
         # zensical crashes on a file or folder name that has one of
         # these characters: " < > \ ^ ` { | }  ("URL reference is a
